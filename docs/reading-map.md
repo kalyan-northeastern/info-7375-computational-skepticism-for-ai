@@ -10,7 +10,7 @@ The alternative data-validation file numbered 05, delegation file numbered 10, a
 
 ## Editorial cautions for the course
 
-- Chapter 1 contains literal merge-conflict markers. Use the assigned skeptical moves; do not treat conflict blocks as student instructions. The course has not silently merged competing manuscript text.
+- Literal merge-conflict markers (`<<<<<<<`, `=======`, `>>>>>>>`) remain in chapters 2, 4, 5, 6, 7, 8, 10, 11 and 13 (checked 2026-10-18). Chapter 1 was rewritten on 2026-10-15 and has none. Do not treat conflict blocks as student instructions. The course has not silently merged competing manuscript text.
 - Chapter 7 sometimes equates predictive parity with score calibration. In this course, precision parity concerns P(Y=1 | predicted positive, group); score calibration concerns outcomes conditional on a probability score. They are distinct. Impossibility and tradeoff claims depend on assumptions; identical groups and perfect predictors matter as boundary cases.
 - Some manuscripts make universal claims about AI's inability to verify, report uncertainty, or reason causally. Treat these as arguments to test against their scope and counterexamples, not empirical laws established by this adaptation. External tools can contribute useful verification; a person's review also needs evidence.
 - Do not infer that every classifier is deterministic or that a wrong prediction has only a bounded downstream consequence. Course fixtures are deterministic by construction; live systems and their uses require separate analysis.

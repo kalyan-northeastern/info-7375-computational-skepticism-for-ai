@@ -1,4 +1,6 @@
 # Publish only the reviewed teaching directories and course files.
+# Canvas exports are never pushed.
+*.imscc
 /*
 !/.gitignore
 !/AGENTS.md
