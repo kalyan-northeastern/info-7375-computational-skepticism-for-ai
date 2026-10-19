@@ -11,11 +11,11 @@ Drafted 2026-10-18, revised the same day on Professor Bear's note. A layout, not
 **The film's central example, all real and dated** (in the profile's new `revisions` block and this folder's log):
 - **2026-09-26.** The target narrowed to roles that make teaching materials, after a Replit posting was rejected over one missing word.
 - **2026-10-18, first run of the faculty reader.** It read listing feeds for 12 business schools and found, among others, an applied-AI professorship at Chicago Booth and the executive director of an AI institute at Boston College. That second kind of listing is not teaching.
-- **The same day, Professor Bear's reasoning:** business schools pay more, run executive education and white-label AI programmes, and in his experience need AI direction. So the target widened from faculty roles to **running an AI group**: AI director, AI centre lead, executive education director, programmes that train a school's own faculty in AI.
+- **The same day, Professor Bear's reasoning:** business schools pay more, run executive education and white-label AI programmes, and in his experience need AI direction. So the target widened from faculty roles to **bringing real AI expertise into the school to direct an AI research centre or educational effort** (informally, running its AI group): AI director, centre lead, executive education director, programmes that train a school's own faculty in AI.
 - **Also that day:** university-facing account and partnership roles added after a correct miss; Stripe and Writer removed, not because they are bad or not useful but because he does not see them as directly applicable to transformative, AI-driven improvement of education.
 
 **What it must be honest about.**
-- The widening to AI-group leadership rests on two things: a handful of real listings and his own experience. Neither measures how many such roles exist or how often they appear. The film says so, and says what the next check is (measure the business-school feed for those titles).
+- The widening to directing an AI centre rests on two things: a handful of real listings and his own experience. Neither measures how many such roles exist or how often they appear. The film says so, and says what the next check is (measure the business-school feed for those titles).
 - No search has been run with this profile. The film shows a profile and its history, not results.
 - The engine's scorers are described only as the exercise states them.
 
@@ -58,9 +58,9 @@ A road of job cards with a few gates across it, each labelled with a profile fie
 |---|---|---|
 | B09 | A dated tag on the first erased gate | "On September twenty-sixth the target narrowed. A posting at Replit, a learning-experiences creator, had been rejected over a single missing word. The gate was too narrow." |
 | B10 | A feed of listings; two cards lit | "On October eighteenth a new reader looked at listings for twelve business schools. Among them: an applied-AI professorship, and the executive director of an AI institute." |
-| B11 | Teaching post card and an AI-group card, side by side | "The second is not teaching. It is running a group. That was not in his profile." |
+| B11 | Teaching post card and an AI-group card, side by side | "The second is not teaching. It is directing an AI research centre. That was not in his profile." |
 | B12 | His reasoning as three small icons | "He knew why it might matter. Business schools pay more, run executive education and AI programmes, and in his experience need AI direction." |
-| B13 | The gate redrawn wider, dated | "So the profile widened: not only faculty, but an AI director, an AI centre lead, an executive education director, programmes that train a school's own faculty." |
+| B13 | The gate redrawn wider, dated | "So the profile widened: not only faculty, but bringing real AI expertise into a business school to direct an AI research centre or educational effort. An AI director, a centre lead, an executive education director, programmes that train the school's own faculty." |
 | B14 | Stripe and Writer cards leaving | "Others went the other way. Stripe and Writer came off the watch list. They are useful for what they do. He does not see them as transformative for education." |
 | B15 | The `revisions` list, each with date and reason | "Each change is written down in the file, with the date and what he saw. That is how a profile stays honest as it evolves." |
 
@@ -82,7 +82,7 @@ A road of job cards with a few gates across it, each labelled with a profile fie
 ## Decisions for Professor Bear before a build
 1. **Citizenship on screen** (B07): decided 2026-10-18: say "US and Brazilian citizen, therefore no sponsorship needed."
 2. **Stripe and Writer** (B14): decided 2026-10-18: name them, and say plainly it is a fit judgment about education, not about their quality.
-3. **B11 to B13:** is "running an AI group" the wording you want for the widened target?
+3. **B11 to B13:** decided 2026-10-18: formal wording is "bringing real AI expertise into the school to direct an AI research centre or educational effort"; "running an AI group" is the informal version and may be used too.
 4. **Measure first?** Run the business-school feed check for AI-director, AI-centre and executive-education titles before the film, so Act IV can say a number, or keep it as the stated next check.
 5. **Lecture skill or show-tell**, and the order against the résumé-JSON film.
 

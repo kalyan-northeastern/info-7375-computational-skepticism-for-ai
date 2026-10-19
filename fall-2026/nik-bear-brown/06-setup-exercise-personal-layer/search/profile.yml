@@ -12,11 +12,12 @@ target_role:
   # Two equal tracks. Business-school AI roles were first left out of this draft as a footnote; Professor Bear
   # corrected that on 2026-10-18: they are a main target, for the reasons in business_school_rationale below.
   primary: >-
-    Track A, business schools: a role at a business school that wants an AI expert: faculty (including a
-    joint appointment between a business school and an engineering school, Northeastern's included), an AI
-    institute or centre leadership role, or a professor-of-practice style role. The point is access to what a
-    business school offers and other departments do not: executive education, specialised AI workshops and AI
-    training, and white-label programmes for executives.
+    Track A, business schools: bring real AI expertise into a business school to direct an AI research centre or
+    an AI educational effort (informally: run the school's AI group). That can be a director, centre-lead or
+    executive-education-director role, a professor of practice, a programme that trains the school's own faculty
+    in AI, or faculty including a joint appointment between business and engineering (Northeastern's included).
+    The point is what a business school offers that other departments do not: executive education, specialised AI
+    workshops and training, white-label programmes for executives, and the budget to pay for it.
   secondary:
     - >-
       Track B, AI and design-tool companies: a role that makes educational materials or advocates for educators
@@ -120,8 +121,8 @@ revisions:
     change: account and partnership roles that reach universities added as a target
     because: a posting for global systems integrators was a correct miss, and he saw the university version of that role would fit him
   - date: 2026-10-18
-    change: business-school roles widened beyond faculty (AI director, AI centre lead, executive education director, faculty AI training)
-    because: his own experience that business schools need AI direction; the listings above show such roles exist. Not yet measured against a feed.
+    change: business-school target widened from faculty to bringing real AI expertise in to direct an AI research centre or AI educational effort (AI director, centre lead, executive education director, professor of practice, faculty AI training)
+    because: his own experience that business schools are weak on AI and need real expertise to direct their research and educational efforts; the listings above show such roles exist. Not yet measured against a feed.
   - date: 2026-10-18
     change: Stripe and Writer removed from the watch list
     because: he does not see them as directly applicable to transformative, AI-driven improvement of education; not a judgment that they are bad or not useful
