@@ -20,9 +20,9 @@ Brief: [`06-setup-exercise-personal-layer.md`](../../../assignments/fall-2026/06
 
 | Requirement | Status | Note | Evidence |
 |---|---|---|---|
-| `search/resume.json` extracted and errors caught | 🟡 | CV facts exist; not in the exercise's schema; the 2026-09-27 additions are unattested. | `facts/professor-bear-cv.json` |
-| `search/profile.yml` | ⬜ | Target role and constraints. Professor Bear's choices. | - |
-| `search/gaps.md` | ⬜ | Delta between the record and the target role. | - |
+| `search/resume.json` extracted and errors caught | ➖ | Not generated, at Professor Bear's word (2026-10-18): the résumé is already JSON. The attested CV facts file and the derived résumé in `greenhouse-watch-demo/` stand; the 2026-09-27 sections of the facts file are still unread by him, and his 2026-09-23 read found no errors (the exercise expects at least three). | `facts/professor-bear-cv.json` |
+| `search/profile.yml` | ✅ | Written from his own answers on 2026-10-18, with a dated `revisions` block; committed locally, not pushed (it names his citizenship; he decides). | `search/profile.yml` |
+| `search/gaps.md` | ⬜ | **Waits for data, on purpose.** The gap between his record and the target roles is measured against real postings, not guessed. Needs the Google and Microsoft collectors (running 2026-10-18, hours, none finished) and the existing 3,243-posting run. Writing it earlier would be a guess presented as a finding. | - |
 | Verification check and log | ⬜ | - | - |
 | Privacy: `search/private-notes.md` kept out of git | ⬜ | This repo is public; personal notes must stay out. | - |
 

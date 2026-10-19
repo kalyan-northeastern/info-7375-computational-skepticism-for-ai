@@ -35,7 +35,7 @@ target_role:
     - Is a Northeastern joint appointment (business plus engineering) something you would start by approaching, not waiting for a listing?   # QUESTION
 visa:
   # Q2. Professor Bear, 2026-10-18: born in Brazil to US parents; holds Brazilian and US citizenship.
-  type: no constraint             # citizen; no authorization end date, no unemployment clock
+  type: no constraint             # US and Brazilian citizen, therefore no sponsorship needed; no authorization end date, no unemployment clock
   authorization_end_date: null
   unemployment_days_used: null    # not applicable (not on OPT)
   stem_eligible: null             # not applicable
@@ -79,7 +79,7 @@ preferences:
     - Design and developer tools
     - Higher education (universities and business schools)
   hard_exclusion: >-
-    He must believe in the product. This is a judgment about whether the tool is good, not an ethics objection.
+    The work must be directly applicable to improving education through AI in a transformative way. This is not a judgment that other products are bad or not useful: Stripe and Writer do useful things, but he does not see them as transformative for education.
   employers_most_wanted:                         # Professor Bear, 2026-10-18; "et cetera, et cetera" means the list is open
     - Anthropic
     - OpenAI
@@ -107,5 +107,23 @@ business_school_watch_list: >-
   Cornell Johnson, Vanderbilt Owen, UCLA Anderson, UT Austin McCombs, UT Dallas Jindal, Boston College Carroll,
   UC San Diego Rady, UNC Kenan-Flagler, and Northeastern D'Amore-McKim. Listings are read through the
   Chronicle and Inside Higher Ed feeds; most schools' own job systems cannot be read by a script.
+revisions:
+  # A profile is not written once. Each line is a change Professor Bear made after seeing something, with the
+  # date and what he saw, taken from FRICTIONAL.md. Add a line whenever a target changes.
+  - date: 2026-09-26
+    change: target narrowed to roles that make teaching materials for a named audience
+    because: a Replit "Learning Experiences Creator" posting had been rejected over one missing word
+  - date: 2026-10-18
+    change: faculty roles at business schools that are about AI added as a target
+    because: the faculty reader's first run found an applied-AI professorship at Chicago Booth and the executive director of an AI institute at Boston College
+  - date: 2026-10-18
+    change: account and partnership roles that reach universities added as a target
+    because: a posting for global systems integrators was a correct miss, and he saw the university version of that role would fit him
+  - date: 2026-10-18
+    change: business-school roles widened beyond faculty (AI director, AI centre lead, executive education director, faculty AI training)
+    because: his own experience that business schools need AI direction; the listings above show such roles exist. Not yet measured against a feed.
+  - date: 2026-10-18
+    change: Stripe and Writer removed from the watch list
+    because: he does not see them as directly applicable to transformative, AI-driven improvement of education; not a judgment that they are bad or not useful
 flexibility_check: >-
   Nothing here claims flexibility. Every null is a question, not an assumption.

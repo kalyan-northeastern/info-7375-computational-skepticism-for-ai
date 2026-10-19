@@ -1,66 +1,89 @@
-# Film layout: the file that stops a job search from lying to you
+# Film layout: a profile is a hypothesis about the market
 
-Drafted 2026-10-18. A layout, not a build: nothing is narrated, drawn or rendered. Items in [brackets] are Professor Bear's to confirm.
+Drafted 2026-10-18, revised the same day on Professor Bear's note. A layout, not a build: nothing is narrated, drawn or rendered. Items in [brackets] are Professor Bear's to confirm.
 
 ## Executive summary
 
-**What this is.** A layout for a film in the series *Professor Bear Does His Assignments* about one small file, `search/profile.yml`: what it holds, what the job-search engine does with it, and why it must say what is true and not what sounds good. It uses Professor Bear's own profile as the worked example.
+**What this is.** A lecture-scale film in the series *Professor Bear Does His Assignments* about `search/profile.yml`: the file that says specifically what a job search is for. It is a short file, but it is the one that decides what every later result means. The film's second half is Professor Bear's note: the profile is not written once. It changes as the market shows you things, and the film uses his own profile's changes, with dates, as the proof.
 
-**Why read it.** The exercise's own warning is the film's spine: "a profile that claims flexibility you do not have will produce Apply recommendations for roles you cannot take." The file is a set of gates. Where it is wrong, every later answer is wrong in the same direction, and nothing downstream will say so.
+**Why read it.** Two ideas, in order. First, a profile is a set of gates, and a vague or wrong gate makes every answer wrong in the same direction without warning ("a profile that claims flexibility you do not have will produce Apply recommendations for roles you cannot take"). Second, a profile is a hypothesis about what you want and what exists, and the way to improve it is to look at the market and revise it on the record.
 
-**What the real session gives the film** (all from this log and this folder):
-- **The agent could fill only part of it.** From project files it filled the target roles and the watch list. Everything it could not know (visa, location, sponsorship, company size, exclusions) it left empty and turned into questions. That is the design: a guess in a gate field is worse than a blank.
-- **The agent's draft was wrong in a way no blank shows.** It treated business-school AI roles as a footnote. Professor Bear corrected that: they are a main target, because business schools pay more, run executive education and white-label AI programmes, and need AI direction. The omission was invisible until he read the draft.
-- **A gate that stops being a gate.** Professor Bear is a US and Brazilian citizen and needs no sponsorship, so the sponsorship gate, the one that skips any company without a sponsorship history, is switched off for him. For many people that gate is the whole search.
-- **Constraints are not all the same kind.** A hard one (never New York, never San Francisco; in Los Angeles only UCLA), a conditional one (relocate only to somewhere cheaper or warmer), a time one (20 hours a week in term, full-time in summer), and a judgment one ("I must believe in the product"). The last one removed Stripe and Writer from the watch list the same day.
-- **The engine's own example persona carries a trap** worth one beat: an authorization field written as free text that says "work authorized" while the person on a student-visa extension still needs sponsorship. The comment in the example file says the scorer must still classify it as needing sponsorship.
+**The film's central example, all real and dated** (in the profile's new `revisions` block and this folder's log):
+- **2026-09-26.** The target narrowed to roles that make teaching materials, after a Replit posting was rejected over one missing word.
+- **2026-10-18, first run of the faculty reader.** It read listing feeds for 12 business schools and found, among others, an applied-AI professorship at Chicago Booth and the executive director of an AI institute at Boston College. That second kind of listing is not teaching.
+- **The same day, Professor Bear's reasoning:** business schools pay more, run executive education and white-label AI programmes, and in his experience need AI direction. So the target widened from faculty roles to **running an AI group**: AI director, AI centre lead, executive education director, programmes that train a school's own faculty in AI.
+- **Also that day:** university-facing account and partnership roles added after a correct miss; Stripe and Writer removed, not because they are bad or not useful but because he does not see them as directly applicable to transformative, AI-driven improvement of education.
 
-**What it does not claim.** It does not say what the engine scores beyond what the exercise states (the sponsorship scorer, the fit score, the timeline factor and the Apply, Consider, Skip recommendation read these files). It does not show a run that used this profile, because none has been run. It says so.
+**What it must be honest about.**
+- The widening to AI-group leadership rests on two things: a handful of real listings and his own experience. Neither measures how many such roles exist or how often they appear. The film says so, and says what the next check is (measure the business-school feed for those titles).
+- No search has been run with this profile. The film shows a profile and its history, not results.
+- The engine's scorers are described only as the exercise states them.
 
 ---
 
 ## The film in one line
 
-*A profile is a list of things you will not do and cannot do. An agent can write the list from your history, but only you can say which lines are true. Here is one real profile, what the agent left blank, and what it got wrong.*
+*A profile says exactly what you are looking for and what you cannot do. The first draft is a guess. Then you look at the market, see something you did not expect, and change the file, with the date and the reason.*
 
-**Working title:** The File That Stops a Job Search From Lying. [Alternative: What Your Search Profile Is For]
-**Form:** `show-tell`, Liam in for Bear, third person, standard greeting and @NikBearBrown outro; playlist *Professor Bear Does His Assignments*. One drawn picture per beat, one to three words of label.
-**Where it will be built:** `youtube/claude-liam-show-tell-the-profile-file/` in this course repository (not tracked by git).
+**Working title:** A Profile Is a Hypothesis. [Alternative: What Your Search Profile Is For]
+**Length:** lecture scale; as long as the acts need, no padding.
+**Form:** Liam in for Bear, third person, standard greeting and @NikBearBrown outro; playlist *Professor Bear Does His Assignments*. [`lecture` skill's act structure, with drawn beats per act; if you want `show-tell` instead, the beats below carry over.]
+**Where it will be built:** `youtube/claude-liam-lecture-a-profile-is-a-hypothesis/` in this course repository (not tracked by git).
 
 ## The central picture
 
-A row of gates across a road, each labelled with one profile field: sponsorship, place, hours, kind of work. Job cards roll toward the gates. A gate set wrongly lets the wrong cards through, and the road beyond looks exactly as tidy as before. One gate (sponsorship) is lifted for Professor Bear and stays down for someone else.
+A road of job cards with a few gates across it, each labelled with a profile field. The gates are drawn in pencil. As the film goes on a hand erases one, redraws it, and adds a new one beside it, and each change has a small dated tag. At the end the same road has a different set of gates and a different set of cards getting through.
 
-## Beats
+## Acts and beats
 
+**Act I: What the file is.**
 | Beat | Picture | Narration draft (Liam, third person) |
 |---|---|---|
 | BIDEA | Hesitant-writer opener | Greeting. "What is a search profile for? It looks like a form." |
-| B01 | The road, job cards, no gates | "A job-search engine reads thousands of postings and hands you a few. To choose, it needs to know what you will not do." |
-| B02 | Four gates appear, labelled | "That is the profile: five questions. What role. What visa and timeline. Where. Which industries. Whether you need sponsorship." |
-| B03 | A gate set wrongly, cards sailing through | "Each answer is a gate. If an answer claims flexibility you do not have, the engine recommends jobs you cannot take, and the output still looks tidy." |
-| B04 | The agent's draft with blanks highlighted | "So the agent drafts it from what the project files say, and leaves the rest empty. Professor Bear's draft filled the roles and the watch list. Visa, place and sponsorship stayed blank." |
-| B05 | A blank beside a guess, the guess crossed out | "A blank is honest. A guess in a gate field is not. It becomes a rule." |
-| B06 | The draft with one missing arrow | "Then the part a blank cannot show. The draft treated business schools as a footnote. Professor Bear read it and said no: they pay more, run executive education and AI programmes, and need AI direction. The agent could not have known that." |
-| B07 | The sponsorship gate lifted | "His answers also switched something off. He is a US and Brazilian citizen. The sponsorship gate, which skips any company with no sponsorship history, does not apply to him." |
-| B08 | Four kinds of constraint as four gate shapes | "His constraints are not all alike. Never New York or San Francisco, and in Los Angeles only UCLA. Move only somewhere cheaper or warmer. Twenty hours a week in term, full-time in summer. And one that is a judgment: he has to believe in the product." |
-| B09 | Two company cards leaving the road | "That last one took Stripe and Writer off the watch list the same day. Not a finding about them. A constraint about him." |
-| B10 | A card reading "work authorized" with a gate that stays shut | "One trap from the engine's own examples. A free-text field says 'work authorized', and the person is on a student-visa extension and still needs sponsorship. Words that sound like permission are not permission." |
-| B11 | A reviewer's tick-list | "How to check your own: does every gate say something you would say out loud to a recruiter? Is anything here a hope?" |
-| B12 | The terminal showing the real file | "Here is the file. Every value has the source in a comment. Every blank is a question." |
-| B13 | A small question mark on the road | "He has not yet run a search with it. So this film shows a profile, not its results." |
-| BHTF | Your Turn in the composer | "Write your five answers as facts. Then mark the one you would most like to be different." |
+| B01 | The road, job cards, no gates | "A job-search engine reads thousands of postings and hands you a few. To choose, it must know what you will not do." |
+| B02 | Five gates appear, labelled | "That is the profile. What role. What visa and timeline. Where. Which industries. Whether you need sponsorship." |
+| B03 | Two role cards: "something in tech", "data scientist at a biotech startup" | "Specific is the point. 'Something in tech' gives the engine nothing to work with. 'Data scientist at a biotech startup' does." |
+
+**Act II: Facts, not hopes.**
+| Beat | Picture | Narration draft |
+|---|---|---|
+| B04 | A gate set wrongly, cards sailing through | "If an answer claims flexibility you do not have, the engine recommends jobs you cannot take, and the output still looks tidy." |
+| B05 | Draft with blanks highlighted | "So the agent drafts from what the files say and leaves the rest empty. Professor Bear's draft filled his roles and his watch list. Visa, place and sponsorship stayed blank." |
+| B06 | A blank beside a guess, the guess crossed out | "A blank is honest. A guess in a gate field is not. It becomes a rule." |
+| B07 | Sponsorship gate lifted | "His answers switched one gate off. He is a US and Brazilian citizen, therefore he needs no sponsorship. The sponsorship gate does not apply to him." |
+| B08 | Four constraint shapes | "His constraints are different kinds. Never New York or San Francisco. Twenty hours a week in term, full-time in summer. And one that is a judgment about fit: the work has to be directly applicable to improving education through AI." |
+
+**Act III: The profile changes when the market does.**
+| Beat | Picture | Narration draft |
+|---|---|---|
+| B09 | A dated tag on the first erased gate | "On September twenty-sixth the target narrowed. A posting at Replit, a learning-experiences creator, had been rejected over a single missing word. The gate was too narrow." |
+| B10 | A feed of listings; two cards lit | "On October eighteenth a new reader looked at listings for twelve business schools. Among them: an applied-AI professorship, and the executive director of an AI institute." |
+| B11 | Teaching post card and an AI-group card, side by side | "The second is not teaching. It is running a group. That was not in his profile." |
+| B12 | His reasoning as three small icons | "He knew why it might matter. Business schools pay more, run executive education and AI programmes, and in his experience need AI direction." |
+| B13 | The gate redrawn wider, dated | "So the profile widened: not only faculty, but an AI director, an AI centre lead, an executive education director, programmes that train a school's own faculty." |
+| B14 | Stripe and Writer cards leaving | "Others went the other way. Stripe and Writer came off the watch list. They are useful for what they do. He does not see them as transformative for education." |
+| B15 | The `revisions` list, each with date and reason | "Each change is written down in the file, with the date and what he saw. That is how a profile stays honest as it evolves." |
+
+**Act IV: What is not known yet.**
+| Beat | Picture | Narration draft |
+|---|---|---|
+| B16 | A question mark over the AI-group card | "The widening rests on a few listings and his own experience. How many such roles exist, and how often they appear, has not been measured. That is the next check." |
+| B17 | Terminal showing the real file | "Here is the file. Every value says where it came from. Every blank is a question." |
+| B18 | A small question mark on the road | "No search has been run with it yet, so this film shows a profile and its history, not results." |
+| BVDT | Recap strip: specific, factual, dated | "A profile is specific, true, and revised on the record." |
+| BHTF | Your Turn in the composer | "Write your five answers as facts. Then name one thing you saw this week that should change one of them." |
 | BOUT | Standard outro | Title read aloud, "At Nik Bear Brown." |
 
 ## What is cut or left out
-- What each engine scorer computes: not in any file this session read.
-- Salary figures for business schools: Professor Bear pasted a table whose source was not checked; none appear.
-- His exact employer wish list: the film names none, because the list is still being decided.
+- What each engine scorer computes beyond the exercise's own description.
+- Business-school salary figures (the table Professor Bear pasted was not checked).
+- His employer wish list, still being decided.
 
 ## Decisions for Professor Bear before a build
-1. **Citizenship on screen.** The film says "US and Brazilian citizen". Keep it, or say only "needs no sponsorship"?
-2. **The Stripe and Writer line.** Name them, or say "two tools he does not believe in"?
-3. **Whether to run a search with the profile first**, so the film can show one result, or publish it as a profile-only film.
-4. **Playlist and order** within the series.
+1. **Citizenship on screen** (B07): decided 2026-10-18: say "US and Brazilian citizen, therefore no sponsorship needed."
+2. **Stripe and Writer** (B14): decided 2026-10-18: name them, and say plainly it is a fit judgment about education, not about their quality.
+3. **B11 to B13:** is "running an AI group" the wording you want for the widened target?
+4. **Measure first?** Run the business-school feed check for AI-director, AI-centre and executive-education titles before the film, so Act IV can say a number, or keep it as the stated next check.
+5. **Lecture skill or show-tell**, and the order against the résumé-JSON film.
 
-*Written from this folder's log and `06-setup-exercise-personal-layer/search/profile.yml`. Nothing here records a decision or understanding Professor Bear did not state.*
+*Written from `06-setup-exercise-personal-layer/search/profile.yml` (including its `revisions` block) and this folder's log. Nothing here records a decision or understanding Professor Bear did not state.*
