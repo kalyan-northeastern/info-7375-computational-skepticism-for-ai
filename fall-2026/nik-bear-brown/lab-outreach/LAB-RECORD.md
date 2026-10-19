@@ -56,6 +56,10 @@ Proposed 2026-10-19 after reading one real department people page and one real l
     "pis_listed": null,
     "funding_stated": [],
     "grants_or_sponsors_named": [],
+    "awards_from_public_databases": [
+      { "funder": "NIH | NSF", "award_id": "", "amount": null, "amount_kind": "annual | total", "start_date": "", "end_date": "",
+        "source_url": "https://reporter.nih.gov/ | https://www.nsf.gov/awardsearch/", "checked_on": "YYYY-MM-DD", "pi_matches_lab": true }
+    ],
     "signal": "single_person | small | established | unknown",
     "basis": ""
   },
@@ -116,7 +120,7 @@ Proposed 2026-10-19 after reading one real department people page and one real l
 |---|---|---|
 | `pi` | Who is the principal investigator? | Every value carries the page it came from. Email and phone only if the page published them; never constructed. |
 | `what_the_lab_does` | What does the lab do? | `verbatim` is the lab's own sentence. `model_summary` is separate and empty unless one is written, so a model's words never replace the lab's. |
-| `size_and_funding` | Can this lab afford me? | People and PIs counted from the pages; funding only as the lab states it. A lab of one is `single_person`: he judged that probably means no funding. "Established" needs evidence on the page (several people, named grants or sponsors), not an impression. |
+| `size_and_funding` | Can this lab afford me? | People and PIs counted from the pages; funding only as the lab states it. A lab of one is `single_person`: he judged that probably means no funding. "Established" needs evidence on the page (several people, named grants or sponsors), not an impression. | Funding is checked against the award databases, not taken from the lab's own page: see the section below.
 | `fit` | Is it a match for what I do? | The best fit is a lab with a lot of genomic or other biological data that needs a computational biologist or a database; on the business side, a group that wants to do AI research without the technical capacity. `basis` shows which words on the page produced the suggestion. `suggested` is the tool's guess; `verdict` is his. |
 | `kind` | Is it a lab or a team inside a company? | A company such as Moderna has research teams that work like labs. For a `company_team` the funding test does not apply (the company pays); what has to be recorded instead is whether the team works with outside collaborators, which a public page rarely says. |
 | `site` | Can I get there? | Where the lab sits, taken from its own page, and whether that is in his range: Longwood, Harvard and Cambridge near the Broad, Allston, and Mass General at the far end, about once a week. Tufts is out. The work is mostly remote, so this is a visit, not a commute. |
@@ -128,6 +132,12 @@ Proposed 2026-10-19 after reading one real department people page and one real l
 | `provenance` | Can I check it? | Every URL read, its status and date, and whether it was read by a script or by hand. |
 | `outreach` | Where am I with this lab? | Filled in by Professor Bear only. |
 | `fit.tier` | Is it worth his look? | `great`, `pretty_good` or `none`, suggested from the lab's own words; he decides. `great` pages are posted to Discord; `pretty_good` only when he says so. |
+
+## Funding: check the award databases (learned 2026-10-19 from a student's version of this search)
+
+A student sent his own version of the lab search: 61 Boston-area labs, each with its funding listed as award numbers, amounts and dates instead of a sentence from the lab's page. Spot-checks against the public databases came back clean: all 20 of the NIH award numbers in his file were found in NIH RePORTER with the same amount and end date, and 24 of 25 sampled NSF awards matched in the NSF Award Search (end date, amount and the lab's principal investigator; the one that did not match is a 2020 award). The method transfers; his selection does not, because it was built for his own profile (agentic AI, code verification, clinical language models).
+
+For this search, `size_and_funding.awards_from_public_databases` replaces the lab's own funding sentence as the evidence for "can this lab pay for me". An annual NIH figure is not a total, so `amount_kind` says which it is. A lab with no active award in either database is recorded as "none found in NIH or NSF", which is not the same as unfunded (industry, foundation and internal money do not appear there). The student's file names people and holds email addresses, so it stays on this machine and is not copied here.
 
 ## From record to Discord (Professor Bear, 2026-10-19)
 
