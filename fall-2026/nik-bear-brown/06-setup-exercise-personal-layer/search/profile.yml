@@ -128,6 +128,7 @@ outreach_search:
     - Boston labs and departments, including epidemiology and endocrinology at Harvard Medical School
     - Harvard Business School and MIT Sloan (business research on AI)
     - Research institutes and think tanks that do business or AI research, and the Broad Institute and the Whitehead Institute
+    - The big Boston hospitals' research labs: Massachusetts General Hospital and Boston Children's Hospital (named by him), and others ("et cetera"; the rest of the list is still to be named)
   unit: the lab (he is applying to a lab, not to a principal investigator in particular)
   fields: [biology, computational biology, business (AI research at Harvard Business School, MIT Sloan and the labs there)]
   method: >-
@@ -156,6 +157,7 @@ outreach_search:
     - A lab is the unit. A faculty member with no lab website is recorded but is not a target.
     - A lab needs funding to pay for him. One that looks too small, such as a single person, probably has none and is not a target.
     - Fit is a suggestion from the page's own words; Professor Bear gives the verdict.
+  hospitals_still_to_name: ["which other hospitals count: Brigham and Women's, Beth Israel Deaconess, Dana-Farber, Joslin, others?"]
   first_pilot: not chosen (the Harvard Medical School Division of Nutrition people page was read to design the record)
   to_decide:
     - Which departments and labs to start with (the first pilot).
@@ -190,6 +192,9 @@ revisions:
   - date: 2026-10-19
     change: "outreach search defined: the lab is the unit; best fit is computational biology and data-heavy labs; Harvard Business School, MIT Sloan, the Broad and Whitehead Institutes and think tanks added; tiny labs and faculty without a lab site are not targets"
     because: he is applying to a lab to be funded and used, so a lab that cannot pay or has no data to compute on is not a target
+  - date: 2026-10-19
+    change: the big Boston hospitals added as places to read (Massachusetts General Hospital, Boston Children's Hospital, and others to be named)
+    because: that is where much of the data-heavy biology in Boston is done, and where a computational biologist would be needed
 
 flexibility_check: >-
   Nothing here claims flexibility. Every null is a question, not an assumption.
