@@ -1,0 +1,2297 @@
+{
+ "as_of": "2026-10-18",
+ "candidates": {
+  "ashby:0681fa01-76c2-47da-9ebd-b4677521e049": {
+   "company": "OpenAI",
+   "date_posted": "2026-09-23",
+   "department": "Finance / Finance",
+   "fp": "5ed39876bb1b8082",
+   "last_published": "2026-10-18",
+   "location_text": "San Francisco",
+   "matched": {
+    "kept_because": "role word in title",
+    "role_title": [
+     "enablement"
+    ],
+    "title_only": true
+   },
+   "published": "2026-10-08",
+   "source": "ashby",
+   "source_id": "0681fa01-76c2-47da-9ebd-b4677521e049",
+   "text_sha": "40c4cd61936a945d",
+   "title": "Head of Sourcing Enablement & Delivery",
+   "url": "https://jobs.ashbyhq.com/openai/0681fa01-76c2-47da-9ebd-b4677521e049"
+  },
+  "ashby:076371b1-e9b0-4ad7-b67b-ae9e4572f65a": {
+   "company": "Notion",
+   "date_posted": "2026-06-22",
+   "department": "People / People",
+   "fp": "93dddc0ddad5cc01",
+   "last_published": "2026-10-18",
+   "location_text": "San Francisco, California · New York, New York",
+   "matched": {
+    "kept_because": "3 topic words in body (>= 3)",
+    "topic_text": [
+     "university",
+     "universities",
+     "campus"
+    ]
+   },
+   "published": "2026-10-08",
+   "source": "ashby",
+   "source_id": "076371b1-e9b0-4ad7-b67b-ae9e4572f65a",
+   "text_sha": "6a095a8805432f4c",
+   "title": "Head of Early Career Recruiting",
+   "url": "https://jobs.ashbyhq.com/notion/076371b1-e9b0-4ad7-b67b-ae9e4572f65a"
+  },
+  "ashby:1098311d-3a07-40ad-8107-6245a492a0b3": {
+   "company": "OpenAI",
+   "date_posted": "2026-09-03",
+   "department": "Applied AI / Applied AI",
+   "fp": "c4b9cf9dbb1ad04e",
+   "last_published": "2026-10-18",
+   "location_text": "San Francisco",
+   "matched": {
+    "kept_because": "role word in title",
+    "role_title": [
+     "learning experiences"
+    ],
+    "topic_text": [
+     "education"
+    ]
+   },
+   "published": "2026-10-08",
+   "source": "ashby",
+   "source_id": "1098311d-3a07-40ad-8107-6245a492a0b3",
+   "text_sha": "98a07bc7aa06e208",
+   "title": "Software Engineer, Native Learning Experiences",
+   "url": "https://jobs.ashbyhq.com/openai/1098311d-3a07-40ad-8107-6245a492a0b3"
+  },
+  "ashby:1acade7a-0b80-4c6c-9253-7c27a165739d": {
+   "company": "Supabase",
+   "date_posted": "2026-08-21",
+   "department": "Marketing / Marketing",
+   "fp": "a47eb94171b80778",
+   "last_published": "2026-10-18",
+   "location_text": "Remote, London UK",
+   "matched": {
+    "kept_because": "role word in title",
+    "role_title": [
+     "developer relations"
+    ],
+    "topic_text": [
+     "education"
+    ]
+   },
+   "published": "2026-10-18",
+   "source": "ashby",
+   "source_id": "1acade7a-0b80-4c6c-9253-7c27a165739d",
+   "text_sha": "db4b2c442004cd70",
+   "title": "Developer Relations Engineer (London, UK)",
+   "url": "https://jobs.ashbyhq.com/supabase/1acade7a-0b80-4c6c-9253-7c27a165739d"
+  },
+  "ashby:1e68e5f6-6bda-4d11-89fd-4be731077031": {
+   "company": "OpenAI",
+   "date_posted": "2026-08-14",
+   "department": "Security / Security",
+   "fp": "7e59af4f3979ae8f",
+   "last_published": "2026-10-18",
+   "location_text": "San Francisco",
+   "matched": {
+    "kept_because": "role word in title",
+    "role_title": [
+     "enablement"
+    ],
+    "title_only": true
+   },
+   "published": "2026-10-08",
+   "source": "ashby",
+   "source_id": "1e68e5f6-6bda-4d11-89fd-4be731077031",
+   "text_sha": "0c64849a75f761e5",
+   "title": "IT Software Architect, SaaS Enablement and Governance",
+   "url": "https://jobs.ashbyhq.com/openai/1e68e5f6-6bda-4d11-89fd-4be731077031"
+  },
+  "ashby:2d7f1028-ce9b-49c7-acc8-782714ca1cf4": {
+   "company": "OpenAI",
+   "date_posted": "2026-06-17",
+   "department": "Applied AI / Codex - Engineering",
+   "fp": "22d61c85fa57fe8f",
+   "last_published": "2026-10-18",
+   "location_text": "San Francisco",
+   "matched": {
+    "kept_because": "role word in title",
+    "role_title": [
+     "enablement"
+    ],
+    "title_only": true
+   },
+   "published": "2026-10-08",
+   "source": "ashby",
+   "source_id": "2d7f1028-ce9b-49c7-acc8-782714ca1cf4",
+   "text_sha": "d6011a84eafdc014",
+   "title": "Full Stack Software Engineer, Agent Enablement",
+   "url": "https://jobs.ashbyhq.com/openai/2d7f1028-ce9b-49c7-acc8-782714ca1cf4"
+  },
+  "ashby:2f00791f-b026-4138-91ad-f5e75929dc7b": {
+   "company": "OpenAI",
+   "date_posted": "2026-10-16",
+   "department": "People / Recruiting",
+   "fp": "b9041ed8dc25c0c0",
+   "last_published": "2026-10-18",
+   "location_text": "San Francisco",
+   "matched": {
+    "kept_because": "role word in title",
+    "role_title": [
+     "enablement"
+    ],
+    "title_only": true
+   },
+   "published": "2026-10-18",
+   "source": "ashby",
+   "source_id": "2f00791f-b026-4138-91ad-f5e75929dc7b",
+   "text_sha": "94dbc0d8841af99e",
+   "title": "Systems & Enablement Lead, Recruiting Operations",
+   "url": "https://jobs.ashbyhq.com/openai/2f00791f-b026-4138-91ad-f5e75929dc7b"
+  },
+  "ashby:4885f56d-9f59-4c40-81d8-c33a167cb26c": {
+   "company": "OpenAI",
+   "date_posted": "2026-10-16",
+   "department": "Product Design / Product Design",
+   "fp": "3ba8b0c11fa5c8f8",
+   "last_published": "2026-10-18",
+   "location_text": "San Francisco",
+   "matched": {
+    "kept_because": "role word in title",
+    "role_title": [
+     "education"
+    ],
+    "topic_text": [
+     "universities",
+     "campus",
+     "education"
+    ]
+   },
+   "published": "2026-10-18",
+   "source": "ashby",
+   "source_id": "4885f56d-9f59-4c40-81d8-c33a167cb26c",
+   "text_sha": "c48460595bfa37bd",
+   "title": "Product Designer, Higher Education",
+   "url": "https://jobs.ashbyhq.com/openai/4885f56d-9f59-4c40-81d8-c33a167cb26c"
+  },
+  "ashby:4cfc6b6b-dd8f-4101-897d-3217e45db1e4": {
+   "company": "OpenAI",
+   "date_posted": "2026-08-24",
+   "department": "OpenAI for Gov / OpenAI for Gov",
+   "fp": "a4bb898b2ede8d78",
+   "last_published": "2026-10-18",
+   "location_text": "Washington, DC",
+   "matched": {
+    "kept_because": "role word in title",
+    "materials": {
+     "audience": [
+      "practitioners"
+     ],
+     "verb_object": [
+      "instructional design"
+     ]
+    },
+    "role_title": [
+     "enablement"
+    ],
+    "topic_text": [
+     "education",
+     "teach"
+    ]
+   },
+   "published": "2026-10-08",
+   "source": "ashby",
+   "source_id": "4cfc6b6b-dd8f-4101-897d-3217e45db1e4",
+   "text_sha": "42565ee2c3d79b50",
+   "title": "Enablement Lead, Government",
+   "url": "https://jobs.ashbyhq.com/openai/4cfc6b6b-dd8f-4101-897d-3217e45db1e4"
+  },
+  "ashby:4df2842a-016d-4c69-a011-fab47aa5f981": {
+   "company": "OpenAI",
+   "date_posted": "2026-08-17",
+   "department": "Scaling / Compute",
+   "fp": "ffe89adf39c9d54b",
+   "last_published": "2026-10-18",
+   "location_text": "US - Remote",
+   "matched": {
+    "kept_because": "role word in title",
+    "role_title": [
+     "community"
+    ],
+    "topic_text": [
+     "education"
+    ]
+   },
+   "published": "2026-10-08",
+   "source": "ashby",
+   "source_id": "4df2842a-016d-4c69-a011-fab47aa5f981",
+   "text_sha": "e870f485ddbcac06",
+   "title": "Community Engagement Lead, Ohio",
+   "url": "https://jobs.ashbyhq.com/openai/4df2842a-016d-4c69-a011-fab47aa5f981"
+  },
+  "ashby:6922ab5c-5b90-4da2-ab10-cbc46d4f4860": {
+   "company": "OpenAI",
+   "date_posted": "2026-08-10",
+   "department": "Applied AI / Applied AI Engineering",
+   "fp": "b7a8f82d29d8ac42",
+   "last_published": "2026-10-18",
+   "location_text": "San Francisco",
+   "matched": {
+    "kept_because": "role word in title",
+    "role_title": [
+     "education"
+    ],
+    "topic_text": [
+     "education",
+     "k-12"
+    ]
+   },
+   "published": "2026-10-08",
+   "source": "ashby",
+   "source_id": "6922ab5c-5b90-4da2-ab10-cbc46d4f4860",
+   "text_sha": "2c25c8bf32e6efd5",
+   "title": "Tech Lead Manager, Education",
+   "url": "https://jobs.ashbyhq.com/openai/6922ab5c-5b90-4da2-ab10-cbc46d4f4860"
+  },
+  "ashby:6f7c5ae6-9632-4436-8b1c-a1e4c1050633": {
+   "company": "Notion",
+   "date_posted": "2026-09-11",
+   "department": "Customer Experience / Customer Experience",
+   "fp": "a2679492383603c9",
+   "last_published": "2026-10-18",
+   "location_text": "New York, New York",
+   "matched": {
+    "kept_because": "role word in title",
+    "role_title": [
+     "education"
+    ],
+    "topic_text": [
+     "education",
+     "teach"
+    ]
+   },
+   "published": "2026-10-08",
+   "source": "ashby",
+   "source_id": "6f7c5ae6-9632-4436-8b1c-a1e4c1050633",
+   "text_sha": "15767907b4aedf79",
+   "title": "Technical Education Specialist",
+   "url": "https://jobs.ashbyhq.com/notion/6f7c5ae6-9632-4436-8b1c-a1e4c1050633"
+  },
+  "ashby:708121e8-51ac-4a24-a2ff-bd9889ba5486": {
+   "company": "OpenAI",
+   "date_posted": "2026-09-11",
+   "department": "Applied AI / Codex – Developer Experience",
+   "fp": "b63d1adea3a0f8bc",
+   "last_published": "2026-10-18",
+   "location_text": "San Francisco",
+   "matched": {
+    "kept_because": "body says it produces teaching materials for a named audience",
+    "materials": {
+     "audience": [
+      "practitioners"
+     ],
+     "verb_object": [
+      "create tutorials"
+     ]
+    }
+   },
+   "published": "2026-10-08",
+   "source": "ashby",
+   "source_id": "708121e8-51ac-4a24-a2ff-bd9889ba5486",
+   "text_sha": "e991c86876040f84",
+   "title": "Developer Experience Engineer, Cyber",
+   "url": "https://jobs.ashbyhq.com/openai/708121e8-51ac-4a24-a2ff-bd9889ba5486"
+  },
+  "ashby:78a49da9-b768-427e-ad01-3e61d80cfea8": {
+   "company": "OpenAI",
+   "date_posted": "2026-10-13",
+   "department": "Go To Market / Technical Success",
+   "fp": "1da15f63f8774b2f",
+   "last_published": "2026-10-18",
+   "location_text": "London, UK",
+   "matched": {
+    "kept_because": "body says it produces teaching materials for a named audience",
+    "materials": {
+     "audience": [
+      "practitioners"
+     ],
+     "verb_object": [
+      "instructional design"
+     ]
+    }
+   },
+   "published": "2026-10-18",
+   "source": "ashby",
+   "source_id": "78a49da9-b768-427e-ad01-3e61d80cfea8",
+   "text_sha": "32bb7e249ea84d9b",
+   "title": "AI Deployment Manager",
+   "url": "https://jobs.ashbyhq.com/openai/78a49da9-b768-427e-ad01-3e61d80cfea8"
+  },
+  "ashby:8842f4d5-dabb-4b15-a339-36ab13a6db11": {
+   "company": "OpenAI",
+   "date_posted": "2026-10-14",
+   "department": "Go To Market / Technical Success",
+   "fp": "813aa7fb2075d95a",
+   "last_published": "2026-10-18",
+   "location_text": "Seoul, South Korea",
+   "matched": {
+    "kept_because": "role word in title",
+    "materials": {
+     "audience": [
+      "practitioners"
+     ],
+     "verb_object": [
+      "instructional design"
+     ]
+    },
+    "role_title": [
+     "enablement"
+    ],
+    "title_only": true
+   },
+   "published": "2026-10-18",
+   "source": "ashby",
+   "source_id": "8842f4d5-dabb-4b15-a339-36ab13a6db11",
+   "text_sha": "2739ee202d37cd1e",
+   "title": "Enablement Lead, Knowledge Work",
+   "url": "https://jobs.ashbyhq.com/openai/8842f4d5-dabb-4b15-a339-36ab13a6db11"
+  },
+  "ashby:8ad567c5-70ca-46bf-85ae-eb5bbc8a2a39": {
+   "company": "OpenAI",
+   "date_posted": "2026-10-13",
+   "department": "Go To Market / Sales",
+   "fp": "0c46cd2f2f661446",
+   "last_published": "2026-10-18",
+   "location_text": "San Francisco · New York City",
+   "matched": {
+    "kept_because": "role word in title",
+    "role_title": [
+     "education"
+    ],
+    "topic_text": [
+     "education"
+    ]
+   },
+   "published": "2026-10-18",
+   "source": "ashby",
+   "source_id": "8ad567c5-70ca-46bf-85ae-eb5bbc8a2a39",
+   "text_sha": "8361369ef28f57ce",
+   "title": "Global Head of Education GTM",
+   "url": "https://jobs.ashbyhq.com/openai/8ad567c5-70ca-46bf-85ae-eb5bbc8a2a39"
+  },
+  "ashby:8f8e9acf-37e7-4085-9ab4-f794c186331a": {
+   "company": "OpenAI",
+   "date_posted": "2026-10-15",
+   "department": "Scaling / Compute",
+   "fp": "19b5193950a3b93f",
+   "last_published": "2026-10-18",
+   "location_text": "US - Remote",
+   "matched": {
+    "kept_because": "role word in title",
+    "materials": {
+     "audience": [
+      "universities"
+     ],
+     "verb_object": [
+      "instructional design"
+     ]
+    },
+    "role_title": [
+     "education",
+     "education manager"
+    ],
+    "topic_text": [
+     "universities",
+     "education"
+    ]
+   },
+   "published": "2026-10-18",
+   "source": "ashby",
+   "source_id": "8f8e9acf-37e7-4085-9ab4-f794c186331a",
+   "text_sha": "62436d1515380444",
+   "title": "Workforce Development & Education Manager, Infrastructure Sites",
+   "url": "https://jobs.ashbyhq.com/openai/8f8e9acf-37e7-4085-9ab4-f794c186331a"
+  },
+  "ashby:96f3c3a6-9951-4db7-8125-8c0f16e8af62": {
+   "company": "OpenAI",
+   "date_posted": "2026-10-07",
+   "department": "Marketing / Marketing",
+   "fp": "6413d1c29da4270b",
+   "last_published": "2026-10-18",
+   "location_text": "San Francisco",
+   "matched": {
+    "kept_because": "role word in title",
+    "materials": {
+     "audience": [
+      "for students"
+     ],
+     "verb_object": [
+      "instructional design",
+      "curriculum development",
+      "education content"
+     ]
+    },
+    "role_title": [
+     "education",
+     "education content"
+    ],
+    "topic_text": [
+     "curriculum",
+     "education"
+    ]
+   },
+   "published": "2026-10-08",
+   "source": "ashby",
+   "source_id": "96f3c3a6-9951-4db7-8125-8c0f16e8af62",
+   "text_sha": "1ec4e8a46ec275bf",
+   "title": "Education Content Marketing Lead",
+   "url": "https://jobs.ashbyhq.com/openai/96f3c3a6-9951-4db7-8125-8c0f16e8af62"
+  },
+  "ashby:98ae5c78-eab7-4879-b143-96b98e4d0dbb": {
+   "company": "Supabase",
+   "date_posted": "2026-08-21",
+   "department": "Marketing / Marketing",
+   "fp": "cb98a77db3040627",
+   "last_published": "2026-10-18",
+   "location_text": "Remote, New York, US",
+   "matched": {
+    "kept_because": "role word in title",
+    "role_title": [
+     "developer relations"
+    ],
+    "topic_text": [
+     "education"
+    ]
+   },
+   "published": "2026-10-18",
+   "source": "ashby",
+   "source_id": "98ae5c78-eab7-4879-b143-96b98e4d0dbb",
+   "text_sha": "cfe8bcba1eac3edf",
+   "title": "Developer Relations Engineer (New York, NY)",
+   "url": "https://jobs.ashbyhq.com/supabase/98ae5c78-eab7-4879-b143-96b98e4d0dbb"
+  },
+  "ashby:98bb09a8-2fdf-4c12-84dd-8568553159d8": {
+   "company": "Notion",
+   "date_posted": "2026-09-01",
+   "department": "Revenue Operations & Strategy  / Revenue Operations & Strategy ",
+   "fp": "ada5a5bde5a4b630",
+   "last_published": "2026-10-18",
+   "location_text": "San Francisco, California",
+   "matched": {
+    "kept_because": "role word in title",
+    "role_title": [
+     "enablement"
+    ],
+    "title_only": true
+   },
+   "published": "2026-10-08",
+   "source": "ashby",
+   "source_id": "98bb09a8-2fdf-4c12-84dd-8568553159d8",
+   "text_sha": "d1e480ee3d8cd172",
+   "title": "Head of Onboarding & Enablement Programs",
+   "url": "https://jobs.ashbyhq.com/notion/98bb09a8-2fdf-4c12-84dd-8568553159d8"
+  },
+  "ashby:98bffd0e-05cf-4748-93f1-b115c84e37b4": {
+   "company": "OpenAI",
+   "date_posted": "2026-09-02",
+   "department": "Go To Market / Technical Success",
+   "fp": "3b4beedabadba7a0",
+   "last_published": "2026-10-18",
+   "location_text": "London, UK",
+   "matched": {
+    "kept_because": "role word in title",
+    "role_title": [
+     "education"
+    ],
+    "topic_text": [
+     "universities",
+     "student",
+     "education"
+    ]
+   },
+   "published": "2026-10-08",
+   "source": "ashby",
+   "source_id": "98bffd0e-05cf-4748-93f1-b115c84e37b4",
+   "text_sha": "088c46857ef36cca",
+   "title": "Applied AI Architect, Education",
+   "url": "https://jobs.ashbyhq.com/openai/98bffd0e-05cf-4748-93f1-b115c84e37b4"
+  },
+  "ashby:999e1432-3edd-453b-b598-ab4b26e1bc5c": {
+   "company": "Replit",
+   "date_posted": "2026-05-27",
+   "department": "GTM / Business Development",
+   "fp": "7bb09048e47f0c00",
+   "last_published": "2026-10-18",
+   "location_text": "Remote - Japan",
+   "matched": {
+    "kept_because": "3 topic words in body (>= 3)",
+    "topic_text": [
+     "universities",
+     "curriculum",
+     "education"
+    ]
+   },
+   "published": "2026-10-18",
+   "source": "ashby",
+   "source_id": "999e1432-3edd-453b-b598-ab4b26e1bc5c",
+   "text_sha": "b859419e3a277c1c",
+   "title": "Japan Growth Lead",
+   "url": "https://jobs.ashbyhq.com/replit/999e1432-3edd-453b-b598-ab4b26e1bc5c"
+  },
+  "ashby:9b1b62f5-1400-4672-910a-fda6f975f642": {
+   "company": "OpenAI",
+   "date_posted": "2026-04-16",
+   "department": "Applied AI / Applied AI Engineering",
+   "fp": "38016a3104ed8fef",
+   "last_published": "2026-10-18",
+   "location_text": "San Francisco",
+   "matched": {
+    "kept_because": "role word in title",
+    "role_title": [
+     "education"
+    ],
+    "topic_text": [
+     "universities",
+     "education"
+    ]
+   },
+   "published": "2026-10-08",
+   "source": "ashby",
+   "source_id": "9b1b62f5-1400-4672-910a-fda6f975f642",
+   "text_sha": "ef73d687e49f8de2",
+   "title": "Full Stack Software Engineer, Education",
+   "url": "https://jobs.ashbyhq.com/openai/9b1b62f5-1400-4672-910a-fda6f975f642"
+  },
+  "ashby:9cd24517-1055-45fb-a47c-e213452132d4": {
+   "company": "OpenAI",
+   "date_posted": "2026-10-06",
+   "department": "Marketing / Marketing",
+   "fp": "5454086a591e1283",
+   "last_published": "2026-10-18",
+   "location_text": "Tokyo, Japan",
+   "matched": {
+    "kept_because": "body says it produces teaching materials for a named audience",
+    "materials": {
+     "audience": [
+      "sales team"
+     ],
+     "verb_object": [
+      "educational content"
+     ]
+    },
+    "topic_text": [
+     "educate",
+     "education"
+    ]
+   },
+   "published": "2026-10-08",
+   "source": "ashby",
+   "source_id": "9cd24517-1055-45fb-a47c-e213452132d4",
+   "text_sha": "7a57b4a90812e8fa",
+   "title": "Ads Marketing Manager, Japan",
+   "url": "https://jobs.ashbyhq.com/openai/9cd24517-1055-45fb-a47c-e213452132d4"
+  },
+  "ashby:9efcef02-0515-4672-bace-81329944b38b": {
+   "company": "OpenAI",
+   "date_posted": "2026-03-28",
+   "department": "Scaling / Compute",
+   "fp": "d3e5832bf8097c5c",
+   "last_published": "2026-10-18",
+   "location_text": "San Francisco · Seattle",
+   "matched": {
+    "kept_because": "role word in title",
+    "role_title": [
+     "enablement"
+    ],
+    "title_only": true
+   },
+   "published": "2026-10-08",
+   "source": "ashby",
+   "source_id": "9efcef02-0515-4672-bace-81329944b38b",
+   "text_sha": "4237125fa36de6f1",
+   "title": "Software Engineer, Workload Enablement",
+   "url": "https://jobs.ashbyhq.com/openai/9efcef02-0515-4672-bace-81329944b38b"
+  },
+  "ashby:a1320bbf-bfae-49a8-a1b7-12eeccaf39ca": {
+   "company": "Supabase",
+   "date_posted": "2026-08-21",
+   "department": "Marketing / Marketing",
+   "fp": "b5376b78824fcabd",
+   "last_published": "2026-10-18",
+   "location_text": "Remote, San Francisco, CA",
+   "matched": {
+    "kept_because": "role word in title",
+    "role_title": [
+     "developer relations"
+    ],
+    "topic_text": [
+     "education"
+    ]
+   },
+   "published": "2026-10-18",
+   "source": "ashby",
+   "source_id": "a1320bbf-bfae-49a8-a1b7-12eeccaf39ca",
+   "text_sha": "d6f947c53ec17417",
+   "title": "Developer Relations Engineer",
+   "url": "https://jobs.ashbyhq.com/supabase/a1320bbf-bfae-49a8-a1b7-12eeccaf39ca"
+  },
+  "ashby:a244270d-9308-4124-82d5-9c0b91eae1f2": {
+   "company": "OpenAI",
+   "date_posted": "2026-09-30",
+   "department": "OpenAI for Gov / OpenAI for Gov",
+   "fp": "31fa92c6db4e9576",
+   "last_published": "2026-10-18",
+   "location_text": "Washington, DC",
+   "matched": {
+    "kept_because": "role word in title",
+    "materials": {
+     "audience": [
+      "practitioners"
+     ],
+     "verb_object": [
+      "curriculum design"
+     ]
+    },
+    "role_title": [
+     "enablement"
+    ],
+    "topic_text": [
+     "workshop",
+     "curriculum"
+    ]
+   },
+   "published": "2026-10-08",
+   "source": "ashby",
+   "source_id": "a244270d-9308-4124-82d5-9c0b91eae1f2",
+   "text_sha": "b296b64a0233a9e2",
+   "title": "Cyber Enablement Lead, Gov",
+   "url": "https://jobs.ashbyhq.com/openai/a244270d-9308-4124-82d5-9c0b91eae1f2"
+  },
+  "ashby:bb569a6b-a7e9-4c4d-a78e-d35349b2f9d9": {
+   "company": "OpenAI",
+   "date_posted": "2026-06-25",
+   "department": "Go To Market / Technical Success",
+   "fp": "bd0827d5f73a278f",
+   "last_published": "2026-10-18",
+   "location_text": "Tokyo, Japan",
+   "matched": {
+    "kept_because": "role word in title",
+    "materials": {
+     "audience": [
+      "our customers"
+     ],
+     "verb_object": [
+      "instructional design"
+     ]
+    },
+    "role_title": [
+     "enablement"
+    ],
+    "title_only": true
+   },
+   "published": "2026-10-08",
+   "source": "ashby",
+   "source_id": "bb569a6b-a7e9-4c4d-a78e-d35349b2f9d9",
+   "text_sha": "d60dba3b58d06f99",
+   "title": "Enablement Lead (Builder) - Tokyo",
+   "url": "https://jobs.ashbyhq.com/openai/bb569a6b-a7e9-4c4d-a78e-d35349b2f9d9"
+  },
+  "ashby:dceee17e-1e37-448b-acd3-2f97e41a6af7": {
+   "company": "OpenAI",
+   "date_posted": "2026-08-31",
+   "department": "Go To Market / Sales",
+   "fp": "2ffa0c3c6dc2fe0e",
+   "last_published": "2026-10-18",
+   "location_text": "San Francisco · New York City · Seattle · US - Remote",
+   "matched": {
+    "connector": {
+     "institution": [
+      "universities",
+      "higher education",
+      "colleges"
+     ],
+     "title": [
+      "account director"
+     ]
+    },
+    "kept_because": "role word in title",
+    "role_title": [
+     "education"
+    ],
+    "topic_text": [
+     "universities",
+     "education"
+    ]
+   },
+   "published": "2026-10-08",
+   "source": "ashby",
+   "source_id": "dceee17e-1e37-448b-acd3-2f97e41a6af7",
+   "text_sha": "ce22864ba389d081",
+   "title": "Account Director, Higher Education",
+   "url": "https://jobs.ashbyhq.com/openai/dceee17e-1e37-448b-acd3-2f97e41a6af7"
+  },
+  "ashby:e0536ab8-fec4-47e2-a9e6-89f43e6b377b": {
+   "company": "OpenAI",
+   "date_posted": "2026-10-14",
+   "department": "Go To Market / Technical Success",
+   "fp": "6773f0bd2ee6489d",
+   "last_published": "2026-10-18",
+   "location_text": "Sydney, Australia",
+   "matched": {
+    "kept_because": "role word in title",
+    "materials": {
+     "audience": [
+      "practitioners"
+     ],
+     "verb_object": [
+      "instructional design"
+     ]
+    },
+    "role_title": [
+     "enablement"
+    ],
+    "title_only": true
+   },
+   "published": "2026-10-18",
+   "source": "ashby",
+   "source_id": "e0536ab8-fec4-47e2-a9e6-89f43e6b377b",
+   "text_sha": "f2bfe2a9785b011e",
+   "title": "Enablement Lead, Knowledge Work",
+   "url": "https://jobs.ashbyhq.com/openai/e0536ab8-fec4-47e2-a9e6-89f43e6b377b"
+  },
+  "ashby:e658545c-ee42-48b5-8f39-c43991b02164": {
+   "company": "Replit",
+   "date_posted": "2026-09-02",
+   "department": "User Operations / Knowledge & Education",
+   "fp": "0ceab1a8c967227c",
+   "last_published": "2026-10-18",
+   "location_text": "Foster City, CA",
+   "matched": {
+    "kept_because": "role word in title",
+    "materials": {
+     "audience": [
+      "internal teams"
+     ],
+     "verb_object": [
+      "instructional design",
+      "learning content"
+     ]
+    },
+    "role_title": [
+     "creator",
+     "learning experiences"
+    ],
+    "topic_text": [
+     "education"
+    ]
+   },
+   "published": "2026-10-18",
+   "source": "ashby",
+   "source_id": "e658545c-ee42-48b5-8f39-c43991b02164",
+   "text_sha": "28b567e8c76e1c3a",
+   "title": "Learning Experiences Creator",
+   "url": "https://jobs.ashbyhq.com/replit/e658545c-ee42-48b5-8f39-c43991b02164"
+  },
+  "ashby:ef828b89-41ed-4cde-96a9-94ffe5770d4c": {
+   "company": "OpenAI",
+   "date_posted": "2026-08-04",
+   "department": "Applied AI / Applied AI Engineering",
+   "fp": "8be836530fcb68ef",
+   "last_published": "2026-10-18",
+   "location_text": "San Francisco",
+   "matched": {
+    "kept_because": "role word in title",
+    "role_title": [
+     "education"
+    ],
+    "topic_text": [
+     "education"
+    ]
+   },
+   "published": "2026-10-08",
+   "source": "ashby",
+   "source_id": "ef828b89-41ed-4cde-96a9-94ffe5770d4c",
+   "text_sha": "09e28ac65287bdbe",
+   "title": "Full-Stack Engineer, ChatGPT Education  & Learning",
+   "url": "https://jobs.ashbyhq.com/openai/ef828b89-41ed-4cde-96a9-94ffe5770d4c"
+  },
+  "ashby:f2f56292-890e-498c-844c-07f2bea8ea7a": {
+   "company": "Replit",
+   "date_posted": "2026-09-08",
+   "department": "Engineering / Product Engineering",
+   "fp": "8fe5431469cbb06d",
+   "last_published": "2026-10-18",
+   "location_text": "Foster City, CA",
+   "matched": {
+    "kept_because": "role word in title",
+    "role_title": [
+     "enablement"
+    ],
+    "title_only": true
+   },
+   "published": "2026-10-18",
+   "source": "ashby",
+   "source_id": "f2f56292-890e-498c-844c-07f2bea8ea7a",
+   "text_sha": "3b3b8144abf25ddc",
+   "title": "Senior Software Engineer, Growth Enablement",
+   "url": "https://jobs.ashbyhq.com/replit/f2f56292-890e-498c-844c-07f2bea8ea7a"
+  },
+  "greenhouse:4224129002": {
+   "company": "Netlify",
+   "date_posted": "2019-03-05",
+   "department": "G&A",
+   "fp": "066f39b9be0bd36f",
+   "last_published": "2026-10-18",
+   "location_text": "Remote",
+   "matched": {
+    "kept_because": "role word in title",
+    "role_title": [
+     "community"
+    ],
+    "title_only": true
+   },
+   "published": "2026-10-18",
+   "source": "greenhouse",
+   "source_id": "4224129002",
+   "text_sha": "32dfc5574f8dc44f",
+   "title": "Your Chance to Join Our Talent Community!",
+   "url": "https://job-boards.greenhouse.io/netlify/jobs/4224129002"
+  },
+  "greenhouse:5097186008": {
+   "company": "Anthropic",
+   "date_posted": "2026-01-27",
+   "department": "Technical Education",
+   "fp": "0a0d83156adfd768",
+   "last_published": "2026-10-18",
+   "location_text": "San Francisco, CA | New York City, NY | Seattle, WA",
+   "matched": {
+    "kept_because": "role word in title",
+    "role_title": [
+     "education"
+    ],
+    "topic_text": [
+     "education"
+    ]
+   },
+   "published": "2026-10-08",
+   "source": "greenhouse",
+   "source_id": "5097186008",
+   "text_sha": "c7ac6d50a0fd73a7",
+   "title": "Full Stack Engineer, Education Labs",
+   "url": "https://job-boards.greenhouse.io/anthropic/jobs/5097186008"
+  },
+  "greenhouse:5221916008": {
+   "company": "Anthropic",
+   "date_posted": "2026-06-02",
+   "department": "Sales",
+   "fp": "517288bb362d47ea",
+   "last_published": "2026-10-18",
+   "location_text": "London, UK",
+   "matched": {
+    "connector": {
+     "institution": [
+      "higher education"
+     ],
+     "title": [
+      "sales manager"
+     ]
+    },
+    "kept_because": "account or partnership role whose body names higher education",
+    "topic_text": [
+     "educate",
+     "education"
+    ]
+   },
+   "published": "2026-10-18",
+   "source": "greenhouse",
+   "source_id": "5221916008",
+   "text_sha": "2db787c6aaf6cfa5",
+   "title": "Sales Manager, Nonprofit, EMEA",
+   "url": "https://job-boards.greenhouse.io/anthropic/jobs/5221916008"
+  },
+  "greenhouse:5228098008": {
+   "company": "Anthropic",
+   "date_posted": "2026-05-21",
+   "department": "Sales",
+   "fp": "86fafb1e06258a2e",
+   "last_published": "2026-10-18",
+   "location_text": "San Francisco, CA; Washington, DC",
+   "matched": {
+    "connector": {
+     "institution": [
+      "universities",
+      "colleges"
+     ],
+     "title": [
+      "partnerships"
+     ]
+    },
+    "kept_because": "account or partnership role whose body names higher education",
+    "topic_text": [
+     "universities",
+     "education"
+    ]
+   },
+   "published": "2026-10-18",
+   "source": "greenhouse",
+   "source_id": "5228098008",
+   "text_sha": "5b5ab4bf240027db",
+   "title": "Economic Mobility Partnerships Manager - Career Pathways",
+   "url": "https://job-boards.greenhouse.io/anthropic/jobs/5228098008"
+  },
+  "greenhouse:5311465008": {
+   "company": "Anthropic",
+   "date_posted": "2026-07-10",
+   "department": "Sales",
+   "fp": "4a138423e6061939",
+   "last_published": "2026-10-18",
+   "location_text": "San Francisco, CA | New York City, NY | Seattle, WA",
+   "matched": {
+    "kept_because": "role word in title",
+    "role_title": [
+     "developer education",
+     "education"
+    ],
+    "topic_text": [
+     "curriculum",
+     "education",
+     "teach"
+    ]
+   },
+   "published": "2026-10-08",
+   "source": "greenhouse",
+   "source_id": "5311465008",
+   "text_sha": "7237cde08b909572",
+   "title": "Developer Education Lead, Claude Platform",
+   "url": "https://job-boards.greenhouse.io/anthropic/jobs/5311465008"
+  },
+  "greenhouse:5367562008": {
+   "company": "Anthropic",
+   "date_posted": "2026-10-13",
+   "department": "Engineering & Design - Product",
+   "fp": "d8206369b8212d61",
+   "last_published": "2026-10-18",
+   "location_text": "San Francisco, CA | New York City, NY",
+   "matched": {
+    "kept_because": "role word in title",
+    "role_title": [
+     "developer relations"
+    ],
+    "topic_text": [
+     "educate",
+     "education"
+    ]
+   },
+   "published": "2026-10-18",
+   "source": "greenhouse",
+   "source_id": "5367562008",
+   "text_sha": "55b5fd9971afd992",
+   "title": "Developer Relations Manager, Claude Platform",
+   "url": "https://job-boards.greenhouse.io/anthropic/jobs/5367562008"
+  },
+  "greenhouse:5383596008": {
+   "company": "Anthropic",
+   "date_posted": "2026-08-10",
+   "department": "Engineering & Design - Product",
+   "fp": "20a761ef8fe06415",
+   "last_published": "2026-10-18",
+   "location_text": "San Francisco, CA | New York City, NY",
+   "matched": {
+    "kept_because": "role word in title",
+    "role_title": [
+     "developer relations"
+    ],
+    "topic_text": [
+     "education"
+    ]
+   },
+   "published": "2026-10-08",
+   "source": "greenhouse",
+   "source_id": "5383596008",
+   "text_sha": "a000d9261e91ba66",
+   "title": "Developer Relations",
+   "url": "https://job-boards.greenhouse.io/anthropic/jobs/5383596008"
+  },
+  "greenhouse:5388719008": {
+   "company": "Anthropic",
+   "date_posted": "2026-08-13",
+   "department": "Marketing & Brand",
+   "fp": "6a6d4538e5f2d280",
+   "last_published": "2026-10-18",
+   "location_text": "San Francisco, CA | New York City, NY",
+   "matched": {
+    "kept_because": "role word in title",
+    "role_title": [
+     "community"
+    ],
+    "topic_text": [
+     "education"
+    ]
+   },
+   "published": "2026-10-08",
+   "source": "greenhouse",
+   "source_id": "5388719008",
+   "text_sha": "f722297063eb4f8f",
+   "title": "Head of Community, Enterprise Marketing",
+   "url": "https://job-boards.greenhouse.io/anthropic/jobs/5388719008"
+  },
+  "greenhouse:5389305008": {
+   "company": "Anthropic",
+   "date_posted": "2026-08-13",
+   "department": "Technical Education",
+   "fp": "87795e3d67a29d38",
+   "last_published": "2026-10-18",
+   "location_text": "San Francisco, CA | New York City, NY",
+   "matched": {
+    "kept_because": "role word in title",
+    "materials": {
+     "audience": [
+      "our users"
+     ],
+     "verb_object": [
+      "instructional design",
+      "educational content"
+     ]
+    },
+    "role_title": [
+     "education"
+    ],
+    "topic_text": [
+     "education"
+    ]
+   },
+   "published": "2026-10-08",
+   "source": "greenhouse",
+   "source_id": "5389305008",
+   "text_sha": "d61656ea3a1f5ce4",
+   "title": "Software Engineer, Education",
+   "url": "https://job-boards.greenhouse.io/anthropic/jobs/5389305008"
+  },
+  "greenhouse:5390960008": {
+   "company": "Anthropic",
+   "date_posted": "2026-08-20",
+   "department": "Sales",
+   "fp": "b8454a3948408273",
+   "last_published": "2026-10-18",
+   "location_text": "San Francisco, CA | New York City, NY",
+   "matched": {
+    "kept_because": "role word in title",
+    "role_title": [
+     "enablement"
+    ],
+    "topic_text": [
+     "education"
+    ]
+   },
+   "published": "2026-10-08",
+   "source": "greenhouse",
+   "source_id": "5390960008",
+   "text_sha": "719f712e5b8ebd5b",
+   "title": "Sales Leader Enablement",
+   "url": "https://job-boards.greenhouse.io/anthropic/jobs/5390960008"
+  },
+  "greenhouse:5390984008": {
+   "company": "Anthropic",
+   "date_posted": "2026-08-19",
+   "department": "Sales",
+   "fp": "d717b950537743bd",
+   "last_published": "2026-10-18",
+   "location_text": "San Francisco, CA | New York City, NY",
+   "matched": {
+    "kept_because": "role word in title",
+    "role_title": [
+     "enablement"
+    ],
+    "topic_text": [
+     "curriculum",
+     "education",
+     "teach"
+    ]
+   },
+   "published": "2026-10-08",
+   "source": "greenhouse",
+   "source_id": "5390984008",
+   "text_sha": "6bd55a7bc9eddad1",
+   "title": "BDR Enablement Lead",
+   "url": "https://job-boards.greenhouse.io/anthropic/jobs/5390984008"
+  },
+  "greenhouse:5391227008": {
+   "company": "Anthropic",
+   "date_posted": "2026-09-02",
+   "department": "Sales",
+   "fp": "e081470fe9363465",
+   "last_published": "2026-10-18",
+   "location_text": "Washington, DC",
+   "matched": {
+    "connector": {
+     "institution": [
+      "higher education"
+     ],
+     "title": [
+      "partnership"
+     ]
+    },
+    "kept_because": "account or partnership role whose body names higher education",
+    "topic_text": [
+     "education"
+    ]
+   },
+   "published": "2026-10-18",
+   "source": "greenhouse",
+   "source_id": "5391227008",
+   "text_sha": "73b05ea27c645747",
+   "title": "AWS GTM Partnership Lead, Public Sector & Nonprofits",
+   "url": "https://job-boards.greenhouse.io/anthropic/jobs/5391227008"
+  },
+  "greenhouse:5391974008": {
+   "company": "Anthropic",
+   "date_posted": "2026-08-19",
+   "department": "Public Policy",
+   "fp": "e4711f3dbe9ecc7e",
+   "last_published": "2026-10-18",
+   "location_text": "Alberta, CAN | Remote-Friendly, Canada",
+   "matched": {
+    "kept_because": "role word in title",
+    "role_title": [
+     "community"
+    ],
+    "topic_text": [
+     "education"
+    ]
+   },
+   "published": "2026-10-08",
+   "source": "greenhouse",
+   "source_id": "5391974008",
+   "text_sha": "8d0362b5dbff89ec",
+   "title": "Community Engagement Manager, Data Centres (Canada)",
+   "url": "https://job-boards.greenhouse.io/anthropic/jobs/5391974008"
+  },
+  "greenhouse:5391983008": {
+   "company": "Anthropic",
+   "date_posted": "2026-08-19",
+   "department": "Public Policy",
+   "fp": "81d04eab708792ee",
+   "last_published": "2026-10-18",
+   "location_text": "Austin, TX | Remote-Friendly, United States",
+   "matched": {
+    "kept_because": "role word in title",
+    "role_title": [
+     "community"
+    ],
+    "topic_text": [
+     "education"
+    ]
+   },
+   "published": "2026-10-08",
+   "source": "greenhouse",
+   "source_id": "5391983008",
+   "text_sha": "4c83079a3eb93c98",
+   "title": "Community Engagement Manager, Data Centers (Texas)",
+   "url": "https://job-boards.greenhouse.io/anthropic/jobs/5391983008"
+  },
+  "greenhouse:5391999008": {
+   "company": "Anthropic",
+   "date_posted": "2026-08-19",
+   "department": "Public Policy",
+   "fp": "5df3d1e96e5f886e",
+   "last_published": "2026-10-18",
+   "location_text": "Sydney, Australia | Remote-Friendly, Australia",
+   "matched": {
+    "kept_because": "role word in title",
+    "role_title": [
+     "community"
+    ],
+    "topic_text": [
+     "education"
+    ]
+   },
+   "published": "2026-10-08",
+   "source": "greenhouse",
+   "source_id": "5391999008",
+   "text_sha": "b007aac10390aa17",
+   "title": "Community Engagement Manager, Data Centres (Australia)",
+   "url": "https://job-boards.greenhouse.io/anthropic/jobs/5391999008"
+  },
+  "greenhouse:5407938008": {
+   "company": "Anthropic",
+   "date_posted": "2026-08-28",
+   "department": "Sales",
+   "fp": "d5712a0a47b80fb2",
+   "last_published": "2026-10-18",
+   "location_text": "San Francisco, CA | New York City, NY",
+   "matched": {
+    "connector": {
+     "institution": [
+      "universities"
+     ],
+     "title": [
+      "partnership"
+     ]
+    },
+    "kept_because": "3 topic words in body (>= 3)",
+    "topic_text": [
+     "universities",
+     "student",
+     "education"
+    ]
+   },
+   "published": "2026-10-08",
+   "source": "greenhouse",
+   "source_id": "5407938008",
+   "text_sha": "a8c9714c9de095f3",
+   "title": "Partnership Manager, AI for Science",
+   "url": "https://job-boards.greenhouse.io/anthropic/jobs/5407938008"
+  },
+  "greenhouse:5410006008": {
+   "company": "Anthropic",
+   "date_posted": "2026-09-01",
+   "department": "Safeguards (Trust & Safety)",
+   "fp": "807e80eff0bfbafe",
+   "last_published": "2026-10-18",
+   "location_text": "San Francisco, CA | New York City, NY | Washington, DC",
+   "matched": {
+    "kept_because": "body says it produces teaching materials for a named audience",
+    "materials": {
+     "audience": [
+      "our users"
+     ],
+     "verb_object": [
+      "educational content"
+     ]
+    },
+    "topic_text": [
+     "education"
+    ]
+   },
+   "published": "2026-10-08",
+   "source": "greenhouse",
+   "source_id": "5410006008",
+   "text_sha": "ab0055ee76d09bdb",
+   "title": "Safeguards Enforcement Analyst, Conventional Weapons",
+   "url": "https://job-boards.greenhouse.io/anthropic/jobs/5410006008"
+  },
+  "greenhouse:5415529008": {
+   "company": "Anthropic",
+   "date_posted": "2026-09-04",
+   "department": "Technical Education",
+   "fp": "d831700825130660",
+   "last_published": "2026-10-18",
+   "location_text": "San Francisco, CA",
+   "matched": {
+    "kept_because": "4 topic words in body (>= 3)",
+    "topic_text": [
+     "curriculum",
+     "education",
+     "teach",
+     "classroom"
+    ]
+   },
+   "published": "2026-10-08",
+   "source": "greenhouse",
+   "source_id": "5415529008",
+   "text_sha": "d2a0b93c42b9b476",
+   "title": "Head of Technical Training",
+   "url": "https://job-boards.greenhouse.io/anthropic/jobs/5415529008"
+  },
+  "greenhouse:5415537008": {
+   "company": "Anthropic",
+   "date_posted": "2026-09-04",
+   "department": "Technical Education",
+   "fp": "6fd5af0af8d9b6ef",
+   "last_published": "2026-10-18",
+   "location_text": "New York City, NY",
+   "matched": {
+    "kept_because": "role word in title",
+    "materials": {
+     "audience": [
+      "our users",
+      "our customers",
+      "learners",
+      "practitioners",
+      "classroom"
+     ],
+     "verb_object": [
+      "instructional design"
+     ]
+    },
+    "role_title": [
+     "instructor"
+    ],
+    "topic_text": [
+     "curriculum",
+     "education",
+     "teach",
+     "classroom"
+    ]
+   },
+   "published": "2026-10-08",
+   "source": "greenhouse",
+   "source_id": "5415537008",
+   "text_sha": "483f97b3cfc5cab2",
+   "title": "Lead Technical Instructor",
+   "url": "https://job-boards.greenhouse.io/anthropic/jobs/5415537008"
+  },
+  "greenhouse:5415930008": {
+   "company": "Anthropic",
+   "date_posted": "2026-09-04",
+   "department": "Sales",
+   "fp": "2769705a0920eac9",
+   "last_published": "2026-10-18",
+   "location_text": "San Francisco, CA | New York City, NY",
+   "matched": {
+    "kept_because": "role word in title",
+    "role_title": [
+     "education"
+    ],
+    "topic_text": [
+     "university",
+     "universities",
+     "campus",
+     "education"
+    ]
+   },
+   "published": "2026-10-08",
+   "source": "greenhouse",
+   "source_id": "5415930008",
+   "text_sha": "ddbbbe1671ffa716",
+   "title": "Research & Education Sales Lead, Beneficial Deployments",
+   "url": "https://job-boards.greenhouse.io/anthropic/jobs/5415930008"
+  },
+  "greenhouse:5421566008": {
+   "company": "Anthropic",
+   "date_posted": "2026-09-11",
+   "department": "Sales",
+   "fp": "d94625b29481e422",
+   "last_published": "2026-10-18",
+   "location_text": "Remote-Friendly (Travel-Required) | San Francisco, CA | Seattle, WA | New York City, NY",
+   "matched": {
+    "kept_because": "3 topic words in body (>= 3)",
+    "topic_text": [
+     "educate",
+     "education",
+     "teach"
+    ]
+   },
+   "published": "2026-10-08",
+   "source": "greenhouse",
+   "source_id": "5421566008",
+   "text_sha": "1618eae7b2aa8ecf",
+   "title": "Technical Architect",
+   "url": "https://job-boards.greenhouse.io/anthropic/jobs/5421566008"
+  },
+  "greenhouse:5426627008": {
+   "company": "Anthropic",
+   "date_posted": "2026-09-21",
+   "department": "Sales",
+   "fp": "246ca688b38bbcf2",
+   "last_published": "2026-10-18",
+   "location_text": "Sydney, Australia",
+   "matched": {
+    "kept_because": "role word in title",
+    "role_title": [
+     "enablement"
+    ],
+    "topic_text": [
+     "education"
+    ]
+   },
+   "published": "2026-10-18",
+   "source": "greenhouse",
+   "source_id": "5426627008",
+   "text_sha": "d510f908b5ddcedc",
+   "title": "APAC GTM Enablement Lead",
+   "url": "https://job-boards.greenhouse.io/anthropic/jobs/5426627008"
+  },
+  "greenhouse:5428790008": {
+   "company": "Anthropic",
+   "date_posted": "2026-09-22",
+   "department": "Sales",
+   "fp": "42afd6ec6c09be30",
+   "last_published": "2026-10-18",
+   "location_text": "San Francisco, CA | New York City, NY",
+   "matched": {
+    "kept_because": "role word in title",
+    "role_title": [
+     "enablement",
+     "trainer"
+    ],
+    "topic_text": [
+     "education",
+     "teach"
+    ]
+   },
+   "published": "2026-10-08",
+   "source": "greenhouse",
+   "source_id": "5428790008",
+   "text_sha": "fe1aba43a565a8f4",
+   "title": "Sales Enablement Trainer, Claude Products",
+   "url": "https://job-boards.greenhouse.io/anthropic/jobs/5428790008"
+  },
+  "greenhouse:5446657008": {
+   "company": "Anthropic",
+   "date_posted": "2026-10-07",
+   "department": "Applied AI",
+   "fp": "506a1ac2437f8247",
+   "last_published": "2026-10-18",
+   "location_text": "San Francisco, CA | New York City, NY",
+   "matched": {
+    "kept_because": "role word in title",
+    "role_title": [
+     "community",
+     "enablement"
+    ],
+    "topic_text": [
+     "education"
+    ]
+   },
+   "published": "2026-10-08",
+   "source": "greenhouse",
+   "source_id": "5446657008",
+   "text_sha": "5d2794cc7b04841f",
+   "title": "Applied AI Architect,  Beneficial Deployments (Life Sciences Community & Enablement)",
+   "url": "https://job-boards.greenhouse.io/anthropic/jobs/5446657008"
+  },
+  "greenhouse:5452691008": {
+   "company": "Anthropic",
+   "date_posted": "2026-10-15",
+   "department": "Public Policy",
+   "fp": "2309993044163c67",
+   "last_published": "2026-10-18",
+   "location_text": "Remote-Friendly, United States",
+   "matched": {
+    "kept_because": "role word in title",
+    "role_title": [
+     "community"
+    ],
+    "topic_text": [
+     "education"
+    ]
+   },
+   "published": "2026-10-18",
+   "source": "greenhouse",
+   "source_id": "5452691008",
+   "text_sha": "5b946b669068ff25",
+   "title": "Community Engagement Manager, Data Centers (Louisiana)",
+   "url": "https://job-boards.greenhouse.io/anthropic/jobs/5452691008"
+  },
+  "greenhouse:5452699008": {
+   "company": "Anthropic",
+   "date_posted": "2026-10-15",
+   "department": "Public Policy",
+   "fp": "8fa5566e243ac181",
+   "last_published": "2026-10-18",
+   "location_text": "Remote-Friendly, United States",
+   "matched": {
+    "kept_because": "role word in title",
+    "role_title": [
+     "community"
+    ],
+    "topic_text": [
+     "education"
+    ]
+   },
+   "published": "2026-10-18",
+   "source": "greenhouse",
+   "source_id": "5452699008",
+   "text_sha": "eb3f3d5b3da44928",
+   "title": "Community Engagement Manager, Data Centers (Virginia & West Virginia)",
+   "url": "https://job-boards.greenhouse.io/anthropic/jobs/5452699008"
+  },
+  "greenhouse:5452922008": {
+   "company": "Anthropic",
+   "date_posted": "2026-10-15",
+   "department": "Public Policy",
+   "fp": "605b639542de6aa4",
+   "last_published": "2026-10-18",
+   "location_text": "Remote-Friendly, United States",
+   "matched": {
+    "kept_because": "role word in title",
+    "role_title": [
+     "community"
+    ],
+    "topic_text": [
+     "education"
+    ]
+   },
+   "published": "2026-10-18",
+   "source": "greenhouse",
+   "source_id": "5452922008",
+   "text_sha": "dbe41601d3de177f",
+   "title": "Community Engagement Manager, Data Centers (New York)",
+   "url": "https://job-boards.greenhouse.io/anthropic/jobs/5452922008"
+  },
+  "greenhouse:5454315008": {
+   "company": "Anthropic",
+   "date_posted": "2026-10-16",
+   "department": "Public Policy",
+   "fp": "e183be5da4e749d4",
+   "last_published": "2026-10-18",
+   "location_text": "Remote-Friendly, United States",
+   "matched": {
+    "kept_because": "role word in title",
+    "role_title": [
+     "community"
+    ],
+    "topic_text": [
+     "education"
+    ]
+   },
+   "published": "2026-10-18",
+   "source": "greenhouse",
+   "source_id": "5454315008",
+   "text_sha": "3a677de85db67ef8",
+   "title": "Community Engagement Manager, Data Centers (Montana & Utah)",
+   "url": "https://job-boards.greenhouse.io/anthropic/jobs/5454315008"
+  },
+  "greenhouse:5454535008": {
+   "company": "Anthropic",
+   "date_posted": "2026-10-18",
+   "department": "Public Policy",
+   "fp": "e9dc9e14f7ec07fa",
+   "last_published": "2026-10-18",
+   "location_text": "Remote-Friendly, United States",
+   "matched": {
+    "kept_because": "role word in title",
+    "role_title": [
+     "community"
+    ],
+    "topic_text": [
+     "education"
+    ]
+   },
+   "published": "2026-10-18",
+   "source": "greenhouse",
+   "source_id": "5454535008",
+   "text_sha": "26af31ef1d955c86",
+   "title": "Community Engagement Manager, Data Centers (Indiana & Kentucky)",
+   "url": "https://job-boards.greenhouse.io/anthropic/jobs/5454535008"
+  },
+  "greenhouse:5976498004": {
+   "company": "Figma",
+   "date_posted": "2026-04-21",
+   "department": "Sales",
+   "fp": "7d8a1d079a14e164",
+   "last_published": "2026-10-18",
+   "location_text": "Paris, France",
+   "matched": {
+    "kept_because": "role word in title",
+    "role_title": [
+     "enablement"
+    ],
+    "title_only": true
+   },
+   "published": "2026-10-08",
+   "source": "greenhouse",
+   "source_id": "5976498004",
+   "text_sha": "8db57c8ef4644086",
+   "title": "Customer Enablement Manager (Paris, France)",
+   "url": "https://boards.greenhouse.io/figma/jobs/5976498004?gh_jid=5976498004"
+  },
+  "greenhouse:6104028004": {
+   "company": "Figma",
+   "date_posted": "2026-07-06",
+   "department": "Sales",
+   "fp": "34375ae758d87087",
+   "last_published": "2026-10-18",
+   "location_text": "São Paulo, Brazil",
+   "matched": {
+    "kept_because": "role word in title",
+    "role_title": [
+     "enablement"
+    ],
+    "title_only": true
+   },
+   "published": "2026-10-08",
+   "source": "greenhouse",
+   "source_id": "6104028004",
+   "text_sha": "63f8229b5b27ddfd",
+   "title": "Customer Enablement Manager (São Paulo, Brazil)",
+   "url": "https://boards.greenhouse.io/figma/jobs/6104028004?gh_jid=6104028004"
+  },
+  "greenhouse:6122437004": {
+   "company": "Vercel",
+   "date_posted": "2026-07-22",
+   "department": "Engineering",
+   "fp": "6069f2e3df103e0b",
+   "last_published": "2026-10-18",
+   "location_text": "Hybrid - San Francisco, New York City, Austin",
+   "matched": {
+    "kept_because": "role word in title",
+    "role_title": [
+     "devrel"
+    ],
+    "topic_text": [
+     "teach"
+    ]
+   },
+   "published": "2026-10-18",
+   "source": "greenhouse",
+   "source_id": "6122437004",
+   "text_sha": "6f857430280ab592",
+   "title": "DevRel Engineer, Agentic Infrastructure",
+   "url": "https://job-boards.greenhouse.io/vercel/jobs/6122437004"
+  },
+  "greenhouse:6130557004": {
+   "company": "Figma",
+   "date_posted": "2026-07-30",
+   "department": "Sales",
+   "fp": "8fe0e5c3dee83f0b",
+   "last_published": "2026-10-18",
+   "location_text": "London, England",
+   "matched": {
+    "kept_because": "role word in title",
+    "role_title": [
+     "enablement"
+    ],
+    "title_only": true
+   },
+   "published": "2026-10-08",
+   "source": "greenhouse",
+   "source_id": "6130557004",
+   "text_sha": "6ab860273f13ab10",
+   "title": "Senior Customer Enablement Manager (London, United Kingdom)",
+   "url": "https://boards.greenhouse.io/figma/jobs/6130557004?gh_jid=6130557004"
+  },
+  "greenhouse:6133181004": {
+   "company": "Figma",
+   "date_posted": "2026-08-04",
+   "department": "Sales",
+   "fp": "2f4f86c7ee628537",
+   "last_published": "2026-10-18",
+   "location_text": "Berlin, Germany",
+   "matched": {
+    "kept_because": "role word in title",
+    "role_title": [
+     "enablement"
+    ],
+    "title_only": true
+   },
+   "published": "2026-10-08",
+   "source": "greenhouse",
+   "source_id": "6133181004",
+   "text_sha": "5425c3130f62430d",
+   "title": "Customer Enablement Manager (Berlin, Germany)",
+   "url": "https://boards.greenhouse.io/figma/jobs/6133181004?gh_jid=6133181004"
+  },
+  "greenhouse:6144873004": {
+   "company": "Figma",
+   "date_posted": "2026-08-17",
+   "department": "Sales",
+   "fp": "fafc6fcfdec40e85",
+   "last_published": "2026-10-18",
+   "location_text": "Tokyo, Japan",
+   "matched": {
+    "kept_because": "role word in title",
+    "role_title": [
+     "enablement"
+    ],
+    "title_only": true
+   },
+   "published": "2026-10-08",
+   "source": "greenhouse",
+   "source_id": "6144873004",
+   "text_sha": "3c9899be4d45eba7",
+   "title": "Manager, Customer Enablement (Tokyo, Japan)",
+   "url": "https://boards.greenhouse.io/figma/jobs/6144873004?gh_jid=6144873004"
+  },
+  "greenhouse:6203089004": {
+   "company": "Figma",
+   "date_posted": "2026-09-24",
+   "department": "Marketing",
+   "fp": "ab647876890e5d13",
+   "last_published": "2026-10-18",
+   "location_text": "Berlin, Germany",
+   "matched": {
+    "kept_because": "role word in title",
+    "role_title": [
+     "advocate",
+     "designer advocate"
+    ],
+    "title_only": true
+   },
+   "published": "2026-10-08",
+   "source": "greenhouse",
+   "source_id": "6203089004",
+   "text_sha": "bc39dc8aca2b832d",
+   "title": "Designer Advocate (Berlin, Germany)",
+   "url": "https://boards.greenhouse.io/figma/jobs/6203089004?gh_jid=6203089004"
+  },
+  "greenhouse:6207950004": {
+   "company": "Figma",
+   "date_posted": "2026-09-29",
+   "department": "Marketing",
+   "fp": "f2a87f682a0d0968",
+   "last_published": "2026-10-18",
+   "location_text": "San Francisco, CA • New York, NY • United States",
+   "matched": {
+    "kept_because": "body says it produces teaching materials for a named audience",
+    "materials": {
+     "audience": [
+      "design community"
+     ],
+     "verb_object": [
+      "educational content"
+     ]
+    }
+   },
+   "published": "2026-10-08",
+   "source": "greenhouse",
+   "source_id": "6207950004",
+   "text_sha": "1f530894523f09e2",
+   "title": "Content Strategist, Product",
+   "url": "https://boards.greenhouse.io/figma/jobs/6207950004?gh_jid=6207950004"
+  },
+  "greenhouse:7214197": {
+   "company": "Stripe",
+   "date_posted": "2025-09-04",
+   "department": "4892 Risk Operations Enablement",
+   "fp": "6d30e66f4f94761e",
+   "last_published": "2026-10-18",
+   "location_text": "US-Remote",
+   "matched": {
+    "kept_because": "role word in title",
+    "role_title": [
+     "enablement"
+    ],
+    "title_only": true
+   },
+   "published": "2026-10-18",
+   "source": "greenhouse",
+   "source_id": "7214197",
+   "text_sha": "b9a628c4d986bc1d",
+   "title": "Program Manager, Risk Ops Enablement",
+   "url": "https://stripe.com/jobs/search?gh_jid=7214197"
+  },
+  "greenhouse:7530580": {
+   "company": "Stripe",
+   "date_posted": "2026-01-14",
+   "department": "3311 FinCRO",
+   "fp": "a456ec1575d5e403",
+   "last_published": "2026-10-18",
+   "location_text": "Dublin OR London",
+   "matched": {
+    "kept_because": "role word in title",
+    "role_title": [
+     "enablement"
+    ],
+    "title_only": true
+   },
+   "published": "2026-10-18",
+   "source": "greenhouse",
+   "source_id": "7530580",
+   "text_sha": "9cef2b918cd758a0",
+   "title": "Compliance Manager, User Enablement",
+   "url": "https://stripe.com/jobs/search?gh_jid=7530580"
+  },
+  "greenhouse:8158082": {
+   "company": "Stripe",
+   "date_posted": "2026-08-25",
+   "department": "4892 Risk Operations Enablement",
+   "fp": "ceed686728f94bd2",
+   "last_published": "2026-10-18",
+   "location_text": "United States",
+   "matched": {
+    "kept_because": "role word in title",
+    "role_title": [
+     "enablement"
+    ],
+    "title_only": true
+   },
+   "published": "2026-10-18",
+   "source": "greenhouse",
+   "source_id": "8158082",
+   "text_sha": "526e7a5b1e60f5ce",
+   "title": "Program Manager, Risk Operations GTM Enablement",
+   "url": "https://stripe.com/jobs/search?gh_jid=8158082"
+  },
+  "greenhouse:8159355": {
+   "company": "Stripe",
+   "date_posted": "2026-09-10",
+   "department": "6526 University Recruiting",
+   "fp": "40a96cdcf91dfb92",
+   "last_published": "2026-10-18",
+   "location_text": "N/A",
+   "matched": {
+    "kept_because": "4 topic words in body (>= 3)",
+    "topic_text": [
+     "university",
+     "campus",
+     "student",
+     "education"
+    ]
+   },
+   "published": "2026-10-18",
+   "source": "greenhouse",
+   "source_id": "8159355",
+   "text_sha": "d3a7c94b7123a0d0",
+   "title": "University Recruiter",
+   "url": "https://stripe.com/jobs/search?gh_jid=8159355"
+  },
+  "greenhouse:8172111": {
+   "company": "Stripe",
+   "date_posted": "2026-09-03",
+   "department": "1512 Global Sales Enablement",
+   "fp": "1338238813499fec",
+   "last_published": "2026-10-18",
+   "location_text": "Mexico City",
+   "matched": {
+    "kept_because": "body says it produces teaching materials for a named audience",
+    "materials": {
+     "audience": [
+      "our users",
+      "learners",
+      "classroom"
+     ],
+     "verb_object": [
+      "instructional design"
+     ]
+    },
+    "topic_text": [
+     "classroom"
+    ]
+   },
+   "published": "2026-10-18",
+   "source": "greenhouse",
+   "source_id": "8172111",
+   "text_sha": "332c65fdcccb9002",
+   "title": "Training Program Manager",
+   "url": "https://stripe.com/jobs/search?gh_jid=8172111"
+  },
+  "greenhouse:8175656": {
+   "company": "Stripe",
+   "date_posted": "2026-09-30",
+   "department": "8614 Office of the CISO & Partnership",
+   "fp": "7326f4f9dad5b1df",
+   "last_published": "2026-10-18",
+   "location_text": "Dublin",
+   "matched": {
+    "kept_because": "role word in title",
+    "role_title": [
+     "enablement"
+    ],
+    "title_only": true
+   },
+   "published": "2026-10-18",
+   "source": "greenhouse",
+   "source_id": "8175656",
+   "text_sha": "3a7dec0771791025",
+   "title": "Software Engineer, Security Business Enablement",
+   "url": "https://stripe.com/jobs/search?gh_jid=8175656"
+  },
+  "greenhouse:8177860": {
+   "company": "Stripe",
+   "date_posted": "2026-09-03",
+   "department": "Global Operations",
+   "fp": "edf4b034d58a42f2",
+   "last_published": "2026-10-18",
+   "location_text": "New York, NY",
+   "matched": {
+    "kept_because": "role word in title",
+    "role_title": [
+     "docs"
+    ],
+    "title_only": true
+   },
+   "published": "2026-10-18",
+   "source": "greenhouse",
+   "source_id": "8177860",
+   "text_sha": "6625c6367e227eb2",
+   "title": "Senior Software Engineer, Docs Product",
+   "url": "https://stripe.com/jobs/search?gh_jid=8177860"
+  },
+  "greenhouse:8209641": {
+   "company": "Stripe",
+   "date_posted": "2026-09-23",
+   "department": "4892 Risk Operations Enablement",
+   "fp": "a592f3ad1c6187d6",
+   "last_published": "2026-10-18",
+   "location_text": "Dublin, Ireland",
+   "matched": {
+    "kept_because": "role word in title",
+    "role_title": [
+     "enablement"
+    ],
+    "title_only": true
+   },
+   "published": "2026-10-18",
+   "source": "greenhouse",
+   "source_id": "8209641",
+   "text_sha": "526e7a5b1e60f5ce",
+   "title": "Program Manager, Risk Operations GTM Enablement",
+   "url": "https://stripe.com/jobs/search?gh_jid=8209641"
+  },
+  "greenhouse:8212674": {
+   "company": "Stripe",
+   "date_posted": "2026-09-18",
+   "department": "1512 Global Sales Enablement",
+   "fp": "b3f4fb35c219b7e1",
+   "last_published": "2026-10-18",
+   "location_text": "San Francisco; Chicago",
+   "matched": {
+    "kept_because": "role word in title",
+    "role_title": [
+     "enablement"
+    ],
+    "title_only": true
+   },
+   "published": "2026-10-18",
+   "source": "greenhouse",
+   "source_id": "8212674",
+   "text_sha": "5f77f536e4b390fe",
+   "title": "Manager, Go-to-Market Enablement Business Partners",
+   "url": "https://stripe.com/jobs/search?gh_jid=8212674"
+  },
+  "greenhouse:8226211": {
+   "company": "Stripe",
+   "date_posted": "2026-09-23",
+   "department": "6526 University Recruiting",
+   "fp": "56639e472c0183ae",
+   "last_published": "2026-10-18",
+   "location_text": "San Francisco, New York, Seattle, US-Remote",
+   "matched": {
+    "flex_text": [
+     "fixed term"
+    ],
+    "kept_because": "4 topic words in body (>= 3)",
+    "topic_text": [
+     "university",
+     "campus",
+     "student",
+     "education"
+    ]
+   },
+   "published": "2026-10-18",
+   "source": "greenhouse",
+   "source_id": "8226211",
+   "text_sha": "a4f1534bf94c9c2c",
+   "title": "University Recruiter (Fixed Term)",
+   "url": "https://stripe.com/jobs/search?gh_jid=8226211"
+  },
+  "greenhouse:8257185": {
+   "company": "Stripe",
+   "date_posted": "2026-10-05",
+   "department": "4119 Product Support",
+   "fp": "520635140ed78899",
+   "last_published": "2026-10-18",
+   "location_text": "Dublin",
+   "matched": {
+    "kept_because": "role word in title",
+    "role_title": [
+     "community"
+    ],
+    "title_only": true
+   },
+   "published": "2026-10-18",
+   "source": "greenhouse",
+   "source_id": "8257185",
+   "text_sha": "e5829ed536eb1bcc",
+   "title": "Community Operations Specialist",
+   "url": "https://stripe.com/jobs/search?gh_jid=8257185"
+  },
+  "greenhouse:8261442": {
+   "company": "Twilio",
+   "date_posted": "2026-10-08",
+   "department": "Sales Operations",
+   "fp": "99ff9020bcf2d4dc",
+   "last_published": "2026-10-18",
+   "location_text": "Remote - US",
+   "matched": {
+    "kept_because": "role word in title",
+    "materials": {
+     "audience": [
+      "our customers",
+      "sales team"
+     ],
+     "verb_object": [
+      "instructional design",
+      "curriculum design"
+     ]
+    },
+    "role_title": [
+     "learning experience"
+    ],
+    "topic_text": [
+     "curriculum"
+    ]
+   },
+   "published": "2026-10-18",
+   "source": "greenhouse",
+   "source_id": "8261442",
+   "text_sha": "4ba500a5cd354c7e",
+   "title": "Senior Learning Experience Designer",
+   "url": "https://job-boards.greenhouse.io/twilio/jobs/8261442"
+  },
+  "greenhouse:8750842002": {
+   "company": "GitLab",
+   "date_posted": "2026-09-18",
+   "department": "Platforms Engineering",
+   "fp": "c24190cea560ae84",
+   "last_published": "2026-10-18",
+   "location_text": "Remote, United States",
+   "matched": {
+    "kept_because": "role word in title",
+    "role_title": [
+     "enablement"
+    ],
+    "topic_text": [
+     "education"
+    ]
+   },
+   "published": "2026-10-18",
+   "source": "greenhouse",
+   "source_id": "8750842002",
+   "text_sha": "b3cc06692e0cb22c",
+   "title": "Senior Backend Engineer, Platform Enablement",
+   "url": "https://job-boards.greenhouse.io/gitlab/jobs/8750842002"
+  },
+  "greenhouse:8814596002": {
+   "company": "GitLab",
+   "date_posted": "2026-09-17",
+   "department": "Enablement",
+   "fp": "eae793a28bdf792b",
+   "last_published": "2026-10-18",
+   "location_text": "Remote, United States",
+   "matched": {
+    "kept_because": "role word in title",
+    "role_title": [
+     "enablement"
+    ],
+    "topic_text": [
+     "curriculum",
+     "educate",
+     "education"
+    ]
+   },
+   "published": "2026-10-18",
+   "source": "greenhouse",
+   "source_id": "8814596002",
+   "text_sha": "c4c024905a81464c",
+   "title": "Public Sector Enablement Lead",
+   "url": "https://job-boards.greenhouse.io/gitlab/jobs/8814596002"
+  },
+  "greenhouse:8838202002": {
+   "company": "GitLab",
+   "date_posted": "2026-09-23",
+   "department": "Developer Relations",
+   "fp": "e925b13e04e7adb2",
+   "last_published": "2026-10-18",
+   "location_text": "Remote, Canada; Remote, United States",
+   "matched": {
+    "kept_because": "role word in title",
+    "materials": {
+     "audience": [
+      "developer community",
+      "sales team"
+     ],
+     "verb_object": [
+      "educational content"
+     ]
+    },
+    "role_title": [
+     "advocate",
+     "developer advocate"
+    ],
+    "topic_text": [
+     "education"
+    ]
+   },
+   "published": "2026-10-18",
+   "source": "greenhouse",
+   "source_id": "8838202002",
+   "text_sha": "f7e639a12f1b52c9",
+   "title": "Senior Developer Advocate",
+   "url": "https://job-boards.greenhouse.io/gitlab/jobs/8838202002"
+  },
+  "greenhouse:8846318002": {
+   "company": "GitLab",
+   "date_posted": "2026-10-01",
+   "department": "Corporate Affairs",
+   "fp": "a0e2133b3c32f259",
+   "last_published": "2026-10-18",
+   "location_text": "Remote, Canada; Remote, United States",
+   "matched": {
+    "kept_because": "3 topic words in body (>= 3)",
+    "topic_text": [
+     "university",
+     "universities",
+     "education"
+    ]
+   },
+   "published": "2026-10-18",
+   "source": "greenhouse",
+   "source_id": "8846318002",
+   "text_sha": "59705e776e3c0b33",
+   "title": "Social Impact Manager",
+   "url": "https://job-boards.greenhouse.io/gitlab/jobs/8846318002"
+  },
+  "smartrecruiters:6000000001299549": {
+   "company": "Canva",
+   "date_posted": "2026-08-10",
+   "department": "Marketing / Marketing",
+   "fp": "e76832b850066855",
+   "last_published": "2026-10-18",
+   "location_text": "Jakarta, Jakarta, Indonesia",
+   "matched": {
+    "kept_because": "role word in title",
+    "role_title": [
+     "education"
+    ],
+    "topic_text": [
+     "student",
+     "education",
+     "classroom"
+    ]
+   },
+   "published": "2026-10-08",
+   "source": "smartrecruiters",
+   "source_id": "6000000001299549",
+   "text_sha": "d6c5d4e3cf10c261",
+   "title": "Education Marketing Specialist - Indonesia (6-month contract)",
+   "url": "https://jobs.smartrecruiters.com/Canva/6000000001299549-education-marketing-specialist-indonesia-6-month-contract-"
+  },
+  "smartrecruiters:6000000001371584": {
+   "company": "Canva",
+   "date_posted": "2026-09-03",
+   "department": "Sales / Go To Market",
+   "fp": "c09bf78089d8e3fb",
+   "last_published": "2026-10-18",
+   "location_text": "Sydney, NSW, Australia",
+   "matched": {
+    "connector": {
+     "institution": [
+      "university",
+      "universities",
+      "higher education"
+     ],
+     "title": [
+      "account executive"
+     ]
+    },
+    "kept_because": "role word in title",
+    "role_title": [
+     "education"
+    ],
+    "topic_text": [
+     "university",
+     "universities",
+     "campus",
+     "education"
+    ]
+   },
+   "published": "2026-10-08",
+   "source": "smartrecruiters",
+   "source_id": "6000000001371584",
+   "text_sha": "8d6e023d57674545",
+   "title": "Higher Education Account Executive",
+   "url": "https://jobs.smartrecruiters.com/Canva/6000000001371584-higher-education-account-executive"
+  },
+  "smartrecruiters:6000000001424453": {
+   "company": "Canva",
+   "date_posted": "2026-09-21",
+   "department": "Sales / Go To Market",
+   "fp": "8edf8ca45cb1872c",
+   "last_published": "2026-10-18",
+   "location_text": "Austin, , United States",
+   "matched": {
+    "connector": {
+     "institution": [
+      "university",
+      "universities",
+      "higher education",
+      "colleges"
+     ],
+     "title": [
+      "account executive"
+     ]
+    },
+    "kept_because": "role word in title",
+    "role_title": [
+     "education"
+    ],
+    "topic_text": [
+     "university",
+     "universities",
+     "campus",
+     "education",
+     "teach"
+    ]
+   },
+   "published": "2026-10-08",
+   "source": "smartrecruiters",
+   "source_id": "6000000001424453",
+   "text_sha": "41530e156812c557",
+   "title": "Account Executive, Higher Education (LATAM)",
+   "url": "https://jobs.smartrecruiters.com/Canva/6000000001424453-account-executive-higher-education-latam-"
+  },
+  "smartrecruiters:6000000001424458": {
+   "company": "Canva",
+   "date_posted": "2026-09-21",
+   "department": "Sales / Go To Market",
+   "fp": "003059cba9679edf",
+   "last_published": "2026-10-18",
+   "location_text": "Austin, , United States",
+   "matched": {
+    "connector": {
+     "institution": [
+      "university",
+      "universities",
+      "higher education",
+      "colleges"
+     ],
+     "title": [
+      "account executive"
+     ]
+    },
+    "kept_because": "role word in title",
+    "role_title": [
+     "education"
+    ],
+    "topic_text": [
+     "university",
+     "universities",
+     "campus",
+     "education",
+     "teach"
+    ]
+   },
+   "published": "2026-10-08",
+   "source": "smartrecruiters",
+   "source_id": "6000000001424458",
+   "text_sha": "6b62ca190a274eb3",
+   "title": "Account Executive, Higher Education",
+   "url": "https://jobs.smartrecruiters.com/Canva/6000000001424458-account-executive-higher-education"
+  },
+  "smartrecruiters:6000000001484196": {
+   "company": "Canva",
+   "date_posted": "2026-10-13",
+   "department": "Sales",
+   "fp": "8b2d8bee18b4eb84",
+   "last_published": "2026-10-18",
+   "location_text": "Seoul, Seoul, Korea, republic of",
+   "matched": {
+    "kept_because": "role word in title",
+    "role_title": [
+     "advocate",
+     "education"
+    ],
+    "topic_text": [
+     "student",
+     "education",
+     "classroom"
+    ]
+   },
+   "published": "2026-10-18",
+   "source": "smartrecruiters",
+   "source_id": "6000000001484196",
+   "text_sha": "53f6197a7d93bbe6",
+   "title": "District Education Advocate, South Korea (12 months contract)",
+   "url": "https://jobs.smartrecruiters.com/Canva/6000000001484196-district-education-advocate-south-korea-12-months-contract-"
+  }
+ },
+ "kw_version": "0.5.1",
+ "schema": 1
+}
