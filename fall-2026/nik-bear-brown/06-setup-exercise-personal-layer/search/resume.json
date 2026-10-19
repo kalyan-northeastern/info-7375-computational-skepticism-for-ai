@@ -192,6 +192,6 @@
       "algorithms"
     ],
     "familiar_with_not_shipped": [],
-    "agent_note": "Every skill string appears in, or is a plain restatement of, the CV text. Nothing was added that the CV does not state (for example, Python is not listed because the CV never names it)."
+    "agent_note": "Checked 2026-10-19 against the CV text: every skill string appears in it except \"course development\", which is Claude's restatement of the CV's co-developed courses and curriculum work, not a phrase the CV uses; its owner has not yet ruled on it. Python is not listed because the CV never names it. The skills list contains nothing from biology or computational biology, although the CV mentions both."
   }
 }
