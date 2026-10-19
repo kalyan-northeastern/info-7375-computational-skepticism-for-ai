@@ -30,6 +30,9 @@ The tool is identical in all three. Only the question changes.
 | `lectern/sources.json` | The watch list — 18 boards, plus the companies that cannot be read |
 | `lectern/keywords.json` | The filter: role, topic, and flexible-terms words, with what was cut and why |
 | `lectern/ATS.md` | Which applicant-tracking system each company uses, and an honest "unknown" where it was not verified |
+| `lectern/faculty_feed.py` · `lectern/faculty_config.json` | The faculty-listings reader: Chronicle and Inside Higher Ed keyword feeds, filtered to business-school faculty roles that mention AI, plus the 12 watched schools. Its run outputs go to `faculty-runs/` (not shared) |
+| `lectern/collectors/` | The big-four collectors (Google, Amazon, Microsoft, Meta), the SQLite monitor and the daily runner. Added to the list 2026-10-18; its `runs/` output is not shared |
+| `lectern/publish_delta.py` | After a run, writes and publishes only what changed since the last published run (new, changed, gone). Added 2026-10-18 |
 | `facts/professor-bear-cv.json` | The CV as structured facts, attested |
 | `figma/` | The first single-company iteration: saved board, scan, kept postings |
 | `greenhouse-watch-demo/` | The Reallocation Engine's watcher run on one board |
@@ -42,7 +45,7 @@ The tool is identical in all three. Only the question changes.
 |---|---|
 | `FRICTIONAL.md` (every copy) | Each class's log records that class's session. Copying one over another destroys the record |
 | `assignment-*/` | Different assignments with different briefs, rubrics, and deadlines |
-| `boondoggle-report/` | Only Computational Skepticism's Assignment 2 |
+| `01-…` to `12-…` (numbered assignment folders, including `03-week-2-boondoggle-report/`, formerly `boondoggle-report/`) and `PLAN.md` | Only Computational Skepticism's Canvas assignments |
 | `README.md`, `CLAUDE.md` | Each names its own class, its own emphasis, its own push approval |
 | **Run outputs** — `all-jobs-<date>.*`, `jobs-of-interest-<date>.*`, `quality-report-<date>.md` | The data lives in the class whose assignment it is submitted for. Today that is Branding's `assignment-3/`. Copying 3.4 MB of identical JSON into three repos buys nothing; the tool that regenerates it is what is shared |
 

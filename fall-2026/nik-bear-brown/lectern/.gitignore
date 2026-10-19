@@ -1,0 +1,9 @@
+# Lectern: the full run files stay on the machine that made them. Only the small delta is published
+# (see publish_delta.py). Files already tracked from earlier runs stay tracked.
+runs/*/all-jobs-*
+runs/*/jobs-of-interest-*
+runs/*/quality-report-*
+runs/*/raw/
+raw/
+monitor.db
+__pycache__/

@@ -11,7 +11,7 @@ CHECK=0
 
 # Shared paths, relative to the nik-bear-brown folder. Everything else is class-specific.
 SHARED=(
-  "lectern/collect.py" "lectern/audit_rejects.py" "lectern/audit_titles.py" "lectern/demand_report.py" "lectern/title_families.json" "lectern/sources.json" "lectern/keywords.json" "lectern/ATS.md"
+  "lectern/collect.py" "lectern/audit_rejects.py" "lectern/audit_titles.py" "lectern/demand_report.py" "lectern/title_families.json" "lectern/sources.json" "lectern/keywords.json" "lectern/ATS.md" "lectern/faculty_feed.py" "lectern/faculty_config.json" "lectern/collectors" "lectern/publish_delta.py"
   "facts/professor-bear-cv.json"
   "SDD-job-search-project.md"
   "figma" "greenhouse-watch-demo"
@@ -20,7 +20,7 @@ SHARED=(
 # (A case statement, not an associative array — macOS still ships bash 3.2.)
 lectern_dir() {
   case "$1" in
-    info-7375-branding-and-ai) echo "assignment-3" ;;
+    info-7375-branding-and-ai) echo "build-your-data-pipeline" ;;
     *) echo "lectern" ;;
   esac
 }

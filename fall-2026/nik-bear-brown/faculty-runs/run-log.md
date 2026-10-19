@@ -1,0 +1,1 @@
+- 2026-10-18: 20 queries x 2 feeds, 1727 items read, 14 matched, 14 new, 0 errors (first run: everything counts as new).

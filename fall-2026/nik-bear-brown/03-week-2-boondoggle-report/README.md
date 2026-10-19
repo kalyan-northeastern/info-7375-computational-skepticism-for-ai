@@ -1,5 +1,7 @@
 # The Boondoggle Report — a downloadable Gru
 
+> Renamed from `boondoggle-report/` to `03-week-2-boondoggle-report/` on 2026-10-18. Plan and status for all attempts: [`PLAN.md`](PLAN.md). Note that a later report on Lectern (`boondoggle-report.md`, committed 2026-10-11) sits beside this one, and which is the submission is not decided.
+
 **Class:** INFO 7375 Computational Skepticism for AI, Fall 2026 · **Assignment 2** ([`BRIEF.md`](BRIEF.md))
 **Application being specified:** a downloadable version of Gru — skills and scripts that run inside a downloaded repository and can read its folders and files, instead of a prompt pasted into a Claude Project.
 

@@ -93,7 +93,9 @@ def normalise(provider, company, payload):
             v = dict(source_id=str(j.get("id")), title=(j.get("title") or "").strip(),
                      text=plain(j.get("content")), location_text=(j.get("location") or {}).get("name", ""),
                      date_raw=j.get("first_published") or j.get("updated_at"), url=j.get("absolute_url"),
-                     department=" / ".join(d.get("name", "") for d in (j.get("departments") or [])))
+                     department=" / ".join(d.get("name", "") for d in (j.get("departments") or [])),
+                     # the underlying job, which can have several posts and can be re-posted under a new post id
+                     job_ref=str(j["internal_job_id"]) if j.get("internal_job_id") is not None else None)
         elif provider == "ashby":
             locs = [j.get("location") or ""] + [x.get("location") or "" for x in (j.get("secondaryLocations") or [])]
             v = dict(source_id=str(j.get("id")), title=(j.get("title") or "").strip(),
@@ -110,6 +112,7 @@ def normalise(provider, company, payload):
                      location_text=loc.get("fullLocation") or "", date_raw=j.get("releasedDate"),
                      url=j.get("postingUrl"),
                      department=" / ".join(x for x in ((j.get("function") or {}).get("label"), cf.get("Org")) if x))
+        v.setdefault("job_ref", None)
         v.update(source=provider, company=company, date_posted=iso_date(v["date_raw"]), original=j)
         out.append(v)
     return out
@@ -133,8 +136,19 @@ def materials_evidence(body_lc, kw):
     return None
 
 
+def connector_evidence(title_lc, body_lc, kw):
+    """A role that owns a big institutional relationship: an account or partnership word in the TITLE and a
+    higher-education institution in the BODY. Both halves required (see keywords.json connector_rule)."""
+    rule = kw.get("connector_rule") or {}
+    if not rule:
+        return None
+    tw = [w for w in rule.get("title_words", []) if word_in(w, title_lc)]
+    iw = [w for w in rule.get("institution_words", []) if word_in(w, body_lc)]
+    return {"title": tw, "institution": iw[:6]} if tw and iw else None
+
+
 def judge(v, kw):
-    """Keep on a role word in the title, >=N topic words in the body, or materials evidence in the body."""
+    """Keep on a role word in the title, >=N topic words in the body, materials evidence, or connector evidence."""
     ignore = {w.lower() for w in (kw.get("ignore_words_by_company") or {}).get(v["company"], [])}
     tl, bl = v["title"].lower(), v["text"].lower()
     role = [w for w in kw["role_title"] if w.lower() not in ignore and word_in(w, tl)]
@@ -142,16 +156,19 @@ def judge(v, kw):
     flex = [w for w in kw["flex_text"] if word_in(w, bl)]
     need = kw["keep_rule"]["topic_text_min_if_no_title_match"]
     mats = materials_evidence(bl, kw)
+    conn = connector_evidence(tl, bl, kw)
     if role:
         why = "role word in title"
     elif len(topic) >= need:
         why = f"{len(topic)} topic words in body (>= {need})"
     elif mats:
         why = "body says it produces teaching materials for a named audience"
+    elif conn:
+        why = "account or partnership role whose body names higher education"
     else:
         return None, ("no-keyword-match" if not (role or topic) else
                       f"only {len(topic)} topic words, no role word in title")
-    return {"role_title": role, "topic_text": topic, "flex_text": flex, "materials": mats,
+    return {"role_title": role, "topic_text": topic, "flex_text": flex, "materials": mats, "connector": conn,
             "kept_because": why, "title_only": bool(role and not topic)}, None
 
 
@@ -283,7 +300,7 @@ def main(argv=None):
                {**meta, "note": "Every posting found on every watched board. Ad text is omitted here for "
                                 "file size; the full text is in raw/ exactly as each API sent it.",
                 "records": [{k: r[k] for k in ("source", "company", "source_id", "title", "url",
-                                               "location_text", "department", "date_posted", "date_raw")}
+                                               "location_text", "department", "date_posted", "date_raw", "job_ref")}
                             | {"kept": bool(r.get("matched")), "reject_reason": r.get("reject_reason")}
                             for r in all_recs]})
     write_csv(os.path.join(a.out, f"all-jobs-{TODAY}.csv"), rows_for_csv(all_recs, with_match=False))
@@ -293,7 +310,7 @@ def main(argv=None):
                {**meta, "note": "Postings kept by keywords.json. `matched` is Lectern's; `original` is the "
                                 "source's own record with its own field names, unmodified.",
                 "records": [{k: r[k] for k in ("source", "company", "source_id", "title", "url",
-                                               "location_text", "department", "date_posted", "date_raw",
+                                               "location_text", "department", "date_posted", "date_raw", "job_ref",
                                                "matched", "text", "original")} for r in kept]})
     write_csv(os.path.join(a.out, f"jobs-of-interest-{TODAY}.csv"), rows_for_csv(kept, with_match=True))
 
