@@ -43,8 +43,26 @@ Listed 2026-10-19 from Professor Bear's own list and a round of web searches. In
 | Cambridge (Kendall) | Akamai Technologies | A technology company on the same map | Seen on his map; not researched |
 | Allston | Harvard Business School: HBS AI Institute (formerly the Digital Data Design Institute); Laboratory for Innovation Science | Business research on AI | Confirmed from the institute's pages; the Allston location is Professor Bear's, not shown in the results |
 | Allston | Kempner Institute | Natural and artificial intelligence; large compute | Confirmed: 150 Western Avenue, Allston, sixth floor of Harvard's Science and Engineering Complex. The pasted snapshot says "Cambridge (Harvard)"; the institute's own contact page wins, so Allston stands |
-| Boston | Northeastern Institute for Experiential AI | His own affiliation (affiliated faculty, per his record) | Not searched |
+| Boston | Northeastern Institute for Experiential AI | His own affiliation (affiliated faculty, per his record) | Read on 2026-10-19; see the Northeastern section below |
 | Out | Tufts | Too far | Professor Bear's rule. One source lists Tufts Medical Center among Longwood-area institutions; his rule applies |
+
+## Northeastern's business school and Institute for Experiential AI: a special search (2026-10-19)
+
+**Why first.** Professor Bear: these are "the easiest people to contact", and his MBA is from the business school. The question for each group is whether someone there would work with him in a paid way, on research. **Read by hand on 2026-10-19** (robots files checked; the school's and the institute's own pages, raw or through a page reader). Tiers are my suggestion from each page's own words; he decides. No people are named here; the records that name them stay local.
+
+| Group | What its own page says it does | Suggested tier | Pay signal on the page |
+|---|---|---|---|
+| D'Amore-McKim: DMSB AI Strategic Hub (DASH) | Brings AI into the school's research, teaching, corporate work and community work; built a GPU desktop so faculty can try AI quickly | **great** (posted to Discord) | None: no programs, grants, fellowships or paid roles |
+| Institute for Experiential AI: AI + Life Sciences | "Novel AI approaches for single cell 'omics data, pharmaceutical developability, and global health security"; drug discovery; validating AI models | **great** (posted to Discord) | Corporate and research partners are named and sponsored research is mentioned; whether anyone outside is paid is not stated |
+| Institute for Experiential AI: AI + Health and Human Performance | Human-centric AI for health: remote sensing, behavioural health, imaging, operations | pretty good | Partners named; none stated for people |
+| Institute for Experiential AI: AI for Finance | Applied AI for banks and insurers, as consulting projects | pretty good | Corporate projects; none stated for people |
+| D'Amore-McKim: Center for Workforce Analytics | Workforce measurement and analytics; working papers; many large corporate partners | pretty good | Partners named; no data or computation need stated |
+| D'Amore-McKim: industry research collaborations (a listing) | Faculty-led projects with outside partners: human-AI work, AI and behaviour, healthcare AI with synthetic health data, a credit-union data-sharing project | pretty good, unread beyond the listing | Outside partners; each project's lead is a faculty member, none read |
+| Center for Health Policy and Healthcare Research | 20+ faculty across colleges on health-care efficiency, quality and access | pretty good, search summary only | Past federal and foundation support (2014 newsletter) |
+| D'Amore-McKim: a fintech and quantitative analysis lab with an industry name | Found as a faculty director's role on one profile; the lab's own page was not found | not rated | Unknown |
+| D'Amore-McKim: Supply Chain and Information Management (an academic group) | Faculty working on information systems, operations and analytics, including AI and human-AI | recorded, not a target (a group of faculty, not a lab) | No labs or funding listed |
+
+**What the pass showed.** Neither great fit says anything about paying an outside or part-time researcher, so pay is a question for the conversation, not a finding. The Institute is where he already holds an affiliation. Because he and the school share an employer, the arrangement may hinge on his own agreements (the profile's `northeastern_arrangement`), which he is reading.
 
 ## Filtered by interest (from the snapshot pasted 2026-10-19)
 

@@ -185,6 +185,16 @@ outreach_search:
     hypothesis: Northeastern could engage him as a consultant, or in some joint-faculty arrangement, alongside the outside research.
     unknown: What his agreements and outside-activity terms say, and what strings they attach. He will read them himself. Nothing is assumed here about what they allow.
     status: to look into
+  special_search_first:
+    # Professor Bear, 2026-10-19: "a special search of the Northeastern Business School. Those are the easiest people to
+    # contact. And I have my MBA from the school." Then the Institute for Experiential AI.
+    where: [Northeastern D'Amore-McKim School of Business, Northeastern Institute for Experiential AI]
+    ask: Would anyone there work with him in a paid way, on research with their group?
+    done_2026_10_19: >-
+      Pages read by hand; two great fits posted to Discord (the business school's AI hub and the Institute's AI + Life
+      Sciences area); seven pretty-good or unrated groups recorded. See lab-outreach/PLACES.md. The records name people
+      he said he knows and stay local.
+    open: Neither great fit states any pay for an outside or part-time researcher; pay is for the conversation.
   places_list: lab-outreach/PLACES.md   # the institutions in range, grouped by area, with how sure each entry is
   status: Not built. No lab list has been defined and no website has been read.
   best_fit: >-
@@ -249,6 +259,9 @@ revisions:
   - date: 2026-10-19
     change: "review gate for the outreach search: great-fit labs and research groups are posted to Discord for him to look at; nothing is approached before he has looked; pretty-good fits only when he says so. Northeastern consulting or joint faculty noted as a hypothesis to check against his agreements"
     because: he wants to read each group's page himself before any contact, and has not yet read the agreements that might attach conditions to outside work
+  - date: 2026-10-19
+    change: "a special first search of Northeastern's business school and Institute for Experiential AI for paid research with a group; two great fits posted to Discord"
+    because: he said those are the easiest people to contact and his MBA is from the school
 
 flexibility_check: >-
   Nothing here claims flexibility. Every null is a question, not an assumption.
