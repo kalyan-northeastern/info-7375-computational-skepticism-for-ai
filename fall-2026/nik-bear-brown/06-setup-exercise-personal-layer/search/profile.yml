@@ -153,6 +153,11 @@ outreach_search:
     - Harvard and Cambridge, particularly where the Broad Institute is, which also has a number of think tanks
     - Allston
   out_of_range: [Tufts]
+  companies_to_look_at:
+    - >-
+      Moderna, in Kendall Square near the Broad (seen on his map, 2026-10-19). Named as a great target. What the public record
+      shows is a company that already uses AI heavily and has its own data science and AI research team, so a need for
+      outside help has not been shown; see lab-outreach/PLACES.md.
   places_list: lab-outreach/PLACES.md   # the institutions in range, grouped by area, with how sure each entry is
   status: Not built. No lab list has been defined and no website has been read.
   best_fit: >-
@@ -208,6 +213,9 @@ revisions:
   - date: 2026-10-19
     change: "distance rule for the outreach search: mostly remote, on-site about once a week, within about one to three miles of Northeastern (Longwood, Mass General at the far end, Harvard and Cambridge near the Broad, Allston); not Tufts"
     because: the work is meant to sit alongside teaching, so it has to be reachable by a few T stops
+  - date: 2026-10-19
+    change: Moderna added as a company to look at, found on his map of Kendall Square
+    because: he named it a great target for AI help; the public record shows heavy AI use and an in-house team, so the need is the open question
 
 flexibility_check: >-
   Nothing here claims flexibility. Every null is a question, not an assumption.

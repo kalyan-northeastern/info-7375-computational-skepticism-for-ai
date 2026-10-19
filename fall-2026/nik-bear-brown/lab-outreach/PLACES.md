@@ -34,10 +34,15 @@ Listed 2026-10-19 from Professor Bear's own list and a round of web searches. In
 | Cambridge | Berkman Klein Center, Harvard | AI research and fellowships; fellows expected in residence in Cambridge | Confirmed (its own pages); its fellowship call for the current cycle has closed |
 | Cambridge | MIT Media Lab | A partner of Partnership on AI | Only a partner listing seen; not verified |
 | Cambridge | Harvard Kennedy School, Belfer Center | Technology and policy | Not verified (a search returned nothing) |
+| Cambridge (Kendall) | Moderna | A company, not a lab. Named by him from his map as a great target for AI help | Seen on his map near Binney Street. Public record: ChatGPT Enterprise with about 750 custom GPTs within two months (Moderna's own 2024 figures), an AI Academy with Carnegie Mellon (2021 announcement), an in-house Data Science and AI team, and data scientist roles in Cambridge on job boards. A need for outside help is not shown |
+| Cambridge (Kendall) | Akamai Technologies | A technology company on the same map | Seen on his map; not researched |
 | Allston | Harvard Business School: HBS AI Institute (formerly the Digital Data Design Institute); Laboratory for Innovation Science | Business research on AI | Confirmed from the institute's pages; the Allston location is Professor Bear's, not shown in the results |
 | Allston | Kempner Institute | Natural and artificial intelligence; large compute | Confirmed: 150 Western Avenue, Allston, sixth floor of Harvard's Science and Engineering Complex |
 | Boston | Northeastern Institute for Experiential AI | His own affiliation (affiliated faculty, per his record) | Not searched |
 | Out | Tufts | Too far | Professor Bear's rule. One source lists Tufts Medical Center among Longwood-area institutions; his rule applies |
+
+## What his map showed (Kendall Square, 2026-10-19)
+Pins labelled Broad Institute 300B, 105B and the Stanley Building (and one unlabelled), Moderna, Akamai Technologies, The Foundry, the MIT Museum, the Kendall/MIT station, and Watermark Kendall. Nothing on the map identifies a think tank; those he remembers are still to be named.
 
 ## Sources checked on 2026-10-19
 - Longwood Medical Area members: Simmons University pages (https://simmons.edu/student-life/experience-boston/longwood-medical-area), MCPHS page, Harvard LMA research cores page. The lists disagree on membership and none is an official roster.
