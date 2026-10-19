@@ -31,6 +31,7 @@ Proposed 2026-10-19 after reading one real department people page and one real l
   },
 
   "institution": { "school": "", "hospital_or_centre": "", "department": "" },
+  "site": { "address_or_building": null, "area": "Longwood | Mass General | Cambridge (Kendall) | Allston | other", "in_range": "yes | far_end | no | unknown", "source_url": null },
 
   "pi": {
     "name": "",
@@ -114,7 +115,8 @@ Proposed 2026-10-19 after reading one real department people page and one real l
 | `what_the_lab_does` | What does the lab do? | `verbatim` is the lab's own sentence. `model_summary` is separate and empty unless one is written, so a model's words never replace the lab's. |
 | `size_and_funding` | Can this lab afford me? | People and PIs counted from the pages; funding only as the lab states it. A lab of one is `single_person`: he judged that probably means no funding. "Established" needs evidence on the page (several people, named grants or sponsors), not an impression. |
 | `fit` | Is it a match for what I do? | The best fit is a lab with a lot of genomic or other biological data that needs a computational biologist or a database; on the business side, a group that wants to do AI research without the technical capacity. `basis` shows which words on the page produced the suggestion. `suggested` is the tool's guess; `verdict` is his. |
-| `target` | Should I write to them? | False for a faculty member with no lab website (recorded only), false for a single-person lab, false with no data signal. These are his rules, applied by the tool as a suggestion; the verdict is his. |
+| `site` | Can I get there? | Where the lab sits, taken from its own page, and whether that is in his range: Longwood, Harvard and Cambridge near the Broad, Allston, and Mass General at the far end, about once a week. Tufts is out. The work is mostly remote, so this is a visit, not a commute. |
+| `target` | Should I write to them? | False for a faculty member with no lab website (recorded only), false for a single-person lab, false with no data signal, false when the site is out of range and the lab is not offering remote work. These are his rules, applied by the tool as a suggestion; the verdict is his. |
 | `people` | Is there a lab manager, and who? | `lab_manager` is null unless a page lists one with that title. "Not found on the pages read" is recorded in `not_found`. |
 | `who_to_email` | Who would get an email? | `how_chosen` says "stated" (the page names a contact for enquiries) or "inferred" (the tool chose the principal investigator by default). |
 | `openings` | Is it hiring? | Null means "no page found", not "no". |

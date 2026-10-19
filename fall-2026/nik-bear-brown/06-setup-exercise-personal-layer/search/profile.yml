@@ -144,6 +144,16 @@ outreach_search:
   privacy: >-
     The lab records name people and may hold work email addresses. They stay on his machine, not in this public
     repository. Only counts and method are published.
+  how_far: >-
+    The work is expected to be mostly remote, with on-site visits at most about once a week. So the labs are within
+    about one to three miles of Northeastern, reachable by a few T stops. He would not go as far as Tufts.
+  in_range:
+    - Longwood: Harvard Medical School, the Harvard Chan School of Public Health, the pharmacy school (MCPHS) and the hospitals around them, including Boston Children's, about three T stops away
+    - Massachusetts General Hospital: the farthest he wants to go; fine once a week
+    - Harvard and Cambridge, particularly where the Broad Institute is, which also has a number of think tanks
+    - Allston
+  out_of_range: [Tufts]
+  places_list: lab-outreach/PLACES.md   # the institutions in range, grouped by area, with how sure each entry is
   status: Not built. No lab list has been defined and no website has been read.
   best_fit: >-
     Labs doing computational biology, meaning labs that deal with a lot of genomic or other biological data.
@@ -157,7 +167,7 @@ outreach_search:
     - A lab is the unit. A faculty member with no lab website is recorded but is not a target.
     - A lab needs funding to pay for him. One that looks too small, such as a single person, probably has none and is not a target.
     - Fit is a suggestion from the page's own words; Professor Bear gives the verdict.
-  hospitals_still_to_name: ["which other hospitals count: Brigham and Women's, Beth Israel Deaconess, Dana-Farber, Joslin, others?"]
+  hospitals_still_to_name: ["other Longwood-area hospitals and institutes (Brigham and Women's, Beth Israel Deaconess, Dana-Farber, Joslin) are close to Boston Children's and Harvard Medical School; confirm each"]
   first_pilot: not chosen (the Harvard Medical School Division of Nutrition people page was read to design the record)
   to_decide:
     - Which departments and labs to start with (the first pilot).
@@ -195,6 +205,9 @@ revisions:
   - date: 2026-10-19
     change: the big Boston hospitals added as places to read (Massachusetts General Hospital, Boston Children's Hospital, and others to be named)
     because: that is where much of the data-heavy biology in Boston is done, and where a computational biologist would be needed
+  - date: 2026-10-19
+    change: "distance rule for the outreach search: mostly remote, on-site about once a week, within about one to three miles of Northeastern (Longwood, Mass General at the far end, Harvard and Cambridge near the Broad, Allston); not Tufts"
+    because: the work is meant to sit alongside teaching, so it has to be reachable by a few T stops
 
 flexibility_check: >-
   Nothing here claims flexibility. Every null is a question, not an assumption.
