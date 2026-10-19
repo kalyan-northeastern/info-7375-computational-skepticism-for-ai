@@ -157,7 +157,10 @@ outreach_search:
     - >-
       Moderna, in Kendall Square near the Broad (seen on his map, 2026-10-19). Named as a great target. What the public record
       shows is a company that already uses AI heavily and has its own data science and AI research team, so a need for
-      outside help has not been shown; see lab-outreach/PLACES.md.
+      outside help has not been shown. He wants to pitch it anyway: a collaboration, not necessarily a job, and if they
+      do not want part-time or summer work that is fine. The unit is a team inside the company (Research and Early
+      Development, the Data Science and AI Research team, the Therapeutic Area Bioinformatics team, all named in public
+      job listings), treated like a lab; see lab-outreach/PLACES.md.
   places_list: lab-outreach/PLACES.md   # the institutions in range, grouped by area, with how sure each entry is
   status: Not built. No lab list has been defined and no website has been read.
   best_fit: >-
