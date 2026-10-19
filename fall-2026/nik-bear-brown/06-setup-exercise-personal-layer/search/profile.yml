@@ -124,7 +124,11 @@ outreach_search:
     lab directly, either to the principal investigator or to the lab manager, with a short proposal.
   precedent: He has done this before.
   what_he_offers: A teaching professor with about 20 hours a week to work part-time in term, and full-time over the summer.
-  where: Boston labs and departments, including business-school departments, epidemiology and endocrinology at Harvard Medical School.
+  where:
+    - Boston labs and departments, including epidemiology and endocrinology at Harvard Medical School
+    - Harvard Business School and MIT Sloan (business research on AI)
+    - Research institutes and think tanks that do business or AI research, and the Broad Institute and the Whitehead Institute
+  unit: the lab (he is applying to a lab, not to a principal investigator in particular)
   fields: [biology, computational biology, business (AI research at Harvard Business School, MIT Sloan and the labs there)]
   method: >-
     Read each lab's public website and keep one JSON record per lab. Then email the person who would decide:
@@ -140,9 +144,21 @@ outreach_search:
     The lab records name people and may hold work email addresses. They stay on his machine, not in this public
     repository. Only counts and method are published.
   status: Not built. No lab list has been defined and no website has been read.
+  best_fit: >-
+    Labs doing computational biology, meaning labs that deal with a lot of genomic or other biological data.
+  fit_criteria:
+    biology: >-
+      Computational biology; high-throughput biology and genomics; any lab dealing with a lot of data; a lab that
+      could use a database built for its research. In short, a lab that needs a computational biologist.
+    business: >-
+      A group that wants to do AI research but does not have the technical capacity to do it.
+  target_rule:
+    - A lab is the unit. A faculty member with no lab website is recorded but is not a target.
+    - A lab needs funding to pay for him. One that looks too small, such as a single person, probably has none and is not a target.
+    - Fit is a suggestion from the page's own words; Professor Bear gives the verdict.
+  first_pilot: not chosen (the Harvard Medical School Division of Nutrition people page was read to design the record)
   to_decide:
     - Which departments and labs to start with (the first pilot).
-    - How a lab is judged a match for him.
 
 revisions:
   # A profile is not written once. Each line is a change Professor Bear made after seeing something, with the
@@ -171,6 +187,9 @@ revisions:
   - date: 2026-10-19
     change: "Track D added (part-time postdoc-style research, found by writing to labs directly) and an outreach_search section"
     because: he has done this before; it is a way to get research work alongside teaching in biology, computational biology or AI research at a business school
+  - date: 2026-10-19
+    change: "outreach search defined: the lab is the unit; best fit is computational biology and data-heavy labs; Harvard Business School, MIT Sloan, the Broad and Whitehead Institutes and think tanks added; tiny labs and faculty without a lab site are not targets"
+    because: he is applying to a lab to be funded and used, so a lab that cannot pay or has no data to compute on is not a target
 
 flexibility_check: >-
   Nothing here claims flexibility. Every null is a question, not an assumption.

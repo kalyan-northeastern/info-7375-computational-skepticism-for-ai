@@ -14,7 +14,7 @@ Proposed 2026-10-19 after reading one real department people page and one real l
 
 **What it must not do.** Guess an email address from a naming pattern. Invent a lab manager. Let a model's summary pass as the lab's own words. Each of those has its own field below so the difference stays visible.
 
-## The record (one per principal investigator's lab)
+## The record (one per lab)
 
 ```json
 {
@@ -49,13 +49,29 @@ Proposed 2026-10-19 after reading one real department people page and one real l
     "model_summary": null
   },
 
+  "size_and_funding": {
+    "people_listed": null,
+    "pis_listed": null,
+    "funding_stated": [],
+    "grants_or_sponsors_named": [],
+    "signal": "single_person | small | established | unknown",
+    "basis": ""
+  },
+
   "fit": {
     "basis": [
-      { "my_record": "experience[4]: …", "lab_text": "…words from the lab's page…", "kind": "topic | method | data" }
+      { "my_record": "experience[11]: …", "lab_text": "…words from the lab's page…",
+        "kind": "genomics | high_throughput | large_data | database_need | wants_ai_without_technical_capacity" }
     ],
+    "track": "biology | business | none",
     "suggested": null,
     "verdict": null,
     "note": null
+  },
+
+  "target": {
+    "is_target": null,
+    "why": "has a lab website | no lab website: recorded, not a target | single person, probably unfunded | no data signal"
   },
 
   "people": {
@@ -77,7 +93,6 @@ Proposed 2026-10-19 after reading one real department people page and one real l
 
   "openings": { "join_page_url": null, "says_it_is_hiring": null, "excerpt": null },
   "contact_page_url": null,
-  "funding_stated": [],
 
   "not_found": ["lab manager", "join or openings page", "funding statement"],
 
@@ -97,7 +112,9 @@ Proposed 2026-10-19 after reading one real department people page and one real l
 |---|---|---|
 | `pi` | Who is the principal investigator? | Every value carries the page it came from. Email and phone only if the page published them; never constructed. |
 | `what_the_lab_does` | What does the lab do? | `verbatim` is the lab's own sentence. `model_summary` is separate and empty unless one is written, so a model's words never replace the lab's. |
-| `fit` | Is it a match for what I do? | `basis` shows which of his record's fields and which words on the lab's page produced the suggestion. `suggested` is the tool's guess; `verdict` is his. |
+| `size_and_funding` | Can this lab afford me? | People and PIs counted from the pages; funding only as the lab states it. A lab of one is `single_person`: he judged that probably means no funding. "Established" needs evidence on the page (several people, named grants or sponsors), not an impression. |
+| `fit` | Is it a match for what I do? | The best fit is a lab with a lot of genomic or other biological data that needs a computational biologist or a database; on the business side, a group that wants to do AI research without the technical capacity. `basis` shows which words on the page produced the suggestion. `suggested` is the tool's guess; `verdict` is his. |
+| `target` | Should I write to them? | False for a faculty member with no lab website (recorded only), false for a single-person lab, false with no data signal. These are his rules, applied by the tool as a suggestion; the verdict is his. |
 | `people` | Is there a lab manager, and who? | `lab_manager` is null unless a page lists one with that title. "Not found on the pages read" is recorded in `not_found`. |
 | `who_to_email` | Who would get an email? | `how_chosen` says "stated" (the page names a contact for enquiries) or "inferred" (the tool chose the principal investigator by default). |
 | `openings` | Is it hiring? | Null means "no page found", not "no". |
@@ -123,9 +140,8 @@ On the page read, faculty were 121 of 126 cards. A faculty card without a lab we
 - A redirect to another host starts that host's robots check again.
 
 ## Open questions for Professor Bear
-1. **One record per principal investigator, or per lab?** Some labs have several principal investigators; the record above is per lab with one named PI.
-2. **A lab with no website.** Keep the record from the directory card alone, or skip it?
-3. **How `fit` is judged.** Topic words, methods, the kind of data? The suggestion is only as good as this answer.
-4. **Which departments first.** The Nutrition directory is 126 cards and one read; a pilot there would show how hard stage B and C are.
+1. **Answered (2026-10-19): the unit is the lab.** A faculty member with no lab website is recorded and is not a target. A lab that looks like one person probably has no funding and is not a target. Fit: computational biology and any lab with a lot of genomic or biological data, or one that could use a database; on the business side, a group that wants to do AI research without the technical capacity. The places to read: Harvard Medical School departments, Harvard Business School, MIT Sloan, the Broad and Whitehead Institutes, and think tanks.
+2. **Still to decide: how small is too small.** Single person is clear. Is two or three people too small, or does the funding signal (named grants, sponsors) decide?
+3. **Which departments first.** The Nutrition directory is 126 cards and one read; a pilot there would show how hard stage B and C are.
 
 *Written from two real reads on 2026-10-19: the Division of Nutrition people page and its robots file, and one lab's site. Nothing here records a decision Professor Bear did not state.*
