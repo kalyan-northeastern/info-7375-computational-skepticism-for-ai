@@ -55,7 +55,7 @@ geography:
     - San Francisco
   los_angeles: UCLA only          # no other Los Angeles employer
   summer_work: location does not matter; any place is fine for a summer
-  metros: [Boston]
+  metros: [Boston, Providence]   # Providence is very close to Boston and much cheaper (Professor Bear, 2026-10-18)
 preferences:
   # Q4. Professor Bear, 2026-10-18.
   engagement:
@@ -104,9 +104,13 @@ business_school_rationale:
   - He has been approached for such work but it is politically hard to get from outside the business school.
   - A joint appointment (business plus engineering) at Northeastern would be one way in.
 business_school_watch_list: >-
-  The 12 business schools in lectern/faculty_config.json: Harvard Business School, MIT Sloan, Duke Fuqua,
+  The business schools in lectern/faculty_config.json (12 on 2026-10-18, plus Brown): Harvard Business School, MIT Sloan, Duke Fuqua,
   Cornell Johnson, Vanderbilt Owen, UCLA Anderson, UT Austin McCombs, UT Dallas Jindal, Boston College Carroll,
-  UC San Diego Rady, UNC Kenan-Flagler, and Northeastern D'Amore-McKim. Listings are read through the
+  UC San Diego Rady, UNC Kenan-Flagler, Northeastern D'Amore-McKim, and Brown (added 2026-10-18), then on the same day Virginia Darden, Dartmouth Tuck, Rice Jones, emlyon, IESE, London Business
+  School, HEC Paris and ESADE (UNC Kenan-Flagler was already on the list). The feeds are American, so the five European
+  schools are unlikely to show listings through them; see the log. Brown has no
+  standalone business school; its executive MBA is run by its School of Professional Studies with IE Business School,
+  so the entry searches Brown University listings, not a business school by name. Listings are read through the
   Chronicle and Inside Higher Ed feeds; most schools' own job systems cannot be read by a script.
 revisions:
   # A profile is not written once. Each line is a change Professor Bear made after seeing something, with the
@@ -126,5 +130,11 @@ revisions:
   - date: 2026-10-18
     change: Stripe and Writer removed from the watch list
     because: he does not see them as directly applicable to transformative, AI-driven improvement of education; not a judgment that they are bad or not useful
+  - date: 2026-10-18
+    change: Brown (School of Professional Studies) added to the business-school watch list; Providence added as an acceptable base
+    because: Brown has no business school of its own but offers an executive MBA with IE Business School; Providence is close to Boston and much cheaper
+  - date: 2026-10-18
+    change: eight more business schools added to the watch list (Virginia Darden, Dartmouth Tuck, Rice Jones, emlyon, IESE, London Business School, HEC Paris, ESADE)
+    because: Professor Bear's list of target schools; the European ones may need a different source than the American feeds
 flexibility_check: >-
   Nothing here claims flexibility. Every null is a question, not an assumption.
