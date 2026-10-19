@@ -1,0 +1,111 @@
+# search/profile.yml for Professor Bear: What You Want and What Constrains You (exercise 06, Step 2).
+# Written 2026-10-18 by Claude Code from Professor Bear's own answers in chat; he corrected the first draft
+# twice (business schools, then the visa, location and engagement answers). A value is here only where he said it
+# or a project file records it, and the source is in the comment. Anything not yet known is null, with the question
+# that would fill it. Nothing is claimed that he did not state.
+# Schema follows the engine's example personas (search/examples/*/profile.yml).
+candidate:
+  name: Professor Bear            # public example name used in this folder; no contact details
+  location: null                  # Q3: see below
+target_role:
+  # Q1. Said by Professor Bear, 2026-09-26 and 2026-10-18 (FRICTIONAL.md). Two tracks, not one.
+  # Two equal tracks. Business-school AI roles were first left out of this draft as a footnote; Professor Bear
+  # corrected that on 2026-10-18: they are a main target, for the reasons in business_school_rationale below.
+  primary: >-
+    Track A, business schools: a role at a business school that wants an AI expert: faculty (including a
+    joint appointment between a business school and an engineering school, Northeastern's included), an AI
+    institute or centre leadership role, or a professor-of-practice style role. The point is access to what a
+    business school offers and other departments do not: executive education, specialised AI workshops and AI
+    training, and white-label programmes for executives.
+  secondary:
+    - >-
+      Track B, AI and design-tool companies: a role that makes educational materials or advocates for educators
+      (education, advocate, enablement, curriculum, developer-education roles), where the work is teaching a
+      public how to use the product.
+    - >-
+      Track C, connector roles at AI companies: an enterprise or higher-education account, partnerships,
+      education marketing or adoption role that owns a large university relationship. He said his experience
+      would be a unique advantage there.
+  excluded:
+    - Sales roles that only say "educate customers" in the ad (28 Enterprise Account Executive roles for banks, retailers and carmakers were correct rejects).
+    - Roles about consulting firms or systems integrators (the Senior Partner Account Manager posting was a correct miss).
+  target_role_unknowns:
+    - A pay number, if any? He cares about pay but said per-day versus per-project does not matter.   # QUESTION
+    - Which summer months are free?   # QUESTION (hours are answered: 20 a week in term, full-time in summer)
+    - Is a Northeastern joint appointment (business plus engineering) something you would start by approaching, not waiting for a listing?   # QUESTION
+visa:
+  # Q2. Professor Bear, 2026-10-18: born in Brazil to US parents; holds Brazilian and US citizenship.
+  type: no constraint             # citizen; no authorization end date, no unemployment clock
+  authorization_end_date: null
+  unemployment_days_used: null    # not applicable (not on OPT)
+  stem_eligible: null             # not applicable
+  buffer_target: null
+  notes: >-
+    No visa clock and no sponsorship gate. The engine's sponsorship scorer should be off for this profile.
+    Citizenship is personal data: do not commit this file without deciding that it may be public.
+geography:
+  # Q3. Professor Bear, 2026-10-18.
+  current_location: Boston, MA    # he would work here because it means no move
+  open_to_remote: true            # much of the work is expected to be remote, on top of teaching
+  willing_to_relocate: >-
+    Only to a place with a reasonable cost of living (Providence, near Brown, was his example) or somewhere warmer.
+  never:
+    - New York City
+    - San Francisco
+  los_angeles: UCLA only          # no other Los Angeles employer
+  summer_work: location does not matter; any place is fine for a summer
+  metros: [Boston]
+preferences:
+  # Q4. Professor Bear, 2026-10-18.
+  engagement:
+    wanted: [consulting, summer work, part-time work, short contracts]
+    not_wanted: permanent full-time employment
+    why: work to be done alongside teaching, not instead of it
+  seniority: not a criterion              # "I care about fit and pay"
+  optimise_for: [fit, pay]
+  how_he_judges_an_offer: >-
+    Is it interesting work, does he think it does good, and does it fit the flexibility? Pay matters, but not
+    whether it is paid per day or per project; a mix is fine.
+  availability:
+    during_teaching: 20 hours a week
+    summer: full-time
+  business_schools_also_weigh: [pay, contract length]
+  business_school_roles_wanted: >-
+    Beyond faculty: executive education director, AI director, AI centre lead, professor of practice, and
+    programmes that train the school's own faculty in AI. His experience is that business schools are
+    pretty clueless about AI and need direction, and he thinks these roles may fit better than teaching posts.
+  sectors:
+    - AI companies (frontier labs and AI tools)
+    - Design and developer tools
+    - Higher education (universities and business schools)
+  hard_exclusion: >-
+    He must believe in the product. This is a judgment about whether the tool is good, not an ethics objection.
+  employers_most_wanted:                         # Professor Bear, 2026-10-18; "et cetera, et cetera" means the list is open
+    - Anthropic
+    - OpenAI
+    - Microsoft          # not in the watch list yet: its collector exists but has not run here
+    - Google             # same: custom collector, not run here
+    - Figma
+    - Canva
+    - GitHub             # maybe; not readable by the three job-board APIs Lectern uses
+    - Notion             # to look into
+  to_look_into: [Jasper AI (likely to go), GitLab (only "if it is real")]
+  removed_from_the_watch_list_2026_10_18: [Stripe, Writer]   # done in lectern/sources.json; recorded there under "removed"
+  company_size: null              # not stated; not treated as a constraint
+sponsorship:
+  # Q5.
+  requires_employer_sponsorship: false
+business_school_rationale:
+  # Professor Bear's reasoning, 2026-10-18. The salary figures in his pasted text (AACSB "2026" averages, rank
+  # bands) were NOT checked against the source and are not copied here; do not quote them without checking.
+  - Business schools pay more than other departments and have the budget to recruit AI people.
+  - They run executive education, specialised AI workshops, AI training and white-label programmes for executives.
+  - He has been approached for such work but it is politically hard to get from outside the business school.
+  - A joint appointment (business plus engineering) at Northeastern would be one way in.
+business_school_watch_list: >-
+  The 12 business schools in lectern/faculty_config.json: Harvard Business School, MIT Sloan, Duke Fuqua,
+  Cornell Johnson, Vanderbilt Owen, UCLA Anderson, UT Austin McCombs, UT Dallas Jindal, Boston College Carroll,
+  UC San Diego Rady, UNC Kenan-Flagler, and Northeastern D'Amore-McKim. Listings are read through the
+  Chronicle and Inside Higher Ed feeds; most schools' own job systems cannot be read by a script.
+flexibility_check: >-
+  Nothing here claims flexibility. Every null is a question, not an assumption.

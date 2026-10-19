@@ -65,13 +65,6 @@
           "why_watched": "Plausible for school and district ops tooling, nothing classroom-facing yet. A three-posting board — cheap to watch."
         },
         {
-          "company": "Stripe",
-          "slug": "stripe",
-          "tier": 1,
-          "postings_2026_09_26": 702,
-          "why_watched": "A pioneer of the DevRel model — technical advocates who write documentation, build sample apps, and speak at conferences. Second-largest board on the list."
-        },
-        {
           "company": "GitLab",
           "slug": "gitlab",
           "tier": 1,
@@ -123,14 +116,6 @@
           "postings_2026_09_26": 75,
           "matched_2026_09_26": 2,
           "why_watched": "Positioned hard at classroom coding (teacher dashboards, Replit for Education); their agent work makes an AI coding tutor near-obvious."
-        },
-        {
-          "company": "Writer",
-          "slug": "writer",
-          "tier": 2,
-          "postings_2026_09_26": 51,
-          "matched_2026_09_26": 1,
-          "why_watched": "Senior AI learning designer, rapid content — the closest thing found to the deep-explainer practice as a job."
         },
         {
           "company": "Jasper AI",
@@ -219,5 +204,20 @@
     "postings_scanned": 2150,
     "postings_matched": 59,
     "note": "Canva's 248 are excluded from the scan total — its detail calls were not re-run on 2026-09-26. Five Tier 1 companies are unreachable, so the watch list is incomplete by design and says so."
+  },
+  "removed": {
+    "_comment": "Removed from the watch list on 2026-10-18 at Professor Bear's word ('we can remove Stripe and Writer for now'). The 2026-09-26 rule was to watch every company whatever it posts; this is a deliberate exception: he must believe in the product. Not a finding about either company. Their last counts are kept so the removal is visible.",
+    "Stripe": {
+      "slug": "stripe",
+      "provider": "greenhouse",
+      "reason": "does not see how it helps education or edtech",
+      "postings_2026_10_18": 731
+    },
+    "Writer": {
+      "slug": "writer",
+      "provider": "ashby",
+      "reason": "a writing-AI tool he does not think is good",
+      "postings_2026_10_18": 47
+    }
   }
 }
