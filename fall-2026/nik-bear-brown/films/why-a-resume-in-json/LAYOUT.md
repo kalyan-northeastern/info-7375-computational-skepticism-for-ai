@@ -1,70 +1,79 @@
-# Film layout: why your résumé should be a file, not a document
+# Film layout: why a résumé should be a file (ai-explainer, Liam in for Bear)
 
-Drafted 2026-10-18. A layout, not a build: nothing is narrated, drawn or rendered. Items in [brackets] are Professor Bear's to confirm.
+Drafted 2026-10-19, rewritten from the 2026-10-18 show-tell layout after Professor Bear asked for an **ai-explainer** (the tighter single-idea film on the Claude skin), not a deep explainer. A layout, not a build: nothing is narrated, drawn or rendered. Items in [brackets] are his to confirm.
 
 ## Executive summary
 
-**What this is.** A short overview film in the series *Professor Bear Does His Assignments*: why the first file in a job search is the résumé as JSON, kept as one record, and everything else (a résumé for one company, a cover letter, a match against a posting) is made from it. It does not teach JSON syntax and it does not walk through the fields.
+**What this is.** A short ai-explainer in the series *Professor Bear Does His Assignments*: why the first file in a job search is the résumé kept as one JSON record, with every résumé and cover letter made from it. The new spine, from Professor Bear: **a résumé you keep editing in Word or Google Docs collects mistakes you never see, and AI makes that worse.** He has known students who had to defend skills they do not have, because those skills crept into their résumé without their knowing.
 
-**Why read it.** The idea is one source of truth that its owner updates, and many disposable outputs made from it. The film also fixes a word. Professor Bear called the file "immutable" and also said it will be updated. Both cannot be true. What is true, and what the film says, is: **one record, changed only by its owner, with a date and a note on every change; everything derived from it can be thrown away and remade.**
+**The second half of the argument is flexibility.** His record is long: 20 roles and about 18,000 characters, because he has done a lot. A one-page résumé has room for a handful. With a record, the page for each opportunity, whether a job or a piece of work, is a **selection** from it: the roles and projects that matter to that opportunity, chosen without editing a document. Two different opportunities give two different pages from the same record.
 
-**What the real work gives the film** (all from this folder):
-- **The record exists and has a history.** `facts/professor-bear-cv.json` is his CV as fields, read and attested by him on 2026-09-23. Two sections were added on 2026-09-27 from his promotion dossier and are marked not yet read by him. The file says which parts are attested and which are not.
-- **One output already comes from it.** The résumé the job-matching demo uses, `greenhouse-watch-demo/resumes/professor-bear.json`, is derived from the record, and says so, and says that its skills list (Claude's selection from the CV) has not been reviewed.
-- **A match can point at the field behind it.** In the design for the job watcher, every match lists the résumé field and the posting field it rests on. That is only possible because the résumé is fields, not paragraphs.
-- **The agent is not the source of truth.** The exercise's own line: extraction is fluent, you are the source of truth. The agent converted the CV; the owner read it.
+**The place of the résumé among three files** (Professor Bear's framing). The résumé is **history**: the factual things you have done. The profile is **your future**: where you want to go. The gaps file is an **analysis done with data**: once we know what you have done and where you want to go, we look at real job postings to find what separates the two. The résumé must be factual because the other two are built on it, and the gaps cannot be written from a guess. In his own search the gaps file does not exist yet, on purpose: it waits for the postings (the Google and Microsoft collectors, the business-school listings) so that it is measured, not guessed.
+
+**Why read it.** The film argues for a record, not against a tool. Edits to a document leave no mark of what was added. An AI rewrite can add a plausible detail that was never in the source (the hallucination literature is the evidence). A record read once by its owner, with every view made from it and checkable against it, is the fix.
+
+**What the real work gives the film, all of it run or read, not staged:**
+- **A real check, with a real result.** A script compared every skill on the résumé derived for the job matcher against the attested CV record. 15 skills; 14 appear in the record; **1 does not: "course development"**. The record says he "co-developed and filmed" a full Coursera course and uses "curriculum" five times, so it is probably a fair restatement, but the script cannot judge that and he has not ruled. The film shows the check finding a line nobody wrote down, and a person deciding.
+- **A real selection, run on his record.** A small script suggested the roles for a one-page view for two real listings (an AI institute director at Boston College, a developer-education lead at Anthropic). Of six roles per page, three are on both pages and three on only one; 11 of his 20 roles are on neither. The suggestion is rough (it matches words), and some picks look wrong, which is the point: it suggests, he chooses.
+- **A record that says what is attested and what is not**, in the same file: attested 2026-09-23; two sections added later and marked unread.
+- **An artifact page** of his record (readable view, raw JSON, and the check), made 2026-10-19.
 
 **What it must be honest about.**
-- **No cover letter and no company-specific résumé has been generated yet.** Those are what the file allows, not what exists. The film says "can be made", not "was made".
-- **The file does not make the content true.** A wrong date in the record is wrong in every output. The film says the attestation is what stands between a typo and ten applications.
-- **Personal data.** The public copy has contact details, links and other people's names removed; the film says a private copy is where those live.
-- The exercise expects the owner to find at least three errors in the import. His read on 2026-09-23 found none. The film does not claim three.
+- The student stories are Professor Bear's own, told as his, with no names and no details. They are not data.
+- No cover letter or company-specific résumé has been made yet. The film says "can be made", never "was made".
+- The hallucination claim is limited to what the survey is: a review of how language models produce content their source does not support. Its venue and year are not confirmed here (see SOURCES.md).
+- **"Watermarking"** was in his note. This layout makes no claim about it, because nothing is checked here and it is not clear what he means. See the questions at the end.
+- The check is literal. It finds a skill the record does not say; it cannot say whether the record is true.
+- The selection script matches words. It is a suggestion tool, and the film shows a pick that looks wrong. Choosing is the owner's job.
 
 ---
 
 ## The film in one line
 
-*Write your résumé once, as fields, and read it as the owner. Then every résumé and letter you send is just a view of it, and a view you can throw away.*
+*A résumé you keep editing drifts, and nobody can say when a line got there. Keep one record you have read, make every résumé from it, and check the views against it.*
 
 **Working title:** One Résumé, Many Views. [Alternative: Why a Résumé Is a File]
-**Length:** about 2:30 to 3:00; brief overview, no detail on the fields.
-**Form:** `show-tell`, Liam in for Bear, third person, standard greeting and @NikBearBrown outro; playlist *Professor Bear Does His Assignments*. [If you want the `lecture` skill's act structure instead, this layout carries over; it is shorter than that skill's usual film.]
-**Where it will be built:** `youtube/claude-liam-show-tell-one-resume-many-views/` in this course repository (not tracked by git).
+**Form:** `ai-explainer`; channel `claude-liam` (Liam in for Bear, Kokoro `am_onyx`, free); Teardown register; the skill's bookends and laws apply. Playlist *Professor Bear Does His Assignments*. Length about 3:15, set by the measured audio.
+**Where it will be built:** `youtube/claude-liam-why-a-resume-in-json/` in this course repository (not tracked by git). `BUILD-PROMPT.md` there is the handoff.
 
 ## The central picture
 
-A single card, the record, at the centre. Arrows run out to many cards: a résumé for one company, a cover letter, a match report, a one-page version. Each outgoing card is slightly faded. Changing the central card changes all of them on the next pass, and the faded cards can be torn up without touching the middle.
+One card at the centre (the record) and a ring of faded cards around it (a résumé for one company, a cover letter, a match report). In the first half the same ring is made by hand-editing one card into the next, and a line quietly changes along the chain. In the second half every outer card is made from the centre and checked against it, and the line that does not trace back lights up.
 
 ## Beats
 
-| Beat | Picture | Narration draft (Liam, third person) |
-|---|---|---|
-| BIDEA | Hesitant-writer opener | Greeting. "Why would a résumé be a JSON file?" |
-| B01 | Five Word documents, slightly different | "Most people keep several résumés. One for each application, edited a little each time. Which is the real one?" |
-| B02 | One card at the centre | "The fix is to have one. A single record of your work, written once as fields: jobs, dates, titles, degrees, skills." |
-| B03 | Arrows out to faded cards | "Everything you send is made from it. A résumé for one company. A cover letter. A short version. They are views of the record, and they are disposable." |
-| B04 | A tidy field next to a messy paragraph | "Why a file and not a document? Because fields can be checked. A missing date, a title in the wrong place: a program can find that. A paragraph cannot be checked at all." |
-| B05 | A match line pointing to one field | "Because a match can point at its evidence. In Professor Bear's job watcher, every match lists the résumé field and the posting field it rests on." |
-| B06 | A change log beside the card | "Because it has a history. The record is a file in a repository, so every change has a date and a reason." |
-| B07 | The word "immutable" crossed out, replaced | "Professor Bear's first word for it was immutable. That is not quite right, because it gets updated. The right words: one record, changed only by its owner, with a date on every change." |
-| B08 | An agent hand passing a card to the owner | "The agent can make the first version from your CV in minutes. That is the easy part. Extraction is fluent. You are the source of truth." |
-| B09 | The owner reading with a pen; a stamp | "So the owner reads it. Professor Bear's CV file says: read on September twenty-third, accurate. Two sections added later say they have not been read yet. Attested and not attested, in the same file." |
-| B10 | A derived card with a small "not reviewed" tag | "The résumé made from it for the job matcher says so too: the skills list is the agent's choice, not yet reviewed." |
-| B11 | A typo travelling down every arrow | "What the file does not do is make the content true. A wrong date in the record is wrong in every output. The reading is what stops one typo from becoming ten applications." |
-| B12 | A pale card: cover letter, labelled "can be made" | "What it allows, and has not yet been used for: a cover letter built from the record for one posting. Nothing here has been sent." |
-| B13 | A locked private copy beside the public one | "One more thing. The public copy has no contact details, no links, no other people's names. The private copy is where those live." |
-| BHTF | Your Turn in the composer | "Open your most recent résumé. List every job and date as separate lines. Which one would you not want to defend?" |
-| BOUT | Standard outro | Title read aloud, "At Nik Bear Brown." |
+Every body beat's `show` events are authored with the beat sheet at build time; the order and the evidence on screen are fixed here. The screen carries the evidence; the voice judges it. The Claude interface appears only in the ask beats, the verdict page, the handoff and the outro.
 
-## What is cut
-- JSON syntax, field names and a tour of the record: the brief said no detail.
-- Claims about ATS (applicant-tracking) parsing: not checked here.
-- Any claim that a JSON résumé gets more interviews. Nothing in the project measures that.
+| Beat | Lane | What the viewer watches | Narration draft |
+|---|---|---|---|
+| B00 cold open | `ClaudeComposerAsk`, greeting "Hej, Liam"; answered | Composer types "Why would a résumé be a JSON file?"; two result lines land | "Hej. This is Liam, in for Bear. Why would a résumé be a JSON file? Because a résumé you keep editing drifts, and a record you keep does not." |
+| B01 BLUF | `BrutalistHesitantWriter`, `lead_silence_s: 0.8`, ≥ 9 s | Types "A résumé is a document you keep editing." then strikes it and types the correction: "a record you keep, and a document made from it" | Reads the final line; one breath of stakes: what creeps into a résumé is what you will be asked to defend. |
+| B02 five years of edits | C3 illustration (constructed, captioned) | Five document cards, each a copy of the last; at each hop one line changes; a counter asks "which edit?" and cannot say | "Edit a document for years and it becomes a copy of a copy. Nothing marks which line was added, by whom, or when." |
+| B03 the interview | C3 illustration (constructed, captioned) | An interviewer card: "Tell me about your work with ___"; the blank is a skill on the page; a student-shaped silence | "Professor Bear has known students who had to defend skills they do not have. The skills crept into the résumé without them knowing. That is the failure." |
+| B04 how it creeps | C3 + a source card | Two arrows into the same document: a person tailoring for one more application, and a rewrite by a language model. A source card names the survey (see SOURCES.md) | "Two ways in. A person tailors the résumé again. Or a tool rewrites it, and language models can add a plausible detail the source never had. Researchers have surveyed that failure. Neither edit leaves a mark." |
+| B05 ask | `ClaudeComposerAsk` micro-beat, runningText `running the check…` | The actual command typed: "Check every skill on my résumé against my CV record and list any the record does not say." | "So ask a different question. Not 'does it read well', but 'does every skill trace to the record'." |
+| B06 result | Onda `code-block`, real output | The real printout of the check: 15 skills, 14 found, one line flagged in the terracotta accent | "Fifteen skills. Fourteen appear in the record. One does not: course development." |
+| B07 a person decides | C3, two cards side by side held ≥ 2 s | The flagged string beside the record's own line ("co-developed and filmed … a full Coursera platform course") | "The check found a line nobody wrote down. It cannot say whether it is fair. The record does say he co-developed a full course. Whether that makes it course development is the owner's call, and he has not ruled yet." |
+| B08 the header | Real file contents as a card | The record's own header lines: attested, date, and the two sections marked unread | "The record carries its own status. Attested on September twenty-third. Two sections added later, marked unread. A document cannot tell you that." |
+| B09 one long record, one page | C2 pattern (a funnel) + the script's real output | The record drawn as 20 role cards; for listing A six cards lift into a one-page frame, then for listing B a different six lift into a second frame; three cards sit in both; the real printout is shown beside it | "His record is long: twenty roles, because he has done a lot. A one-page résumé holds six. So the page for each opportunity is a selection from the record. Two listings, two pages, three roles in common. The script only suggests. A person decides." |
+| B10 three files | C3 illustration: three cards in a row, the third computed from the first two | The résumé card labelled "history", the profile card "future", and a third card "gaps" that fills only when a stack of real postings slides in under the first two; until then it shows blank, labelled "waits for the data" | "A search has three files. The résumé is your history: what you have done, as facts. The profile is your future: where you want to go. The gaps are neither. They are an analysis, made from data: take what you have done, take where you want to go, and read real job postings to see what separates them. Professor Bear's gaps file is not written yet, because the postings are not all collected." |
+| B11 many views | C2 pattern / C3 | The centre card sends arrows to a company résumé and a cover letter, drawn faded and labelled "can be made" | "Everything you send is a view of the record. A company résumé. A cover letter. None made yet. Each can be thrown away and made again." |
+| B12 verdict | Artifact page | Two columns: what a record does / what it does not | "What a file does: it makes an unread change visible. What it does not: make a line true. A wrong date in the record is wrong in every view." |
+| B13 handoff | `ClaudeComposerAsk`, greeting "Your turn." | The prompt typed: "Here is my résumé. Make a JSON record with one entry per job, project, degree and skill. For every skill, name the job, project or course that shows it. Mark any skill you cannot point to as unsupported, and add nothing I did not write." | Reads the prompt aloud, then discusses it: it flips the usual task, so the model has to show evidence, and the viewer should look for the word "unsupported" in the answer. |
+| B14 outro | `ClaudeTitleOutro`, locked | Title restated; `@NikBearBrown` | Liam re-reads the title, then "At Nik Bear Brown." |
 
-## Decisions for Professor Bear before a build
-1. **The word.** "One record, changed only by its owner" in place of "immutable": agreed?
-2. **Lecture skill or show-tell**, for this film and for the profile-file film.
-3. **Whether to make one cover letter or one company-specific résumé first**, so B12 can show a real output instead of saying "can be made".
-4. **Order** of the two films in the series.
+## Laws this layout is built around
+- **Executable evidence.** B06 and B08 are real output and real file contents. Nothing is mocked.
+- **Constructed means captioned.** B02 and B03 are illustrations and say so on screen, once, small.
+- **No source, no verdict.** B04's claim about language models is attributed to a named source and limited to what that source is.
+- **Not a slideshow.** B02, B04, B07, B09, B10 and B11 each move; none is a headline over a paragraph.
 
-*Written from `facts/professor-bear-cv.json`, `greenhouse-watch-demo/resumes/professor-bear.json` and this folder's log. Nothing here records a decision or understanding Professor Bear did not state.*
+## Open questions for Professor Bear
+1. **"Watermarking."** What did you mean? If it is AI-text detection or watermarks on rewritten text, say what claim you want, and I will find a source for it. Until then the film says nothing about it.
+2. **The selection.** The suggester is rough and puts a Harvard Medical School course role on the Anthropic page. Keep that on screen as the reason a person chooses, or tidy it first?
+3. **The flagged skill.** Is "course development" a fair restatement of the Coursera course line? The film currently says you have not ruled.
+4. **B03.** Your student stories are told in your voice and attributed to you. Fine as written?
+5. **The artifact page** of the record (readable view, raw JSON, check): show it in the film as the real page, or leave it out?
+6. **The greeting language** (Hej) and the series order against the profile-file film.
+
+*Written from `facts/professor-bear-cv.json`, the derived résumé in `greenhouse-watch-demo/`, `skills_trace_check.py` and its output, and this folder's log. Nothing here records a decision or understanding Professor Bear did not state.*

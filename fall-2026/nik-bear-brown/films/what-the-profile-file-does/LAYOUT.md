@@ -6,6 +6,8 @@ Drafted 2026-10-18, revised the same day on Professor Bear's note. A layout, not
 
 **What this is.** A lecture-scale film in the series *Professor Bear Does His Assignments* about `search/profile.yml`: the file that says specifically what a job search is for. It is a short file, but it is the one that decides what every later result means. The film's second half is Professor Bear's note: the profile is not written once. It changes as the market shows you things, and the film uses his own profile's changes, with dates, as the proof.
 
+**Where it sits.** Professor Bear's framing, shared with the résumé film: the résumé is **history** (the factual things you have done), the profile is **the future** (where you want to go), and the gaps file is an **analysis made from job data** once the other two exist. The film says so in one beat in Act I and again where it says what is not known yet: no gaps file exists, because it waits for the collected postings.
+
 **Why read it.** Two ideas, in order. First, a profile is a set of gates, and a vague or wrong gate makes every answer wrong in the same direction without warning ("a profile that claims flexibility you do not have will produce Apply recommendations for roles you cannot take"). Second, a profile is a hypothesis about what you want and what exists, and the way to improve it is to look at the market and revise it on the record.
 
 **The film's central example, all real and dated** (in the profile's new `revisions` block and this folder's log):

@@ -1,0 +1,22 @@
+The record holds 20 roles, 18,062 characters. A one-page view holds 6.
+
+A. AI centre director at a business-school-type setting (Boston College AI institute listing)
+  posting: Boston College: Executive Director for Krantz Institute for Artificial Intelligence, Ethics, and Humanity  (18 keywords)
+   2 shared  [ 0] Associate Teaching Professor, Northeastern University, College of Engineering (2022-present)
+   2 shared  [ 4] Founder and Executive Director, Humanitarians AI Inc. (501(c)(3)) (2019-present)
+   1 shared  [ 1] Project Lead, College of Engineering Educational Bot Effort, Northeastern University (2023-present)
+   1 shared  [ 3] Affiliated Faculty, Institute for Experiential AI, Northeastern University (2022-present)
+   1 shared  [ 8] Assistant Teaching Professor, Northeastern University, College of Engineering (2017-2022)
+   1 shared  [11] Collaborator, Broad Institute of MIT and Harvard (2019-2020)
+
+B. Educator at an AI company (Anthropic listing)
+  posting: Developer Education Lead, Claude Platform  (30 keywords)
+   4 shared  [ 4] Founder and Executive Director, Humanitarians AI Inc. (501(c)(3)) (2019-present)
+   3 shared  [ 2] Project Lead, AI for Education Project (AI4ED), Northeastern University (2023-present)
+   2 shared  [ 0] Associate Teaching Professor, Northeastern University, College of Engineering (2022-present)
+   2 shared  [ 1] Project Lead, College of Engineering Educational Bot Effort, Northeastern University (2023-present)
+   2 shared  [12] Course Specialist, Harvard Medical School (2019-2019)
+   1 shared  [ 6] Developer, Bear Brown and Company (2024-present)
+
+Roles on both one-page views: 3 of 6. Only on A: 3. Only on B: 3.
+Left off both views, still in the record: 11 of 20 roles.
