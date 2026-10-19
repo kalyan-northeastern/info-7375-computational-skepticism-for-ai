@@ -7,7 +7,15 @@ set -euo pipefail
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"     # .../nik-bear-brown
 BOOKS="$(cd "$HERE/../../.." && pwd)"                        # .../books
 CHECK=0
-[[ "${1:-}" == "--check" ]] && CHECK=1
+ONLY=""      # --only <text>: sync just the class whose repo name contains <text> (e.g. --only prompt)
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    --check) CHECK=1 ;;
+    --only) ONLY="${2:?--only needs a word from the repo name}"; shift ;;
+    *) echo "usage: sync.sh [--check] [--only <word in repo name>]" >&2; exit 2 ;;
+  esac
+  shift
+done
 
 # Shared paths, relative to the nik-bear-brown folder. Everything else is class-specific.
 SHARED=(
@@ -27,6 +35,7 @@ lectern_dir() {
 
 drift=0
 for repo in info-7375-branding-and-ai info-7375-prompt-engineering-for-generative-ai; do
+  [[ -z "$ONLY" || "$repo" == *"$ONLY"* ]] || continue
   dst="$BOOKS/$repo/fall-2026/nik-bear-brown"
   [[ -d "$dst" ]] || { echo "  SKIP $repo — no nik-bear-brown folder"; continue; }
   echo "== $repo"

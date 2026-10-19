@@ -262,6 +262,9 @@ revisions:
   - date: 2026-10-19
     change: "a special first search of Northeastern's business school and Institute for Experiential AI for paid research with a group; two great fits posted to Discord"
     because: he said those are the easiest people to contact and his MBA is from the school
+  - date: 2026-10-19
+    change: Replit removed from the watch list
+    because: "he said it is not really educational AI, just AI: not educational software in the sense that Claude for University, NotebookLM and Claude Science are, more a low-level app, and the role he read there (Learning Experiences Creator) an entry-level, low-level job"
 
 flexibility_check: >-
   Nothing here claims flexibility. Every null is a question, not an assumption.

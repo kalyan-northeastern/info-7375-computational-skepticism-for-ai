@@ -110,14 +110,6 @@
           "why_watched": "Notion for Education is a student-magnet freemium play and Notion AI already ships. Technical Education Specialist and Developer Advocate both open."
         },
         {
-          "company": "Replit",
-          "slug": "replit",
-          "tier": 1,
-          "postings_2026_09_26": 75,
-          "matched_2026_09_26": 2,
-          "why_watched": "Positioned hard at classroom coding (teacher dashboards, Replit for Education); their agent work makes an AI coding tutor near-obvious."
-        },
-        {
           "company": "Jasper AI",
           "slug": "Jasper AI",
           "tier": 2,
@@ -206,7 +198,7 @@
     "note": "Canva's 248 are excluded from the scan total — its detail calls were not re-run on 2026-09-26. Five Tier 1 companies are unreachable, so the watch list is incomplete by design and says so."
   },
   "removed": {
-    "_comment": "Removed from the watch list on 2026-10-18 at Professor Bear's word ('we can remove Stripe and Writer for now'). The 2026-09-26 rule was to watch every company whatever it posts; this is a deliberate exception. His reason, corrected the same day: not that these companies or their products are bad or not useful, but that he does not see them as directly applicable to transformative, AI-driven improvement of education. Not a finding about either company. Their last counts are kept so the removal is visible.",
+    "_comment": "Removed from the watch list on 2026-10-18 at Professor Bear's word ('we can remove Stripe and Writer for now'). The 2026-09-26 rule was to watch every company whatever it posts; this is a deliberate exception. His reason, corrected the same day: not that these companies or their products are bad or not useful, but that he does not see them as directly applicable to transformative, AI-driven improvement of education. Not a finding about either company. Their last counts are kept so the removal is visible. 2026-10-19: Replit removed at his word (\"let's remove Replit from the job search\"; \"it's not really educational AI, it's just AI\"), the same kind of deliberate exception.",
     "Stripe": {
       "slug": "stripe",
       "provider": "greenhouse",
@@ -218,6 +210,13 @@
       "provider": "ashby",
       "reason": "not directly applicable to transformative, AI-driven improvement of education (not a judgment that it is a bad tool; he first said he did not think writing-AI tools were good, then clarified)",
       "postings_2026_10_18": 47
+    },
+    "Replit": {
+      "slug": "replit",
+      "provider": "ashby",
+      "reason": "not really educational AI, just AI: in Professor Bear's words, not educational software in the sense that Claude for University, NotebookLM and Claude for Life Sciences are, but more of a low-level app, and the role he read there (Learning Experiences Creator) an entry-level, low-level job. Not a finding about the company beyond that judgment.",
+      "removed_on": "2026-10-19",
+      "postings_2026_09_26": 75
     }
   }
 }
