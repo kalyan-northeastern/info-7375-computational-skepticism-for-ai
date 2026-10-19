@@ -48,5 +48,48 @@ class Notify(unittest.TestCase):
             self.assertFalse(os.path.exists(p))
 
 
+def lab(i, tier="great", **kw):
+    c = {"lab_id": f"lab-{i}", "display_name": f"Genomics group {i}", "institution": "Broad Institute", "page_url": f"https://labs.example.org/{i}",
+         "tier": tier, "kind": "lab", "reason": "Builds tools for single-cell data."}
+    c.update(kw)
+    return c
+
+
+class Labs(unittest.TestCase):
+    def test_only_great_fits_are_posted_unless_he_widens_it(self):
+        rows, _ = notify.build_lab_messages([lab(1), lab(2, tier="pretty_good")])
+        self.assertEqual([r["lab_id"] for r in rows], ["lab-1"])
+        rows, _ = notify.build_lab_messages([lab(1), lab(2, tier="pretty_good")], tiers=notify.LAB_TIERS)
+        self.assertEqual(len(rows), 2)
+
+    def test_people_fields_are_never_read_or_posted(self):
+        c = lab(1, pi={"name": "Dr Zed Quux", "email": {"value": "zed@example.org"}}, people={"lab_manager": {"name": "Ann Lee"}})
+        _, msgs = notify.build_lab_messages([c])
+        text = "".join(msgs)
+        for secret in ("Quux", "zed@example.org", "Ann Lee"):
+            self.assertNotIn(secret, text)
+
+    def test_a_lab_named_for_a_person_is_shown_by_its_institution_not_the_name(self):
+        _, msgs = notify.build_lab_messages([lab(1, display_name="Quux Lab", avoid_names=["Quux"])])
+        self.assertNotIn("Quux", msgs[0])
+        self.assertIn("A lab at Broad Institute", msgs[0])
+
+    def test_posted_labs_are_skipped_and_the_footer_says_nothing_was_sent(self):
+        rows, msgs = notify.build_lab_messages([lab(1), lab(2)], already={"lab-1"})
+        self.assertEqual([r["lab_id"] for r in rows], ["lab-2"])
+        self.assertTrue(msgs[-1].endswith(notify.LAB_FOOTER))
+
+    def test_a_lab_with_no_page_is_not_posted(self):
+        rows, _ = notify.build_lab_messages([lab(1, page_url="")])
+        self.assertEqual(rows, [])
+
+    def test_an_email_in_the_reason_blocks_the_post_and_a_dry_run_records_nothing(self):
+        with tempfile.TemporaryDirectory() as d:
+            p = os.path.join(d, "labs.json")
+            self.assertEqual(notify.post_labs([lab(1, reason="write to a.b@example.com")], p, send=True), 0)
+            self.assertEqual(notify.post_labs([lab(2)], p, send=False), 0)
+            self.assertFalse(os.path.exists(p))
+
+
 if __name__ == "__main__":
     unittest.main()

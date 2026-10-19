@@ -60,6 +60,16 @@ Every push that touches this folder adds a row to the `## GitHub pushes` table, 
 - **What never does:** a local path, an email address, a webhook URL, or an unlisted YouTube link. The webhook stays in the home folder.
 - **Posting is not pushing.** Posting a run's listings to Discord needs no word; pushing its delta to GitHub still does.
 
+## Rule 5 — great-fit labs are posted to Discord, and nothing is approached before Professor Bear has looked
+
+**Standing rule (Professor Bear, 2026-10-19):** when a lab or research group looks like a great fit, post its page to the public `#professor-bear` channel so he can look at it. For a company such as Moderna that is a research group's page, not a job posting. Then he, as a person, reads the page and decides. No lab is approached, drafted to or written to before he has looked, and the emails are his to write and send.
+
+- **Tiers:** `great` fits first. `pretty_good` fits are posted only when he says so, after great fits have come to nothing. Do not widen on your own.
+- **How:** `lectern/notify.py` `post_labs()` (tested with made-up labs in `lectern/test_notify.py`). It reads only the lab's public name, institution, page link, tier, kind and the lab's own words (300 characters at most).
+- **What never goes in a post:** the principal investigator, a lab manager or any other person; an email address or phone number; a local path; a webhook URL. A lab named for a person is shown as "A lab at <institution>" with its link. The lab records themselves name people and stay local (`lectern/labs/`, `lectern/lab-records/`, gitignored).
+- **Not built yet:** the reader that turns lab pages into candidates (see `lab-outreach/LAB-RECORD.md`). Until it exists there is nothing to post.
+- **Posting is not pushing**, as in Rule 4.
+
 ## Pushing from this folder
 
 - **Each push needs Professor Bear's word.** He approved the first push on 2026-09-24. There is no standing approval for this folder yet.

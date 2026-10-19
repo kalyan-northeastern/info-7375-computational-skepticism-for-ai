@@ -171,6 +171,20 @@ outreach_search:
     topics: [biology, finance, economics, people doing interesting things with education]
     named_place: the MIT Media Lab
     thin_in_the_snapshot: [finance (nothing on markets or corporate finance), education]
+  review_gate:
+    # Professor Bear, 2026-10-19: nothing is approached without a person looking at the group first.
+    rule: >-
+      Labs and research groups that look like great fits are posted to the #professor-bear Discord channel (the page,
+      not a job). He reads the page and decides. If great fits yield nothing, he will say when to move to pretty good fits.
+    tiers: [great, pretty_good]
+    posted_by: lectern/notify.py post_labs(); see CLAUDE.md Rule 5
+    for_a_company: a research group's page, not a job posting (Moderna)
+  northeastern_arrangement:
+    # Professor Bear, 2026-10-19, in his words: "I have to look into the actual agreements. But I don't see why
+    # Northeastern couldn't hire me as a consultant or some sort of joint faculty."
+    hypothesis: Northeastern could engage him as a consultant, or in some joint-faculty arrangement, alongside the outside research.
+    unknown: What his agreements and outside-activity terms say, and what strings they attach. He will read them himself. Nothing is assumed here about what they allow.
+    status: to look into
   places_list: lab-outreach/PLACES.md   # the institutions in range, grouped by area, with how sure each entry is
   status: Not built. No lab list has been defined and no website has been read.
   best_fit: >-
@@ -232,6 +246,9 @@ revisions:
   - date: 2026-10-19
     change: "outreach search filtered to biology, finance, economics, the MIT Media Lab and people doing interesting things with education; \"think tank\" defined as any group of very smart people working on hard problems, so research institutes count"
     because: a research snapshot he pasted split policy think tanks from science institutes and said the Broad and Whitehead were not think tanks; he called the distinction wrong for his purpose, which is the topic, not the kind of place
+  - date: 2026-10-19
+    change: "review gate for the outreach search: great-fit labs and research groups are posted to Discord for him to look at; nothing is approached before he has looked; pretty-good fits only when he says so. Northeastern consulting or joint faculty noted as a hypothesis to check against his agreements"
+    because: he wants to read each group's page himself before any contact, and has not yet read the agreements that might attach conditions to outside work
 
 flexibility_check: >-
   Nothing here claims flexibility. Every null is a question, not an assumption.

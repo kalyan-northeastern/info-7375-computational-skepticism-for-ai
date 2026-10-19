@@ -66,6 +66,7 @@ Proposed 2026-10-19 after reading one real department people page and one real l
         "kind": "genomics | high_throughput | large_data | database_need | wants_ai_without_technical_capacity" }
     ],
     "track": "biology | business | none",
+    "tier": null,
     "suggested": null,
     "verdict": null,
     "note": null
@@ -104,7 +105,8 @@ Proposed 2026-10-19 after reading one real department people page and one real l
     "reader": "scrape | by hand"
   },
 
-  "outreach": { "state": "not_contacted | drafted | sent | replied | declined", "sent_on": null, "note": null }
+  "outreach": { "state": "not_contacted | drafted | sent | replied | declined", "sent_on": null, "note": null,
+                "page_posted_to_discord_on": null, "looked_at_by_professor_bear_on": null }
 }
 ```
 
@@ -125,6 +127,11 @@ Proposed 2026-10-19 after reading one real department people page and one real l
 | `not_found` | What did the scrape fail to find? | Explicit, per record. |
 | `provenance` | Can I check it? | Every URL read, its status and date, and whether it was read by a script or by hand. |
 | `outreach` | Where am I with this lab? | Filled in by Professor Bear only. |
+| `fit.tier` | Is it worth his look? | `great`, `pretty_good` or `none`, suggested from the lab's own words; he decides. `great` pages are posted to Discord; `pretty_good` only when he says so. |
+
+## From record to Discord (Professor Bear, 2026-10-19)
+
+A lab record with `fit.tier` of `great` becomes a candidate for `lectern/notify.py` `post_labs()`: `lab_id`, a public display name, the institution, the lab's page, the tier, the kind and `what_the_lab_does.verbatim`. Nothing else from the record leaves the machine: not the principal investigator, not the lab manager, not an email or phone. He looks at the page; `outreach.looked_at_by_professor_bear_on` is filled in by him, and no email is drafted before it is. For a `company_team` (Moderna) the page is the research group's page, not a job posting. The Northeastern question, whether it could engage him as a consultant or joint faculty for this work, is his to settle by reading his agreements, and sits in the profile as a hypothesis.
 
 ## The directory stage, as its own small record
 

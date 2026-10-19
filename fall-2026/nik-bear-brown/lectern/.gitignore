@@ -12,6 +12,7 @@ runs/text/
 runs/logs/
 *.log
 runs/posted-to-discord.json
+runs/posted-labs-to-discord.json
 # lab outreach records name people and may hold email addresses: local only, never committed
 labs/
 lab-records/
