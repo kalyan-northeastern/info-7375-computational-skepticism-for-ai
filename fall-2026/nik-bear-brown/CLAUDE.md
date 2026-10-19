@@ -51,6 +51,15 @@ Every push that touches this folder adds a row to the `## GitHub pushes` table, 
 - The note is the commit subject, copied exactly. The repo uses conventional subjects (`feat(fall-2026): …`, `docs(fall-2026): …`).
 - No commit ID in the row: a commit can't contain its own ID, and `git log` holds it.
 
+## Rule 4 — new possible listings are posted to Discord automatically
+
+**Standing rule (Professor Bear, 2026-10-19):** every time a run finds new possible listings, post them to the public `#professor-bear` channel of the SEIS AI Lab Discord server without being asked, so he can see them whenever he looks. This is not a question to ask each time.
+
+- **How:** `lectern/daily.sh` does it (`publish_delta.py --write --post`, then `faculty_feed.py --send`). A run you start by hand uses `publish_delta.py --post`, or `--post-only` for a run already collected. Both go through `lectern/notify.py`.
+- **What goes in a post:** only listings from companies still on the watch list, most-wanted employers first, each with its link and the words that matched, newly watched companies marked, and the line "A person decides; the machine only ranks words." Posted ids are remembered, so nothing is posted twice.
+- **What never does:** a local path, an email address, a webhook URL, or an unlisted YouTube link. The webhook stays in the home folder.
+- **Posting is not pushing.** Posting a run's listings to Discord needs no word; pushing its delta to GitHub still does.
+
 ## Pushing from this folder
 
 - **Each push needs Professor Bear's word.** He approved the first push on 2026-09-24. There is no standing approval for this folder yet.

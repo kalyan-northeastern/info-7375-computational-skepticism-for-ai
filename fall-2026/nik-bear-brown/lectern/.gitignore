@@ -7,3 +7,8 @@ runs/*/raw/
 raw/
 monitor.db
 __pycache__/
+# big-four ad text and run logs stay local
+runs/text/
+runs/logs/
+*.log
+runs/posted-to-discord.json

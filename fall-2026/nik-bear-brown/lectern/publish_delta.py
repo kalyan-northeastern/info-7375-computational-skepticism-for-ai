@@ -6,6 +6,8 @@
     python3 publish_delta.py --write               # write delta-<date>.{md,json,csv}; the state does not move yet
     python3 publish_delta.py --commit              # --write, update published-state.json, commit ONLY those files (no push)
     python3 publish_delta.py --push                # --commit, then push. Only on Professor Bear's word.
+    python3 publish_delta.py --post                # also post the new listings to the public Discord channel
+    python3 publish_delta.py --post-only           # post the new listings of the latest run's delta, nothing else
 
 Why: a run reads thousands of postings and keeps a few dozen. The full files (all-jobs, jobs-of-interest,
 raw/) stay on this machine; what goes to GitHub is the small difference from the last published state:
@@ -239,6 +241,21 @@ def write_state(runs_dir, run, state_c):
     return path
 
 
+def watched_companies():
+    """Companies on the current watch list (a company removed from sources.json is never posted)."""
+    cfg = load_json(os.path.join(HERE, "sources.json"))
+    return {b["company"] for s in cfg["sources"] for b in s["boards"]}
+
+
+def post_new_listings(new, first_time, runs, date, send):
+    try:
+        import notify
+    except ImportError:
+        raise SystemExit("posting to Discord is done from the master folder (info-7375-computational-skepticism-for-ai), which has notify.py")
+    return notify.post_new(new, watched_companies(), set(first_time), os.path.join(runs, "posted-to-discord.json"),
+                           f"run {date}", send)
+
+
 def git(args, cwd):
     return subprocess.run(["git", *args], cwd=cwd, check=True, capture_output=True, text=True).stdout.strip()
 
@@ -250,6 +267,8 @@ def main(argv=None):
     ap.add_argument("--write", action="store_true", help="write the delta files and update the published state")
     ap.add_argument("--commit", action="store_true", help="--write, then commit only those files; no push")
     ap.add_argument("--push", action="store_true", help="--commit, then push. Only on Professor Bear's word.")
+    ap.add_argument("--post", action="store_true", help="after writing, post the new listings to the public Discord channel (standing rule, 2026-10-19)")
+    ap.add_argument("--post-only", action="store_true", help="post the new listings in the latest run's existing delta file; write and commit nothing")
     a = ap.parse_args(argv)
     a.write = a.write or a.commit or a.push
     a.commit = a.commit or a.push
@@ -263,6 +282,11 @@ def main(argv=None):
         if not dated:
             raise SystemExit(f"no dated run folder with jobs-of-interest-*.json under {runs}")
         run_dir = os.path.join(runs, dated[-1])
+    if a.post_only:
+        d = os.path.basename(run_dir)
+        dj = load_json(os.path.join(run_dir, f"delta-{d}.json"))
+        post_new_listings(dj["new"], dj.get("first_time_companies", []), runs, d, send=True)
+        return 0
     run = load_run(run_dir)
 
     state_path = os.path.join(runs, STATE_NAME)
@@ -305,6 +329,8 @@ def main(argv=None):
         return 0
 
     paths = write_outputs(run_dir, run, base_desc, new, changed, gone, unavailable, first_time, filter_note)
+    if a.post:
+        post_new_listings(new, first_time, runs, run["date"], send=True)
     if a.commit:      # the state means "what is published": it moves only when the delta is committed
         paths["state"] = write_state(runs, run, state_c)
     for p in paths.values():

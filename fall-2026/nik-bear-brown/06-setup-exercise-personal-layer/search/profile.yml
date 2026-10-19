@@ -43,7 +43,7 @@ visa:
   buffer_target: null
   notes: >-
     No visa clock and no sponsorship gate. The engine's sponsorship scorer should be off for this profile.
-    Citizenship is personal data: do not commit this file without deciding that it may be public.
+    Citizenship is personal data. Professor Bear decided on 2026-10-18 that it may be public: he asked for this file to be published and for the film to say "US and Brazilian citizen, therefore I need no sponsorship."
 geography:
   # Q3. Professor Bear, 2026-10-18.
   current_location: Boston, MA    # he would work here because it means no move
