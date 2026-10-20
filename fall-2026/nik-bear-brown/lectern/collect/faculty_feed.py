@@ -11,7 +11,7 @@ that fired and the words that matched, saves only the NEW ones (not seen on an e
 posts a short summary to the Discord channel named in the config (a public channel, by design).
 
 Run from this folder:  python3 faculty_feed.py [--send] [--max-pages N] [--limit-queries N] [--no-save]
-Without --send nothing is posted. Writes ../faculty-runs/: new/new-<date>.json + .md, state/seen.json, run-log.md.
+Without --send nothing is posted. Writes faculty-runs/: new/new-<date>.json + .md, state/seen.json, run-log.md.
 The webhook is a secret kept in the home folder (~/.discord-webhooks/<channel>, mode 600; the channel
 professor-bear also falls back to ~/.lectern-webhook). It is never read from, or written to, this repo.
 """

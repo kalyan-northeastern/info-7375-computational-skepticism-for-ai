@@ -2,7 +2,7 @@
 
 ## Executive summary
 
-**What this is.** The list of everything the job search and the research search are pointed at: companies, business schools, research institutes, hospitals, think tanks, a biotech, and the public databases behind them. Each is classified by what it is, with the direct link to where its data lives, the script that reads it (or a plain "none"), and what is still missing. **Why read it.** A target is only real if there is a way to read it. The project had grown a watch list in one file, a school list in another and a research-places list in a third, and nobody could see at a glance which targets are actually being read and which are only intentions. **What it found.** Of the targets with a reader: 14 company job boards are read and one (HubSpot) has gone dark; Google is collected but not filtered; Microsoft has never been read (it throttled), Amazon and Meta have never run here; 21 business schools are covered only through two shared job-feed searches, because most schools' own job systems cannot be read by script. Of the research places, **none has a reader**: they were read by hand once. Two targets turned out to have readable job feeds that Lectern has no reader for (Moderna on Workday, Hugging Face on Workable).
+**What this is.** The list of everything the job search and the research search are pointed at: companies, business schools, research institutes, hospitals, think tanks, a biotech, and the public databases behind them. Each is classified by what it is, with the direct link to where its data lives, the script that reads it (or a plain "none"), and what is still missing. **Why read it.** A target is only real if there is a way to read it. The project had grown a watch list in one file, a school list in another and a research-places list in a third, and nobody could see at a glance which targets are actually being read and which are only intentions. **What it found.** Of the targets with a reader: 14 company job boards are read and one (HubSpot) has gone dark; Google is collected but not filtered; Microsoft has never been read (it throttled), Amazon and Meta have never run here; 21 business schools are covered only through two shared job-feed searches, because most schools' own job systems cannot be read by script. Of the research places, **only one early reader exists** (`collect/collectors/biolabs.py`, built 2026-10-20 from the Biojobs repository, run on four directory pages): it finds lab links and scores each lab page for data-heavy biology, but no lab has yet been read for fit. Two targets turned out to have readable job feeds that Lectern has no reader for (Moderna on Workday, Hugging Face on Workable).
 
 Links were checked with a plain request on 2026-10-20 (HTTP status shown in the notes where it was not 200). A page that answers a script is not the same as a page a script may read: check the site's robots file before adding a reader.
 
@@ -26,7 +26,7 @@ Links were checked with a plain request on 2026-10-20 (HTTP status shown in the 
 
 ## A. Companies read by `collect.py` (15 job boards)
 
-The script is `lectern/collect/collect.py` with the watch list `lectern/config/sources.json`. The n8n form (`lectern-n8n/01-collect`) reads the Greenhouse and Ashby ones live and Canva not at all.
+The script is `lectern/collect/collect.py` with the watch list `lectern/config/sources.json`. The n8n form (`lectern/n8n/01-collect`) reads the Greenhouse and Ashby ones live and Canva not at all.
 
 | Company | Type | Provider | Board page (people) | API the script calls (data) | Status and to-do |
 |---|---|---|---|---|---|
@@ -111,7 +111,7 @@ The school's own page is the better source where it can be read; the table below
 
 ## E. Research places (the part-time research search)
 
-There is **no reader** for any of these. The 2026-10-19 reads were by hand (a page reader and plain requests). The design for a reader is in `lab-outreach/LAB-RECORD.md`: three stages (a department directory gives the principal investigators, each person's profile gives the lab, the lab site gives what it does and who is in it). Funding is checked at the institution level with `check-awards.py` against NIH RePORTER and the NSF Award Search (it was run for six institutions on 2026-10-19; it lives in the Prompt Engineering repository's `mode-build-assignment/scripts/funding/`, not in the master folder). Records that name people stay local.
+There is **one early reader**, `collect/collectors/biolabs.py` (seeds and rules in `config/biolabs.json`, adapted from the Biojobs repository): it checks `robots.txt`, says what it is in its User-Agent, finds lab links on a directory page, scores each lab page for data-heavy biology words and writes a local record. Run on 2026-10-20 on four directory pages: Harvard Medical School's Division of Nutrition people page, the Chan School's biostatistics page and Boston Children's labs page produced candidate lab links (the Chan page first returned degree programmes, so the filter was tightened); **the Harvard Medical School labs page answers 200 to `curl` but 404 to the reader, unresolved**; and Broad, Dana-Farber, MIT Biology and Wyss directory pages are unreadable (403 or 404). Everything else was read by hand on 2026-10-19. The design for a reader is in `lab-outreach/LAB-RECORD.md`: three stages (a department directory gives the principal investigators, each person's profile gives the lab, the lab site gives what it does and who is in it). Funding is checked at the institution level with `check-awards.py` against NIH RePORTER and the NSF Award Search (it was run for six institutions on 2026-10-19; it lives in the Prompt Engineering repository's `mode-build-assignment/scripts/funding/`, not in the master folder). Records that name people stay local.
 
 **Universities and their units**
 
@@ -174,13 +174,13 @@ There is **no reader** for any of these. The 2026-10-19 reads were by hand (a pa
 | `lectern/collect/collect.py` | Greenhouse, Ashby, SmartRecruiters | 14 working boards | HubSpot (404); Canva has no ad text in the n8n form |
 | `lectern/collect/collectors/` | Google, Microsoft, Amazon, Meta | Google (collected, unfiltered) | Microsoft (429), Amazon and Meta (never run); none passes the filter or the delta |
 | `lectern/collect/faculty_feed.py` | two job feeds | 21 schools by keyword | each school's own page |
-| `lectern-n8n/` (five workflows) | Greenhouse, Ashby | the same as `collect.py` minus SmartRecruiters | everything above that is not a board |
+| `lectern/n8n/` (five workflows) | Greenhouse, Ashby | the same as `collect.py` minus SmartRecruiters | everything above that is not a board |
 | `check-awards.py` | NIH RePORTER, NSF | institution-level funding for 6 institutions | NSF names for four of them; lab level |
-| none | the research places | nothing | everything in section E |
+| `collect/collectors/biolabs.py` | four lab directory pages | candidate lab links and a data-signal score per lab page | HMS labs page (404 to the reader), Broad, Dana-Farber, MIT Biology, Wyss; fit judgment; people and funding at lab level |
 
 ## What we do not have (the to-do list)
 
-1. **A reader for the research places.** The three-stage lab reader is a design only. No institute, hospital, think tank or department page is read by a script.
+1. **The lab reader is a start, not a reader.** `biolabs.py` covers directory pages and a keyword score; the people-page stage, funding at lab level, the HMS labs page, and every institute, think tank and department page are still unread by script.
 2. **Moderna.** A Workday reader (the feed answers), and, more important, the research group pages the pitch needs.
 3. **HubSpot.** The board returned 404 on 2026-10-18 and on 2026-10-20: find where its postings moved.
 4. **Microsoft, Amazon, Meta.** Never read here; and Google is collected but not filtered or part of the delta.

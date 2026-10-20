@@ -12,9 +12,9 @@ import test_headless as t
 
 
 def _default_lectern():
-    """The sibling Python Lectern, when this folder sits beside it (as in the course repository)."""
-    d = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "..", "lectern")
-    return d if os.path.isdir(d) else None
+    """The Python Lectern, when this folder sits inside it (as in the course repository: lectern/n8n/)."""
+    d = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))      # lectern/, which holds n8n/
+    return d if os.path.exists(os.path.join(d, "lectern_paths.py")) else None
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--lectern", default=_default_lectern()); ap.add_argument("--boards", nargs="+", default=["Netlify", "Jasper AI", "Airtable"])
     a = ap.parse_args()

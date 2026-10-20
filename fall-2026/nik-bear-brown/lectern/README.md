@@ -40,6 +40,7 @@ lectern/
   ops/       daily.sh · sync.sh                                                           running it and copying it
   notes/     ATS.md
   runs/      dated output (small files tracked; the rest ignored)
+  TARGETS.md · lab-outreach/ · n8n/ · faculty-runs/ · HISTORY.md     the rest of Lectern: see below
   lectern_paths.py                                                                        where things are, in one place
 ```
 
@@ -53,6 +54,7 @@ The folders follow the pipeline, not the file type: rules in, sources read, what
 |---|---|---|
 | **Rules** | `config/sources.json` · `config/keywords.json` · `config/title_families.json` · `config/faculty_config.json` | The watch list (15 boards today); the filter, with a record of every word that was cut and the count that cut it; the 20 job families the title audit uses; the 21 schools and the queries for the faculty feed |
 | **Collect and judge** | `collect/collect.py` | Reads Greenhouse, Ashby and SmartRecruiters boards, turns the three formats into one, applies the filter, writes every posting with the reason it was kept or rejected |
+| **Lab pages** | `collect/collectors/biolabs.py` · `config/biolabs.json` | Reads public lab directory pages (robots.txt first, honest User-Agent), scores each lab page for data-heavy biology and writes a local record; no emails decoded, no outreach drafted. Adapted from the Biojobs repository |
 | **The big four** | `collect/collectors/` | Google, Amazon, Microsoft and Meta have no simple public feed; these collectors take hours and write to a local database (`monitor.db`, not tracked). Not yet part of the daily delta or the filter |
 | **Faculty listings** | `collect/faculty_feed.py` | Business-school faculty roles that mention AI, from two keyword feeds, each with the rule that fired |
 | **What changed** | `publish/publish_delta.py` | New, changed and gone since the last published run. A source that could not be read today never closes a posting |
@@ -64,7 +66,7 @@ The folders follow the pipeline, not the file type: rules in, sources read, what
 | **Notes** | `notes/ATS.md` | Which applicant-tracking system each company uses, and an honest "unknown" where it was not verified |
 | **Output** | `runs/` | Dated outputs. Tracked: the small deltas, churn reports and `published-state.json`. Ignored: full snapshots, raw payloads, ad text, logs, `monitor.db`, lab records |
 
-**What it is pointed at.** Every company, school and research group the tool watches, what kind of thing each is, where its data lives (direct links), which script reads it and what is still missing: `../TARGETS.md`.
+**What it is pointed at.** Every company, school and research group the tool watches, what kind of thing each is, where its data lives (direct links), which script reads it and what is still missing: `TARGETS.md`.
 
 ## Shared with two other classes
 
@@ -82,19 +84,25 @@ python3 tests/test_publish_delta.py                  # and the other tests/test_
 
 Run these from this folder. (In the other two classes' flat copies the same scripts run as `python3 collect.py` and so on.)
 
-## What is not in this folder
+## Also in this folder: everything else about Lectern
 
-- **The profile.** What the search is for is in `../06-setup-exercise-personal-layer/search/profile.yml`. **Nothing reads it:** `keywords.json` is edited by hand to match it. Wiring the two together is an open design question.
-- **Lab outreach.** The design for the part-time research search (the lab record, the places, the funding check) is in `../lab-outreach/`. Only `post_labs()` is here.
-- **The same pipeline in other forms.** The point of building it more than once is to compare:
+Anything about Lectern lives here or in one of its folders; the folders at the level above this one are about the assignments.
+
+- `TARGETS.md`: every company, school and research group the tool watches, classified, with the direct link to its data, the script that reads it and what is missing.
+- `lab-outreach/`: the design for the part-time research search (the lab record, the places, the funding check). `collect/collectors/biolabs.py` is its first reader.
+- `n8n/`: the same pipeline as five n8n workflows, tested against this Python. The point of building it more than once is to compare:
 
 ```mermaid
 flowchart LR
-  P["Python<br/>this folder<br/>the master"] -->|"the oracle: same input,<br/>same output?"| NN["n8n<br/>../lectern-n8n<br/>five workflows, tested against the Python"]
+  P["Python<br/>this folder<br/>the master"] -->|"the oracle: same input,<br/>same output?"| NN["n8n<br/>lectern/n8n<br/>five workflows, tested against the Python"]
   P -.->|planned| CR["CrewAI<br/>not started"]
 ```
 
-  The n8n form has its own diagrams: each workflow draws itself, and its README says what was tested. A CrewAI form is planned, not built.
+  The n8n form has its own diagrams: each workflow draws itself, and its README says what was tested. A CrewAI form is planned (`crewai/`), not built.
+- `faculty-runs/`: the faculty feed's output.
+- `HISTORY.md`: the daily log of what was added here and why.
+
+**Outside this folder, on purpose.** The profile (what the search is for) is the assignment 06 file, `../06-setup-exercise-personal-layer/search/profile.yml`; **nothing reads it**, and `config/keywords.json` is edited by hand to match it. The CV facts, the early single-company iterations (`../figma/`, `../greenhouse-watch-demo/`), the design document and `../SYNC.md` are shared with the other two classes at the class level, so they stay there.
 
 ## Known gaps
 

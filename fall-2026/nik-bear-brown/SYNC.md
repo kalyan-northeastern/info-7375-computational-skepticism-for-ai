@@ -31,7 +31,7 @@ The tool is identical in all three. Only the question changes.
 | `lectern/config/sources.json` | The watch list — 18 boards, plus the companies that cannot be read |
 | `lectern/config/keywords.json` | The filter: role, topic, and flexible-terms words, with what was cut and why |
 | `lectern/notes/ATS.md` | Which applicant-tracking system each company uses, and an honest "unknown" where it was not verified |
-| `lectern/collect/faculty_feed.py` · `lectern/config/faculty_config.json` | The faculty-listings reader: Chronicle and Inside Higher Ed keyword feeds, filtered to business-school faculty roles that mention AI, plus the 12 watched schools. Its run outputs go to `faculty-runs/` (not shared) |
+| `lectern/collect/faculty_feed.py` · `lectern/config/faculty_config.json` | The faculty-listings reader: Chronicle and Inside Higher Ed keyword feeds, filtered to business-school faculty roles that mention AI, plus the 12 watched schools. Its run outputs go to `lectern/faculty-runs/` (not shared) |
 | `lectern/collect/collectors/` | The big-four collectors (Google, Amazon, Microsoft, Meta), the SQLite monitor and the daily runner. Added to the list 2026-10-18; its `runs/` output is not shared |
 | `lectern/publish/publish_delta.py` | After a run, writes and publishes only what changed since the last published run (new, changed, gone). Added 2026-10-18 |
 | `facts/professor-bear-cv.json` | The CV as structured facts, attested |

@@ -14,7 +14,7 @@ ROOT = os.path.dirname(os.path.abspath(__file__))          # lectern/ (structure
 RUNS = os.path.join(ROOT, "runs")
 MONITOR_DB = os.path.join(ROOT, "monitor.db")               # the big-four collectors' local database (never tracked)
 CACHE = os.path.join(ROOT, "cache")
-FACULTY_RUNS = os.path.normpath(os.path.join(ROOT, "..", "faculty-runs"))   # belongs to the class that runs it; never synced
+FACULTY_RUNS = os.path.join(ROOT, "faculty-runs")           # output belongs to the class that runs it; never synced
 
 
 def config(name):

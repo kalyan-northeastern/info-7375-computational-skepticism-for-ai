@@ -160,14 +160,14 @@ outreach_search:
       outside help has not been shown. He wants to pitch it anyway: a collaboration, not necessarily a job, and if they
       do not want part-time or summer work that is fine. The unit is a team inside the company (Research and Early
       Development, the Data Science and AI Research team, the Therapeutic Area Bioinformatics team, all named in public
-      job listings), treated like a lab; see lab-outreach/PLACES.md.
+      job listings), treated like a lab; see lectern/lab-outreach/PLACES.md.
   think_tank_meaning: >-
     Professor Bear, 2026-10-19: a think tank, broadly, is a group of very smart people working on hard problems. An
     institute, a center, a lab or a policy shop all count, so the Broad and the Whitehead are think tanks. The kind
     of place is not a filter.
   interest_filter:
     # What a place has to work on to be read. Applied on 2026-10-19 to a research snapshot of Boston and Cambridge
-    # institutions he pasted; the result is the "Filtered by interest" table in lab-outreach/PLACES.md.
+    # institutions he pasted; the result is the "Filtered by interest" table in lectern/lab-outreach/PLACES.md.
     topics: [biology, finance, economics, people doing interesting things with education]
     named_place: the MIT Media Lab
     thin_in_the_snapshot: [finance (nothing on markets or corporate finance), education]
@@ -192,10 +192,10 @@ outreach_search:
     ask: Would anyone there work with him in a paid way, on research with their group?
     done_2026_10_19: >-
       Pages read by hand; two great fits posted to Discord (the business school's AI hub and the Institute's AI + Life
-      Sciences area); seven pretty-good or unrated groups recorded. See lab-outreach/PLACES.md. The records name people
+      Sciences area); seven pretty-good or unrated groups recorded. See lectern/lab-outreach/PLACES.md. The records name people
       he said he knows and stay local.
     open: Neither great fit states any pay for an outside or part-time researcher; pay is for the conversation.
-  places_list: lab-outreach/PLACES.md   # the institutions in range, grouped by area, with how sure each entry is
+  places_list: lectern/lab-outreach/PLACES.md   # the institutions in range, grouped by area, with how sure each entry is
   status: Not built. No lab list has been defined and no website has been read.
   best_fit: >-
     Labs doing computational biology, meaning labs that deal with a lot of genomic or other biological data.

@@ -1,0 +1,33 @@
+{
+  "_comment": "Seeds, signal words and scope rules for collect/collectors/biolabs.py. Adapted on 2026-10-20 from the Biojobs repository (github.com/nikbearbrown/Biojobs, MIT licence, by Nik Bear Brown and student contributors): the data-signal keywords, the people-page hints and the portal/fundraising deny lists come from its biolab_devops_cli.py; the seed list is its seeds.txt re-checked, with the pages that no longer answer moved to 'unreadable'. Nothing in this file names a person.",
+  "user_agent": "lectern-biolabs/0.1 (course project)",
+  "delay_seconds": 2.0,
+  "data_keywords": [
+    "high-throughput sequencing", "high throughput sequencing", "next-generation sequencing", "ngs", "wgs", "wes", "rna-seq",
+    "single-cell", "scrna-seq", "metagenomics", "variant calling", "illumina", "pacbio", "nanopore", "10x genomics", "chip-seq",
+    "atac-seq", "long-read", "genomic surveillance", "pathogen genomics", "genomic epidemiology", "bam", "fastq", "vcf", "cromwell",
+    "wdl", "nextflow", "snakemake", "slurm", "hpc", "kubernetes", "aws batch", "gcp pipelines", "terra", "bioinformatics core",
+    "computational biology", "machine learning", "deep learning", "proteomics", "spatial transcriptomics"
+  ],
+  "_keywords_added_here": ["computational biology", "machine learning", "deep learning", "proteomics", "spatial transcriptomics"],
+  "people_hints": ["people", "team", "members", "personnel", "faculty", "staff", "directory", "contact"],
+  "lab_link_words": ["lab", "laboratory", "group", "center", "centre", "core", "program"],
+  "skip_anchor_words": ["main site", "home", "about", "news", "events", "giving", "donate", "careers", "patient", "locations", "rankings", "degree", "master", "doctoral", "applying", "undergraduate", "high school", "fellowship", "training", "admission", "finder"],
+  "_skip_added_here": ["degree", "master", "doctoral", "applying", "undergraduate", "high school", "fellowship", "training", "admission", "finder"],
+  "deny_host_prefixes": ["mychart.", "secure.", "giving.", "donate."],
+  "deny_path_parts": ["/MyChart/", "/site/Donation2"],
+  "tracking_params": ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_id", "s_src", "mfc_pref", "df_id", "fbclid", "gclid"],
+  "host_rewrites": {"www.childrenshospital.org/research-units/": "research.childrenshospital.org/research-units/"},
+  "seeds": [
+    {"name": "Harvard Medical School labs", "url": "https://hms.harvard.edu/research/hms-labs", "checked": "2026-10-20 HTTP 200"},
+    {"name": "Harvard Chan School biostatistics groups and labs", "url": "https://www.hsph.harvard.edu/biostatistics/research/groups-and-labs/", "checked": "2026-10-20 HTTP 200"},
+    {"name": "Boston Children's Hospital labs", "url": "https://www.childrenshospital.org/research/labs", "checked": "2026-10-20 HTTP 200"},
+    {"name": "Harvard Medical School Division of Nutrition people", "url": "https://nutrition.hms.harvard.edu/people", "checked": "2026-10-20 HTTP 200; a directory of principal investigators"}
+  ],
+  "unreadable": [
+    {"name": "Dana-Farber labs", "url": "https://www.dana-farber.org/research/labs-researchers/", "checked": "2026-10-20 HTTP 404"},
+    {"name": "Broad Institute research labs and groups", "url": "https://www.broadinstitute.org/research-labs-and-groups", "checked": "2026-10-20 HTTP 403 to a plain request"},
+    {"name": "MIT Biology labs", "url": "https://biology.mit.edu/research/labs/", "checked": "2026-10-20 HTTP 404"},
+    {"name": "Wyss Institute people", "url": "https://wyss.harvard.edu/people/", "checked": "2026-10-20 HTTP 404"}
+  ]
+}

@@ -67,12 +67,12 @@ Every push that touches this folder adds a row to the `## GitHub pushes` table, 
 - **Tiers:** `great` fits first. `pretty_good` fits are posted only when he says so, after great fits have come to nothing. Do not widen on your own.
 - **How:** `lectern/publish/notify.py` `post_labs()` (tested with made-up labs in `lectern/tests/test_notify.py`). It reads only the lab's public name, institution, page link, tier, kind and the lab's own words (300 characters at most).
 - **What never goes in a post:** the principal investigator, a lab manager or any other person; an email address or phone number; a local path; a webhook URL. A lab named for a person is shown as "A lab at <institution>" with its link. The lab records themselves name people and stay local (`lectern/labs/`, `lectern/lab-records/`, gitignored).
-- **Not built yet:** the reader that turns lab pages into candidates (see `lab-outreach/LAB-RECORD.md`). Until it exists there is nothing to post.
+- **Not built yet:** the reader that turns lab pages into candidates (see `lectern/lab-outreach/LAB-RECORD.md`). Until it exists there is nothing to post.
 - **Posting is not pushing**, as in Rule 4.
 
 ## Rule 6 — `lectern/HISTORY.md` is the daily log of the code
 
-**Standing instruction (Professor Bear, 2026-10-20):** keep `lectern/HISTORY.md` as a daily log of what was added to `lectern/` and when, and how the tool is being built up, alongside `FRICTIONAL.md`. Whenever a file in `lectern/` is added, removed or changed in what it does, add a dated entry (date, what, why) **in the same change**, and keep the tables in `lectern/README.md` true. Write what happened, including what failed; never a result nobody ran. The same goes for `lectern-n8n/` (the n8n form, kept beside the Python form): its README says what is tested. **Also keep `TARGETS.md` true:** when a target is added, removed or reclassified, or a reader for one is built or fails, change its row in the same change.
+**Standing instruction (Professor Bear, 2026-10-20):** keep `lectern/HISTORY.md` as a daily log of what was added to `lectern/` and when, and how the tool is being built up, alongside `FRICTIONAL.md`. Whenever a file in `lectern/` is added, removed or changed in what it does, add a dated entry (date, what, why) **in the same change**, and keep the tables in `lectern/README.md` true. Write what happened, including what failed; never a result nobody ran. The same goes for `lectern/n8n/` (the n8n form, kept beside the Python form): its README says what is tested. **Also keep `lectern/TARGETS.md` true:** when a target is added, removed or reclassified, or a reader for one is built or fails, change its row in the same change.
 
 ## Pushing from this folder
 
