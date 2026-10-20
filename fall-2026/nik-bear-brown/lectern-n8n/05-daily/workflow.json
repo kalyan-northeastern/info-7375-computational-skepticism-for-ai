@@ -1,0 +1,713 @@
+{
+ "id": "lectern8d085b93ba",
+ "name": "Lectern 05 · Daily: collect, filter, diff, post, remember",
+ "active": false,
+ "nodes": [
+  {
+   "parameters": {
+    "content": "## 05 · Daily\nCalls 01 to 04 in order and keeps two small files: the published state and the ids already posted. Set the paths and `mode` in **Settings**. Default: fixtures, dry run (nothing sent), state written. Run it twice: the second run finds nothing new. The state advances only after the whole chain succeeded. Import all five workflows with `tools/import.sh` so the Execute Workflow nodes find their targets.",
+    "height": 210,
+    "width": 700,
+    "color": 4
+   },
+   "id": "25fc060f-7b70",
+   "name": "Note 05 · Daily\nCalls 01 t",
+   "type": "n8n-nodes-base.stickyNote",
+   "typeVersion": 1,
+   "position": [
+    -160,
+    -380
+   ]
+  },
+  {
+   "parameters": {},
+   "id": "78c163de-4e83",
+   "name": "Manual",
+   "type": "n8n-nodes-base.manualTrigger",
+   "typeVersion": 1,
+   "position": [
+    0,
+    0
+   ]
+  },
+  {
+   "parameters": {
+    "rule": {
+     "interval": [
+      {
+       "field": "days",
+       "triggerAtHour": 7
+      }
+     ]
+    }
+   },
+   "id": "ba05ff5a-3b2e",
+   "name": "Every day",
+   "type": "n8n-nodes-base.scheduleTrigger",
+   "typeVersion": 1.2,
+   "position": [
+    0,
+    170
+   ]
+  },
+  {
+   "parameters": {
+    "jsCode": "// The only place to edit. mode: 'fixture' replays made-up payloads; 'live' reads the real boards.\nreturn [{json: {mode: 'fixture', only: [], date: '', send: false, allow_first_run_post: false, state_path: '__STATE_PATH__', posted_path: '__POSTED_PATH__'}}];"
+   },
+   "id": "62017a48-c7f7",
+   "name": "Settings",
+   "type": "n8n-nodes-base.code",
+   "typeVersion": 2,
+   "position": [
+    240,
+    80
+   ]
+  },
+  {
+   "parameters": {
+    "operation": "read",
+    "fileSelector": "={{ $json.state_path }}",
+    "options": {}
+   },
+   "id": "8e853558-4d2b",
+   "name": "Read state",
+   "type": "n8n-nodes-base.readWriteFile",
+   "typeVersion": 1,
+   "position": [
+    460,
+    0
+   ],
+   "onError": "continueRegularOutput",
+   "alwaysOutputData": true
+  },
+  {
+   "parameters": {
+    "operation": "fromJson",
+    "options": {}
+   },
+   "id": "01e34532-0b6e",
+   "name": "Extract state",
+   "type": "n8n-nodes-base.extractFromFile",
+   "typeVersion": 1,
+   "position": [
+    680,
+    0
+   ],
+   "onError": "continueRegularOutput",
+   "alwaysOutputData": true
+  },
+  {
+   "parameters": {
+    "operation": "read",
+    "fileSelector": "={{ $('Settings').first().json.posted_path }}",
+    "options": {}
+   },
+   "id": "8dd9d183-6000",
+   "name": "Read posted",
+   "type": "n8n-nodes-base.readWriteFile",
+   "typeVersion": 1,
+   "position": [
+    900,
+    0
+   ],
+   "onError": "continueRegularOutput",
+   "alwaysOutputData": true
+  },
+  {
+   "parameters": {
+    "operation": "fromJson",
+    "options": {}
+   },
+   "id": "924f496d-77fb",
+   "name": "Extract posted",
+   "type": "n8n-nodes-base.extractFromFile",
+   "typeVersion": 1,
+   "position": [
+    1120,
+    0
+   ],
+   "onError": "continueRegularOutput",
+   "alwaysOutputData": true
+  },
+  {
+   "parameters": {
+    "jsCode": "// A missing file is the first run, not an error.\nconst s = $('Settings').first().json;\nconst st = $('Extract state').first().json, po = $('Extract posted').first().json;\nconst state = st && st.data && st.data.candidates ? st.data : null;\nconst already = po && po.data && Array.isArray(po.data.ids) ? po.data.ids : [];\n// With no readable state, everything looks new. With send on, that would post every listing at once: refuse unless asked.\nif (!state && s.send && !s.allow_first_run_post) throw new Error('No published state was read, and send is on: the first run would post every kept listing. Run once with send off, or set allow_first_run_post to true.');\nreturn [{json: {mode: s.mode, only: s.only, date: s.date, send: s.send, state_path: s.state_path, posted_path: s.posted_path, state, already}}];"
+   },
+   "id": "d76cb4ad-d845",
+   "name": "Remember what exists",
+   "type": "n8n-nodes-base.code",
+   "typeVersion": 2,
+   "position": [
+    1340,
+    0
+   ]
+  },
+  {
+   "parameters": {
+    "jsCode": "const m = $json; return [{json: {mode: m.mode, only: m.only, date: m.date}}];"
+   },
+   "id": "e80e25e2-280f",
+   "name": "Collect input",
+   "type": "n8n-nodes-base.code",
+   "typeVersion": 2,
+   "position": [
+    1560,
+    0
+   ]
+  },
+  {
+   "parameters": {
+    "source": "database",
+    "workflowId": {
+     "__rl": true,
+     "value": "lectern9133e20d84",
+     "mode": "id"
+    },
+    "mode": "once",
+    "options": {}
+   },
+   "id": "91b4abda-f5aa",
+   "name": "01 · Collect",
+   "type": "n8n-nodes-base.executeWorkflow",
+   "typeVersion": 1.2,
+   "position": [
+    1780,
+    0
+   ]
+  },
+  {
+   "parameters": {
+    "source": "database",
+    "workflowId": {
+     "__rl": true,
+     "value": "lectern25fa32f27e",
+     "mode": "id"
+    },
+    "mode": "once",
+    "options": {}
+   },
+   "id": "a7a55fba-e608",
+   "name": "02 · Filter",
+   "type": "n8n-nodes-base.executeWorkflow",
+   "typeVersion": 1.2,
+   "position": [
+    2000,
+    0
+   ]
+  },
+  {
+   "parameters": {
+    "jsCode": "const m = $('Remember what exists').first().json; return [{json: {state: m.state, run: $json}}];"
+   },
+   "id": "3c7e5d13-32dc",
+   "name": "Delta input",
+   "type": "n8n-nodes-base.code",
+   "typeVersion": 2,
+   "position": [
+    2220,
+    0
+   ]
+  },
+  {
+   "parameters": {
+    "source": "database",
+    "workflowId": {
+     "__rl": true,
+     "value": "lectern34e988c162",
+     "mode": "id"
+    },
+    "mode": "once",
+    "options": {}
+   },
+   "id": "a95b5635-fa18",
+   "name": "03 · Delta",
+   "type": "n8n-nodes-base.executeWorkflow",
+   "typeVersion": 1.2,
+   "position": [
+    2440,
+    0
+   ]
+  },
+  {
+   "parameters": {
+    "jsCode": "const m = $('Remember what exists').first().json, d = $json;\nif (d.refused) throw new Error(d.refused);\nreturn [{json: {new: d.new, watched: d.watched, first_time_companies: d.first_time_companies, already: m.already, send: m.send, date: d.date}}];"
+   },
+   "id": "0144568d-392b",
+   "name": "Post input",
+   "type": "n8n-nodes-base.code",
+   "typeVersion": 2,
+   "position": [
+    2660,
+    0
+   ]
+  },
+  {
+   "parameters": {
+    "source": "database",
+    "workflowId": {
+     "__rl": true,
+     "value": "lecternf10fbbf0e3",
+     "mode": "id"
+    },
+    "mode": "once",
+    "options": {}
+   },
+   "id": "2a4a5479-45c0",
+   "name": "04 · Post",
+   "type": "n8n-nodes-base.executeWorkflow",
+   "typeVersion": 1.2,
+   "position": [
+    2880,
+    0
+   ]
+  },
+  {
+   "parameters": {
+    "jsCode": "const m = $('Remember what exists').first().json, d = $('03 · Delta').first().json, p = $json;\nconst ids = [...new Set([...(m.already || []), ...(p.posted_ids || [])])].sort();\nreturn [{json: {state_path: m.state_path, posted_path: m.posted_path, next_state: d.next_state, posted_ids: ids, wrote_posted: (p.posted_ids || []).length > 0,\n  summary: {date: d.date, baseline: d.baseline, kept: d.counts.kept, new: d.counts.new, changed: d.counts.changed, gone: d.counts.gone, gone_by_reason: d.counts.gone_by_reason,\n            unavailable: d.unavailable, filter_note: d.filter_note, messages: p.messages.length, sent: p.sent_count, refused: p.refused}}}];"
+   },
+   "id": "d26a67bd-42a1",
+   "name": "Remember this run",
+   "type": "n8n-nodes-base.code",
+   "typeVersion": 2,
+   "position": [
+    3100,
+    0
+   ]
+  },
+  {
+   "parameters": {
+    "jsCode": "return [{json: $json.next_state}];   // the file holds the state and nothing else"
+   },
+   "id": "561c3f9a-ca8d",
+   "name": "State only",
+   "type": "n8n-nodes-base.code",
+   "typeVersion": 2,
+   "position": [
+    3320,
+    0
+   ]
+  },
+  {
+   "parameters": {
+    "operation": "toJson",
+    "mode": "each",
+    "options": {
+     "fileName": "published-state.json",
+     "format": true
+    }
+   },
+   "id": "4e3c5ecd-fb7a",
+   "name": "State to file",
+   "type": "n8n-nodes-base.convertToFile",
+   "typeVersion": 1.1,
+   "position": [
+    3540,
+    0
+   ]
+  },
+  {
+   "parameters": {
+    "operation": "write",
+    "fileName": "={{ $('Remember this run').first().json.state_path }}",
+    "dataPropertyName": "data",
+    "options": {}
+   },
+   "id": "f11b249d-78f8",
+   "name": "Write state",
+   "type": "n8n-nodes-base.readWriteFile",
+   "typeVersion": 1,
+   "position": [
+    3760,
+    0
+   ]
+  },
+  {
+   "parameters": {
+    "conditions": {
+     "options": {
+      "caseSensitive": true,
+      "leftValue": "",
+      "typeValidation": "strict",
+      "version": 2
+     },
+     "conditions": [
+      {
+       "id": "00269c8d-6cd4",
+       "leftValue": "={{ $('Remember this run').first().json.wrote_posted }}",
+       "rightValue": "",
+       "operator": {
+        "type": "boolean",
+        "operation": "true",
+        "singleValue": true
+       }
+      }
+     ],
+     "combinator": "and"
+    },
+    "options": {}
+   },
+   "id": "6d42494c-71e6",
+   "name": "Anything posted?",
+   "type": "n8n-nodes-base.if",
+   "typeVersion": 2.2,
+   "position": [
+    3980,
+    0
+   ]
+  },
+  {
+   "parameters": {
+    "jsCode": "return [{json: {ids: $('Remember this run').first().json.posted_ids}}];"
+   },
+   "id": "433f4c0f-dfca",
+   "name": "Posted ids only",
+   "type": "n8n-nodes-base.code",
+   "typeVersion": 2,
+   "position": [
+    4200,
+    -100
+   ]
+  },
+  {
+   "parameters": {
+    "operation": "toJson",
+    "mode": "each",
+    "options": {
+     "fileName": "posted.json",
+     "format": true
+    }
+   },
+   "id": "61d74533-16a0",
+   "name": "Posted to file",
+   "type": "n8n-nodes-base.convertToFile",
+   "typeVersion": 1.1,
+   "position": [
+    4420,
+    -100
+   ]
+  },
+  {
+   "parameters": {
+    "operation": "write",
+    "fileName": "={{ $('Remember this run').first().json.posted_path }}",
+    "dataPropertyName": "data",
+    "options": {}
+   },
+   "id": "f54158c4-dd15",
+   "name": "Write posted",
+   "type": "n8n-nodes-base.readWriteFile",
+   "typeVersion": 1,
+   "position": [
+    4640,
+    -100
+   ]
+  },
+  {
+   "parameters": {
+    "numberInputs": 2
+   },
+   "id": "b20158fd-7bda",
+   "name": "Wait for both",
+   "type": "n8n-nodes-base.merge",
+   "typeVersion": 3.2,
+   "position": [
+    4860,
+    0
+   ]
+  },
+  {
+   "parameters": {
+    "jsCode": "return [{json: $('Remember this run').first().json.summary}];"
+   },
+   "id": "abd93d17-0d6a",
+   "name": "Daily summary",
+   "type": "n8n-nodes-base.code",
+   "typeVersion": 2,
+   "position": [
+    5080,
+    0
+   ]
+  }
+ ],
+ "connections": {
+  "Manual": {
+   "main": [
+    [
+     {
+      "node": "Settings",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Every day": {
+   "main": [
+    [
+     {
+      "node": "Settings",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Settings": {
+   "main": [
+    [
+     {
+      "node": "Read state",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Read state": {
+   "main": [
+    [
+     {
+      "node": "Extract state",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Extract state": {
+   "main": [
+    [
+     {
+      "node": "Read posted",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Read posted": {
+   "main": [
+    [
+     {
+      "node": "Extract posted",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Extract posted": {
+   "main": [
+    [
+     {
+      "node": "Remember what exists",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Remember what exists": {
+   "main": [
+    [
+     {
+      "node": "Collect input",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Collect input": {
+   "main": [
+    [
+     {
+      "node": "01 · Collect",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "01 · Collect": {
+   "main": [
+    [
+     {
+      "node": "02 · Filter",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "02 · Filter": {
+   "main": [
+    [
+     {
+      "node": "Delta input",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Delta input": {
+   "main": [
+    [
+     {
+      "node": "03 · Delta",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "03 · Delta": {
+   "main": [
+    [
+     {
+      "node": "Post input",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Post input": {
+   "main": [
+    [
+     {
+      "node": "04 · Post",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "04 · Post": {
+   "main": [
+    [
+     {
+      "node": "Remember this run",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Remember this run": {
+   "main": [
+    [
+     {
+      "node": "State only",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "State only": {
+   "main": [
+    [
+     {
+      "node": "State to file",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "State to file": {
+   "main": [
+    [
+     {
+      "node": "Write state",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Write state": {
+   "main": [
+    [
+     {
+      "node": "Anything posted?",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Posted ids only": {
+   "main": [
+    [
+     {
+      "node": "Posted to file",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Posted to file": {
+   "main": [
+    [
+     {
+      "node": "Write posted",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Write posted": {
+   "main": [
+    [
+     {
+      "node": "Wait for both",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Wait for both": {
+   "main": [
+    [
+     {
+      "node": "Daily summary",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Anything posted?": {
+   "main": [
+    [
+     {
+      "node": "Posted ids only",
+      "type": "main",
+      "index": 0
+     }
+    ],
+    [
+     {
+      "node": "Wait for both",
+      "type": "main",
+      "index": 1
+     }
+    ]
+   ]
+  }
+ },
+ "settings": {
+  "executionOrder": "v1"
+ },
+ "pinData": {},
+ "tags": [],
+ "meta": {
+  "templateCredsSetupCompleted": false
+ }
+}

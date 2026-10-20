@@ -1,0 +1,297 @@
+{
+ "id": "lecternf10fbbf0e3",
+ "name": "Lectern 04 · Post: new listings to the Discord channel, behind a switch",
+ "active": false,
+ "nodes": [
+  {
+   "parameters": {
+    "content": "## 04 · Post\nPort of `build_messages()` in lectern/notify.py. Only companies still on the watch list, most-wanted first, nothing already posted, and a message with a path, an email address or a webhook URL is refused. **`send` is false by default**: the Discord node runs only when it is true, and it needs a Discord webhook credential (nothing secret is in this file). The message-building and refusal rules are tested; the Discord node itself is not exercised without a webhook.",
+    "height": 200,
+    "width": 640,
+    "color": 4
+   },
+   "id": "06177578-e59e",
+   "name": "Note 04 · Post\nPort of `bu",
+   "type": "n8n-nodes-base.stickyNote",
+   "typeVersion": 1,
+   "position": [
+    -160,
+    -330
+   ]
+  },
+  {
+   "parameters": {},
+   "id": "6145bfea-ec2e",
+   "name": "Manual · run on fixtures",
+   "type": "n8n-nodes-base.manualTrigger",
+   "typeVersion": 1,
+   "position": [
+    0,
+    0
+   ]
+  },
+  {
+   "parameters": {
+    "jsCode": "// New listings in the shape workflow 03 produces. Synthetic. send is false: nothing is posted.\nconst FIXTURE = {\"new\": [{\"company\": \"ExampleCo Ashby\", \"source\": \"ashby\", \"source_id\": \"a-2002\", \"title\": \"Strategic Account Manager\", \"url\": \"https://jobs.example.test/a/2002\", \"location_text\": \"New York, NY\", \"department\": \"Sales\", \"date_posted\": \"2026-10-04\", \"matched\": {\"topic_text\": [\"university\", \"education\"], \"connector\": {\"title\": [\"account manager\", \"strategic account\"], \"institution\": [\"university\", \"higher education\"]}, \"kept_because\": \"account or partnership role whose body names higher education\"}, \"text_sha\": \"7c7a0c847cffb305\"}], \"watched\": [\"ExampleCo Ashby\", \"ExampleCo Labs\", \"ExampleCo Recruiters\"], \"first_time_companies\": [\"ExampleCo Ashby\"], \"already\": [\"ashby:a-2002\"], \"send\": false};\nreturn [{json: FIXTURE}];"
+   },
+   "id": "742e3d15-2cc0",
+   "name": "Fixture input",
+   "type": "n8n-nodes-base.code",
+   "typeVersion": 2,
+   "position": [
+    220,
+    0
+   ]
+  },
+  {
+   "parameters": {
+    "inputSource": "passthrough"
+   },
+   "id": "2b5a8759-0ffc",
+   "name": "When called by another workflow",
+   "type": "n8n-nodes-base.executeWorkflowTrigger",
+   "typeVersion": 1.1,
+   "position": [
+    0,
+    160
+   ]
+  },
+  {
+   "parameters": {},
+   "id": "94e83a27-5c73",
+   "name": "Run in",
+   "type": "n8n-nodes-base.noOp",
+   "typeVersion": 1,
+   "position": [
+    440,
+    80
+   ]
+  },
+  {
+   "parameters": {
+    "jsCode": "// Port of lectern/notify.py: matched_words(), order(), build_messages() and the refusal rule in post().\n// Pure functions: no n8n globals. Nothing here can send anything; the Discord node does that, behind a switch.\nconst PRIORITY = ['Anthropic', 'OpenAI', 'Microsoft', 'Google', 'Figma', 'Canva', 'GitHub', 'Notion'];\nconst MAX_CHUNK = 1300;\nconst FOOTER = 'Every row links to the live posting. A person decides; the machine only ranks words.';\nconst REFUSE = /\\/Users\\/|\\/home\\/\\w+|[\\w.+-]+@[\\w-]+\\.[\\w.]+|discord(app)?\\.com\\/api\\/webhooks/;\n\nfunction matchedWords(m) {\n  if (!m || typeof m !== 'object' || Array.isArray(m)) return '';\n  const words = [];\n  for (const v0 of Object.values(m)) {\n    let v = v0;\n    if (v && typeof v === 'object' && !Array.isArray(v)) v = Object.values(v).filter(Array.isArray).flat();\n    if (Array.isArray(v)) for (const w of v) if (!words.includes(w)) words.push(w);\n  }\n  return words.slice(0, 4).join(', ');\n}\nfunction order(rows) {\n  const rank = {}; PRIORITY.forEach((c, i) => { rank[c] = i; });\n  const r = c => (c in rank ? rank[c] : 99);\n  const cmp = (a, b) => (a < b ? -1 : a > b ? 1 : 0);\n  return rows.slice().sort((a, b) => (r(a.company) - r(b.company)) || cmp(a.company, b.company) || cmp(a.title || '', b.title || ''));\n}\n// Returns {rows, messages}. Drops unwatched companies and rows already posted.\nfunction buildMessages(nw, watched, firstTime, already) {\n  const W = new Set(watched), F = new Set(firstTime || []), A = new Set(already || []);\n  let rows = nw.filter(r => W.has(r.company) && !A.has(`${r.source}:${r.source_id}`));\n  rows = order(rows);\n  if (!rows.length) return {rows: [], messages: []};\n  const lines = rows.map(r => {\n    const loc = (r.location_text || '').split(' | ')[0].split(';')[0].slice(0, 40);\n    const tag = F.has(r.company) ? ' (newly watched)' : '';\n    const mw = matchedWords(r.matched);\n    return `**${r.company}**${tag}: ${(r.title || '').slice(0, 100)}` + (loc ? ` · ${loc}` : '') + (mw ? ` (${mw})` : '') + ` ${r.url || ''}`;\n  });\n  const msgs = []; let chunk = [], size = 0;\n  for (const ln of lines) {\n    if (size + ln.length > MAX_CHUNK && chunk.length) { msgs.push(chunk.join('\\n')); chunk = []; size = 0; }\n    chunk.push(ln); size += ln.length + 1;\n  }\n  if (chunk.length) msgs.push(chunk.join('\\n'));\n  msgs[msgs.length - 1] += '\\n\\n' + FOOTER;\n  return {rows, messages: msgs};\n}\nconst refused = text => REFUSE.test(text);\n// (node export removed in the n8n copy) module.exports = {buildMessages, matchedWords, order, refused, PRIORITY, MAX_CHUNK, FOOTER};\n\nconst i = $input.first().json;\nconst label = i.label || ('run ' + (i.date || ''));\nconst {rows, messages} = buildMessages(i.new || [], i.watched || [], i.first_time_companies || [], i.already || []);\nconst title = `Jobs: ${rows.length} new possible listings (${label})`;\nif (!messages.length) return [{json: {nothing_new: true, rows: [], messages: [], send: false}}];\nreturn messages.map((m, n) => {\n  const head = messages.length > 1 ? `${title} (${n + 1}/${messages.length})` : title;\n  const content = `**${head}**\\n${m}`;\n  const bad = refused(content);\n  return {json: {nothing_new: false, rows: n === 0 ? rows.map(r => `${r.source}:${r.source_id}`) : [], message: m, content, refused: bad, send: Boolean(i.send) && !bad}};\n});"
+   },
+   "id": "d97971fc-37ab",
+   "name": "Build messages",
+   "type": "n8n-nodes-base.code",
+   "typeVersion": 2,
+   "position": [
+    660,
+    80
+   ]
+  },
+  {
+   "parameters": {
+    "conditions": {
+     "options": {
+      "caseSensitive": true,
+      "leftValue": "",
+      "typeValidation": "strict",
+      "version": 2
+     },
+     "conditions": [
+      {
+       "id": "ec0908c1-0dac",
+       "leftValue": "={{ $json.send }}",
+       "rightValue": "",
+       "operator": {
+        "type": "boolean",
+        "operation": "true",
+        "singleValue": true
+       }
+      }
+     ],
+     "combinator": "and"
+    },
+    "options": {}
+   },
+   "id": "1bfa6a41-493e",
+   "name": "Send?",
+   "type": "n8n-nodes-base.if",
+   "typeVersion": 2.2,
+   "position": [
+    880,
+    80
+   ]
+  },
+  {
+   "parameters": {
+    "authentication": "webhook",
+    "content": "={{ $json.content }}",
+    "options": {
+     "username": "Professor Bear",
+     "flags": [
+      "SUPPRESS_EMBEDS"
+     ]
+    }
+   },
+   "id": "c2d53bdb-bccc",
+   "name": "Discord",
+   "type": "n8n-nodes-base.discord",
+   "typeVersion": 2,
+   "position": [
+    1100,
+    0
+   ],
+   "credentials": {
+    "discordWebhookApi": {
+     "id": "",
+     "name": "Discord webhook for the Lectern channel"
+    }
+   }
+  },
+  {
+   "parameters": {},
+   "id": "efa1b6cd-80c5",
+   "name": "Dry run: nothing sent",
+   "type": "n8n-nodes-base.noOp",
+   "typeVersion": 1,
+   "position": [
+    1100,
+    170
+   ]
+  },
+  {
+   "parameters": {
+    "numberInputs": 2
+   },
+   "id": "c3738449-7bda",
+   "name": "Wait for both",
+   "type": "n8n-nodes-base.merge",
+   "typeVersion": 3.2,
+   "position": [
+    1320,
+    80
+   ]
+  },
+  {
+   "parameters": {
+    "jsCode": "const built = $('Build messages').all().map(i => i.json);\nif (built.length === 1 && built[0].nothing_new) return [{json: {rows: [], messages: [], sent_count: 0, posted_ids: [], refused: 0}}];\nconst sent = $('Discord').isExecuted ? $('Discord').all().length : 0;\nconst rows = built.flatMap(b => b.rows);\nreturn [{json: {rows, messages: built.map(b => b.message), sent_count: sent, refused: built.filter(b => b.refused).length,\n  posted_ids: sent === built.length ? rows : []}}];   // an id is recorded as posted only if every message went out"
+   },
+   "id": "c4977441-5faa",
+   "name": "Result",
+   "type": "n8n-nodes-base.code",
+   "typeVersion": 2,
+   "position": [
+    1540,
+    80
+   ]
+  }
+ ],
+ "connections": {
+  "Manual · run on fixtures": {
+   "main": [
+    [
+     {
+      "node": "Fixture input",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Fixture input": {
+   "main": [
+    [
+     {
+      "node": "Run in",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "When called by another workflow": {
+   "main": [
+    [
+     {
+      "node": "Run in",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Run in": {
+   "main": [
+    [
+     {
+      "node": "Build messages",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Build messages": {
+   "main": [
+    [
+     {
+      "node": "Send?",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Send?": {
+   "main": [
+    [
+     {
+      "node": "Discord",
+      "type": "main",
+      "index": 0
+     }
+    ],
+    [
+     {
+      "node": "Dry run: nothing sent",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Discord": {
+   "main": [
+    [
+     {
+      "node": "Wait for both",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Dry run: nothing sent": {
+   "main": [
+    [
+     {
+      "node": "Wait for both",
+      "type": "main",
+      "index": 1
+     }
+    ]
+   ]
+  },
+  "Wait for both": {
+   "main": [
+    [
+     {
+      "node": "Result",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  }
+ },
+ "settings": {
+  "executionOrder": "v1"
+ },
+ "pinData": {},
+ "tags": [],
+ "meta": {
+  "templateCredsSetupCompleted": false
+ }
+}

@@ -1,0 +1,21 @@
+# Parity and live runs, 2026-10-19 (Lectern master: filter v0.5.2; runs 2026-10-08 and 2026-10-18)
+
+## parity_real_data
+boards read: 15   postings: python 2465, javascript 2465   only-in-one: 0
+kept: python 81, javascript 81
+PARITY: all 2465 postings identical on every field, keep decision and matched words
+
+## parity_delta
+python: new 42, changed 7, gone 9   javascript: new 42, changed 7, gone 9
+PARITY: new, changed and gone are identical, including the reasons
+
+## parity_messages
+new 42; posted rows python 30, javascript 30; messages python 5, javascript 5
+PARITY: same rows in the same order and byte-identical messages
+
+## live_parity (public job-board APIs)
+n8n status: [('Airtable', 'ok', 4, None), ('Netlify', 'ok', 5, None), ('Jasper AI', 'ok', 10, None)]
+  Netlify    (greenhouse): python 5 postings, n8n 5; identical on every field: True
+  Jasper AI  (ashby): python 10 postings, n8n 10; identical on every field: True
+  Airtable   (greenhouse): python 4 postings, n8n 4; identical on every field: True
+LIVE PARITY

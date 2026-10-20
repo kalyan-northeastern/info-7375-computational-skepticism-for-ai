@@ -1,0 +1,306 @@
+{
+ "id": "lectern25fa32f27e",
+ "name": "Lectern 02 · Filter: keep what the rules keep, say why for the rest",
+ "active": false,
+ "nodes": [
+  {
+   "parameters": {
+    "content": "## 02 · Filter\nPort of `judge()` in lectern/collect.py. The rules are `shared/keywords.json` (v0.5.2), never this workflow. Every posting leaves with a decision AND a reason: kept (which rule), or rejected (which test failed). Run it on its own with the Manual trigger (synthetic postings), or let 05 · Daily call it.",
+    "height": 170,
+    "width": 520,
+    "color": 4
+   },
+   "id": "13875154-110c",
+   "name": "Note 02 · Filter\nPort of `",
+   "type": "n8n-nodes-base.stickyNote",
+   "typeVersion": 1,
+   "position": [
+    -160,
+    -330
+   ]
+  },
+  {
+   "parameters": {},
+   "id": "1cbc1d72-ec2e",
+   "name": "Manual · run on fixtures",
+   "type": "n8n-nodes-base.manualTrigger",
+   "typeVersion": 1,
+   "position": [
+    0,
+    0
+   ]
+  },
+  {
+   "parameters": {
+    "jsCode": "// Synthetic postings in the shape workflow 01 produces. Every company and ad is made up.\nconst FIXTURE = {\"date\": \"2026-10-19\", \"sources\": [{\"company\": \"ExampleCo Labs\", \"provider\": \"greenhouse\", \"status\": \"ok\", \"postings\": 6}, {\"company\": \"ExampleCo Ashby\", \"provider\": \"ashby\", \"status\": \"ok\", \"postings\": 4}, {\"company\": \"ExampleCo Recruiters\", \"provider\": \"smartrecruiters\", \"status\": \"ok\", \"postings\": 2}], \"views\": [{\"source_id\": \"1001\", \"title\": \"Developer Educator\", \"text\": \"Teach developers & run workshops.\", \"location_text\": \"Remote - US\", \"date_raw\": \"2026-10-01T10:00:00-04:00\", \"url\": \"https://jobs.example.test/g/1001\", \"department\": \"Education\", \"job_ref\": \"5001\", \"source\": \"greenhouse\", \"company\": \"ExampleCo Labs\", \"date_posted\": \"2026-10-01\"}, {\"source_id\": \"1002\", \"title\": \"Staff Backend Engineer\", \"text\": \"Build services. Partner with universities, campus programs, student interns and classroom pilots.\", \"location_text\": \"Boston, MA\", \"date_raw\": \"2026-10-02T09:30:00-04:00\", \"url\": \"https://jobs.example.test/g/1002\", \"department\": \"Engineering / Platform\", \"job_ref\": \"5002\", \"source\": \"greenhouse\", \"company\": \"ExampleCo Labs\", \"date_posted\": \"2026-10-02\"}, {\"source_id\": \"1003\", \"title\": \"Payments Analyst\", \"text\": \"Reconcile payments every day.\", \"location_text\": \"Remote\", \"date_raw\": \"2026-10-02T09:30:00-04:00\", \"url\": \"https://jobs.example.test/g/1003\", \"department\": \"\", \"job_ref\": \"5003\", \"source\": \"greenhouse\", \"company\": \"ExampleCo Labs\", \"date_posted\": \"2026-10-02\"}, {\"source_id\": \"1001\", \"title\": \"Developer Educator (repost)\", \"text\": \"Same id, listed twice.\", \"location_text\": \"Remote - US\", \"date_raw\": \"2026-10-01T10:00:00-04:00\", \"url\": \"https://jobs.example.test/g/1001\", \"department\": \"\", \"job_ref\": \"5001\", \"source\": \"greenhouse\", \"company\": \"ExampleCo Labs\", \"date_posted\": \"2026-10-01\"}, {\"source_id\": \"1005\", \"title\": \"Finance Analyst\", \"text\": \"Our customers include one university.\", \"location_text\": \"Remote\", \"date_raw\": \"2026-10-03T09:30:00-04:00\", \"url\": \"https://jobs.example.test/g/1005\", \"department\": \"Finance\", \"job_ref\": \"5005\", \"source\": \"greenhouse\", \"company\": \"ExampleCo Labs\", \"date_posted\": \"2026-10-03\"}, {\"source_id\": \"1006\", \"title\": \"Education Programs Lead\", \"text\": \"No link on this one.\", \"location_text\": \"Remote\", \"date_raw\": \"2026-10-03T09:30:00-04:00\", \"url\": null, \"department\": \"\", \"job_ref\": \"5006\", \"source\": \"greenhouse\", \"company\": \"ExampleCo Labs\", \"date_posted\": \"2026-10-03\"}, {\"source_id\": \"a-2001\", \"title\": \"Curriculum Lead\", \"text\": \"Own curriculum & courseware for the academy.\", \"location_text\": \"Boston, MA \\u00b7 Remote\", \"date_raw\": \"2026-10-03T09:00:00.000+00:00\", \"url\": \"https://jobs.example.test/a/2001\", \"department\": \"Learning / Content\", \"job_ref\": null, \"source\": \"ashby\", \"company\": \"ExampleCo Ashby\", \"date_posted\": \"2026-10-03\"}, {\"source_id\": \"a-2002\", \"title\": \"Strategic Account Manager\", \"text\": \"You will own our largest university relationships and manage each higher education partnership.\", \"location_text\": \"New York, NY\", \"date_raw\": \"2026-10-04T09:00:00.000+00:00\", \"url\": \"https://jobs.example.test/a/2002\", \"department\": \"Sales\", \"job_ref\": null, \"source\": \"ashby\", \"company\": \"ExampleCo Ashby\", \"date_posted\": \"2026-10-04\"}, {\"source_id\": \"a-2003\", \"title\": \"Content Specialist\", \"text\": \"Instructional design and curriculum development for developers & partners.\", \"location_text\": \"Remote\", \"date_raw\": \"2026-10-04T10:00:00.000+00:00\", \"url\": \"https://jobs.example.test/a/2003\", \"department\": \"Marketing / Content\", \"job_ref\": null, \"source\": \"ashby\", \"company\": \"ExampleCo Ashby\", \"date_posted\": \"2026-10-04\"}, {\"source_id\": \"a-2004\", \"title\": \"Education Partnerships Manager\", \"text\": \"No published date.\", \"location_text\": \"Remote\", \"date_raw\": null, \"url\": \"https://jobs.example.test/a/2004\", \"department\": \"Sales\", \"job_ref\": null, \"source\": \"ashby\", \"company\": \"ExampleCo Ashby\", \"date_posted\": null}, {\"source_id\": \"sr-3001\", \"title\": \"Education Program Manager\", \"text\": \"We teach. Run education programs.\", \"location_text\": \"New York, NY, US\", \"date_raw\": \"2026-10-05T12:00:00.000Z\", \"url\": \"https://jobs.example.test/s/3001\", \"department\": \"Education / Learning\", \"job_ref\": null, \"source\": \"smartrecruiters\", \"company\": \"ExampleCo Recruiters\", \"date_posted\": \"2026-10-05\"}, {\"source_id\": \"sr-3002\", \"title\": \"Warehouse Associate\", \"text\": \"Pack boxes.\", \"location_text\": \"Reno, NV, US\", \"date_raw\": \"2026-10-05T12:00:00.000Z\", \"url\": \"https://jobs.example.test/s/3002\", \"department\": \"Operations\", \"job_ref\": null, \"source\": \"smartrecruiters\", \"company\": \"ExampleCo Recruiters\", \"date_posted\": \"2026-10-05\"}]};\nreturn [{json: FIXTURE}];"
+   },
+   "id": "6cdfaf0a-2cc0",
+   "name": "Fixture input",
+   "type": "n8n-nodes-base.code",
+   "typeVersion": 2,
+   "position": [
+    220,
+    0
+   ]
+  },
+  {
+   "parameters": {
+    "inputSource": "passthrough"
+   },
+   "id": "f0af6133-0ffc",
+   "name": "When called by another workflow",
+   "type": "n8n-nodes-base.executeWorkflowTrigger",
+   "typeVersion": 1.1,
+   "position": [
+    0,
+    160
+   ]
+  },
+  {
+   "parameters": {},
+   "id": "1c502188-5c73",
+   "name": "Run in",
+   "type": "n8n-nodes-base.noOp",
+   "typeVersion": 1,
+   "position": [
+    440,
+    80
+   ]
+  },
+  {
+   "parameters": {
+    "jsCode": "// Port of lectern/collect.py: word_in(), materials_evidence(), connector_evidence(), judge(), and the\n// dedupe and validity checks from main(). Pure functions: no n8n globals. The rules are keywords.json, never this file.\nconst escRe = s => s.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\\\$&');\nfunction wordIn(word, text) {\n  return new RegExp('(?<![a-z0-9])' + escRe(word.toLowerCase()) + '(?![a-z0-9])').test(text);\n}\n\nfunction materialsEvidence(bodyLc, kw) {\n  const rule = kw.materials_rule || {};\n  if (!Object.keys(rule).length) return null;\n  const vo = (rule.verb_object || []).filter(p => bodyLc.includes(p.toLowerCase()));\n  const au = (rule.audience || []).filter(p => bodyLc.includes(p.toLowerCase()));\n  const minVo = rule.min_verb_object === undefined ? 1 : rule.min_verb_object;\n  const minAu = rule.min_audience === undefined ? 1 : rule.min_audience;\n  if (vo.length >= minVo && au.length >= minAu) return {verb_object: vo.slice(0, 6), audience: au.slice(0, 6)};\n  return null;\n}\n\nfunction connectorEvidence(titleLc, bodyLc, kw) {\n  const rule = kw.connector_rule || {};\n  if (!Object.keys(rule).length) return null;\n  const tw = (rule.title_words || []).filter(w => wordIn(w, titleLc));\n  const iw = (rule.institution_words || []).filter(w => wordIn(w, bodyLc));\n  return (tw.length && iw.length) ? {title: tw, institution: iw.slice(0, 6)} : null;\n}\n\n// Returns [matched, rejectReason]; exactly one is null.\nfunction judge(v, kw) {\n  const ignore = new Set(((kw.ignore_words_by_company || {})[v.company] || []).map(w => w.toLowerCase()));\n  const tl = v.title.toLowerCase(), bl = v.text.toLowerCase();\n  const role = kw.role_title.filter(w => !ignore.has(w.toLowerCase()) && wordIn(w, tl));\n  const topic = kw.topic_text.filter(w => !ignore.has(w.toLowerCase()) && wordIn(w, bl));\n  const flex = kw.flex_text.filter(w => wordIn(w, bl));\n  const need = kw.keep_rule.topic_text_min_if_no_title_match;\n  const mats = materialsEvidence(bl, kw);\n  const conn = connectorEvidence(tl, bl, kw);\n  let why;\n  if (role.length) why = 'role word in title';\n  else if (topic.length >= need) why = `${topic.length} topic words in body (>= ${need})`;\n  else if (mats) why = 'body says it produces teaching materials for a named audience';\n  else if (conn) why = 'account or partnership role whose body names higher education';\n  else return [null, (!(role.length || topic.length) ? 'no-keyword-match' : `only ${topic.length} topic words, no role word in title`)];\n  return [{role_title: role, topic_text: topic, flex_text: flex, materials: mats, connector: conn,\n           kept_because: why, title_only: Boolean(role.length && !topic.length)}, null];\n}\n\n// The per-posting checks in collect.main(): returns a reject reason, or null if the posting goes on to judge().\nfunction validity(v) {\n  if (!v.title) return 'missing-title';\n  if (!v.url) return 'missing-url';\n  if (!v.date_posted) return 'unparseable-date';\n  return null;\n}\n// (node export removed in the n8n copy) module.exports = {wordIn, judge, validity, materialsEvidence, connectorEvidence};\n\n// One item per unique posting. A repeat of (source, source_id) is dropped and counted by Assemble; a posting with no\n// title, link or parseable date is marked and never reaches the rules.\nconst run = $input.first().json;\nconst seen = new Set(), out = [];\nfor (const v of run.views) {\n  const key = v.source + '\\u0000' + v.source_id;\n  if (seen.has(key)) continue;\n  seen.add(key);\n  out.push({json: Object.assign({}, v, {check: validity(v)})});\n}\nreturn out;"
+   },
+   "id": "8dacaad5-6f76",
+   "name": "Dedupe and validate",
+   "type": "n8n-nodes-base.code",
+   "typeVersion": 2,
+   "position": [
+    660,
+    80
+   ]
+  },
+  {
+   "parameters": {
+    "jsCode": "// Port of lectern/collect.py: word_in(), materials_evidence(), connector_evidence(), judge(), and the\n// dedupe and validity checks from main(). Pure functions: no n8n globals. The rules are keywords.json, never this file.\nconst escRe = s => s.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\\\$&');\nfunction wordIn(word, text) {\n  return new RegExp('(?<![a-z0-9])' + escRe(word.toLowerCase()) + '(?![a-z0-9])').test(text);\n}\n\nfunction materialsEvidence(bodyLc, kw) {\n  const rule = kw.materials_rule || {};\n  if (!Object.keys(rule).length) return null;\n  const vo = (rule.verb_object || []).filter(p => bodyLc.includes(p.toLowerCase()));\n  const au = (rule.audience || []).filter(p => bodyLc.includes(p.toLowerCase()));\n  const minVo = rule.min_verb_object === undefined ? 1 : rule.min_verb_object;\n  const minAu = rule.min_audience === undefined ? 1 : rule.min_audience;\n  if (vo.length >= minVo && au.length >= minAu) return {verb_object: vo.slice(0, 6), audience: au.slice(0, 6)};\n  return null;\n}\n\nfunction connectorEvidence(titleLc, bodyLc, kw) {\n  const rule = kw.connector_rule || {};\n  if (!Object.keys(rule).length) return null;\n  const tw = (rule.title_words || []).filter(w => wordIn(w, titleLc));\n  const iw = (rule.institution_words || []).filter(w => wordIn(w, bodyLc));\n  return (tw.length && iw.length) ? {title: tw, institution: iw.slice(0, 6)} : null;\n}\n\n// Returns [matched, rejectReason]; exactly one is null.\nfunction judge(v, kw) {\n  const ignore = new Set(((kw.ignore_words_by_company || {})[v.company] || []).map(w => w.toLowerCase()));\n  const tl = v.title.toLowerCase(), bl = v.text.toLowerCase();\n  const role = kw.role_title.filter(w => !ignore.has(w.toLowerCase()) && wordIn(w, tl));\n  const topic = kw.topic_text.filter(w => !ignore.has(w.toLowerCase()) && wordIn(w, bl));\n  const flex = kw.flex_text.filter(w => wordIn(w, bl));\n  const need = kw.keep_rule.topic_text_min_if_no_title_match;\n  const mats = materialsEvidence(bl, kw);\n  const conn = connectorEvidence(tl, bl, kw);\n  let why;\n  if (role.length) why = 'role word in title';\n  else if (topic.length >= need) why = `${topic.length} topic words in body (>= ${need})`;\n  else if (mats) why = 'body says it produces teaching materials for a named audience';\n  else if (conn) why = 'account or partnership role whose body names higher education';\n  else return [null, (!(role.length || topic.length) ? 'no-keyword-match' : `only ${topic.length} topic words, no role word in title`)];\n  return [{role_title: role, topic_text: topic, flex_text: flex, materials: mats, connector: conn,\n           kept_because: why, title_only: Boolean(role.length && !topic.length)}, null];\n}\n\n// The per-posting checks in collect.main(): returns a reject reason, or null if the posting goes on to judge().\nfunction validity(v) {\n  if (!v.title) return 'missing-title';\n  if (!v.url) return 'missing-url';\n  if (!v.date_posted) return 'unparseable-date';\n  return null;\n}\n// (node export removed in the n8n copy) module.exports = {wordIn, judge, validity, materialsEvidence, connectorEvidence};\n\nconst KW = {\"_comment\": \"Lectern's filter. A posting is KEPT if any role_title word appears in its title, or if three or more topic_text words appear in its body. flex_text never causes a keep \\u2014 it only annotates a kept record, because 'part-time' on its own has nothing to do with teaching. Every kept record records which words matched and where, so a reader can apply this file by hand to one posting and get the same answer. v0.2.0 (2026-09-26): added the alternative titles these roles are posted under \\u2014 Developer/Designer/Creator Advocate, Design or Product Evangelist, Community Engineer, Community Architect, Product Education Manager, Technical Content Engineer, Developer Experience, DevRel, Technical Writer. Several are broad on purpose and the run report measures what noise they added. v0.2.1 (2026-09-26, same day): REMOVED 'developer experience' and 'advocacy' after measuring them. 'developer experience' fired on 11 postings and 10 were backend or platform software-engineering jobs (Anthropic, Figma, Stripe x2, GitLab, OpenAI x2, Notion, Replit, Canva) \\u2014 the phrase names an engineering discipline, not an advocacy role. 'advocacy' fired once, on a customer-marketing programme. Kept: 'devrel', which found Vercel's DevRel Engineer. This is what P3 is for \\u2014 the filter is a file, so a word that turns out to be noise gets cut and the cut is recorded. v0.3.0 (2026-09-26): Professor Bear refined the target \\u2014 any job that DEVELOPS MATERIALS, whether to sell into universities, to teach the public, or to train the company's own people. Anthropic's 'Technical Documentation and Content Engineer, Claude Docs' is the model. Measured every candidate word against all 3,446 titles before adding: 11 of them appear in ZERO titles today and so cannot add noise; 'creator', 'documentation', and 'content engineer' each appear in exactly one title and it is the right one. 'learning experiences' found Replit's LEARNING EXPERIENCES CREATOR, a bullseye that v0.2.1 missed because it only had 'learning designer'. REJECTED as measured noise: bare 'learning' (42 titles, almost all Machine/Reinforcement Learning) and 'content strategy' (3 titles, all regional SEO marketing).\", \"version\": \"0.5.2\", \"keep_rule\": {\"role_title_min\": 1, \"topic_text_min_if_no_title_match\": 3}, \"role_title\": [\"academy\", \"advocate\", \"certification\", \"community\", \"community architect\", \"community engineer\", \"content developer\", \"content engineer\", \"courseware\", \"creator\", \"creator advocate\", \"curriculum\", \"design evangelist\", \"designer advocate\", \"developer advocate\", \"developer education\", \"developer relations\", \"devrel\", \"docs\", \"documentation\", \"education\", \"education content\", \"education manager\", \"educator\", \"enablement\", \"evangelist\", \"instructional design\", \"instructional designer\", \"instructor\", \"knowledge base\", \"learning content\", \"learning designer\", \"learning experience\", \"learning experiences\", \"onboarding content\", \"product education\", \"product evangelist\", \"teaching\", \"technical content\", \"technical writer\", \"technical writing\", \"trainer\", \"training content\", \"upskilling\", \"workshop\"], \"topic_text\": [\"university\", \"universities\", \"campus\", \"student\", \"workshop\", \"curriculum\", \"educate\", \"education\", \"teach\", \"classroom\", \"k-12\", \"higher ed\"], \"flex_text\": [\"part-time\", \"part time\", \"contract role\", \"contract position\", \"contractor role\", \"temporary\", \"seasonal\", \"fixed-term\", \"fixed term\", \"freelance\", \"summer\", \"hourly\"], \"ignore_words_by_company\": {\"_comment\": \"Words that appear in (nearly) every posting on that board \\u2014 company boilerplate, not a signal. Measured, not guessed. Writer, 2026-09-19: these three appeared in 51 of 51 postings and alone pushed every job over the line.\", \"Writer\": [\"generative ai\", \"ai agents\", \"learning\"]}, \"removed_after_measurement\": {\"developer experience\": \"11 hits, 10 were software-engineering roles (2026-09-26)\", \"advocacy\": \"1 hit, a customer-marketing programme (2026-09-26)\", \"connector_rule weaker body half (2026-10-18)\": \"2 hits, 0 fit: a public-health partnerships role and a hardware marketing role. Not added.\"}, \"measured_before_adding\": {\"zero titles today, no noise possible\": [\"technical writer\", \"technical writing\", \"instructional design\", \"instructional designer\", \"courseware\", \"knowledge base\", \"content developer\", \"onboarding content\", \"training content\", \"upskilling\", \"certification\", \"workshop\"], \"one title today and it is correct\": {\"creator\": \"Learning Experiences Creator\", \"documentation\": \"Technical Documentation and Content Engineer\", \"content engineer\": \"Technical Documentation and Content Engineer\"}, \"accepted with one known false positive\": {\"learning experience(s)\": \"finds Learning Experiences Creator; also matches 'Software Engineer, Native Learning Experiences'\", \"docs\": \"finds the Claude Docs role; also matches 'Senior Software Engineer, Docs Product'\"}, \"rejected as measured noise\": {\"learning\": \"42 titles, nearly all Machine/Reinforcement Learning\", \"content strategy\": \"3 titles, all regional SEO/content marketing\"}, \"connector_rule (2026-10-18)\": \"495 titles with an account or partnership word, 7 also name higher education in the body, 5 of the 7 already kept, 2 new.\", \"connector_rule second pass (2026-10-18)\": \"57 postings name higher education in the body; 5 sales or partner-style titles not kept; 1 added by 'sales manager'; all 38 Enterprise Account Executive roles remain rejected.\", \"connector_rule third pass (2026-10-18)\": \"992 titles with a marketing/adoption/account/partner/sales/success word; 13 name higher education in the body; 12 already kept; 1 added by 'marketing'.\"}, \"materials_rule\": {\"_comment\": \"Professor Bear, 2026-09-26: 'everything's probably named differently, but that kind of job would be something to look out for.' Titles cannot carry this family \\u2014 'documentation' is in 2 of 3,446 titles and 'technical writer' in zero \\u2014 so a posting is also KEPT when its BODY says the job is to produce teaching materials FOR a named audience. Both halves are required: a make-materials phrase AND an audience. 'Maintain documentation' in a tax director's ad matches the first and not the second, which is the whole point. TIGHTENED same day after measurement: the first version kept 101 extra postings at roughly one-in-ten precision, because phrases like 'technical documentation' and 'technical content' appear in almost every engineering, support, and legal ad \\u2014 every product has docs. Nine phrase groups were removed and the threshold raised to TWO verb-object phrases. The removed list is kept here because a rule that failed is evidence about the corpus, not an embarrassment. Final pass: threshold back to ONE phrase (two matched nothing in the whole corpus), and three more phrases cut. The surviving list is 23 phrases that only a teaching-materials job uses. Measured precision of the body rule after all cuts is in the run report; it is the only rule here whose precision was measured rather than assumed, because it was the only one that failed loudly enough to force it.\", \"min_verb_object\": 1, \"min_audience\": 1, \"verb_object\": [\"instructional design\", \"curriculum design\", \"curriculum development\", \"develop curriculum\", \"build curriculum\", \"courseware\", \"write tutorials\", \"create tutorials\", \"build tutorials\", \"produce tutorials\", \"author courses\", \"build courses\", \"create courses\", \"develop courses\", \"design courses\", \"learning content\", \"educational content\", \"education content\", \"record video\", \"record walkthroughs\", \"present on camera\", \"on-camera\", \"screencast\"], \"audience\": [\"for developers\", \"for users\", \"for customers\", \"for partners\", \"for students\", \"for teachers\", \"for educators\", \"for engineers\", \"for designers\", \"for our customers\", \"for the community\", \"developer community\", \"design community\", \"our users\", \"our customers\", \"end users\", \"learners\", \"practitioners\", \"universities\", \"classroom\", \"k-12\", \"higher education\", \"internal teams\", \"our own team\", \"sales team\", \"field team\", \"new hires\", \"go-to-market team\", \"account teams\"], \"removed_after_measurement\": {\"technical documentation\": \"matched ~40 engineering, support, tax and legal postings \\u2014 every product has docs\", \"technical content\": \"matched all 15 Anthropic Applied AI Architects plus marketing and partnerships\", \"product documentation\": \"matched customer-support roles\", \"knowledge base articles\": \"matched IT Support Engineers and Technical Support Engineers\", \"training materials / training material\": \"matched incident managers, project managers, deal-desk analysts\", \"deliver training / live training / virtual training\": \"matched compliance counsel and account managers\", \"run workshops / lead workshops / deliver workshops\": \"matched solutions architects running customer workshops\", \"sample code\": \"matched applied-AI and partner engineering roles\", \"enablement content\": \"matched product marketing and partnerships\", \"how-to guides\": \"matched 3 Anthropic IT Support Engineers and an IT Operations Engineer \\u2014 internal IT writes how-to guides\", \"reference material / implementation guides\": \"too generic once 'how-to guides' proved the pattern; cut unmeasured rather than left in on a guess\"}}, \"connector_rule\": {\"_comment\": \"Professor Bear, 2026-10-18, looking at a Senior Partner Account Manager posting for global systems integrators (correctly rejected: it is a sales role about consulting firms, not education): 'the search should look for jobs like this' for universities: a role that owns a big institutional relationship, the way Claude and Northeastern is a big account. Not a teaching job and not a teaching-materials job, so neither older rule can see it by design. Both halves required: an account-or-partnership word in the TITLE and a higher-education institution in the BODY. Measured on the 2026-10-18 corpus (3,243 postings) before adding: 495 titles carry an account or partnership word; 7 of those also name a university or higher education in the body; 5 of the 7 were already kept (Canva and OpenAI higher-education account roles, Anthropic's AI for Science partnership role) and 2 are new. Precision is NOT measured: 2 new postings is too few to say, and a person has to read them. 'customer success' was left out because it is a support title at most companies. 2026-10-18, second pass (v0.5.1), after Professor Bear read the closest-call table and confirmed that industry Enterprise Account Executive roles (retail, banking, automotive and the rest, 27 on the board) are correct rejects: 'educate them about our services' is sales boilerplate, not teaching. The fit he named is an account executive who reaches universities. Re-measured: 57 postings name a university or higher education in the body; 5 of those have a sales or partner-style title and are not kept. Four are not account roles (a solutions-marketing lead, two state-and-local-affairs leads, a public-sector operations lead) and stay out. One, a Sales Manager for nonprofits in EMEA that names higher education, is the kind of role he described, so 'sales manager', 'sales director', 'sales executive' and 'enterprise sales' were added to the title words. Only 'sales manager' matches anything today; the other three are 'zero titles today, no noise possible'. All 38 Enterprise Account Executive roles on the boards (28 at Anthropic; 'industry' ones such as retail, banking and automotive) still come out as rejects. (An earlier draft of this note said 27; that was a miscount of the Anthropic lines, corrected 2026-10-18.) 2026-10-18, third pass (v0.5.2), after Professor Bear read the reject file, found no misses, and asked that marketing, adoption and enterprise-account roles not be rejected early ('I'm okay with looking at a few more'). Re-measured on the same corpus: 992 postings have a marketing, adoption, customer-success, account, partner, sales or growth word in the title; 13 of those name a university or higher education in the body; 12 were already kept; 1 was rejected (a Solutions Marketing Lead for the public sector), and 'marketing' now keeps it. 'adoption', 'customer success', 'go-to-market' and 'gtm' match nothing new today. A weaker body half was also tried and NOT added: accepting two or more education words (education, students, schools, k-12, learners, teachers) instead of a university gave 2 extra rejects and 0 that fit (a public-health partnerships role where 'schools' means school health, and a hardware marketing role where 'students' is a consumer group).\", \"title_words\": [\"account executive\", \"account manager\", \"account director\", \"strategic account\", \"strategic accounts\", \"key account\", \"partnership\", \"partnerships\", \"partner manager\", \"partner account\", \"alliances\", \"business development\", \"relationship manager\", \"client partner\", \"sales manager\", \"sales director\", \"sales executive\", \"enterprise sales\", \"marketing\", \"adoption\", \"customer success\", \"go-to-market\", \"gtm\"], \"institution_words\": [\"university\", \"universities\", \"higher education\", \"higher ed\", \"colleges\", \"academic institution\", \"academic institutions\"]}};\n\nreturn $input.all().map(it => {\n  const v = it.json;\n  if (v.check) return {json: Object.assign({}, v, {kept: false, matched: null, reject_reason: v.check})};\n  const [m, why] = judge(v, KW);\n  return {json: Object.assign({}, v, {kept: Boolean(m), matched: m, reject_reason: why})};\n});"
+   },
+   "id": "a99c29aa-9868",
+   "name": "Judge (rules = keywords.json v0.5.2)",
+   "type": "n8n-nodes-base.code",
+   "typeVersion": 2,
+   "position": [
+    880,
+    80
+   ]
+  },
+  {
+   "parameters": {
+    "conditions": {
+     "options": {
+      "caseSensitive": true,
+      "leftValue": "",
+      "typeValidation": "strict",
+      "version": 2
+     },
+     "conditions": [
+      {
+       "id": "3f9c1914-b8fe",
+       "leftValue": "={{ $json.kept }}",
+       "rightValue": "",
+       "operator": {
+        "type": "boolean",
+        "operation": "true",
+        "singleValue": true
+       }
+      }
+     ],
+     "combinator": "and"
+    },
+    "options": {}
+   },
+   "id": "0ded52f4-3237",
+   "name": "Kept?",
+   "type": "n8n-nodes-base.if",
+   "typeVersion": 2.2,
+   "position": [
+    1100,
+    80
+   ]
+  },
+  {
+   "parameters": {},
+   "id": "7e5e71e7-727e",
+   "name": "Kept",
+   "type": "n8n-nodes-base.noOp",
+   "typeVersion": 1,
+   "position": [
+    1320,
+    0
+   ]
+  },
+  {
+   "parameters": {},
+   "id": "8375cddd-27ee",
+   "name": "Rejected",
+   "type": "n8n-nodes-base.noOp",
+   "typeVersion": 1,
+   "position": [
+    1320,
+    170
+   ]
+  },
+  {
+   "parameters": {
+    "numberInputs": 2
+   },
+   "id": "bf799d53-7bda",
+   "name": "Wait for both",
+   "type": "n8n-nodes-base.merge",
+   "typeVersion": 3.2,
+   "position": [
+    1540,
+    80
+   ]
+  },
+  {
+   "parameters": {
+    "jsCode": "// The run, in the shape workflow 03 reads. Postings in their original order, with the reason for every decision.\nconst run = $('Run in').first().json;\nconst rows = $('Judge (rules = keywords.json v0.5.2)').all().map(i => i.json);\nconst FIELDS = ['source', 'company', 'source_id', 'title', 'text', 'url', 'location_text', 'department', 'date_posted', 'job_ref', 'kept', 'matched', 'reject_reason'];\nconst records = rows.map(r => { const o = {}; for (const f of FIELDS) o[f] = r[f] === undefined ? null : r[f]; return o; });\nconst rejected = {};\nif (run.views.length > rows.length) rejected.duplicate = run.views.length - rows.length;\nfor (const r of records) if (r.reject_reason) rejected[r.reject_reason] = (rejected[r.reject_reason] || 0) + 1;\nreturn [{json: {date: run.date, keywords_version: '0.5.2', sources: run.sources, watched: run.watched || [...new Set(run.sources.map(s => s.company))],\n  counts: {postings_fetched: run.views.length, postings_unique: records.length, kept: records.filter(r => r.kept).length, rejected}, records}}];"
+   },
+   "id": "6f9fb2b1-4a76",
+   "name": "Assemble run",
+   "type": "n8n-nodes-base.code",
+   "typeVersion": 2,
+   "position": [
+    1760,
+    80
+   ]
+  }
+ ],
+ "connections": {
+  "Manual · run on fixtures": {
+   "main": [
+    [
+     {
+      "node": "Fixture input",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Fixture input": {
+   "main": [
+    [
+     {
+      "node": "Run in",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "When called by another workflow": {
+   "main": [
+    [
+     {
+      "node": "Run in",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Run in": {
+   "main": [
+    [
+     {
+      "node": "Dedupe and validate",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Dedupe and validate": {
+   "main": [
+    [
+     {
+      "node": "Judge (rules = keywords.json v0.5.2)",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Judge (rules = keywords.json v0.5.2)": {
+   "main": [
+    [
+     {
+      "node": "Kept?",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Kept": {
+   "main": [
+    [
+     {
+      "node": "Wait for both",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Kept?": {
+   "main": [
+    [
+     {
+      "node": "Kept",
+      "type": "main",
+      "index": 0
+     }
+    ],
+    [
+     {
+      "node": "Rejected",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Rejected": {
+   "main": [
+    [
+     {
+      "node": "Wait for both",
+      "type": "main",
+      "index": 1
+     }
+    ]
+   ]
+  },
+  "Wait for both": {
+   "main": [
+    [
+     {
+      "node": "Assemble run",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  }
+ },
+ "settings": {
+  "executionOrder": "v1"
+ },
+ "pinData": {},
+ "tags": [],
+ "meta": {
+  "templateCredsSetupCompleted": false
+ }
+}

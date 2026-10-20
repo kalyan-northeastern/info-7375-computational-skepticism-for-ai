@@ -1,0 +1,13 @@
+{
+ "runtime": "1.113.3",
+ "tested_at": "2026-10-20T04:12:57.493031+00:00",
+ "results": {
+  "01-collect": true,
+  "02-filter": true,
+  "03-delta": true,
+  "04-post-to-discord": true,
+  "05-daily": true
+ },
+ "mode": "synthetic fixtures, no network, no credentials, nothing sent",
+ "all_passed": true
+}

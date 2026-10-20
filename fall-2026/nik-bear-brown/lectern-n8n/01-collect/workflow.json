@@ -1,0 +1,405 @@
+{
+ "id": "lectern9133e20d84",
+ "name": "Lectern 01 · Collect: read each watched board and normalise what it says",
+ "active": false,
+ "nodes": [
+  {
+   "parameters": {
+    "content": "## 01 · Collect\nPort of `fetch_board()` and `normalise()` in lectern/collect.py. **Fixture mode** (default) replays three recorded, made-up payloads, one per provider; **live mode** calls the public job-board APIs for the boards in `shared/boards.json`. A board that fails becomes a status row, never a stop. Live: Greenhouse and Ashby only; SmartRecruiters needs its per-posting detail calls (not built), so it is reported as unavailable rather than judged on empty text.",
+    "height": 200,
+    "width": 640,
+    "color": 4
+   },
+   "id": "34eb0191-6416",
+   "name": "Note 01 · Collect\nPort of",
+   "type": "n8n-nodes-base.stickyNote",
+   "typeVersion": 1,
+   "position": [
+    -160,
+    -380
+   ]
+  },
+  {
+   "parameters": {},
+   "id": "a2255ba3-ec2e",
+   "name": "Manual · run on fixtures",
+   "type": "n8n-nodes-base.manualTrigger",
+   "typeVersion": 1,
+   "position": [
+    0,
+    0
+   ]
+  },
+  {
+   "parameters": {
+    "jsCode": "return [{json: {mode: 'fixture'}}];  // change to {mode: 'live'} (optionally only: ['Anthropic']) to read the real boards"
+   },
+   "id": "64301726-2cc0",
+   "name": "Fixture input",
+   "type": "n8n-nodes-base.code",
+   "typeVersion": 2,
+   "position": [
+    220,
+    0
+   ]
+  },
+  {
+   "parameters": {
+    "inputSource": "passthrough"
+   },
+   "id": "3548cbb4-0ffc",
+   "name": "When called by another workflow",
+   "type": "n8n-nodes-base.executeWorkflowTrigger",
+   "typeVersion": 1.1,
+   "position": [
+    0,
+    160
+   ]
+  },
+  {
+   "parameters": {},
+   "id": "2d2ba25a-5c73",
+   "name": "Run in",
+   "type": "n8n-nodes-base.noOp",
+   "typeVersion": 1,
+   "position": [
+    440,
+    80
+   ]
+  },
+  {
+   "parameters": {
+    "jsCode": "const BOARDS = [{\"provider\": \"greenhouse\", \"company\": \"Anthropic\", \"slug\": \"anthropic\", \"tier\": 1}, {\"provider\": \"greenhouse\", \"company\": \"Figma\", \"slug\": \"figma\", \"tier\": 1}, {\"provider\": \"greenhouse\", \"company\": \"HubSpot\", \"slug\": \"hubspotjobs\", \"tier\": 1}, {\"provider\": \"greenhouse\", \"company\": \"Vercel\", \"slug\": \"vercel\", \"tier\": 2}, {\"provider\": \"greenhouse\", \"company\": \"Webflow\", \"slug\": \"webflow\", \"tier\": 2}, {\"provider\": \"greenhouse\", \"company\": \"Miro\", \"slug\": \"realtimeboardglobal\", \"tier\": 2}, {\"provider\": \"greenhouse\", \"company\": \"Airtable\", \"slug\": \"airtable\", \"tier\": 2}, {\"provider\": \"greenhouse\", \"company\": \"GitLab\", \"slug\": \"gitlab\", \"tier\": 1}, {\"provider\": \"greenhouse\", \"company\": \"Twilio\", \"slug\": \"twilio\", \"tier\": 1}, {\"provider\": \"greenhouse\", \"company\": \"Netlify\", \"slug\": \"netlify\", \"tier\": 2}, {\"provider\": \"ashby\", \"company\": \"OpenAI\", \"slug\": \"openai\", \"tier\": 1}, {\"provider\": \"ashby\", \"company\": \"Notion\", \"slug\": \"notion\", \"tier\": 2}, {\"provider\": \"ashby\", \"company\": \"Jasper AI\", \"slug\": \"Jasper AI\", \"tier\": 2}, {\"provider\": \"ashby\", \"company\": \"Supabase\", \"slug\": \"supabase\", \"tier\": 2}, {\"provider\": \"smartrecruiters\", \"company\": \"Canva\", \"slug\": \"Canva\", \"tier\": 1}];\nconst FIXTURE = [{\"provider\": \"greenhouse\", \"company\": \"ExampleCo Labs\", \"slug\": \"examplelabs\", \"payload\": {\"jobs\": [{\"id\": 1001, \"title\": \"Developer Educator\", \"content\": \"&lt;p&gt;Teach developers &amp; run workshops.&lt;/p&gt;\", \"location\": {\"name\": \"Remote - US\"}, \"departments\": [{\"name\": \"Education\"}], \"first_published\": \"2026-10-01T10:00:00-04:00\", \"absolute_url\": \"https://jobs.example.test/g/1001\", \"internal_job_id\": 5001}, {\"id\": 1002, \"title\": \"Staff Backend Engineer\", \"content\": \"&lt;p&gt;Build services. Partner with universities, campus programs, student interns and classroom pilots.&lt;/p&gt;\", \"location\": {\"name\": \"Boston, MA\"}, \"departments\": [{\"name\": \"Engineering\"}, {\"name\": \"Platform\"}], \"first_published\": \"2026-10-02T09:30:00-04:00\", \"absolute_url\": \"https://jobs.example.test/g/1002\", \"internal_job_id\": 5002}, {\"id\": 1003, \"title\": \"Payments Analyst\", \"content\": \"&lt;p&gt;Reconcile payments every day.&lt;/p&gt;\", \"location\": {\"name\": \"Remote\"}, \"departments\": [], \"first_published\": \"2026-10-02T09:30:00-04:00\", \"absolute_url\": \"https://jobs.example.test/g/1003\", \"internal_job_id\": 5003}, {\"id\": 1001, \"title\": \"Developer Educator (repost)\", \"content\": \"&lt;p&gt;Same id, listed twice.&lt;/p&gt;\", \"location\": {\"name\": \"Remote - US\"}, \"departments\": [], \"first_published\": \"2026-10-01T10:00:00-04:00\", \"absolute_url\": \"https://jobs.example.test/g/1001\", \"internal_job_id\": 5001}, {\"id\": 1005, \"title\": \"Finance Analyst\", \"content\": \"&lt;p&gt;Our customers include one university.&lt;/p&gt;\", \"location\": {\"name\": \"Remote\"}, \"departments\": [{\"name\": \"Finance\"}], \"first_published\": \"2026-10-03T09:30:00-04:00\", \"absolute_url\": \"https://jobs.example.test/g/1005\", \"internal_job_id\": 5005}, {\"id\": 1006, \"title\": \"Education Programs Lead\", \"content\": \"&lt;p&gt;No link on this one.&lt;/p&gt;\", \"location\": {\"name\": \"Remote\"}, \"departments\": [], \"first_published\": \"2026-10-03T09:30:00-04:00\", \"internal_job_id\": 5006}]}}, {\"provider\": \"ashby\", \"company\": \"ExampleCo Ashby\", \"slug\": \"Example Ashby\", \"payload\": {\"jobs\": [{\"id\": \"a-2001\", \"title\": \"Curriculum Lead\", \"descriptionHtml\": \"&lt;p&gt;Own curriculum &amp; courseware for the academy.&lt;/p&gt;\", \"location\": \"Boston, MA\", \"secondaryLocations\": [{\"location\": \"Remote\"}], \"publishedAt\": \"2026-10-03T09:00:00.000+00:00\", \"jobUrl\": \"https://jobs.example.test/a/2001\", \"department\": \"Learning\", \"team\": \"Content\"}, {\"id\": \"a-2002\", \"title\": \"Strategic Account Manager\", \"descriptionPlain\": \"You will own our largest university relationships and manage each higher education partnership.\", \"location\": \"New York, NY\", \"secondaryLocations\": [], \"publishedAt\": \"2026-10-04T09:00:00.000+00:00\", \"jobUrl\": \"https://jobs.example.test/a/2002\", \"department\": \"Sales\", \"team\": null}, {\"id\": \"a-2003\", \"title\": \"Content Specialist\", \"descriptionHtml\": \"&lt;p&gt;Instructional design and curriculum development for developers &amp; partners.&lt;/p&gt;\", \"location\": \"Remote\", \"secondaryLocations\": [], \"publishedAt\": \"2026-10-04T10:00:00.000+00:00\", \"jobUrl\": \"https://jobs.example.test/a/2003\", \"department\": \"Marketing\", \"team\": \"Content\"}, {\"id\": \"a-2004\", \"title\": \"Education Partnerships Manager\", \"descriptionHtml\": \"<p>No published date.</p>\", \"location\": \"Remote\", \"secondaryLocations\": [], \"jobUrl\": \"https://jobs.example.test/a/2004\", \"department\": \"Sales\", \"team\": null}]}}, {\"provider\": \"smartrecruiters\", \"company\": \"ExampleCo Recruiters\", \"slug\": \"examplesr\", \"payload\": {\"jobs\": [{\"id\": \"sr-3001\", \"name\": \"Education Program Manager\", \"jobAd\": {\"sections\": {\"companyDescription\": {\"text\": \"We teach.\"}, \"jobDescription\": {\"text\": \"<p>Run education programs.</p>\"}}}, \"customField\": [{\"fieldLabel\": \"Org\", \"valueLabel\": \"Learning\"}], \"location\": {\"fullLocation\": \"New York, NY, US\"}, \"releasedDate\": \"2026-10-05T12:00:00.000Z\", \"postingUrl\": \"https://jobs.example.test/s/3001\", \"function\": {\"label\": \"Education\"}}, {\"id\": \"sr-3002\", \"name\": \"Warehouse Associate\", \"jobAd\": {\"sections\": {\"jobDescription\": {\"text\": \"Pack boxes.\"}}}, \"customField\": [], \"location\": {\"fullLocation\": \"Reno, NV, US\"}, \"releasedDate\": \"2026-10-05T12:00:00.000Z\", \"postingUrl\": \"https://jobs.example.test/s/3002\", \"function\": {\"label\": \"Operations\"}}], \"_detail\": true}}];\n\nconst input = $input.first().json, mode = input.mode || 'fixture';\nif (mode === 'fixture') return FIXTURE.map((b, i) => ({json: Object.assign({mode}, b), pairedItem: {item: 0}}));\nconst only = input.only && input.only.length ? new Set(input.only) : null;\nreturn BOARDS.filter(b => !only || only.has(b.company)).map(b => ({json: {mode, provider: b.provider, company: b.company, slug: b.slug}, pairedItem: {item: 0}}));"
+   },
+   "id": "630cb163-3d3d",
+   "name": "Boards",
+   "type": "n8n-nodes-base.code",
+   "typeVersion": 2,
+   "position": [
+    660,
+    80
+   ]
+  },
+  {
+   "parameters": {
+    "conditions": {
+     "options": {
+      "caseSensitive": true,
+      "leftValue": "",
+      "typeValidation": "strict",
+      "version": 2
+     },
+     "conditions": [
+      {
+       "id": "bc6da94b-8286",
+       "leftValue": "={{ $json.mode === 'live' }}",
+       "rightValue": "",
+       "operator": {
+        "type": "boolean",
+        "operation": "true",
+        "singleValue": true
+       }
+      }
+     ],
+     "combinator": "and"
+    },
+    "options": {}
+   },
+   "id": "6d33df0d-0249",
+   "name": "Live?",
+   "type": "n8n-nodes-base.if",
+   "typeVersion": 2.2,
+   "position": [
+    880,
+    80
+   ]
+  },
+  {
+   "parameters": {},
+   "id": "b5322e13-57e7",
+   "name": "Recorded payloads",
+   "type": "n8n-nodes-base.noOp",
+   "typeVersion": 1,
+   "position": [
+    1100,
+    0
+   ]
+  },
+  {
+   "parameters": {
+    "conditions": {
+     "options": {
+      "caseSensitive": true,
+      "leftValue": "",
+      "typeValidation": "strict",
+      "version": 2
+     },
+     "conditions": [
+      {
+       "id": "def668ef-f681",
+       "leftValue": "={{ $json.provider !== 'smartrecruiters' }}",
+       "rightValue": "",
+       "operator": {
+        "type": "boolean",
+        "operation": "true",
+        "singleValue": true
+       }
+      }
+     ],
+     "combinator": "and"
+    },
+    "options": {}
+   },
+   "id": "df359d24-2105",
+   "name": "Live provider supported?",
+   "type": "n8n-nodes-base.if",
+   "typeVersion": 2.2,
+   "position": [
+    1100,
+    200
+   ]
+  },
+  {
+   "parameters": {
+    "method": "GET",
+    "url": "={{ $json.provider === 'greenhouse' ? 'https://boards-api.greenhouse.io/v1/boards/' + $json.slug + '/jobs?content=true' : 'https://api.ashbyhq.com/posting-api/job-board/' + encodeURIComponent($json.slug) + '?includeCompensation=true' }}",
+    "sendHeaders": true,
+    "headerParameters": {
+     "parameters": [
+      {
+       "name": "User-Agent",
+       "value": "lectern (course project)"
+      }
+     ]
+    },
+    "options": {
+     "timeout": 30000,
+     "redirect": {
+      "redirect": {
+       "followRedirects": false
+      }
+     }
+    }
+   },
+   "id": "a3b8d316-0279",
+   "name": "Fetch board",
+   "type": "n8n-nodes-base.httpRequest",
+   "typeVersion": 4.2,
+   "position": [
+    1320,
+    140
+   ],
+   "onError": "continueRegularOutput"
+  },
+  {
+   "parameters": {
+    "jsCode": "// The HTTP node replaced the item with the API's answer: put the board back with it.\nconst b = $('Boards').item.json;\nconst r = $json;\nif (r.error || !r.jobs) return {json: {provider: b.provider, company: b.company, slug: b.slug, payload: null, error: String(r.error && r.error.message || r.error || 'no jobs in the response')}};\nreturn {json: {provider: b.provider, company: b.company, slug: b.slug, payload: r}};",
+    "mode": "runOnceForEachItem"
+   },
+   "id": "694a0925-535d",
+   "name": "Label fetched board",
+   "type": "n8n-nodes-base.code",
+   "typeVersion": 2,
+   "position": [
+    1540,
+    140
+   ]
+  },
+  {
+   "parameters": {
+    "jsCode": "const b = $json;\nreturn {json: {provider: b.provider, company: b.company, slug: b.slug, payload: null, error: 'SmartRecruiters needs its per-posting detail calls, not built in n8n yet'}};",
+    "mode": "runOnceForEachItem"
+   },
+   "id": "4da0542d-4708",
+   "name": "Not built live",
+   "type": "n8n-nodes-base.code",
+   "typeVersion": 2,
+   "position": [
+    1320,
+    300
+   ]
+  },
+  {
+   "parameters": {
+    "numberInputs": 3
+   },
+   "id": "38e531ff-d7bd",
+   "name": "Collect all",
+   "type": "n8n-nodes-base.merge",
+   "typeVersion": 3.2,
+   "position": [
+    1760,
+    140
+   ]
+  },
+  {
+   "parameters": {
+    "jsCode": "// Port of lectern/collect.py: plain(), iso_date(), normalise(). Pure functions: no n8n globals.\nconst NAMED = {amp:'&', lt:'<', gt:'>', quot:'\"', apos:\"'\", nbsp:' ', ndash:'–', mdash:'—',\n  lsquo:'‘', rsquo:'’', ldquo:'“', rdquo:'”', hellip:'…', bull:'•', middot:'·',\n  copy:'©', reg:'®', trade:'™', eacute:'é', egrave:'è', aacute:'á', agrave:'à',\n  uuml:'ü', ouml:'ö', auml:'ä', ntilde:'ñ', ccedil:'ç', deg:'°', times:'×',\n  euro:'€', pound:'£', laquo:'«', raquo:'»', iexcl:'¡', iquest:'¿', szlig:'ß'};\nconst CP1252 = {0x80:0x20ac,0x82:0x201a,0x83:0x0192,0x84:0x201e,0x85:0x2026,0x86:0x2020,0x87:0x2021,0x88:0x02c6,\n  0x89:0x2030,0x8a:0x0160,0x8b:0x2039,0x8c:0x0152,0x8e:0x017d,0x91:0x2018,0x92:0x2019,0x93:0x201c,0x94:0x201d,\n  0x95:0x2022,0x96:0x2013,0x97:0x2014,0x98:0x02dc,0x99:0x2122,0x9a:0x0161,0x9b:0x203a,0x9c:0x0153,0x9e:0x017e,0x9f:0x0178};\n\nfunction unescapeHtml(s) {\n  return s.replace(/&(#[xX][0-9a-fA-F]+|#[0-9]+|[A-Za-z][A-Za-z0-9]*);/g, (m, e) => {\n    if (e[0] === '#') {\n      let cp = (e[1] === 'x' || e[1] === 'X') ? parseInt(e.slice(2), 16) : parseInt(e.slice(1), 10);\n      if (cp === 0 || cp > 0x10ffff || (cp >= 0xd800 && cp <= 0xdfff)) return '�';\n      if (CP1252[cp]) cp = CP1252[cp];\n      return String.fromCodePoint(cp);\n    }\n    return Object.prototype.hasOwnProperty.call(NAMED, e) ? NAMED[e] : m;\n  });\n}\n\n// Python: re.sub(r\"\\s+\", \" \", re.sub(r\"<[^>]+>\", \" \", html.unescape(html.unescape(s or \"\")))).strip()\nfunction plain(s) {\n  return unescapeHtml(unescapeHtml(s || '')).replace(/<[^>]+>/g, ' ').replace(/\\s+/g, ' ').trim();\n}\n\nfunction isoDate(v) {\n  if (!v) return null;\n  const m = /^(\\d{4})-(\\d{2})-(\\d{2})/.exec(String(v));\n  return m ? m[0] : null;\n}\n\nconst pystr = v => (v === undefined || v === null) ? 'None' : String(v);   // Python str(None) is 'None'\nconst joinTruthy = (xs, sep) => xs.filter(x => x).join(sep);\n\nfunction normalise(provider, company, payload) {\n  const out = [];\n  for (const j of (payload && payload.jobs) || []) {\n    let v;\n    if (provider === 'greenhouse') {\n      v = {source_id: pystr(j.id), title: (j.title || '').trim(), text: plain(j.content),\n           location_text: (j.location || {}).name || '', date_raw: j.first_published || j.updated_at || null,\n           url: j.absolute_url === undefined ? null : j.absolute_url,\n           department: (j.departments || []).map(d => d.name || '').join(' / '),\n           job_ref: (j.internal_job_id !== undefined && j.internal_job_id !== null) ? String(j.internal_job_id) : null};\n    } else if (provider === 'ashby') {\n      const locs = [j.location || ''].concat((j.secondaryLocations || []).map(x => x.location || ''));\n      v = {source_id: pystr(j.id), title: (j.title || '').trim(), text: plain(j.descriptionHtml || j.descriptionPlain),\n           location_text: joinTruthy(locs, ' · '), date_raw: j.publishedAt || null,\n           url: j.jobUrl === undefined ? null : j.jobUrl, department: joinTruthy([j.department, j.team], ' / ')};\n    } else {   // smartrecruiters\n      const secs = ((j.jobAd || {}).sections || {});\n      const cf = {};\n      for (const f of (j.customField || [])) cf[f.fieldLabel] = f.valueLabel;\n      const loc = j.location || {};\n      v = {source_id: pystr(j.id), title: (j.name || '').trim(),\n           text: plain(Object.values(secs).map(x => ((x || {}).text) || '').join(' ')),\n           location_text: loc.fullLocation || '', date_raw: j.releasedDate || null,\n           url: j.postingUrl === undefined ? null : j.postingUrl,\n           department: joinTruthy([(j.function || {}).label, cf.Org], ' / ')};\n    }\n    if (v.job_ref === undefined) v.job_ref = null;\n    Object.assign(v, {source: provider, company, date_posted: isoDate(v.date_raw), original: j});\n    out.push(v);\n  }\n  return out;\n}\n// (node export removed in the n8n copy) module.exports = {plain, isoDate, normalise, unescapeHtml};\n\nconst inDate = $('Run in').first().json.date;\nconst today = new Date().toISOString().slice(0, 10);\nconst boards = $('Boards').all().map(i => i.json);\nconst mode = boards.length ? boards[0].mode : 'fixture';\nconst views = [], sources = [];\nfor (const it of $input.all()) {\n  const b = it.json;\n  if (b.error || !b.payload) { sources.push({company: b.company, provider: b.provider, status: 'unavailable', reason: b.error || 'no payload'}); continue; }\n  const v = normalise(b.provider, b.company, b.payload);\n  views.push(...v);\n  sources.push({company: b.company, provider: b.provider, status: 'ok', postings: v.length});\n}\nif (!sources.some(s => s.status === 'ok')) throw new Error('every source failed: nothing to report');\nconst strip = ({original, ...rest}) => rest;      // the source's own record is not carried between workflows\nreturn [{json: {date: inDate || (mode === 'fixture' ? '2026-10-19' : today), mode, sources, watched: [...new Set(boards.map(b => b.company))], views: views.map(strip)}}];"
+   },
+   "id": "e2cc3612-d5e5",
+   "name": "Normalise",
+   "type": "n8n-nodes-base.code",
+   "typeVersion": 2,
+   "position": [
+    1980,
+    140
+   ]
+  }
+ ],
+ "connections": {
+  "Manual · run on fixtures": {
+   "main": [
+    [
+     {
+      "node": "Fixture input",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Fixture input": {
+   "main": [
+    [
+     {
+      "node": "Run in",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "When called by another workflow": {
+   "main": [
+    [
+     {
+      "node": "Run in",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Run in": {
+   "main": [
+    [
+     {
+      "node": "Boards",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Boards": {
+   "main": [
+    [
+     {
+      "node": "Live?",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Live?": {
+   "main": [
+    [
+     {
+      "node": "Live provider supported?",
+      "type": "main",
+      "index": 0
+     }
+    ],
+    [
+     {
+      "node": "Recorded payloads",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Live provider supported?": {
+   "main": [
+    [
+     {
+      "node": "Fetch board",
+      "type": "main",
+      "index": 0
+     }
+    ],
+    [
+     {
+      "node": "Not built live",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Fetch board": {
+   "main": [
+    [
+     {
+      "node": "Label fetched board",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Recorded payloads": {
+   "main": [
+    [
+     {
+      "node": "Collect all",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Label fetched board": {
+   "main": [
+    [
+     {
+      "node": "Collect all",
+      "type": "main",
+      "index": 1
+     }
+    ]
+   ]
+  },
+  "Not built live": {
+   "main": [
+    [
+     {
+      "node": "Collect all",
+      "type": "main",
+      "index": 2
+     }
+    ]
+   ]
+  },
+  "Collect all": {
+   "main": [
+    [
+     {
+      "node": "Normalise",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  }
+ },
+ "settings": {
+  "executionOrder": "v1"
+ },
+ "pinData": {},
+ "tags": [],
+ "meta": {
+  "templateCredsSetupCompleted": false
+ }
+}

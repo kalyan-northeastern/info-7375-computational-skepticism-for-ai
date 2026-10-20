@@ -1,0 +1,138 @@
+{
+ "id": "lectern34e988c162",
+ "name": "Lectern 03 · Delta: what is new, changed or gone since the last published run",
+ "active": false,
+ "nodes": [
+  {
+   "parameters": {
+    "content": "## 03 · Delta\nPort of `diff()` and `write_state()` in lectern/publish_delta.py. Input: the published state (or none) and today's filtered run. Output: new, changed and gone, with the reason for each gone. **A source that could not be read today never closes a posting**: its rows are 'unknown', and they stay in the state. Closed is not hired.",
+    "height": 190,
+    "width": 560,
+    "color": 4
+   },
+   "id": "d75fd644-324c",
+   "name": "Note 03 · Delta\nPort of `d",
+   "type": "n8n-nodes-base.stickyNote",
+   "typeVersion": 1,
+   "position": [
+    -160,
+    -330
+   ]
+  },
+  {
+   "parameters": {},
+   "id": "159baa8e-ec2e",
+   "name": "Manual · run on fixtures",
+   "type": "n8n-nodes-base.manualTrigger",
+   "typeVersion": 1,
+   "position": [
+    0,
+    0
+   ]
+  },
+  {
+   "parameters": {
+    "jsCode": "// An earlier published state and a later run that differs from it in every way the diff can see. Synthetic.\nconst FIXTURE = {\"state\": {\"schema\": 1, \"as_of\": \"2026-10-18\", \"kw_version\": \"0.5.2\", \"candidates\": {\"greenhouse:1001\": {\"company\": \"ExampleCo Labs\", \"source\": \"greenhouse\", \"source_id\": \"1001\", \"title\": \"Developer Educator\", \"url\": \"https://jobs.example.test/g/1001\", \"location_text\": \"Remote - US\", \"department\": \"Education\", \"date_posted\": \"2026-10-01\", \"matched\": {\"role_title\": [\"educator\"], \"topic_text\": [\"teach\"], \"kept_because\": \"role word in title\"}, \"text_sha\": \"01c456731a2179\", \"fp\": \"06c9ea7e78b920\", \"published\": \"2026-10-18\", \"last_published\": \"2026-10-18\"}, \"greenhouse:1002\": {\"company\": \"ExampleCo Labs\", \"source\": \"greenhouse\", \"source_id\": \"1002\", \"title\": \"Backend Engineer\", \"url\": \"https://jobs.example.test/g/1002\", \"location_text\": \"Boston, MA\", \"department\": \"Engineering / Platform\", \"date_posted\": \"2026-10-02\", \"matched\": {\"topic_text\": [\"universities\", \"campus\", \"student\", \"classroom\"], \"kept_because\": \"4 topic words in body (>= 3)\"}, \"text_sha\": \"058b8035690744\", \"fp\": \"19313d23f244fb\", \"published\": \"2026-10-18\", \"last_published\": \"2026-10-18\"}, \"ashby:a-2001\": {\"company\": \"ExampleCo Ashby\", \"source\": \"ashby\", \"source_id\": \"a-2001\", \"title\": \"Curriculum Lead\", \"url\": \"https://jobs.example.test/a/2001\", \"location_text\": \"Boston, MA \\u00b7 Remote\", \"department\": \"Learning / Content\", \"date_posted\": \"2026-10-03\", \"matched\": {\"role_title\": [\"curriculum\"], \"topic_text\": [\"curriculum\"], \"kept_because\": \"role word in title\"}, \"text_sha\": \"03419eab53dc5e\", \"fp\": \"15c88c96d5b5c3\", \"published\": \"2026-10-18\", \"last_published\": \"2026-10-18\"}, \"ashby:a-2003\": {\"company\": \"ExampleCo Ashby\", \"source\": \"ashby\", \"source_id\": \"a-2003\", \"title\": \"Content Specialist\", \"url\": \"https://jobs.example.test/a/2003\", \"location_text\": \"Remote\", \"department\": \"Marketing / Content\", \"date_posted\": \"2026-10-04\", \"matched\": {\"topic_text\": [\"curriculum\"], \"materials\": {\"verb_object\": [\"instructional design\", \"curriculum development\"], \"audience\": [\"for developers\"]}, \"kept_because\": \"body says it produces teaching materials for a named audience\"}, \"text_sha\": \"05f23497f140f3\", \"fp\": \"1134310469c5bb\", \"published\": \"2026-10-18\", \"last_published\": \"2026-10-18\"}, \"smartrecruiters:sr-3001\": {\"company\": \"ExampleCo Recruiters\", \"source\": \"smartrecruiters\", \"source_id\": \"sr-3001\", \"title\": \"Education Program Manager\", \"url\": \"https://jobs.example.test/s/3001\", \"location_text\": \"New York, NY, US\", \"department\": \"Education / Learning\", \"date_posted\": \"2026-10-05\", \"matched\": {\"role_title\": [\"education\"], \"topic_text\": [\"education\", \"teach\"], \"kept_because\": \"role word in title\"}, \"text_sha\": \"094e122a328768\", \"fp\": \"091526afaa95fe\", \"published\": \"2026-10-18\", \"last_published\": \"2026-10-18\"}, \"greenhouse:1999\": {\"company\": \"ExampleCo Labs\", \"source\": \"greenhouse\", \"source_id\": \"1999\", \"title\": \"Developer Educator (closed)\", \"url\": \"https://jobs.example.test/g/1999\", \"location_text\": \"Remote - US\", \"department\": \"Education\", \"date_posted\": \"2026-10-01\", \"matched\": {\"role_title\": [\"educator\"], \"topic_text\": [\"teach\"], \"kept_because\": \"role word in title\"}, \"text_sha\": \"05d95af769ab42\", \"fp\": \"17e74cf6b3b6ef\", \"published\": \"2026-10-18\", \"last_published\": \"2026-10-18\"}, \"greenhouse:1003\": {\"company\": \"ExampleCo Labs\", \"source\": \"greenhouse\", \"source_id\": \"1003\", \"title\": \"Payments Analyst\", \"url\": \"https://jobs.example.test/g/1003\", \"location_text\": \"Remote - US\", \"department\": \"Education\", \"date_posted\": \"2026-10-01\", \"matched\": {\"role_title\": [\"educator\"], \"topic_text\": [\"teach\"], \"kept_because\": \"role word in title\"}, \"text_sha\": \"003dee87f46480\", \"fp\": \"0ed306bbebfb79\", \"published\": \"2026-10-18\", \"last_published\": \"2026-10-18\"}, \"ashby:z-1\": {\"company\": \"ExampleCo Down\", \"source\": \"ashby\", \"source_id\": \"z-1\", \"title\": \"Educator\", \"url\": \"https://jobs.example.test/z/1\", \"location_text\": \"Remote - US\", \"department\": \"Education\", \"date_posted\": \"2026-10-01\", \"matched\": {\"role_title\": [\"educator\"], \"topic_text\": [\"teach\"], \"kept_because\": \"role word in title\"}, \"text_sha\": \"00794b6aeb69ce\", \"fp\": \"1e67589e5ca699\", \"published\": \"2026-10-18\", \"last_published\": \"2026-10-18\"}}}, \"run\": {\"date\": \"2026-10-19\", \"kw_version\": \"0.5.2\", \"sources\": [{\"company\": \"ExampleCo Labs\", \"provider\": \"greenhouse\", \"status\": \"ok\", \"postings\": 6}, {\"company\": \"ExampleCo Ashby\", \"provider\": \"ashby\", \"status\": \"ok\", \"postings\": 4}, {\"company\": \"ExampleCo Recruiters\", \"provider\": \"smartrecruiters\", \"status\": \"ok\", \"postings\": 2}, {\"company\": \"ExampleCo Down\", \"provider\": \"ashby\", \"status\": \"unavailable\", \"reason\": \"HTTPError: 503\"}], \"records\": [{\"source\": \"greenhouse\", \"company\": \"ExampleCo Labs\", \"source_id\": \"1001\", \"title\": \"Developer Educator\", \"text\": \"Teach developers & run workshops.\", \"url\": \"https://jobs.example.test/g/1001\", \"location_text\": \"Remote - US\", \"department\": \"Education\", \"date_posted\": \"2026-10-01\", \"job_ref\": \"5001\", \"kept\": true, \"matched\": {\"role_title\": [\"educator\"], \"topic_text\": [\"teach\"], \"flex_text\": [], \"materials\": null, \"connector\": null, \"kept_because\": \"role word in title\", \"title_only\": false}, \"reject_reason\": null}, {\"source\": \"greenhouse\", \"company\": \"ExampleCo Labs\", \"source_id\": \"1002\", \"title\": \"Staff Backend Engineer\", \"text\": \"Build services. Partner with universities, campus programs, student interns and classroom pilots.\", \"url\": \"https://jobs.example.test/g/1002\", \"location_text\": \"Boston, MA\", \"department\": \"Engineering / Platform\", \"date_posted\": \"2026-10-02\", \"job_ref\": \"5002\", \"kept\": true, \"matched\": {\"role_title\": [], \"topic_text\": [\"universities\", \"campus\", \"student\", \"classroom\"], \"flex_text\": [], \"materials\": null, \"connector\": null, \"kept_because\": \"4 topic words in body (>= 3)\", \"title_only\": false}, \"reject_reason\": null}, {\"source\": \"greenhouse\", \"company\": \"ExampleCo Labs\", \"source_id\": \"1003\", \"title\": \"Payments Analyst\", \"text\": \"Reconcile payments every day.\", \"url\": \"https://jobs.example.test/g/1003\", \"location_text\": \"Remote\", \"department\": \"\", \"date_posted\": \"2026-10-02\", \"job_ref\": \"5003\", \"kept\": false, \"matched\": null, \"reject_reason\": \"no-keyword-match\"}, {\"source\": \"greenhouse\", \"company\": \"ExampleCo Labs\", \"source_id\": \"1005\", \"title\": \"Finance Analyst\", \"text\": \"Our customers include one university.\", \"url\": \"https://jobs.example.test/g/1005\", \"location_text\": \"Remote\", \"department\": \"Finance\", \"date_posted\": \"2026-10-03\", \"job_ref\": \"5005\", \"kept\": false, \"matched\": null, \"reject_reason\": \"only 1 topic words, no role word in title\"}, {\"source\": \"greenhouse\", \"company\": \"ExampleCo Labs\", \"source_id\": \"1006\", \"title\": \"Education Programs Lead\", \"text\": \"No link on this one.\", \"url\": null, \"location_text\": \"Remote\", \"department\": \"\", \"date_posted\": \"2026-10-03\", \"job_ref\": \"5006\", \"kept\": false, \"matched\": null, \"reject_reason\": \"missing-url\"}, {\"source\": \"ashby\", \"company\": \"ExampleCo Ashby\", \"source_id\": \"a-2001\", \"title\": \"Curriculum Lead\", \"text\": \"Own curriculum & courseware for the academy.\", \"url\": \"https://jobs.example.test/a/2001\", \"location_text\": \"Boston, MA \\u00b7 Remote\", \"department\": \"Learning / Content\", \"date_posted\": \"2026-10-03\", \"job_ref\": null, \"kept\": true, \"matched\": {\"role_title\": [\"curriculum\"], \"topic_text\": [\"curriculum\"], \"flex_text\": [], \"materials\": null, \"connector\": null, \"kept_because\": \"role word in title\", \"title_only\": false}, \"reject_reason\": null}, {\"source\": \"ashby\", \"company\": \"ExampleCo Ashby\", \"source_id\": \"a-2002\", \"title\": \"Strategic Account Manager\", \"text\": \"You will own our largest university relationships and manage each higher education partnership.\", \"url\": \"https://jobs.example.test/a/2002\", \"location_text\": \"New York, NY\", \"department\": \"Sales\", \"date_posted\": \"2026-10-04\", \"job_ref\": null, \"kept\": true, \"matched\": {\"role_title\": [], \"topic_text\": [\"university\", \"education\"], \"flex_text\": [], \"materials\": null, \"connector\": {\"title\": [\"account manager\", \"strategic account\"], \"institution\": [\"university\", \"higher education\"]}, \"kept_because\": \"account or partnership role whose body names higher education\", \"title_only\": false}, \"reject_reason\": null}, {\"source\": \"ashby\", \"company\": \"ExampleCo Ashby\", \"source_id\": \"a-2003\", \"title\": \"Content Specialist\", \"text\": \"Instructional design and curriculum development for developers & partners.\", \"url\": \"https://jobs.example.test/a/2003\", \"location_text\": \"Remote\", \"department\": \"Marketing / Content\", \"date_posted\": \"2026-10-04\", \"job_ref\": null, \"kept\": true, \"matched\": {\"role_title\": [], \"topic_text\": [\"curriculum\"], \"flex_text\": [], \"materials\": {\"verb_object\": [\"instructional design\", \"curriculum development\"], \"audience\": [\"for developers\"]}, \"connector\": null, \"kept_because\": \"body says it produces teaching materials for a named audience\", \"title_only\": false}, \"reject_reason\": null}, {\"source\": \"ashby\", \"company\": \"ExampleCo Ashby\", \"source_id\": \"a-2004\", \"title\": \"Education Partnerships Manager\", \"text\": \"No published date.\", \"url\": \"https://jobs.example.test/a/2004\", \"location_text\": \"Remote\", \"department\": \"Sales\", \"date_posted\": null, \"job_ref\": null, \"kept\": false, \"matched\": null, \"reject_reason\": \"unparseable-date\"}, {\"source\": \"smartrecruiters\", \"company\": \"ExampleCo Recruiters\", \"source_id\": \"sr-3001\", \"title\": \"Education Program Manager\", \"text\": \"We teach. Run education programs.\", \"url\": \"https://jobs.example.test/s/3001\", \"location_text\": \"New York, NY, US\", \"department\": \"Education / Learning\", \"date_posted\": \"2026-10-05\", \"job_ref\": null, \"kept\": true, \"matched\": {\"role_title\": [\"education\"], \"topic_text\": [\"education\", \"teach\"], \"flex_text\": [], \"materials\": null, \"connector\": null, \"kept_because\": \"role word in title\", \"title_only\": false}, \"reject_reason\": null}, {\"source\": \"smartrecruiters\", \"company\": \"ExampleCo Recruiters\", \"source_id\": \"sr-3002\", \"title\": \"Warehouse Associate\", \"text\": \"Pack boxes.\", \"url\": \"https://jobs.example.test/s/3002\", \"location_text\": \"Reno, NV, US\", \"department\": \"Operations\", \"date_posted\": \"2026-10-05\", \"job_ref\": null, \"kept\": false, \"matched\": null, \"reject_reason\": \"no-keyword-match\"}]}};\nreturn [{json: FIXTURE}];"
+   },
+   "id": "1df2becf-2cc0",
+   "name": "Fixture input",
+   "type": "n8n-nodes-base.code",
+   "typeVersion": 2,
+   "position": [
+    220,
+    0
+   ]
+  },
+  {
+   "parameters": {
+    "inputSource": "passthrough"
+   },
+   "id": "d2b3c74d-0ffc",
+   "name": "When called by another workflow",
+   "type": "n8n-nodes-base.executeWorkflowTrigger",
+   "typeVersion": 1.1,
+   "position": [
+    0,
+    160
+   ]
+  },
+  {
+   "parameters": {},
+   "id": "66c851d4-5c73",
+   "name": "Run in",
+   "type": "n8n-nodes-base.noOp",
+   "typeVersion": 1,
+   "position": [
+    440,
+    80
+   ]
+  },
+  {
+   "parameters": {
+    "jsCode": "// Port of lectern/publish_delta.py: norm_matched(), slim(), fingerprint(), diff(), write_state().\n// Pure functions: no n8n globals. Hashes use a small non-cryptographic function (the Code node has no crypto\n// module by default), so a state file written here is not interchangeable with the Python one.\nconst FIELDS = ['title', 'url', 'location_text', 'department'];\n\nfunction hash(s) {   // cyrb53, hex\n  let h1 = 0xdeadbeef, h2 = 0x41c6ce57;\n  for (let i = 0; i < s.length; i++) {\n    const ch = s.charCodeAt(i);\n    h1 = Math.imul(h1 ^ ch, 2654435761); h2 = Math.imul(h2 ^ ch, 1597334677);\n  }\n  h1 = Math.imul(h1 ^ (h1 >>> 16), 2246822507) ^ Math.imul(h2 ^ (h2 >>> 13), 3266489909);\n  h2 = Math.imul(h2 ^ (h2 >>> 16), 2246822507) ^ Math.imul(h1 ^ (h1 >>> 13), 3266489909);\n  return (4294967296 * (2097151 & h2) + (h1 >>> 0)).toString(16).padStart(14, '0');\n}\nfunction stable(x) {   // JSON with sorted keys at every level\n  if (Array.isArray(x)) return '[' + x.map(stable).join(',') + ']';\n  if (x && typeof x === 'object') return '{' + Object.keys(x).sort().map(k => JSON.stringify(k) + ':' + stable(x[k])).join(',') + '}';\n  return JSON.stringify(x === undefined ? null : x);\n}\nconst keyOf = r => `${r.source}:${r.source_id}`;\nconst isEmpty = v => v === null || v === undefined || v === false || v === 0 ||\n  (Array.isArray(v) && v.length === 0) || (v && typeof v === 'object' && !Array.isArray(v) && Object.keys(v).length === 0);\n\n// Drop empty entries so a rule added to the filter is not reported as a change to every posting.\nfunction normMatched(m) {\n  if (!m || typeof m !== 'object' || Array.isArray(m)) return m === undefined ? null : m;\n  const out = {};\n  for (const k of Object.keys(m)) if (!isEmpty(m[k])) out[k] = m[k];\n  return out;\n}\nfunction slim(r) {\n  const out = {};\n  for (const k of ['company', 'source', 'source_id', ...FIELDS, 'date_posted']) out[k] = r[k] === undefined ? null : r[k];\n  out.matched = normMatched(r.matched);\n  out.text_sha = (r.text !== undefined && r.text !== null) ? hash(r.text) : null;\n  return out;\n}\nfunction fingerprint(s) {\n  const o = {};\n  for (const k of [...FIELDS, 'matched', 'text_sha']) o[k] = s[k] === undefined ? null : s[k];\n  return hash(stable(o));\n}\n\n// run = {date, kw_version, kept: {key: slim}, all: {key: record}, sources: {company: status}}\nfunction diff(stateC, run) {\n  const nw = [], changed = [], gone = [];\n  for (const [k, s] of Object.entries(run.kept)) {\n    if (!(k in stateC)) { nw.push(s); continue; }\n    const old = stateC[k];\n    if (fingerprint(s) !== old.fp) {\n      const what = [];\n      for (const f of [...FIELDS, 'matched', 'text_sha']) {\n        if (stable(s[f] === undefined ? null : s[f]) !== stable(old[f] === undefined ? null : old[f]))\n          what.push({field: f === 'text_sha' ? 'ad text' : f, before: f === 'text_sha' ? null : (old[f] === undefined ? null : old[f]),\n                     after: f === 'text_sha' ? null : (s[f] === undefined ? null : s[f])});\n      }\n      changed.push(Object.assign({}, s, {changes: what}));\n    }\n  }\n  for (const [k, old] of Object.entries(stateC)) {\n    if (k in run.kept) continue;\n    const src = run.sources[old.company];\n    let why;\n    if (src === undefined) why = 'company not watched in this run';\n    else if (src.status !== 'ok') why = `unknown: source ${src.status} today (${src.reason === undefined ? 'no reason given' : src.reason})`;\n    else if (k in run.all) why = 'still on the board, no longer kept by the filter: ' + String(run.all[k].reject_reason === undefined ? 'None' : run.all[k].reject_reason);\n    else why = 'no longer on the board';\n    gone.push(Object.assign({}, old, {why}));\n  }\n  const baseCos = new Set(Object.values(stateC).map(v => v.company));\n  const firstTime = [...new Set(nw.filter(r => !baseCos.has(r.company)).map(r => r.company))].sort();\n  return {new: nw, changed, gone, first_time_companies: firstTime};\n}\n\n// The published state after this run: kept rows are written, and a gone row is dropped only if its source was readable.\nfunction nextState(stateC, run) {\n  const c = Object.assign({}, stateC);\n  for (const [k, v] of Object.entries(run.kept)) {\n    const prev = c[k];\n    c[k] = Object.assign({}, v, {fp: fingerprint(v), published: prev ? prev.published : run.date, last_published: run.date});\n  }\n  for (const k of Object.keys(c)) {\n    const src = run.sources[c[k].company];\n    if (!(k in run.kept) && src && src.status === 'ok') delete c[k];\n  }\n  return {schema: 1, as_of: run.date, kw_version: run.kw_version, candidates: c};\n}\n// (node export removed in the n8n copy) module.exports = {slim, fingerprint, diff, nextState, normMatched, hash, stable, keyOf};\n\nconst {state, run} = $input.first().json;\nconst stateC = state && state.candidates ? state.candidates : {};\nconst kept = {}, all = {}, sources = {};\nfor (const r of run.records) { all[keyOf(r)] = r; if (r.kept) kept[keyOf(r)] = slim(r); }\nfor (const s of run.sources) sources[s.company] = s;\nconst R = {date: run.date, kw_version: run.keywords_version || run.kw_version, kept, all, sources};\nconst d = diff(stateC, R);\nconst unavailable = run.sources.filter(s => s.status !== 'ok').map(s => `${s.company} (${s.status}: ${s.reason || ''})`);\nconst note = (state && state.kw_version && R.kw_version && state.kw_version !== R.kw_version)\n  ? `The filter changed between the published run (${state.kw_version}) and this one (${R.kw_version}). A 'matched' change can come from the filter, not from the posting.` : '';\nconst lone = state && state.as_of && state.as_of >= run.date ? 'published state is not older than this run; nothing to do' : '';\nconst why = {}; for (const g of d.gone) why[g.why] = (why[g.why] || 0) + 1;\nreturn [{json: {date: run.date, kw_version: R.kw_version, baseline: state ? `published state as of ${state.as_of}` : 'no earlier run: everything is new', refused: lone || null,\n  counts: {kept: Object.keys(kept).length, new: d.new.length, changed: d.changed.length, gone: d.gone.length, gone_by_reason: why},\n  new: d.new, changed: d.changed, gone: d.gone, first_time_companies: d.first_time_companies, unavailable, filter_note: note,\n  watched: run.watched || [], next_state: nextState(stateC, R)}}];"
+   },
+   "id": "69b075a4-d23a",
+   "name": "Diff",
+   "type": "n8n-nodes-base.code",
+   "typeVersion": 2,
+   "position": [
+    660,
+    80
+   ]
+  }
+ ],
+ "connections": {
+  "Manual · run on fixtures": {
+   "main": [
+    [
+     {
+      "node": "Fixture input",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Fixture input": {
+   "main": [
+    [
+     {
+      "node": "Run in",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "When called by another workflow": {
+   "main": [
+    [
+     {
+      "node": "Run in",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Run in": {
+   "main": [
+    [
+     {
+      "node": "Diff",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  }
+ },
+ "settings": {
+  "executionOrder": "v1"
+ },
+ "pinData": {},
+ "tags": [],
+ "meta": {
+  "templateCredsSetupCompleted": false
+ }
+}

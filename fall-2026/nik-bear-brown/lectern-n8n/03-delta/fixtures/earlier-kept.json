@@ -1,0 +1,230 @@
+{
+ "date": "2026-10-18",
+ "kw_version": "0.5.2",
+ "records": [
+  {
+   "source": "greenhouse",
+   "company": "ExampleCo Labs",
+   "source_id": "1001",
+   "title": "Developer Educator",
+   "text": "Teach developers & run workshops.",
+   "url": "https://jobs.example.test/g/1001",
+   "location_text": "Remote - US",
+   "department": "Education",
+   "date_posted": "2026-10-01",
+   "job_ref": "5001",
+   "kept": true,
+   "matched": {
+    "role_title": [
+     "educator"
+    ],
+    "topic_text": [
+     "teach"
+    ],
+    "flex_text": [],
+    "materials": null,
+    "connector": null,
+    "kept_because": "role word in title",
+    "title_only": false
+   },
+   "reject_reason": null
+  },
+  {
+   "source": "greenhouse",
+   "company": "ExampleCo Labs",
+   "source_id": "1002",
+   "title": "Backend Engineer",
+   "text": "Build services. Partner with universities, campus programs, student interns and classroom pilots.",
+   "url": "https://jobs.example.test/g/1002",
+   "location_text": "Boston, MA",
+   "department": "Engineering / Platform",
+   "date_posted": "2026-10-02",
+   "job_ref": "5002",
+   "kept": true,
+   "matched": {
+    "role_title": [],
+    "topic_text": [
+     "universities",
+     "campus",
+     "student",
+     "classroom"
+    ],
+    "flex_text": [],
+    "materials": null,
+    "connector": null,
+    "kept_because": "4 topic words in body (>= 3)",
+    "title_only": false
+   },
+   "reject_reason": null
+  },
+  {
+   "source": "ashby",
+   "company": "ExampleCo Ashby",
+   "source_id": "a-2001",
+   "title": "Curriculum Lead",
+   "text": "Own curriculum & courseware for the academy. Older wording.",
+   "url": "https://jobs.example.test/a/2001",
+   "location_text": "Boston, MA · Remote",
+   "department": "Learning / Content",
+   "date_posted": "2026-10-03",
+   "job_ref": null,
+   "kept": true,
+   "matched": {
+    "role_title": [
+     "curriculum"
+    ],
+    "topic_text": [
+     "curriculum"
+    ],
+    "flex_text": [],
+    "materials": null,
+    "connector": null,
+    "kept_because": "role word in title",
+    "title_only": false
+   },
+   "reject_reason": null
+  },
+  {
+   "source": "ashby",
+   "company": "ExampleCo Ashby",
+   "source_id": "a-2003",
+   "title": "Content Specialist",
+   "text": "Instructional design and curriculum development for developers & partners.",
+   "url": "https://jobs.example.test/a/2003",
+   "location_text": "Remote",
+   "department": "Marketing / Content",
+   "date_posted": "2026-10-04",
+   "job_ref": null,
+   "kept": true,
+   "matched": {
+    "role_title": [],
+    "topic_text": [
+     "curriculum"
+    ],
+    "flex_text": [],
+    "materials": {
+     "verb_object": [
+      "instructional design",
+      "curriculum development"
+     ],
+     "audience": [
+      "for developers"
+     ]
+    },
+    "connector": null,
+    "kept_because": "body says it produces teaching materials for a named audience",
+    "title_only": false
+   },
+   "reject_reason": null
+  },
+  {
+   "source": "smartrecruiters",
+   "company": "ExampleCo Recruiters",
+   "source_id": "sr-3001",
+   "title": "Education Program Manager",
+   "text": "We teach. Run education programs.",
+   "url": "https://jobs.example.test/s/3001",
+   "location_text": "New York, NY, US",
+   "department": "Education / Learning",
+   "date_posted": "2026-10-05",
+   "job_ref": null,
+   "kept": true,
+   "matched": {
+    "role_title": [
+     "education"
+    ],
+    "topic_text": [
+     "education",
+     "teach"
+    ],
+    "flex_text": [],
+    "materials": null,
+    "connector": null,
+    "kept_because": "role word in title",
+    "title_only": false
+   },
+   "reject_reason": null
+  },
+  {
+   "source": "greenhouse",
+   "company": "ExampleCo Labs",
+   "source_id": "1999",
+   "title": "Developer Educator (closed)",
+   "text": "Gone from the board.",
+   "url": "https://jobs.example.test/g/1999",
+   "location_text": "Remote - US",
+   "department": "Education",
+   "date_posted": "2026-10-01",
+   "job_ref": "5001",
+   "kept": true,
+   "matched": {
+    "role_title": [
+     "educator"
+    ],
+    "topic_text": [
+     "teach"
+    ],
+    "flex_text": [],
+    "materials": null,
+    "connector": null,
+    "kept_because": "role word in title",
+    "title_only": false
+   },
+   "reject_reason": null
+  },
+  {
+   "source": "greenhouse",
+   "company": "ExampleCo Labs",
+   "source_id": "1003",
+   "title": "Payments Analyst",
+   "text": "Was kept earlier.",
+   "url": "https://jobs.example.test/g/1003",
+   "location_text": "Remote - US",
+   "department": "Education",
+   "date_posted": "2026-10-01",
+   "job_ref": "5001",
+   "kept": true,
+   "matched": {
+    "role_title": [
+     "educator"
+    ],
+    "topic_text": [
+     "teach"
+    ],
+    "flex_text": [],
+    "materials": null,
+    "connector": null,
+    "kept_because": "role word in title",
+    "title_only": false
+   },
+   "reject_reason": null
+  },
+  {
+   "source": "ashby",
+   "company": "ExampleCo Down",
+   "source_id": "z-1",
+   "title": "Educator",
+   "text": "Its board is down today.",
+   "url": "https://jobs.example.test/z/1",
+   "location_text": "Remote - US",
+   "department": "Education",
+   "date_posted": "2026-10-01",
+   "job_ref": "5001",
+   "kept": true,
+   "matched": {
+    "role_title": [
+     "educator"
+    ],
+    "topic_text": [
+     "teach"
+    ],
+    "flex_text": [],
+    "materials": null,
+    "connector": null,
+    "kept_because": "role word in title",
+    "title_only": false
+   },
+   "reject_reason": null
+  }
+ ]
+}

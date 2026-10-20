@@ -1,0 +1,181 @@
+{
+ "date": "2026-10-19",
+ "sources": [
+  {
+   "company": "ExampleCo Labs",
+   "provider": "greenhouse",
+   "status": "ok",
+   "postings": 6
+  },
+  {
+   "company": "ExampleCo Ashby",
+   "provider": "ashby",
+   "status": "ok",
+   "postings": 4
+  },
+  {
+   "company": "ExampleCo Recruiters",
+   "provider": "smartrecruiters",
+   "status": "ok",
+   "postings": 2
+  }
+ ],
+ "views": [
+  {
+   "source_id": "1001",
+   "title": "Developer Educator",
+   "text": "Teach developers & run workshops.",
+   "location_text": "Remote - US",
+   "date_raw": "2026-10-01T10:00:00-04:00",
+   "url": "https://jobs.example.test/g/1001",
+   "department": "Education",
+   "job_ref": "5001",
+   "source": "greenhouse",
+   "company": "ExampleCo Labs",
+   "date_posted": "2026-10-01"
+  },
+  {
+   "source_id": "1002",
+   "title": "Staff Backend Engineer",
+   "text": "Build services. Partner with universities, campus programs, student interns and classroom pilots.",
+   "location_text": "Boston, MA",
+   "date_raw": "2026-10-02T09:30:00-04:00",
+   "url": "https://jobs.example.test/g/1002",
+   "department": "Engineering / Platform",
+   "job_ref": "5002",
+   "source": "greenhouse",
+   "company": "ExampleCo Labs",
+   "date_posted": "2026-10-02"
+  },
+  {
+   "source_id": "1003",
+   "title": "Payments Analyst",
+   "text": "Reconcile payments every day.",
+   "location_text": "Remote",
+   "date_raw": "2026-10-02T09:30:00-04:00",
+   "url": "https://jobs.example.test/g/1003",
+   "department": "",
+   "job_ref": "5003",
+   "source": "greenhouse",
+   "company": "ExampleCo Labs",
+   "date_posted": "2026-10-02"
+  },
+  {
+   "source_id": "1001",
+   "title": "Developer Educator (repost)",
+   "text": "Same id, listed twice.",
+   "location_text": "Remote - US",
+   "date_raw": "2026-10-01T10:00:00-04:00",
+   "url": "https://jobs.example.test/g/1001",
+   "department": "",
+   "job_ref": "5001",
+   "source": "greenhouse",
+   "company": "ExampleCo Labs",
+   "date_posted": "2026-10-01"
+  },
+  {
+   "source_id": "1005",
+   "title": "Finance Analyst",
+   "text": "Our customers include one university.",
+   "location_text": "Remote",
+   "date_raw": "2026-10-03T09:30:00-04:00",
+   "url": "https://jobs.example.test/g/1005",
+   "department": "Finance",
+   "job_ref": "5005",
+   "source": "greenhouse",
+   "company": "ExampleCo Labs",
+   "date_posted": "2026-10-03"
+  },
+  {
+   "source_id": "1006",
+   "title": "Education Programs Lead",
+   "text": "No link on this one.",
+   "location_text": "Remote",
+   "date_raw": "2026-10-03T09:30:00-04:00",
+   "url": null,
+   "department": "",
+   "job_ref": "5006",
+   "source": "greenhouse",
+   "company": "ExampleCo Labs",
+   "date_posted": "2026-10-03"
+  },
+  {
+   "source_id": "a-2001",
+   "title": "Curriculum Lead",
+   "text": "Own curriculum & courseware for the academy.",
+   "location_text": "Boston, MA · Remote",
+   "date_raw": "2026-10-03T09:00:00.000+00:00",
+   "url": "https://jobs.example.test/a/2001",
+   "department": "Learning / Content",
+   "job_ref": null,
+   "source": "ashby",
+   "company": "ExampleCo Ashby",
+   "date_posted": "2026-10-03"
+  },
+  {
+   "source_id": "a-2002",
+   "title": "Strategic Account Manager",
+   "text": "You will own our largest university relationships and manage each higher education partnership.",
+   "location_text": "New York, NY",
+   "date_raw": "2026-10-04T09:00:00.000+00:00",
+   "url": "https://jobs.example.test/a/2002",
+   "department": "Sales",
+   "job_ref": null,
+   "source": "ashby",
+   "company": "ExampleCo Ashby",
+   "date_posted": "2026-10-04"
+  },
+  {
+   "source_id": "a-2003",
+   "title": "Content Specialist",
+   "text": "Instructional design and curriculum development for developers & partners.",
+   "location_text": "Remote",
+   "date_raw": "2026-10-04T10:00:00.000+00:00",
+   "url": "https://jobs.example.test/a/2003",
+   "department": "Marketing / Content",
+   "job_ref": null,
+   "source": "ashby",
+   "company": "ExampleCo Ashby",
+   "date_posted": "2026-10-04"
+  },
+  {
+   "source_id": "a-2004",
+   "title": "Education Partnerships Manager",
+   "text": "No published date.",
+   "location_text": "Remote",
+   "date_raw": null,
+   "url": "https://jobs.example.test/a/2004",
+   "department": "Sales",
+   "job_ref": null,
+   "source": "ashby",
+   "company": "ExampleCo Ashby",
+   "date_posted": null
+  },
+  {
+   "source_id": "sr-3001",
+   "title": "Education Program Manager",
+   "text": "We teach. Run education programs.",
+   "location_text": "New York, NY, US",
+   "date_raw": "2026-10-05T12:00:00.000Z",
+   "url": "https://jobs.example.test/s/3001",
+   "department": "Education / Learning",
+   "job_ref": null,
+   "source": "smartrecruiters",
+   "company": "ExampleCo Recruiters",
+   "date_posted": "2026-10-05"
+  },
+  {
+   "source_id": "sr-3002",
+   "title": "Warehouse Associate",
+   "text": "Pack boxes.",
+   "location_text": "Reno, NV, US",
+   "date_raw": "2026-10-05T12:00:00.000Z",
+   "url": "https://jobs.example.test/s/3002",
+   "department": "Operations",
+   "job_ref": null,
+   "source": "smartrecruiters",
+   "company": "ExampleCo Recruiters",
+   "date_posted": "2026-10-05"
+  }
+ ]
+}

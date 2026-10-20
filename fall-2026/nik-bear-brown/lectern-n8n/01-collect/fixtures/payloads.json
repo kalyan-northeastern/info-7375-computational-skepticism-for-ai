@@ -1,0 +1,211 @@
+[
+ {
+  "provider": "greenhouse",
+  "company": "ExampleCo Labs",
+  "slug": "examplelabs",
+  "payload": {
+   "jobs": [
+    {
+     "id": 1001,
+     "title": "Developer Educator",
+     "content": "&lt;p&gt;Teach developers &amp; run workshops.&lt;/p&gt;",
+     "location": {
+      "name": "Remote - US"
+     },
+     "departments": [
+      {
+       "name": "Education"
+      }
+     ],
+     "first_published": "2026-10-01T10:00:00-04:00",
+     "absolute_url": "https://jobs.example.test/g/1001",
+     "internal_job_id": 5001
+    },
+    {
+     "id": 1002,
+     "title": "Staff Backend Engineer",
+     "content": "&lt;p&gt;Build services. Partner with universities, campus programs, student interns and classroom pilots.&lt;/p&gt;",
+     "location": {
+      "name": "Boston, MA"
+     },
+     "departments": [
+      {
+       "name": "Engineering"
+      },
+      {
+       "name": "Platform"
+      }
+     ],
+     "first_published": "2026-10-02T09:30:00-04:00",
+     "absolute_url": "https://jobs.example.test/g/1002",
+     "internal_job_id": 5002
+    },
+    {
+     "id": 1003,
+     "title": "Payments Analyst",
+     "content": "&lt;p&gt;Reconcile payments every day.&lt;/p&gt;",
+     "location": {
+      "name": "Remote"
+     },
+     "departments": [],
+     "first_published": "2026-10-02T09:30:00-04:00",
+     "absolute_url": "https://jobs.example.test/g/1003",
+     "internal_job_id": 5003
+    },
+    {
+     "id": 1001,
+     "title": "Developer Educator (repost)",
+     "content": "&lt;p&gt;Same id, listed twice.&lt;/p&gt;",
+     "location": {
+      "name": "Remote - US"
+     },
+     "departments": [],
+     "first_published": "2026-10-01T10:00:00-04:00",
+     "absolute_url": "https://jobs.example.test/g/1001",
+     "internal_job_id": 5001
+    },
+    {
+     "id": 1005,
+     "title": "Finance Analyst",
+     "content": "&lt;p&gt;Our customers include one university.&lt;/p&gt;",
+     "location": {
+      "name": "Remote"
+     },
+     "departments": [
+      {
+       "name": "Finance"
+      }
+     ],
+     "first_published": "2026-10-03T09:30:00-04:00",
+     "absolute_url": "https://jobs.example.test/g/1005",
+     "internal_job_id": 5005
+    },
+    {
+     "id": 1006,
+     "title": "Education Programs Lead",
+     "content": "&lt;p&gt;No link on this one.&lt;/p&gt;",
+     "location": {
+      "name": "Remote"
+     },
+     "departments": [],
+     "first_published": "2026-10-03T09:30:00-04:00",
+     "internal_job_id": 5006
+    }
+   ]
+  }
+ },
+ {
+  "provider": "ashby",
+  "company": "ExampleCo Ashby",
+  "slug": "Example Ashby",
+  "payload": {
+   "jobs": [
+    {
+     "id": "a-2001",
+     "title": "Curriculum Lead",
+     "descriptionHtml": "&lt;p&gt;Own curriculum &amp; courseware for the academy.&lt;/p&gt;",
+     "location": "Boston, MA",
+     "secondaryLocations": [
+      {
+       "location": "Remote"
+      }
+     ],
+     "publishedAt": "2026-10-03T09:00:00.000+00:00",
+     "jobUrl": "https://jobs.example.test/a/2001",
+     "department": "Learning",
+     "team": "Content"
+    },
+    {
+     "id": "a-2002",
+     "title": "Strategic Account Manager",
+     "descriptionPlain": "You will own our largest university relationships and manage each higher education partnership.",
+     "location": "New York, NY",
+     "secondaryLocations": [],
+     "publishedAt": "2026-10-04T09:00:00.000+00:00",
+     "jobUrl": "https://jobs.example.test/a/2002",
+     "department": "Sales",
+     "team": null
+    },
+    {
+     "id": "a-2003",
+     "title": "Content Specialist",
+     "descriptionHtml": "&lt;p&gt;Instructional design and curriculum development for developers &amp; partners.&lt;/p&gt;",
+     "location": "Remote",
+     "secondaryLocations": [],
+     "publishedAt": "2026-10-04T10:00:00.000+00:00",
+     "jobUrl": "https://jobs.example.test/a/2003",
+     "department": "Marketing",
+     "team": "Content"
+    },
+    {
+     "id": "a-2004",
+     "title": "Education Partnerships Manager",
+     "descriptionHtml": "<p>No published date.</p>",
+     "location": "Remote",
+     "secondaryLocations": [],
+     "jobUrl": "https://jobs.example.test/a/2004",
+     "department": "Sales",
+     "team": null
+    }
+   ]
+  }
+ },
+ {
+  "provider": "smartrecruiters",
+  "company": "ExampleCo Recruiters",
+  "slug": "examplesr",
+  "payload": {
+   "jobs": [
+    {
+     "id": "sr-3001",
+     "name": "Education Program Manager",
+     "jobAd": {
+      "sections": {
+       "companyDescription": {
+        "text": "We teach."
+       },
+       "jobDescription": {
+        "text": "<p>Run education programs.</p>"
+       }
+      }
+     },
+     "customField": [
+      {
+       "fieldLabel": "Org",
+       "valueLabel": "Learning"
+      }
+     ],
+     "location": {
+      "fullLocation": "New York, NY, US"
+     },
+     "releasedDate": "2026-10-05T12:00:00.000Z",
+     "postingUrl": "https://jobs.example.test/s/3001",
+     "function": {
+      "label": "Education"
+     }
+    },
+    {
+     "id": "sr-3002",
+     "name": "Warehouse Associate",
+     "jobAd": {
+      "sections": {
+       "jobDescription": {
+        "text": "Pack boxes."
+       }
+      }
+     },
+     "customField": [],
+     "location": {
+      "fullLocation": "Reno, NV, US"
+     },
+     "releasedDate": "2026-10-05T12:00:00.000Z",
+     "postingUrl": "https://jobs.example.test/s/3002",
+     "function": {
+      "label": "Operations"
+     }
+    }
+   ],
+   "_detail": true
+  }
+ }
+]

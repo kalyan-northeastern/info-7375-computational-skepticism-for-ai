@@ -1,0 +1,44 @@
+{
+ "new": [
+  {
+   "company": "ExampleCo Ashby",
+   "source": "ashby",
+   "source_id": "a-2002",
+   "title": "Strategic Account Manager",
+   "url": "https://jobs.example.test/a/2002",
+   "location_text": "New York, NY",
+   "department": "Sales",
+   "date_posted": "2026-10-04",
+   "matched": {
+    "topic_text": [
+     "university",
+     "education"
+    ],
+    "connector": {
+     "title": [
+      "account manager",
+      "strategic account"
+     ],
+     "institution": [
+      "university",
+      "higher education"
+     ]
+    },
+    "kept_because": "account or partnership role whose body names higher education"
+   },
+   "text_sha": "7c7a0c847cffb305"
+  }
+ ],
+ "watched": [
+  "ExampleCo Ashby",
+  "ExampleCo Labs",
+  "ExampleCo Recruiters"
+ ],
+ "first_time_companies": [
+  "ExampleCo Ashby"
+ ],
+ "already": [
+  "ashby:a-2002"
+ ],
+ "send": false
+}

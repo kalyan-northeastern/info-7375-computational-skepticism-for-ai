@@ -1,0 +1,43 @@
+{
+ "new": [
+  {
+   "key": "ashby:a-2002",
+   "why": null,
+   "fields": []
+  }
+ ],
+ "changed": [
+  {
+   "key": "ashby:a-2001",
+   "why": null,
+   "fields": [
+    "ad text"
+   ]
+  },
+  {
+   "key": "greenhouse:1002",
+   "why": null,
+   "fields": [
+    "title"
+   ]
+  }
+ ],
+ "gone": [
+  {
+   "key": "ashby:z-1",
+   "why": "unknown: source unavailable today (HTTPError: 503)",
+   "fields": []
+  },
+  {
+   "key": "greenhouse:1003",
+   "why": "still on the board, no longer kept by the filter: no-keyword-match",
+   "fields": []
+  },
+  {
+   "key": "greenhouse:1999",
+   "why": "no longer on the board",
+   "fields": []
+  }
+ ],
+ "first_time_companies": []
+}
