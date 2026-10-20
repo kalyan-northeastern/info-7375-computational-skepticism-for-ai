@@ -69,7 +69,7 @@ def IF(w, name, expr, pos):
 def build_filter():
     w = WF("filter", "Lectern 02 · Filter: keep what the rules keep, say why for the rest")
     fx = jload("02-filter", "fixtures", "views.json")
-    w.note("## 02 · Filter\nPort of `judge()` in lectern/collect.py. The rules are `shared/keywords.json` (v%s), never this workflow. "
+    w.note("## 02 · Filter\nPort of `judge()` in lectern/collect/collect.py. The rules are `shared/keywords.json` (v%s), never this workflow. "
            "Every posting leaves with a decision AND a reason: kept (which rule), or rejected (which test failed). "
            "Run it on its own with the Manual trigger (synthetic postings), or let 05 · Daily call it." % KW["version"], [-160, -330], 520, 170, 4)
     w.manual("Manual · run on fixtures", [0, 0])
@@ -126,7 +126,7 @@ def build_collect():
     w = WF("collect", "Lectern 01 · Collect: read each watched board and normalise what it says")
     fx = jload("01-collect", "fixtures", "payloads.json")
     boards = jload("shared", "boards.json")["boards"]
-    w.note("## 01 · Collect\nPort of `fetch_board()` and `normalise()` in lectern/collect.py. **Fixture mode** (default) replays three recorded, made-up "
+    w.note("## 01 · Collect\nPort of `fetch_board()` and `normalise()` in lectern/collect/collect.py. **Fixture mode** (default) replays three recorded, made-up "
            "payloads, one per provider; **live mode** calls the public job-board APIs for the boards in `shared/boards.json`. "
            "A board that fails becomes a status row, never a stop. Live: Greenhouse and Ashby only; SmartRecruiters needs its per-posting detail calls (not built), "
            "so it is reported as unavailable rather than judged on empty text.", [-160, -380], 640, 200, 4)

@@ -21,8 +21,9 @@ def main():
     if not a.lectern:
         ap.error("--lectern is required (or put this folder beside a lectern/ folder)")
     sys.path.insert(0, os.path.abspath(a.lectern))
+    import lectern_paths as lp   # the Python Lectern's own map of where its files are (config/, collect/, publish/, audit/)
     import collect
-    cfg = json.load(open(os.path.join(a.lectern, "sources.json"), encoding="utf-8"))
+    cfg = json.load(open(lp.config("sources.json"), encoding="utf-8"))
     boards = {b["company"]: (s["provider"], b["slug"]) for s in cfg["sources"] for b in s["boards"]}
     ok_all = True
     with tempfile.TemporaryDirectory(prefix="lectern-live-") as tmp:

@@ -75,9 +75,10 @@ def main():
     if not a.lectern:
         ap.error("--lectern is required (or put this folder beside a lectern/ folder)")
     sys.path.insert(0, os.path.abspath(a.lectern))
+    import lectern_paths as lp   # the Python Lectern's own map of where its files are (config/, collect/, publish/, audit/)
     import collect, publish_delta as pd, notify
-    kw = json.load(open(os.path.join(a.lectern, "keywords.json"), encoding="utf-8"))
-    src = json.load(open(os.path.join(a.lectern, "sources.json"), encoding="utf-8"))
+    kw = json.load(open(lp.config("keywords.json"), encoding="utf-8"))
+    src = json.load(open(lp.config("sources.json"), encoding="utf-8"))
     dump(os.path.join(ROOT, "shared", "keywords.json"), kw)
     boards = [{"provider": s["provider"], "company": b["company"], "slug": b["slug"], "tier": b.get("tier")} for s in src["sources"] for b in s["boards"]]
     dump(os.path.join(ROOT, "shared", "boards.json"), {"_comment": "The watch list, copied from lectern/sources.json (the master). Edit it there, never here.", "boards": boards})

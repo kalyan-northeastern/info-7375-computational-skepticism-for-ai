@@ -4,7 +4,7 @@
 # See SYNC.md. --check reports drift and changes nothing. Never deletes, never commits.
 set -euo pipefail
 
-HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"     # .../nik-bear-brown
+HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"   # .../nik-bear-brown (this file is lectern/ops/sync.sh)
 BOOKS="$(cd "$HERE/../../.." && pwd)"                        # .../books
 CHECK=0
 ONLY=""      # --only <text>: sync just the class whose repo name contains <text> (e.g. --only prompt)
@@ -19,11 +19,18 @@ done
 
 # Shared paths, relative to the nik-bear-brown folder. Everything else is class-specific.
 SHARED=(
-  "lectern/collect.py" "lectern/audit_rejects.py" "lectern/audit_titles.py" "lectern/demand_report.py" "lectern/title_families.json" "lectern/sources.json" "lectern/keywords.json" "lectern/ATS.md" "lectern/faculty_feed.py" "lectern/faculty_config.json" "lectern/collectors" "lectern/publish_delta.py"
+  "lectern/lectern_paths.py"
+  "lectern/collect/collect.py" "lectern/collect/faculty_feed.py" "lectern/collect/collectors"
+  "lectern/publish/publish_delta.py"
+  "lectern/audit/audit_rejects.py" "lectern/audit/audit_titles.py" "lectern/audit/demand_report.py"
+  "lectern/config/title_families.json" "lectern/config/sources.json" "lectern/config/keywords.json" "lectern/config/faculty_config.json"
+  "lectern/notes/ATS.md"
   "facts/professor-bear-cv.json"
   "SDD-job-search-project.md"
   "figma" "greenhouse-watch-demo"
 )
+# The master keeps these in folders (config/, collect/, publish/, audit/, notes/); the other two classes keep one flat
+# folder, so each file lands there by its base name. lectern_paths.py finds config and sibling scripts in either layout.
 # Where each target class keeps its copy of the collector. Branding's is its graded submission.
 # (A case statement, not an associative array — macOS still ships bash 3.2.)
 lectern_dir() {

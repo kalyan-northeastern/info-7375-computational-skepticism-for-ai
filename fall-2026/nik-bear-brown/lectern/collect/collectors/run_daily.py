@@ -18,6 +18,11 @@ import traceback
 from datetime import datetime, timezone
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+for _p in (os.path.dirname(os.path.dirname(os.path.abspath(__file__))), os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))):
+    if os.path.exists(os.path.join(_p, "lectern_paths.py")):
+        sys.path.insert(0, _p)
+        break
+import lectern_paths as lp
 
 from collectors import amazon, google, microsoft, monitor
 
@@ -30,9 +35,7 @@ COLLECTORS = {
 
 def main(argv=None):
     ap = argparse.ArgumentParser()
-    ap.add_argument("--db", default=os.path.join(
-        os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
-        "monitor.db"))
+    ap.add_argument("--db", default=lp.MONITOR_DB)
     ap.add_argument("--only", choices=list(COLLECTORS),
                     help="run one collector")
     ap.add_argument("--text-out", metavar="DIR",

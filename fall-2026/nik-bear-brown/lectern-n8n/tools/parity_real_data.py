@@ -26,10 +26,11 @@ def main():
     if not a.lectern:
         ap.error("--lectern is required (or put this folder beside a lectern/ folder)")
     sys.path.insert(0, os.path.abspath(a.lectern))
+    import lectern_paths as lp   # the Python Lectern's own map of where its files are (config/, collect/, publish/, audit/)
     import collect
-    kwp = a.keywords or os.path.join(a.lectern, "keywords.json")
+    kwp = a.keywords or lp.config("keywords.json")
     kw = json.load(open(kwp, encoding="utf-8"))
-    cfg = json.load(open(os.path.join(a.lectern, "sources.json"), encoding="utf-8"))
+    cfg = json.load(open(lp.config("sources.json"), encoding="utf-8"))
     spec = []
     for s in cfg["sources"]:
         for b in s["boards"]:

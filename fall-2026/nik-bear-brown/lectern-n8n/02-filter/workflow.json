@@ -5,7 +5,7 @@
  "nodes": [
   {
    "parameters": {
-    "content": "## 02 · Filter\nPort of `judge()` in lectern/collect.py. The rules are `shared/keywords.json` (v0.5.2), never this workflow. Every posting leaves with a decision AND a reason: kept (which rule), or rejected (which test failed). Run it on its own with the Manual trigger (synthetic postings), or let 05 · Daily call it.",
+    "content": "## 02 · Filter\nPort of `judge()` in lectern/collect/collect.py. The rules are `shared/keywords.json` (v0.5.2), never this workflow. Every posting leaves with a decision AND a reason: kept (which rule), or rejected (which test failed). Run it on its own with the Manual trigger (synthetic postings), or let 05 · Daily call it.",
     "height": 170,
     "width": 520,
     "color": 4

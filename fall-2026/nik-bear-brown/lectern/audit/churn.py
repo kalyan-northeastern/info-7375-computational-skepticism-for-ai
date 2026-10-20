@@ -23,10 +23,16 @@ Two or three snapshots give a window, not a trend; the measure improves as runs 
 
 Stdlib only. Reads the full snapshots, which stay on the machine that made them.
 """
+import os as _os, sys as _sys
+for _p in (_os.path.dirname(_os.path.abspath(__file__)), _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))):
+    if _os.path.exists(_os.path.join(_p, "lectern_paths.py")):
+        _sys.path.insert(0, _p)
+        break
+import lectern_paths as lp   # where things are: see lectern_paths.py
 import argparse, glob, json, os, re, statistics, sys
 from datetime import date
 
-HERE = os.path.dirname(os.path.abspath(__file__))
+HERE = lp.ROOT
 
 
 def key_of(r):

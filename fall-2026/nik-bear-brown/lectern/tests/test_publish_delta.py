@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
 """Tests for publish_delta.py: classification, the unavailable-source rule, state timing, and the commit guard."""
+import os as _os, sys as _sys
+for _p in (_os.path.dirname(_os.path.abspath(__file__)), _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))):
+    if _os.path.exists(_os.path.join(_p, "lectern_paths.py")):
+        _sys.path.insert(0, _p)
+        break
+import lectern_paths as lp   # where things are: see lectern_paths.py
 import json, os, tempfile, unittest
 
 import publish_delta as pd

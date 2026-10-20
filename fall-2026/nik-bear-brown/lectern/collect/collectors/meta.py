@@ -23,8 +23,11 @@ import json
 import os
 import time
 
-CACHE_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
-                         "cache", "meta")
+try:
+    import lectern_paths as _lp                      # the cache sits beside the rest of the local, untracked data
+    CACHE_DIR = os.path.join(_lp.CACHE, "meta")
+except ImportError:                                  # run on its own, outside the lectern folders
+    CACHE_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "cache", "meta")
 
 
 def _cache_path(page_no):

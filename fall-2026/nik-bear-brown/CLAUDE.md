@@ -6,7 +6,7 @@ This folder is the instructor's public example work for INFO 7375 Computational 
 
 The same job-search tool is live-coded in Computational Skepticism, Branding and AI, and Prompt Engineering. **The shared files live here and are copied out.** Read [`SYNC.md`](SYNC.md) before editing anything in `lectern/`, `facts/`, `figma/`, or `greenhouse-watch-demo/`.
 
-- **Edit a shared file here, never downstream.** After editing, run `./lectern/sync.sh --check`, then `./lectern/sync.sh`.
+- **Edit a shared file here, never downstream.** After editing, run `./lectern/ops/sync.sh --check`, then `./lectern/ops/sync.sh`.
 - **Never copy** `FRICTIONAL.md`, `README.md`, `CLAUDE.md`, an `assignment-*/` folder, or a dated run output between classes. A log overwritten by another class's log is a destroyed record.
 - **`sync.sh` does not commit.** Each repo is committed by hand with its own message and its own `FRICTIONAL.md` entry.
 - If a shared file was edited in the wrong repo during a class, follow the recovery steps in `SYNC.md` — and log the drift, because it is a finding about the workflow.
@@ -55,7 +55,7 @@ Every push that touches this folder adds a row to the `## GitHub pushes` table, 
 
 **Standing rule (Professor Bear, 2026-10-19):** every time a run finds new possible listings, post them to the public `#professor-bear` channel of the SEIS AI Lab Discord server without being asked, so he can see them whenever he looks. This is not a question to ask each time.
 
-- **How:** `lectern/daily.sh` does it (`publish_delta.py --write --post`, then `faculty_feed.py --send`). A run you start by hand uses `publish_delta.py --post`, or `--post-only` for a run already collected. Both go through `lectern/notify.py`.
+- **How:** `lectern/ops/daily.sh` does it (`publish_delta.py --write --post`, then `faculty_feed.py --send`). A run you start by hand uses `publish_delta.py --post`, or `--post-only` for a run already collected. Both go through `lectern/publish/notify.py`.
 - **What goes in a post:** only listings from companies still on the watch list, most-wanted employers first, each with its link and the words that matched, newly watched companies marked, and the line "A person decides; the machine only ranks words." Posted ids are remembered, so nothing is posted twice.
 - **What never does:** a local path, an email address, a webhook URL, or an unlisted YouTube link. The webhook stays in the home folder.
 - **Posting is not pushing.** Posting a run's listings to Discord needs no word; pushing its delta to GitHub still does.
@@ -65,7 +65,7 @@ Every push that touches this folder adds a row to the `## GitHub pushes` table, 
 **Standing rule (Professor Bear, 2026-10-19):** when a lab or research group looks like a great fit, post its page to the public `#professor-bear` channel so he can look at it. For a company such as Moderna that is a research group's page, not a job posting. Then he, as a person, reads the page and decides. No lab is approached, drafted to or written to before he has looked, and the emails are his to write and send.
 
 - **Tiers:** `great` fits first. `pretty_good` fits are posted only when he says so, after great fits have come to nothing. Do not widen on your own.
-- **How:** `lectern/notify.py` `post_labs()` (tested with made-up labs in `lectern/test_notify.py`). It reads only the lab's public name, institution, page link, tier, kind and the lab's own words (300 characters at most).
+- **How:** `lectern/publish/notify.py` `post_labs()` (tested with made-up labs in `lectern/tests/test_notify.py`). It reads only the lab's public name, institution, page link, tier, kind and the lab's own words (300 characters at most).
 - **What never goes in a post:** the principal investigator, a lab manager or any other person; an email address or phone number; a local path; a webhook URL. A lab named for a person is shown as "A lab at <institution>" with its link. The lab records themselves name people and stay local (`lectern/labs/`, `lectern/lab-records/`, gitignored).
 - **Not built yet:** the reader that turns lab pages into candidates (see `lab-outreach/LAB-RECORD.md`). Until it exists there is nothing to post.
 - **Posting is not pushing**, as in Rule 4.

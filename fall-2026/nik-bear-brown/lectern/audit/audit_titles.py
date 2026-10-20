@@ -14,6 +14,12 @@ rule is wrong. Both happen, and the second is easy to mistake for the first.
 
 Stdlib only.
 """
+import os as _os, sys as _sys
+for _p in (_os.path.dirname(_os.path.abspath(__file__)), _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))):
+    if _os.path.exists(_os.path.join(_p, "lectern_paths.py")):
+        _sys.path.insert(0, _p)
+        break
+import lectern_paths as lp   # where things are: see lectern_paths.py
 import argparse, json, os, re
 from collections import defaultdict
 
@@ -29,7 +35,7 @@ def classify(title, families):
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--all-jobs", required=True)
-    ap.add_argument("--families", default=os.path.join(os.path.dirname(os.path.abspath(__file__)), "title_families.json"))
+    ap.add_argument("--families", default=lp.config("title_families.json"))
     ap.add_argument("--out", required=True)
     a = ap.parse_args(argv)
 

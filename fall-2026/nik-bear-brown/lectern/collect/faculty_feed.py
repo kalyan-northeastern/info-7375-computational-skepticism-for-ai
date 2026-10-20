@@ -15,14 +15,20 @@ Without --send nothing is posted. Writes ../faculty-runs/: new/new-<date>.json +
 The webhook is a secret kept in the home folder (~/.discord-webhooks/<channel>, mode 600; the channel
 professor-bear also falls back to ~/.lectern-webhook). It is never read from, or written to, this repo.
 """
+import os as _os, sys as _sys
+for _p in (_os.path.dirname(_os.path.abspath(__file__)), _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))):
+    if _os.path.exists(_os.path.join(_p, "lectern_paths.py")):
+        _sys.path.insert(0, _p)
+        break
+import lectern_paths as lp   # where things are: see lectern_paths.py
 import argparse, html, json, os, re, sys, time, urllib.parse, urllib.request, urllib.error
 import xml.etree.ElementTree as ET
 from datetime import datetime, timezone, timedelta
 from email.utils import parsedate_to_datetime
 
-HERE = os.path.dirname(os.path.abspath(__file__))
-CFG = json.load(open(os.path.join(HERE, "faculty_config.json"), encoding="utf-8"))
-RUNS = os.path.normpath(os.path.join(HERE, "..", "faculty-runs"))  # run outputs belong to the class that runs it; never synced
+HERE = lp.ROOT
+CFG = json.load(open(lp.config("faculty_config.json"), encoding="utf-8"))
+RUNS = lp.FACULTY_RUNS  # run outputs belong to the class that runs it; never synced
 
 AI_STRONG = re.compile(r"\bartificial intelligence\b|\bmachine learning\b|\bgenerative ai\b|\bgen-?ai\b|\bAI\b|\bLLMs?\b|\blarge language models?\b|\bdeep learning\b|\bAI-[a-z]+", re.I)
 AI_STRONG_CASE = re.compile(r"\bAI\b")  # "AI" alone must be upper-case ("ai" is noise)

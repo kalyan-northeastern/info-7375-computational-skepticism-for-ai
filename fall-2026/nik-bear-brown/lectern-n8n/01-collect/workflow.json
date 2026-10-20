@@ -5,7 +5,7 @@
  "nodes": [
   {
    "parameters": {
-    "content": "## 01 · Collect\nPort of `fetch_board()` and `normalise()` in lectern/collect.py. **Fixture mode** (default) replays three recorded, made-up payloads, one per provider; **live mode** calls the public job-board APIs for the boards in `shared/boards.json`. A board that fails becomes a status row, never a stop. Live: Greenhouse and Ashby only; SmartRecruiters needs its per-posting detail calls (not built), so it is reported as unavailable rather than judged on empty text.",
+    "content": "## 01 · Collect\nPort of `fetch_board()` and `normalise()` in lectern/collect/collect.py. **Fixture mode** (default) replays three recorded, made-up payloads, one per provider; **live mode** calls the public job-board APIs for the boards in `shared/boards.json`. A board that fails becomes a status row, never a stop. Live: Greenhouse and Ashby only; SmartRecruiters needs its per-posting detail calls (not built), so it is reported as unavailable rather than judged on empty text.",
     "height": 200,
     "width": 640,
     "color": 4

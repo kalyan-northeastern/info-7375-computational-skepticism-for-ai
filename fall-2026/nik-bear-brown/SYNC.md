@@ -26,18 +26,21 @@ The tool is identical in all three. Only the question changes.
 
 | Path | What it is |
 |---|---|
-| `lectern/collect.py` | The collector: fetch → normalise → filter → dedupe → validate → write, three ATS providers |
-| `lectern/sources.json` | The watch list — 18 boards, plus the companies that cannot be read |
-| `lectern/keywords.json` | The filter: role, topic, and flexible-terms words, with what was cut and why |
-| `lectern/ATS.md` | Which applicant-tracking system each company uses, and an honest "unknown" where it was not verified |
-| `lectern/faculty_feed.py` · `lectern/faculty_config.json` | The faculty-listings reader: Chronicle and Inside Higher Ed keyword feeds, filtered to business-school faculty roles that mention AI, plus the 12 watched schools. Its run outputs go to `faculty-runs/` (not shared) |
-| `lectern/collectors/` | The big-four collectors (Google, Amazon, Microsoft, Meta), the SQLite monitor and the daily runner. Added to the list 2026-10-18; its `runs/` output is not shared |
-| `lectern/publish_delta.py` | After a run, writes and publishes only what changed since the last published run (new, changed, gone). Added 2026-10-18 |
+| `lectern/lectern_paths.py` | Where every script finds its rule files and its sibling scripts, in one place. Added 2026-10-20 with the folder layout; it is what lets the same files run in the master's folders and in the other two classes' flat copies |
+| `lectern/collect/collect.py` | The collector: fetch → normalise → filter → dedupe → validate → write, three ATS providers |
+| `lectern/config/sources.json` | The watch list — 18 boards, plus the companies that cannot be read |
+| `lectern/config/keywords.json` | The filter: role, topic, and flexible-terms words, with what was cut and why |
+| `lectern/notes/ATS.md` | Which applicant-tracking system each company uses, and an honest "unknown" where it was not verified |
+| `lectern/collect/faculty_feed.py` · `lectern/config/faculty_config.json` | The faculty-listings reader: Chronicle and Inside Higher Ed keyword feeds, filtered to business-school faculty roles that mention AI, plus the 12 watched schools. Its run outputs go to `faculty-runs/` (not shared) |
+| `lectern/collect/collectors/` | The big-four collectors (Google, Amazon, Microsoft, Meta), the SQLite monitor and the daily runner. Added to the list 2026-10-18; its `runs/` output is not shared |
+| `lectern/publish/publish_delta.py` | After a run, writes and publishes only what changed since the last published run (new, changed, gone). Added 2026-10-18 |
 | `facts/professor-bear-cv.json` | The CV as structured facts, attested |
 | `figma/` | The first single-company iteration: saved board, scan, kept postings |
 | `greenhouse-watch-demo/` | The Reallocation Engine's watcher run on one board |
 
-**Edit these here.** Then run `./lectern/sync.sh` to copy them out and see what changed.
+**Layout.** In the master the shared files live in folders (`config/`, `collect/`, `publish/`, `audit/`, `notes/`); `sync.sh` copies each to the other two classes by its base name, into the one flat folder they keep. Branding's is a student's graded path and does not move.
+
+**Edit these here.** Then run `./lectern/ops/sync.sh` to copy them out and see what changed.
 
 ## Not shared — deliberately different
 
@@ -54,8 +57,8 @@ The tool is identical in all three. Only the question changes.
 From this folder:
 
 ```bash
-./lectern/sync.sh --check     # report drift, change nothing (safe, do this first)
-./lectern/sync.sh             # copy the shared files out to the other two repos
+./lectern/ops/sync.sh --check     # report drift, change nothing (safe, do this first)
+./lectern/ops/sync.sh             # copy the shared files out to the other two repos
 ```
 
 It never deletes, never touches a file in the "not shared" list, and never commits — each repo is committed by hand with its own message and its own `FRICTIONAL.md` entry.
@@ -64,14 +67,14 @@ It never deletes, never touches a file in the "not shared" list, and never commi
 
 It happens during a live class. The fix is not to copy it back blindly:
 
-1. `./lectern/sync.sh --check` names the file and shows the difference.
+1. `./lectern/ops/sync.sh --check` names the file and shows the difference.
 2. Decide which version is right — usually the newer edit, but not always.
 3. Bring the correct content **here**, into the master.
-4. Run `./lectern/sync.sh` so all three match.
+4. Run `./lectern/ops/sync.sh` so all three match.
 5. Note it in this class's `FRICTIONAL.md`, because a drift that happened is a finding about the workflow.
 
 ## Current state
 
 **2026-09-26.** The shared spine was copied into this folder today, which means the master started out *behind* the other two — Branding had the collector, the watch list, and the data; this folder had none of it. That is the inverse of what "master" should mean, and it is recorded rather than tidied away. Branding and Prompt Engineering were byte-identical on every shared file at the time of the copy, so nothing had to be reconciled.
 
-**2026-10-07.** The first real propagation. Professor Bear asked for all three classes to be brought into sync and pushed. `--check` reported every listed file identical, but a file-by-file comparison outside the list found `lectern/demand_report.py` (added to the master and Branding on 2026-09-26) missing from Prompt Engineering: the script's shared list had not been updated when the file was added. The list now carries it, and `sync.sh` was run for real for the first time. Lesson for the workflow: a new shared file is not shared until it is in the `SHARED` array; adding a file to `lectern/` and adding it to the list are one change, not two.
+**2026-10-07.** The first real propagation. Professor Bear asked for all three classes to be brought into sync and pushed. `--check` reported every listed file identical, but a file-by-file comparison outside the list found `lectern/audit/demand_report.py` (added to the master and Branding on 2026-09-26) missing from Prompt Engineering: the script's shared list had not been updated when the file was added. The list now carries it, and `sync.sh` was run for real for the first time. Lesson for the workflow: a new shared file is not shared until it is in the `SHARED` array; adding a file to `lectern/` and adding it to the list are one change, not two.

@@ -72,7 +72,7 @@
   ⎿  Wrote 106 lines to DIAGRAM.md
       2 # Project diagram — Lectern job-board watcher, three-class sync
       3 ## Executive summary
-      5 The Lectern tool (`lectern/collect.py`) is a job-board watcher fo
+      5 The Lectern tool (`lectern/collect/collect.py`) is a job-board watcher fo
         r teaching-related and advocacy roles in AI and education. It rea
          Ashby, SmartRecruiters), runs a seven-step pipeline — fetch → wr
         ite raw → normalise → deduplicate → validate → keyword-filter → w
@@ -152,7 +152,7 @@
 
 ✻ Sautéed for 1m 52s
 
-❯ Compare the FigJam board with lectern/collect.py and SYNC.md. List anything   
+❯ Compare the FigJam board with lectern/collect/collect.py and SYNC.md. List anything   
   on the board that isn't in the code, and anything in the code that isn't on   
   the board. Don't fix anything.                                                
   ⎿  UserPromptSubmit hook error  ⎿  Failed with non-blocking status code: /bin/sh: ~/…/books/info-7375-computational-skepticism-for-ai/fall-2026/nik-bear-brown/.claude/hooks/postcompact-check.sh: …
@@ -260,7 +260,7 @@
 
 ✻ Baked for 2m 15s
 
-❯ Compare the FigJam board with lectern/collect.py and SYNC.md. List anything   
+❯ Compare the FigJam board with lectern/collect/collect.py and SYNC.md. List anything   
   on the board that isn't in the code, and anything in the code that isn't on   
   the board. Don't fix anything.                                                
   ⎿  UserPromptSubmit hook error  ⎿  Failed with non-blocking status code: /bin/sh: ~/…/books/info-7375-computational-skepticism-for-ai/fall-2026/nik-bear-brown/.claude/hooks/postcompact-check.sh: …

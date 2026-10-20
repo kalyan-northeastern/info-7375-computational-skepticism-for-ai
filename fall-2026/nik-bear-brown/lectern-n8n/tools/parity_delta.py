@@ -25,6 +25,7 @@ def main():
     if not a.lectern:
         ap.error("--lectern is required (or put this folder beside a lectern/ folder)")
     sys.path.insert(0, os.path.abspath(a.lectern))
+    import lectern_paths as lp   # the Python Lectern's own map of where its files are (config/, collect/, publish/, audit/)
     import publish_delta as pd
     e, l = pd.load_run(a.earlier), pd.load_run(a.later)
     state = {k: {**v, "fp": pd.fingerprint(v)} for k, v in e["kept"].items()}

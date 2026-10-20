@@ -13,6 +13,12 @@ Two parts, on purpose:
 
 Stdlib only. Writes Markdown with a blank Verdict column. Judges nothing itself.
 """
+import os as _os, sys as _sys
+for _p in (_os.path.dirname(_os.path.abspath(__file__)), _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))):
+    if _os.path.exists(_os.path.join(_p, "lectern_paths.py")):
+        _sys.path.insert(0, _p)
+        break
+import lectern_paths as lp   # where things are: see lectern_paths.py
 import argparse, json, os, random, re, sys
 
 
@@ -63,7 +69,7 @@ def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--all-jobs", required=True)
     ap.add_argument("--raw", required=True)
-    ap.add_argument("--keywords", default=os.path.join(os.path.dirname(os.path.abspath(__file__)), "keywords.json"))
+    ap.add_argument("--keywords", default=lp.config("keywords.json"))
     ap.add_argument("--out", required=True)
     ap.add_argument("--n", type=int, default=100, help="size of the uniform random sample")
     ap.add_argument("--seed", type=int, default=20260926, help="recorded in the file so the sample is reproducible")

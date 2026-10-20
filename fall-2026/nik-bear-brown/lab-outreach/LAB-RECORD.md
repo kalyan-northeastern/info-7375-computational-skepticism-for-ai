@@ -141,7 +141,7 @@ For this search, `size_and_funding.awards_from_public_databases` replaces the la
 
 ## From record to Discord (Professor Bear, 2026-10-19)
 
-A lab record with `fit.tier` of `great` becomes a candidate for `lectern/notify.py` `post_labs()`: `lab_id`, a public display name, the institution, the lab's page, the tier, the kind and `what_the_lab_does.verbatim`. Nothing else from the record leaves the machine: not the principal investigator, not the lab manager, not an email or phone. He looks at the page; `outreach.looked_at_by_professor_bear_on` is filled in by him, and no email is drafted before it is. For a `company_team` (Moderna) the page is the research group's page, not a job posting. The Northeastern question, whether it could engage him as a consultant or joint faculty for this work, is his to settle by reading his agreements, and sits in the profile as a hypothesis.
+A lab record with `fit.tier` of `great` becomes a candidate for `lectern/publish/notify.py` `post_labs()`: `lab_id`, a public display name, the institution, the lab's page, the tier, the kind and `what_the_lab_does.verbatim`. Nothing else from the record leaves the machine: not the principal investigator, not the lab manager, not an email or phone. He looks at the page; `outreach.looked_at_by_professor_bear_on` is filled in by him, and no email is drafted before it is. For a `company_team` (Moderna) the page is the research group's page, not a job posting. The Northeastern question, whether it could engage him as a consultant or joint faculty for this work, is his to settle by reading his agreements, and sits in the profile as a hypothesis.
 
 ## The directory stage, as its own small record
 

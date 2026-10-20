@@ -24,9 +24,15 @@ Nothing is committed unless --commit or --push is given. Only the files this scr
 the full snapshots are refused by name even if asked for. Each push also needs a row in the folder's
 FRICTIONAL.md "GitHub pushes" table; the script prints the row and does not edit the log.
 """
+import os as _os, sys as _sys
+for _p in (_os.path.dirname(_os.path.abspath(__file__)), _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))):
+    if _os.path.exists(_os.path.join(_p, "lectern_paths.py")):
+        _sys.path.insert(0, _p)
+        break
+import lectern_paths as lp   # where things are: see lectern_paths.py
 import argparse, csv, datetime as dt, hashlib, json, os, re, subprocess, sys
 
-HERE = os.path.dirname(os.path.abspath(__file__))
+HERE = lp.ROOT
 STATE_NAME = "published-state.json"
 FIELDS = ("title", "url", "location_text", "department")
 NEVER_COMMIT = re.compile(r"(^|/)(all-jobs-|jobs-of-interest-|quality-report-)|(^|/)raw(/|$)|monitor\.db")
@@ -243,7 +249,7 @@ def write_state(runs_dir, run, state_c):
 
 def watched_companies():
     """Companies on the current watch list (a company removed from sources.json is never posted)."""
-    cfg = load_json(os.path.join(HERE, "sources.json"))
+    cfg = load_json(lp.config("sources.json"))
     return {b["company"] for s in cfg["sources"] for b in s["boards"]}
 
 

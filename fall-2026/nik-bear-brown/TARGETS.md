@@ -26,7 +26,7 @@ Links were checked with a plain request on 2026-10-20 (HTTP status shown in the 
 
 ## A. Companies read by `collect.py` (15 job boards)
 
-The script is `lectern/collect.py` with the watch list `lectern/sources.json`. The n8n form (`lectern-n8n/01-collect`) reads the Greenhouse and Ashby ones live and Canva not at all.
+The script is `lectern/collect/collect.py` with the watch list `lectern/config/sources.json`. The n8n form (`lectern-n8n/01-collect`) reads the Greenhouse and Ashby ones live and Canva not at all.
 
 | Company | Type | Provider | Board page (people) | API the script calls (data) | Status and to-do |
 |---|---|---|---|---|---|
@@ -50,7 +50,7 @@ Removed on his word and kept in the `removed` block of the watch list: **Stripe*
 
 ## B. Companies read by the big-four collectors (no simple feed)
 
-Script: `lectern/collectors/` (`run_daily.py`, one module per company, `monitor.py`), writing to a local database. None of it passes through the keyword filter or the daily delta yet.
+Script: `lectern/collect/collectors/` (`run_daily.py`, one module per company, `monitor.py`), writing to a local database. None of it passes through the keyword filter or the daily delta yet.
 
 | Company | Type | Data (direct link) | Status and to-do |
 |---|---|---|---|
@@ -77,7 +77,7 @@ Watched, but the three job-board systems Lectern reads (Greenhouse, Ashby, Smart
 
 ## D. Business schools: 21, read only through two shared feeds
 
-Script: `lectern/faculty_feed.py` with `lectern/faculty_config.json`. Data: the Chronicle of Higher Education's [job feed](https://jobs.chronicle.com/jobsrss/) and Inside Higher Ed's [job feed](https://careers.insidehighered.com/jobsrss/), searched with eight AI queries plus one query per school. The reader keeps a listing only if it looks like a faculty or institute-leadership role at a business school (or a watched school) with AI in the text, and stores the rule that fired. First run: 1,727 items read, 14 matched. Output: `faculty-runs/`.
+Script: `lectern/collect/faculty_feed.py` with `lectern/config/faculty_config.json`. Data: the Chronicle of Higher Education's [job feed](https://jobs.chronicle.com/jobsrss/) and Inside Higher Ed's [job feed](https://careers.insidehighered.com/jobsrss/), searched with eight AI queries plus one query per school. The reader keeps a listing only if it looks like a faculty or institute-leadership role at a business school (or a watched school) with AI in the text, and stores the rule that fired. First run: 1,727 items read, 14 matched. Output: `faculty-runs/`.
 
 The school's own page is the better source where it can be read; the table below says which can and cannot.
 
@@ -171,9 +171,9 @@ There is **no reader** for any of these. The 2026-10-19 reads were by hand (a pa
 
 | Script | Reads | Covers | Not covered |
 |---|---|---|---|
-| `lectern/collect.py` | Greenhouse, Ashby, SmartRecruiters | 14 working boards | HubSpot (404); Canva has no ad text in the n8n form |
-| `lectern/collectors/` | Google, Microsoft, Amazon, Meta | Google (collected, unfiltered) | Microsoft (429), Amazon and Meta (never run); none passes the filter or the delta |
-| `lectern/faculty_feed.py` | two job feeds | 21 schools by keyword | each school's own page |
+| `lectern/collect/collect.py` | Greenhouse, Ashby, SmartRecruiters | 14 working boards | HubSpot (404); Canva has no ad text in the n8n form |
+| `lectern/collect/collectors/` | Google, Microsoft, Amazon, Meta | Google (collected, unfiltered) | Microsoft (429), Amazon and Meta (never run); none passes the filter or the delta |
+| `lectern/collect/faculty_feed.py` | two job feeds | 21 schools by keyword | each school's own page |
 | `lectern-n8n/` (five workflows) | Greenhouse, Ashby | the same as `collect.py` minus SmartRecruiters | everything above that is not a board |
 | `check-awards.py` | NIH RePORTER, NSF | institution-level funding for 6 institutions | NSF names for four of them; lab level |
 | none | the research places | nothing | everything in section E |

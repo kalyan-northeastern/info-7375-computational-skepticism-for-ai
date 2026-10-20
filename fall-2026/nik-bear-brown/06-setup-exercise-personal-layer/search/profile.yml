@@ -96,7 +96,7 @@ preferences:
     - GitHub             # maybe; not readable by the three job-board APIs Lectern uses
     - Notion             # to look into
   to_look_into: [Jasper AI (likely to go), GitLab (only "if it is real")]
-  removed_from_the_watch_list_2026_10_18: [Stripe, Writer]   # done in lectern/sources.json; recorded there under "removed"
+  removed_from_the_watch_list_2026_10_18: [Stripe, Writer]   # done in lectern/config/sources.json; recorded there under "removed"
   company_size: null              # not stated; not treated as a constraint
 sponsorship:
   # Q5.
@@ -109,7 +109,7 @@ business_school_rationale:
   - He has been approached for such work but it is politically hard to get from outside the business school.
   - A joint appointment (business plus engineering) at Northeastern would be one way in.
 business_school_watch_list: >-
-  The business schools in lectern/faculty_config.json (12 on 2026-10-18, plus Brown): Harvard Business School, MIT Sloan, Duke Fuqua,
+  The business schools in lectern/config/faculty_config.json (12 on 2026-10-18, plus Brown): Harvard Business School, MIT Sloan, Duke Fuqua,
   Cornell Johnson, Vanderbilt Owen, UCLA Anderson, UT Austin McCombs, UT Dallas Jindal, Boston College Carroll,
   UC San Diego Rady, UNC Kenan-Flagler, Northeastern D'Amore-McKim, and Brown (added 2026-10-18), then on the same day Virginia Darden, Dartmouth Tuck, Rice Jones, emlyon, IESE, London Business
   School, HEC Paris and ESADE (UNC Kenan-Flagler was already on the list). The feeds are American, so the five European
@@ -177,7 +177,7 @@ outreach_search:
       Labs and research groups that look like great fits are posted to the #professor-bear Discord channel (the page,
       not a job). He reads the page and decides. If great fits yield nothing, he will say when to move to pretty good fits.
     tiers: [great, pretty_good]
-    posted_by: lectern/notify.py post_labs(); see CLAUDE.md Rule 5
+    posted_by: lectern/publish/notify.py post_labs(); see CLAUDE.md Rule 5
     for_a_company: a research group's page, not a job posting (Moderna)
   northeastern_arrangement:
     # Professor Bear, 2026-10-19, in his words: "I have to look into the actual agreements. But I don't see why

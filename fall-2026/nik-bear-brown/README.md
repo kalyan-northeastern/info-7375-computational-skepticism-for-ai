@@ -2,7 +2,7 @@
 
 A place for the public work of Nik Bear Brown's examples — INFO 7375, Fall 2026.
 
-> **This folder is the canonical master for a project live-coded in three classes.** The same job-search tool is built in Computational Skepticism, Branding and AI, and Prompt Engineering, with a different emphasis in each. Shared code and configuration are edited **here** and propagated with `./lectern/sync.sh`. Class-specific writing is never copied. The rule, the file lists, and the recovery procedure are in **[`SYNC.md`](SYNC.md)**.
+> **This folder is the canonical master for a project live-coded in three classes.** The same job-search tool is built in Computational Skepticism, Branding and AI, and Prompt Engineering, with a different emphasis in each. Shared code and configuration are edited **here** and propagated with `./lectern/ops/sync.sh`. Class-specific writing is never copied. The rule, the file lists, and the recovery procedure are in **[`SYNC.md`](SYNC.md)**.
 
 ## Executive summary
 

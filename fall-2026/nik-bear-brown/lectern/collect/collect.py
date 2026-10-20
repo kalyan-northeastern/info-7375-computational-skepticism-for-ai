@@ -16,11 +16,17 @@ P2 the raw response is written before anything parses it. P3 the filter is keywo
 every match is published. P4 one source failing does not stop the others. P5 a company with no
 match today stays on the watch list. Stdlib only. Exit 0 ran, 2 bad input, 3 every source failed.
 """
+import os as _os, sys as _sys
+for _p in (_os.path.dirname(_os.path.abspath(__file__)), _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))):
+    if _os.path.exists(_os.path.join(_p, "lectern_paths.py")):
+        _sys.path.insert(0, _p)
+        break
+import lectern_paths as lp   # where things are: see lectern_paths.py
 import argparse, csv, datetime as dt, html, json, os, re, sys, time, urllib.error, urllib.request
 from urllib.parse import quote
 
 ALLOWED = {"boards-api.greenhouse.io", "api.ashbyhq.com", "api.smartrecruiters.com"}
-HERE = os.path.dirname(os.path.abspath(__file__))
+HERE = lp.ROOT
 TODAY = dt.date.today().isoformat()
 
 
@@ -212,8 +218,8 @@ def write_csv(path, rows):
 # ---------------------------------------------------------------- main
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--sources", default=os.path.join(HERE, "sources.json"))
-    ap.add_argument("--keywords", default=os.path.join(HERE, "keywords.json"))
+    ap.add_argument("--sources", default=lp.config("sources.json"))
+    ap.add_argument("--keywords", default=lp.config("keywords.json"))
     ap.add_argument("--out", default=HERE)
     ap.add_argument("--only", help="one provider: greenhouse | ashby | smartrecruiters")
     ap.add_argument("--from-raw", metavar="DIR", help="no network; re-filter saved responses")
