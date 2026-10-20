@@ -265,6 +265,9 @@ revisions:
   - date: 2026-10-19
     change: Replit removed from the watch list
     because: "he said it is not really educational AI, just AI: not educational software in the sense that Claude for University, NotebookLM and Claude Science are, more a low-level app, and the role he read there (Learning Experiences Creator) an entry-level, low-level job"
+  - date: 2026-10-20
+    change: Vercel, Webflow, Airtable, GitLab, Twilio, Netlify, Jasper AI and Supabase removed from the watch list
+    because: "he said they are not really educational AI, meaning institutional or university AI: more software products than true educational tools, and not tools that could be the central part of a course unless the course is on that tool"
 
 flexibility_check: >-
   Nothing here claims flexibility. Every null is a question, not an assumption.

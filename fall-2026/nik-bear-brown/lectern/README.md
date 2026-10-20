@@ -52,7 +52,7 @@ The folders follow the pipeline, not the file type: rules in, sources read, what
 
 | Stage | Files | What it does |
 |---|---|---|
-| **Rules** | `config/sources.json` · `config/keywords.json` · `config/title_families.json` · `config/faculty_config.json` | The watch list (15 boards today); the filter, with a record of every word that was cut and the count that cut it; the 20 job families the title audit uses; the 21 schools and the queries for the faculty feed |
+| **Rules** | `config/sources.json` · `config/keywords.json` · `config/title_families.json` · `config/faculty_config.json` | The watch list (7 boards today); the filter, with a record of every word that was cut and the count that cut it; the 20 job families the title audit uses; the 21 schools and the queries for the faculty feed |
 | **Collect and judge** | `collect/collect.py` | Reads Greenhouse, Ashby and SmartRecruiters boards, turns the three formats into one, applies the filter, writes every posting with the reason it was kept or rejected |
 | **Lab pages** | `collect/collectors/biolabs.py` · `config/biolabs.json` | Reads public lab directory pages (robots.txt first, honest User-Agent), scores each lab page for data-heavy biology and writes a local record; no emails decoded, no outreach drafted. Adapted from the Biojobs repository |
 | **The big four** | `collect/collectors/` | Google, Amazon, Microsoft and Meta have no simple public feed; these collectors take hours and write to a local database (`monitor.db`, not tracked). Not yet part of the daily delta or the filter |

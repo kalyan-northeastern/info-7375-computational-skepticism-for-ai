@@ -4,7 +4,7 @@
 # automatically, so he can see them without asking. This script is where that happens. It does NOT commit or push:
 # pushing a day's delta needs his word (CLAUDE.md), and `publish_delta.py --commit` is the step for that.
 #
-#   ./ops/daily.sh            # collect the 16 boards, post the new listings, then the faculty feed
+#   ./ops/daily.sh            # collect the watched boards, post the new listings, then the faculty feed
 #   ./ops/daily.sh --no-post  # the same, but post nothing (a test)
 #
 # The big-four collectors (Google, Microsoft, ...) take hours and run separately:

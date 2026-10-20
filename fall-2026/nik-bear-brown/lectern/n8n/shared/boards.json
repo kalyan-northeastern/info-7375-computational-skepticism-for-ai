@@ -21,44 +21,8 @@
   },
   {
    "provider": "greenhouse",
-   "company": "Vercel",
-   "slug": "vercel",
-   "tier": 2
-  },
-  {
-   "provider": "greenhouse",
-   "company": "Webflow",
-   "slug": "webflow",
-   "tier": 2
-  },
-  {
-   "provider": "greenhouse",
    "company": "Miro",
    "slug": "realtimeboardglobal",
-   "tier": 2
-  },
-  {
-   "provider": "greenhouse",
-   "company": "Airtable",
-   "slug": "airtable",
-   "tier": 2
-  },
-  {
-   "provider": "greenhouse",
-   "company": "GitLab",
-   "slug": "gitlab",
-   "tier": 1
-  },
-  {
-   "provider": "greenhouse",
-   "company": "Twilio",
-   "slug": "twilio",
-   "tier": 1
-  },
-  {
-   "provider": "greenhouse",
-   "company": "Netlify",
-   "slug": "netlify",
    "tier": 2
   },
   {
@@ -71,18 +35,6 @@
    "provider": "ashby",
    "company": "Notion",
    "slug": "notion",
-   "tier": 2
-  },
-  {
-   "provider": "ashby",
-   "company": "Jasper AI",
-   "slug": "Jasper AI",
-   "tier": 2
-  },
-  {
-   "provider": "ashby",
-   "company": "Supabase",
-   "slug": "supabase",
    "tier": 2
   },
   {
