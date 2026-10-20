@@ -15,12 +15,6 @@
   },
   {
    "provider": "greenhouse",
-   "company": "HubSpot",
-   "slug": "hubspotjobs",
-   "tier": 1
-  },
-  {
-   "provider": "greenhouse",
    "company": "Miro",
    "slug": "realtimeboardglobal",
    "tier": 2

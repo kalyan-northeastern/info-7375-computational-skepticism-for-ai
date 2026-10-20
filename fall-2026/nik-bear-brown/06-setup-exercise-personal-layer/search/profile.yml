@@ -268,6 +268,9 @@ revisions:
   - date: 2026-10-20
     change: Vercel, Webflow, Airtable, GitLab, Twilio, Netlify, Jasper AI and Supabase removed from the watch list
     because: "he said they are not really educational AI, meaning institutional or university AI: more software products than true educational tools, and not tools that could be the central part of a course unless the course is on that tool"
+  - date: 2026-10-20
+    change: HubSpot removed from the watch list; Miro kept for now
+    because: "he said HubSpot's education is product training for HubSpot, not educational AI, and does not look relevant; its board also returned 404; Miro he wants to research further before deciding"
 
 flexibility_check: >-
   Nothing here claims flexibility. Every null is a question, not an assumption.

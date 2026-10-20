@@ -25,14 +25,6 @@
           "why_watched": "Figma Education is an acquisition funnel; Designer Advocate is the Assignment 2 dream job."
         },
         {
-          "company": "HubSpot",
-          "slug": "hubspotjobs",
-          "tier": 1,
-          "postings_2026_09_26": 133,
-          "matched_2026_09_26": 1,
-          "why_watched": "HubSpot Academy is a revenue driver and hires 'Academy Professor' roles outright. NOTE: the board slug is hubspotjobs, not hubspot — plain 'hubspot' returns an empty board."
-        },
-        {
           "company": "Miro",
           "slug": "realtimeboardglobal",
           "tier": 2,
@@ -138,7 +130,7 @@
     "note": "Canva's 248 are excluded from the scan total — its detail calls were not re-run on 2026-09-26. Five Tier 1 companies are unreachable, so the watch list is incomplete by design and says so."
   },
   "removed": {
-    "_comment": "Removed from the watch list on 2026-10-18 at Professor Bear's word ('we can remove Stripe and Writer for now'). The 2026-09-26 rule was to watch every company whatever it posts; this is a deliberate exception. His reason, corrected the same day: not that these companies or their products are bad or not useful, but that he does not see them as directly applicable to transformative, AI-driven improvement of education. Not a finding about either company. Their last counts are kept so the removal is visible. 2026-10-19: Replit removed at his word (\"let's remove Replit from the job search\"; \"it's not really educational AI, it's just AI\"), the same kind of deliberate exception. 2026-10-20: Vercel, Webflow, Airtable, GitLab, Twilio, Netlify, Jasper AI and Supabase removed at his word, for the same kind of reason as Replit: software products, not educational AI for institutions or universities.",
+    "_comment": "Removed from the watch list on 2026-10-18 at Professor Bear's word ('we can remove Stripe and Writer for now'). The 2026-09-26 rule was to watch every company whatever it posts; this is a deliberate exception. His reason, corrected the same day: not that these companies or their products are bad or not useful, but that he does not see them as directly applicable to transformative, AI-driven improvement of education. Not a finding about either company. Their last counts are kept so the removal is visible. 2026-10-19: Replit removed at his word (\"let's remove Replit from the job search\"; \"it's not really educational AI, it's just AI\"), the same kind of deliberate exception. 2026-10-20: Vercel, Webflow, Airtable, GitLab, Twilio, Netlify, Jasper AI and Supabase removed at his word, for the same kind of reason as Replit: software products, not educational AI for institutions or universities. 2026-10-20: HubSpot removed at his word. Miro was considered the same day and kept for now: he wants to research it first.",
     "Stripe": {
       "slug": "stripe",
       "provider": "greenhouse",
@@ -213,6 +205,13 @@
       "removed_on": "2026-10-20",
       "reason": "not really educational AI: institutional or university AI. More a software product than a true educational tool, and not a tool that could be the central part of a course unless the course is on that tool (Professor Bear's words, paraphrased only to name the company).",
       "postings_2026_09_26": 56
+    },
+    "HubSpot": {
+      "slug": "hubspotjobs",
+      "provider": "greenhouse",
+      "removed_on": "2026-10-20",
+      "reason": "education is marketing for its own product (HubSpot Academy teaches people to use HubSpot), not educational AI for institutions or universities; not relevant to the search in his words. Its Greenhouse board had also returned 404 since 2026-10-18, so nothing was being read.",
+      "postings_2026_09_26": 133
     }
   }
 }

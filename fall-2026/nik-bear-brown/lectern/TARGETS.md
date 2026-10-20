@@ -2,7 +2,7 @@
 
 ## Executive summary
 
-**What this is.** The list of everything the job search and the research search are pointed at: companies, business schools, research institutes, hospitals, think tanks, a biotech, and the public databases behind them. Each is classified by what it is, with the direct link to where its data lives, the script that reads it (or a plain "none"), and what is still missing. **Why read it.** A target is only real if there is a way to read it. The project had grown a watch list in one file, a school list in another and a research-places list in a third, and nobody could see at a glance which targets are actually being read and which are only intentions. **What it found.** Of the targets with a reader: 6 company job boards are read and one (HubSpot) has gone dark; Google is collected but not filtered; Microsoft has never been read (it throttled), Amazon and Meta have never run here; 21 business schools are covered only through two shared job-feed searches, because most schools' own job systems cannot be read by script. Of the research places, **only one early reader exists** (`collect/collectors/biolabs.py`, built 2026-10-20 from the Biojobs repository, run on four directory pages): it finds lab links and scores each lab page for data-heavy biology, but no lab has yet been read for fit. Two targets turned out to have readable job feeds that Lectern has no reader for (Moderna on Workday, Hugging Face on Workable).
+**What this is.** The list of everything the job search and the research search are pointed at: companies, business schools, research institutes, hospitals, think tanks, a biotech, and the public databases behind them. Each is classified by what it is, with the direct link to where its data lives, the script that reads it (or a plain "none"), and what is still missing. **Why read it.** A target is only real if there is a way to read it. The project had grown a watch list in one file, a school list in another and a research-places list in a third, and nobody could see at a glance which targets are actually being read and which are only intentions. **What it found.** Of the targets with a reader: 6 company job boards are read; Google is collected but not filtered; Microsoft has never been read (it throttled), Amazon and Meta have never run here; 21 business schools are covered only through two shared job-feed searches, because most schools' own job systems cannot be read by script. Of the research places, **only one early reader exists** (`collect/collectors/biolabs.py`, built 2026-10-20 from the Biojobs repository, run on four directory pages): it finds lab links and scores each lab page for data-heavy biology, but no lab has yet been read for fit. Two targets turned out to have readable job feeds that Lectern has no reader for (Moderna on Workday, Hugging Face on Workable).
 
 Links were checked with a plain request on 2026-10-20 (HTTP status shown in the notes where it was not 200). A page that answers a script is not the same as a page a script may read: check the site's robots file before adding a reader.
 
@@ -11,7 +11,7 @@ Links were checked with a plain request on 2026-10-20 (HTTP status shown in the 
 | Type | Meaning | Examples |
 |---|---|---|
 | **AI lab with an education product** | Builds AI and sells or runs an education product | Anthropic, OpenAI |
-| **Tool company with an education program** | A product company with a real education arm (an academy, a university, an education edition) | Canva, Figma, Notion, HubSpot |
+| **Tool company with an education program** | A product company with a real education arm (an academy, a university, an education edition) | Canva, Figma, Notion |
 | **Developer-advocacy employer** | Known for paying people to teach developers | none watched now (GitLab, Twilio, Netlify and Supabase were removed 2026-10-20) |
 | **Tool company, no education program yet** | Watched cheaply; the education push may come | Miro |
 | **Big technology company with an education footprint** | Large incumbents with education businesses | Google, Microsoft, Amazon, Meta, Adobe, Salesforce, GitHub, Shopify |
@@ -24,7 +24,7 @@ Links were checked with a plain request on 2026-10-20 (HTTP status shown in the 
 
 "Why it is a target" is taken from the reason recorded in the watch list or from Professor Bear's own words; where the repository gives none, the table says so. The classification is a reading, not a fact about the target.
 
-## A. Companies read by `collect.py` (7 job boards)
+## A. Companies read by `collect.py` (6 job boards)
 
 The script is `lectern/collect/collect.py` with the watch list `lectern/config/sources.json`. The n8n form (`lectern/n8n/01-collect`) reads the Greenhouse and Ashby ones live and Canva not at all.
 
@@ -32,7 +32,6 @@ The script is `lectern/collect/collect.py` with the watch list `lectern/config/s
 |---|---|---|---|---|---|
 | Anthropic | AI lab with an education product | Greenhouse | [job-boards.greenhouse.io/anthropic](https://job-boards.greenhouse.io/anthropic) | `boards-api.greenhouse.io/v1/boards/anthropic/jobs?content=true` | Reads |
 | Figma | tool company with an education program | Greenhouse | [job-boards.greenhouse.io/figma](https://job-boards.greenhouse.io/figma) | `boards-api.greenhouse.io/v1/boards/figma/jobs?content=true` | Reads (API 200); the board page redirects to the company's own careers page |
-| HubSpot | tool company with an education program | Greenhouse | [job-boards.greenhouse.io/hubspotjobs](https://job-boards.greenhouse.io/hubspotjobs) | `boards-api.greenhouse.io/v1/boards/hubspotjobs/jobs?content=true` | **Board returns 404 (checked 2026-10-20); it also returned 404 in the 2026-10-18 run.** No data. |
 | Miro | tool company, no education program yet | Greenhouse | [job-boards.greenhouse.io/realtimeboardglobal](https://job-boards.greenhouse.io/realtimeboardglobal) | `boards-api.greenhouse.io/v1/boards/realtimeboardglobal/jobs?content=true` | Reads (API 200); the board page redirects to the company's own careers page |
 | OpenAI | AI lab with an education product | Ashby | [jobs.ashbyhq.com/openai](https://jobs.ashbyhq.com/openai) | `api.ashbyhq.com/posting-api/job-board/openai?includeCompensation=true` | Reads |
 | Notion | tool company with an education program | Ashby | [jobs.ashbyhq.com/notion](https://jobs.ashbyhq.com/notion) | `api.ashbyhq.com/posting-api/job-board/notion?includeCompensation=true` | Reads |
@@ -163,7 +162,7 @@ There is **one early reader**, `collect/collectors/biolabs.py` (seeds and rules 
 
 | Script | Reads | Covers | Not covered |
 |---|---|---|---|
-| `lectern/collect/collect.py` | Greenhouse, Ashby, SmartRecruiters | 6 working boards | HubSpot (404); Canva has no ad text in the n8n form |
+| `lectern/collect/collect.py` | Greenhouse, Ashby, SmartRecruiters | 6 boards | Canva has no ad text in the n8n form |
 | `lectern/collect/collectors/` | Google, Microsoft, Amazon, Meta | Google (collected, unfiltered) | Microsoft (429), Amazon and Meta (never run); none passes the filter or the delta |
 | `lectern/collect/faculty_feed.py` | two job feeds | 21 schools by keyword | each school's own page |
 | `lectern/n8n/` (five workflows) | Greenhouse, Ashby | the same as `collect.py` minus SmartRecruiters | everything above that is not a board |
@@ -174,7 +173,7 @@ There is **one early reader**, `collect/collectors/biolabs.py` (seeds and rules 
 
 1. **The lab reader is a start, not a reader.** `biolabs.py` covers directory pages and a keyword score; the people-page stage, funding at lab level, the HMS labs page, and every institute, think tank and department page are still unread by script.
 2. **Moderna.** A Workday reader (the feed answers), and, more important, the research group pages the pitch needs.
-3. **HubSpot.** The board returned 404 on 2026-10-18 and on 2026-10-20: find where its postings moved.
+3. **Miro** is kept for now: Professor Bear wants to research it before deciding.
 4. **Microsoft, Amazon, Meta.** Never read here; and Google is collected but not filtered or part of the delta.
 5. **A Workable reader** (Hugging Face answers) and **a Workday reader** (Moderna answers).
 6. **Adobe, Salesforce, GitHub, Shopify, Framer, Sketch, Retool, InVision.** No job system identified.
