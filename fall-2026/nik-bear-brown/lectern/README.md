@@ -45,6 +45,8 @@ A day's run is `daily.sh`: collect, then what is new (and post it), then churn, 
 | **Notes** | `ATS.md` | Which applicant-tracking system each company uses, and an honest "unknown" where it was not verified |
 | **Output** | `runs/` | Dated outputs. Tracked: the small deltas, churn reports and `published-state.json`. Ignored: full snapshots, raw payloads, ad text, logs, `monitor.db`, lab records |
 
+**What it is pointed at.** Every company, school and research group the tool watches, what kind of thing each is, where its data lives (direct links), which script reads it and what is still missing: `../TARGETS.md`.
+
 ## Shared with two other classes
 
 The same tool is live-coded in Computational Skepticism, Branding and AI, and Prompt Engineering. **This folder is the master.** `sync.sh` copies `collect.py`, the three audit scripts, `title_families.json`, `sources.json`, `keywords.json`, `ATS.md`, `faculty_feed.py`, `faculty_config.json`, `publish_delta.py` and `collectors/` to the others (`./lectern/sync.sh --check` reports drift; `--only <word>` syncs one class). **Not shared, on purpose:** `notify.py`, `churn.py`, `daily.sh`, `sync.sh` and the tests, which are the instructor's operations (the posting goes to one Discord channel). Edit shared files here, never in the copies. See `../SYNC.md`.

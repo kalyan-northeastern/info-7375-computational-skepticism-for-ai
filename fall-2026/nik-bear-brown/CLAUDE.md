@@ -72,7 +72,7 @@ Every push that touches this folder adds a row to the `## GitHub pushes` table, 
 
 ## Rule 6 — `lectern/HISTORY.md` is the daily log of the code
 
-**Standing instruction (Professor Bear, 2026-10-20):** keep `lectern/HISTORY.md` as a daily log of what was added to `lectern/` and when, and how the tool is being built up, alongside `FRICTIONAL.md`. Whenever a file in `lectern/` is added, removed or changed in what it does, add a dated entry (date, what, why) **in the same change**, and keep the tables in `lectern/README.md` true. Write what happened, including what failed; never a result nobody ran. The same goes for `lectern-n8n/` (the n8n form, kept beside the Python form): its README says what is tested.
+**Standing instruction (Professor Bear, 2026-10-20):** keep `lectern/HISTORY.md` as a daily log of what was added to `lectern/` and when, and how the tool is being built up, alongside `FRICTIONAL.md`. Whenever a file in `lectern/` is added, removed or changed in what it does, add a dated entry (date, what, why) **in the same change**, and keep the tables in `lectern/README.md` true. Write what happened, including what failed; never a result nobody ran. The same goes for `lectern-n8n/` (the n8n form, kept beside the Python form): its README says what is tested. **Also keep `TARGETS.md` true:** when a target is added, removed or reclassified, or a reader for one is built or fails, change its row in the same change.
 
 ## Pushing from this folder
 
