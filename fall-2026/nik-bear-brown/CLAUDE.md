@@ -72,7 +72,11 @@ Every push that touches this folder adds a row to the `## GitHub pushes` table, 
 
 ## Rule 6 — `lectern/HISTORY.md` is the daily log of the code
 
-**Standing instruction (Professor Bear, 2026-10-20):** keep `lectern/HISTORY.md` as a daily log of what was added to `lectern/` and when, and how the tool is being built up, alongside `FRICTIONAL.md`. Whenever a file in `lectern/` is added, removed or changed in what it does, add a dated entry (date, what, why) **in the same change**, and keep the tables in `lectern/README.md` true. Write what happened, including what failed; never a result nobody ran. The same goes for `lectern/n8n/` (the n8n form, kept beside the Python form): its README says what is tested. **Also keep `lectern/TARGETS.md` true:** when a target is added, removed or reclassified, or a reader for one is built or fails, change its row in the same change.
+**Standing instruction (Professor Bear, 2026-10-20):** keep `lectern/HISTORY.md` as a daily log of what was added to `lectern/` and when, and how the tool is being built up, alongside `FRICTIONAL.md`. Whenever a file in `lectern/` is added, removed or changed in what it does, add a dated entry (date, what, why) **in the same change**, and keep the tables in `lectern/README.md` true. Write what happened, including what failed; never a result nobody ran. The same goes for `lectern/forms/n8n/` (the n8n form, kept beside the Python form): its README says what is tested. **Also keep `lectern/TARGETS.md` true:** when a target is added, removed or reclassified, or a reader for one is built or fails, change its row in the same change.
+
+## Rule 7 — one list of targets, read by every form
+
+**Standing instruction (Professor Bear, 2026-10-20):** the companies, schools and research groups Lectern looks at have **one** source of truth, `lectern/config/targets.json`; every form of Lectern (the Python, `lectern/forms/n8n/` and the others) reads it and none copies it. Change a target there, then run `python3 lectern/ops/build_from_targets.py`; it regenerates `sources.json`, the schools in `faculty_config.json`, the seeds in `biolabs.json` and the tables in `lectern/TARGETS.md` (`--check` says whether anything differs, and `tests/test_targets.py` fails if it does). A form may collect its own data and may propose a new target in its own `proposed-targets.jsonl` with a link to a public page that backs the claim, but never edits `targets.json`; a person promotes it. A removed target stays, with its reason and date.
 
 ## Pushing from this folder
 

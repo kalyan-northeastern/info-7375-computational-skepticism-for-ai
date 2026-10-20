@@ -32,7 +32,8 @@ A day's run is `ops/daily.sh`: collect, then what is new (and post it), then chu
 
 ```
 lectern/
-  config/    sources.json · keywords.json · title_families.json · faculty_config.json    the rules: data you edit, not code
+  config/    targets.json · keywords.json · title_families.json · biolabs.json · …        the rules and the list of targets: data you edit, not code
+             (sources.json, faculty_config.json and the seeds in biolabs.json are generated from targets.json)
   collect/   collect.py · faculty_feed.py · collectors/                                   everything that talks to a source
   publish/   publish_delta.py · notify.py                                                 everything that changes state or tells someone
   audit/     audit_rejects.py · audit_titles.py · demand_report.py · churn.py             read-only measurement of the filter and the market
@@ -40,7 +41,10 @@ lectern/
   ops/       daily.sh · sync.sh                                                           running it and copying it
   notes/     ATS.md
   runs/      dated output (small files tracked; the rest ignored)
-  TARGETS.md · lab-outreach/ · n8n/ · faculty-runs/ · HISTORY.md     the rest of Lectern: see below
+  forms/     the other versions of Lectern, each reading the same targets (n8n is built; the rest are plans)
+  compare/   the run-format check, the run comparison, the heartbeat
+  logs/      one append-only folder per tool
+  TARGETS.md · lab-outreach/ · faculty-runs/ · HISTORY.md     the rest of Lectern: see below
   lectern_paths.py                                                                        where things are, in one place
 ```
 
@@ -52,7 +56,7 @@ The folders follow the pipeline, not the file type: rules in, sources read, what
 
 | Stage | Files | What it does |
 |---|---|---|
-| **Rules** | `config/sources.json` · `config/keywords.json` · `config/title_families.json` · `config/faculty_config.json` | The watch list (6 boards today); the filter, with a record of every word that was cut and the count that cut it; the 20 job families the title audit uses; the 21 schools and the queries for the faculty feed |
+| **Rules and targets** | `config/targets.json` (the single list of targets) · `config/keywords.json` · `config/title_families.json` · generated from the list: `config/sources.json`, `config/faculty_config.json`, the seeds in `config/biolabs.json` (`ops/build_from_targets.py`) | The watch list (6 boards today); the filter, with a record of every word that was cut and the count that cut it; the 20 job families the title audit uses; the 21 schools and the queries for the faculty feed |
 | **Collect and judge** | `collect/collect.py` | Reads Greenhouse, Ashby and SmartRecruiters boards, turns the three formats into one, applies the filter, writes every posting with the reason it was kept or rejected |
 | **Lab pages** | `collect/collectors/biolabs.py` · `config/biolabs.json` | Reads public lab directory pages (robots.txt first, honest User-Agent), scores each lab page for data-heavy biology and writes a local record; no emails decoded, no outreach drafted. Adapted from the Biojobs repository |
 | **The big four** | `collect/collectors/` | Google, Amazon, Microsoft and Meta have no simple public feed; these collectors take hours and write to a local database (`monitor.db`, not tracked). Not yet part of the daily delta or the filter |
@@ -90,15 +94,16 @@ Anything about Lectern lives here or in one of its folders; the folders at the l
 
 - `TARGETS.md`: every company, school and research group the tool watches, classified, with the direct link to its data, the script that reads it and what is missing.
 - `lab-outreach/`: the design for the part-time research search (the lab record, the places, the funding check). `collect/collectors/biolabs.py` is its first reader.
-- `n8n/`: the same pipeline as five n8n workflows, tested against this Python. The point of building it more than once is to compare:
+- `forms/`: the same pipeline built other ways, to compare them (see `forms/PLAN.md`). **Every form reads `config/targets.json` and none copies it.** `forms/n8n/` is five n8n workflows tested against this Python; the others are plans with a folder each:
 
 ```mermaid
 flowchart LR
   P["Python<br/>this folder<br/>the master"] -->|"the oracle: same input,<br/>same output?"| NN["n8n<br/>lectern/n8n<br/>five workflows, tested against the Python"]
-  P -.->|planned| CR["CrewAI<br/>not started"]
+  P -.->|planned| CR["CrewAI, LangGraph, a model judge,<br/>and three always-on agents<br/>not started"]
 ```
 
-  The n8n form has its own diagrams: each workflow draws itself, and its README says what was tested. A CrewAI form is planned (`crewai/`), not built.
+  The n8n form has its own diagrams: each workflow draws itself, and its README says what was tested. The other forms (a Pydantic AI judge, two CrewAI versions, LangGraph, Muse, Grok Bot, Dots) are planned, not built.
+- `compare/`, `logs/`: the shared plumbing every form uses: a check that a run uses the one output format, a comparison against the reference run, and a heartbeat that looks for each tool's log.
 - `faculty-runs/`: the faculty feed's output.
 - `HISTORY.md`: the daily log of what was added here and why.
 

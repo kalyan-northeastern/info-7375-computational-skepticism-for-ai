@@ -4,6 +4,8 @@
 
 **What this is.** The list of everything the job search and the research search are pointed at: companies, business schools, research institutes, hospitals, think tanks, a biotech, and the public databases behind them. Each is classified by what it is, with the direct link to where its data lives, the script that reads it (or a plain "none"), and what is still missing. **Why read it.** A target is only real if there is a way to read it. The project had grown a watch list in one file, a school list in another and a research-places list in a third, and nobody could see at a glance which targets are actually being read and which are only intentions. **What it found.** Of the targets with a reader: 6 company job boards are read; Google is collected but not filtered; Microsoft has never been read (it throttled), Amazon and Meta have never run here; 21 business schools are covered only through two shared job-feed searches, because most schools' own job systems cannot be read by script. Of the research places, **only one early reader exists** (`collect/collectors/biolabs.py`, built 2026-10-20 from the Biojobs repository, run on four directory pages): it finds lab links and scores each lab page for data-heavy biology, but no lab has yet been read for fit. Two targets turned out to have readable job feeds that Lectern has no reader for (Moderna on Workday, Hugging Face on Workable).
 
+**The tables below are generated from `config/targets.json`** (run `python3 ops/build_from_targets.py` after editing it; `--check` says whether anything differs). Edit the data there, never the tables here. The prose around them is written by hand.
+
 Links were checked with a plain request on 2026-10-20 (HTTP status shown in the notes where it was not 200). A page that answers a script is not the same as a page a script may read: check the site's robots file before adding a reader.
 
 ## How targets are classified
@@ -26,45 +28,68 @@ Links were checked with a plain request on 2026-10-20 (HTTP status shown in the 
 
 ## A. Companies read by `collect.py` (6 job boards)
 
-The script is `lectern/collect/collect.py` with the watch list `lectern/config/sources.json`. The n8n form (`lectern/n8n/01-collect`) reads the Greenhouse and Ashby ones live and Canva not at all.
+The script is `lectern/collect/collect.py` with the watch list `lectern/config/sources.json`. The n8n form (`lectern/forms/n8n/01-collect`) reads the Greenhouse and Ashby ones live and Canva not at all.
 
+<!-- targets:boards -->
 | Company | Type | Provider | Board page (people) | API the script calls (data) | Status and to-do |
 |---|---|---|---|---|---|
 | Anthropic | AI lab with an education product | Greenhouse | [job-boards.greenhouse.io/anthropic](https://job-boards.greenhouse.io/anthropic) | `boards-api.greenhouse.io/v1/boards/anthropic/jobs?content=true` | Reads |
-| Figma | tool company with an education program | Greenhouse | [job-boards.greenhouse.io/figma](https://job-boards.greenhouse.io/figma) | `boards-api.greenhouse.io/v1/boards/figma/jobs?content=true` | Reads (API 200); the board page redirects to the company's own careers page |
-| Miro | tool company, no education program yet | Greenhouse | [job-boards.greenhouse.io/realtimeboardglobal](https://job-boards.greenhouse.io/realtimeboardglobal) | `boards-api.greenhouse.io/v1/boards/realtimeboardglobal/jobs?content=true` | Reads (API 200); the board page redirects to the company's own careers page |
+| Figma | Tool company with an education program | Greenhouse | [job-boards.greenhouse.io/figma](https://job-boards.greenhouse.io/figma) | `boards-api.greenhouse.io/v1/boards/figma/jobs?content=true` | Reads (API 200); the board page redirects to the company's own careers page |
+| Miro | Tool company, no education program yet | Greenhouse | [job-boards.greenhouse.io/realtimeboardglobal](https://job-boards.greenhouse.io/realtimeboardglobal) | `boards-api.greenhouse.io/v1/boards/realtimeboardglobal/jobs?content=true` | Reads (API 200); the board page redirects to the company's own careers page; kept for now, he wants to research it |
 | OpenAI | AI lab with an education product | Ashby | [jobs.ashbyhq.com/openai](https://jobs.ashbyhq.com/openai) | `api.ashbyhq.com/posting-api/job-board/openai?includeCompensation=true` | Reads |
-| Notion | tool company with an education program | Ashby | [jobs.ashbyhq.com/notion](https://jobs.ashbyhq.com/notion) | `api.ashbyhq.com/posting-api/job-board/notion?includeCompensation=true` | Reads |
-| Canva | tool company with an education program | SmartRecruiters | [careers.smartrecruiters.com/Canva](https://careers.smartrecruiters.com/Canva) | `api.smartrecruiters.com/v1/companies/Canva/postings` | Reads, but the listing has no ad text: needs one call per posting (the n8n form does not do this yet) |
+| Notion | Tool company with an education program | Ashby | [jobs.ashbyhq.com/notion](https://jobs.ashbyhq.com/notion) | `api.ashbyhq.com/posting-api/job-board/notion?includeCompensation=true` | Reads |
+| Canva | Tool company with an education program | SmartRecruiters | [careers.smartrecruiters.com/Canva](https://careers.smartrecruiters.com/Canva) | `api.smartrecruiters.com/v1/companies/Canva/postings` | Reads, but the listing has no ad text: needs one call per posting (the n8n form does not do this yet) |
+<!-- /targets:boards -->
 
 Removed on his word and kept, with the reason, in the `removed` block of the watch list: **Stripe** and **Writer** (2026-10-18; not directly applicable to improving education through AI, and not a judgment that they are bad); **Replit** (2026-10-19; not educational AI, just AI); and on **2026-10-20 Vercel, Webflow, Airtable, GitLab, Twilio, Netlify, Jasper AI and Supabase**: not really educational AI, meaning institutional or university AI; more software products than true educational tools, and not tools that could be the central part of a course unless the course is on that tool.
+
+<!-- targets:removed -->
+| Removed | On | Reason, as recorded |
+|---|---|---|
+| Stripe | 2026-10-18 | not directly applicable to transformative, AI-driven improvement of education (not a judgment that it is not useful) |
+| Writer | 2026-10-18 | not directly applicable to transformative, AI-driven improvement of education (not a judgment that it is a bad tool; he first said he did not think writing-AI tools were good, then clarified) |
+| Replit | 2026-10-19 | not really educational AI, just AI: in Professor Bear's words, not educational software in the sense that Claude for University, NotebookLM and Claude for Life Sciences are, but more of a low-level app, and the role he read there (Learning Experiences Creator) an entry-level, low-level job. Not a finding about the company beyond that judgment. |
+| Vercel | 2026-10-20 | not really educational AI: institutional or university AI. More a software product than a true educational tool, and not a tool that could be the central part of a course unless the course is on that tool (Professor Bear's words, paraphrased only to name the company). |
+| Webflow | 2026-10-20 | not really educational AI: institutional or university AI. More a software product than a true educational tool, and not a tool that could be the central part of a course unless the course is on that tool (Professor Bear's words, paraphrased only to name the company). |
+| Airtable | 2026-10-20 | not really educational AI: institutional or university AI. More a software product than a true educational tool, and not a tool that could be the central part of a course unless the course is on that tool (Professor Bear's words, paraphrased only to name the company). |
+| GitLab | 2026-10-20 | not really educational AI: institutional or university AI. More a software product than a true educational tool, and not a tool that could be the central part of a course unless the course is on that tool (Professor Bear's words, paraphrased only to name the company). |
+| Twilio | 2026-10-20 | not really educational AI: institutional or university AI. More a software product than a true educational tool, and not a tool that could be the central part of a course unless the course is on that tool (Professor Bear's words, paraphrased only to name the company). |
+| Netlify | 2026-10-20 | not really educational AI: institutional or university AI. More a software product than a true educational tool, and not a tool that could be the central part of a course unless the course is on that tool (Professor Bear's words, paraphrased only to name the company). |
+| Jasper AI | 2026-10-20 | not really educational AI: institutional or university AI. More a software product than a true educational tool, and not a tool that could be the central part of a course unless the course is on that tool (Professor Bear's words, paraphrased only to name the company). |
+| Supabase | 2026-10-20 | not really educational AI: institutional or university AI. More a software product than a true educational tool, and not a tool that could be the central part of a course unless the course is on that tool (Professor Bear's words, paraphrased only to name the company). |
+| HubSpot | 2026-10-20 | education is marketing for its own product (HubSpot Academy teaches people to use HubSpot), not educational AI for institutions or universities; not relevant to the search in his words. Its Greenhouse board had also returned 404 since 2026-10-18, so nothing was being read. |
+<!-- /targets:removed -->
 
 ## B. Companies read by the big-four collectors (no simple feed)
 
 Script: `lectern/collect/collectors/` (`run_daily.py`, one module per company, `monitor.py`), writing to a local database. None of it passes through the keyword filter or the daily delta yet.
 
+<!-- targets:bigfour -->
 | Company | Type | Data (direct link) | Status and to-do |
 |---|---|---|---|
-| Google | Big technology company with an education footprint (Google for Education, Classroom, Gemini for Education, NotebookLM; on the most-wanted list) | [careers results pages](https://www.google.com/about/careers/applications/jobs/results/?page=1), read from a script block in the page | **Collected in two runs on 2026-10-19 (3,690 and 3,638 postings); 3,825 distinct postings** in the local database. Not filtered, not in the delta. The page is server-rendered HTML with no official feed: a page change will break it |
-| Microsoft | Same type (on the most-wanted list) | [`apply.careers.microsoft.com/api/pcsx/search`](https://apply.careers.microsoft.com/api/pcsx/search?domain=microsoft.com&start=0) (page size fixed at 10) | **Never read.** The first runs hit HTTP 429 (the site throttles hard). A single request answers 200 today. To-do: a slower, resumable run |
-| Amazon | Same type (no reason recorded in the repository; part of the "big four") | [`amazon.jobs/en/search.json`](https://www.amazon.jobs/en/search.json?base_query=&country=USA&result_limit=1&offset=0) (answers 200) | **Never run here.** To-do: run it, and write down why Amazon is a target |
-| Meta | Same type (no reason recorded) | [`metacareers.com/jobs`](https://www.metacareers.com/jobs) (redirects to `/jobsearch/`), read through a real browser | **Never run here.** Needs Playwright; not covered by any test. To-do: run it, and write down why Meta is a target |
+| Google | Big technology company with an education footprint (Google for Education and Classroom are the incumbent K-12 infrastructure; Gemini for Education is the AI-era extension. The largest school footprint of anyone on this list.) | [careers results pages, read from a script block in the page](https://www.google.com/about/careers/applications/jobs/results/?page=1) | Collected in two runs on 2026-10-19 (3,690 and 3,638 postings); 3,825 distinct postings in the local database. Not filtered, not in the delta. The page is server-rendered HTML with no official feed: a page change will break it. To-do: Pass it through the filter and the delta |
+| Microsoft | Big technology company with an education footprint (On the most-wanted list) | [careers API (page size fixed at 10)](https://apply.careers.microsoft.com/api/pcsx/search?domain=microsoft.com&start=0) | Never read. The first runs hit HTTP 429 (the site throttles hard). A single request answers 200 today. To-do: A slower, resumable run |
+| Amazon | Big technology company with an education footprint (No reason recorded in the repository; part of the big four) | [jobs search JSON (answers 200)](https://www.amazon.jobs/en/search.json?base_query=&country=USA&result_limit=1&offset=0) | Never run here. To-do: Run it, and write down why Amazon is a target |
+| Meta | Big technology company with an education footprint (No reason recorded in the repository; part of the big four) | [careers search, read through a real browser (redirects to /jobsearch/)](https://www.metacareers.com/jobs) | Never run here. Needs Playwright; not covered by any test. To-do: Run it, and write down why Meta is a target |
+<!-- /targets:bigfour -->
 
 ## C. Companies with no data source yet
 
 Watched, but the three job-board systems Lectern reads (Greenhouse, Ashby, SmartRecruiters) have no board for them. Their careers pages answer, but which system they use is not recorded.
 
-| Company | Type | Careers page (checked 2026-10-20) | What is known | To-do |
+<!-- targets:unreachable -->
+| Company | Type | Careers page | What is known | To-do |
 |---|---|---|---|---|
-| Adobe | Big technology company with an education footprint | [careers.adobe.com](https://careers.adobe.com/us/en) (200) | Education Exchange, Creative Cloud for Education | Find its job system and write a reader |
-| Salesforce | same | [salesforce.com/company/careers](https://www.salesforce.com/company/careers/) (200, redirected) | Trailhead | same |
-| GitHub | same (on the most-wanted list, "maybe") | [github.careers](https://www.github.careers/careers-home) (200, redirected) | GitHub Education, Student Developer Pack | same |
-| Shopify | same | [shopify.com/careers](https://www.shopify.com/careers) (200) | Shopify Academy | same |
-| Hugging Face | AI company (no education reason recorded) | [apply.workable.com/huggingface](https://apply.workable.com/huggingface/) (200) | **A Workable feed that works: 6 jobs listed on 2026-10-20** via `apply.workable.com/api/v1/widget/accounts/huggingface` | A Workable reader |
-| Framer | Tool company | [framer.com/careers](https://www.framer.com/careers/) (200) | none | Find its job system |
-| Sketch | Tool company | [sketch.com/careers](https://www.sketch.com/careers/) (200) | none | same |
-| Retool | Tool company | [retool.com/careers](https://retool.com/careers) (200) | none | same |
-| InVision | Tool company | not checked | the company's status is not established here | Check whether it still hires |
+| Adobe | Big technology company with an education footprint | [careers page](https://careers.adobe.com/us/en) | Careers page answers 200 (2026-10-20); its job system is not identified. Education Exchange, Creative Cloud for Education | Find its job system and write a reader |
+| Salesforce | Big technology company with an education footprint | [careers page](https://www.salesforce.com/company/careers/) | Careers page answers 200 (2026-10-20); its job system is not identified. Trailhead | Find its job system and write a reader |
+| GitHub | Big technology company with an education footprint | [careers page](https://www.github.careers/careers-home) | Careers page answers 200 (2026-10-20); its job system is not identified. GitHub Education, Student Developer Pack | Find its job system and write a reader |
+| Shopify | Big technology company with an education footprint | [careers page](https://www.shopify.com/careers) | Careers page answers 200 (2026-10-20); its job system is not identified. Shopify Academy | Find its job system and write a reader |
+| Hugging Face | AI company | [careers page](https://apply.workable.com/huggingface/) | A Workable feed that works: 6 jobs listed on 2026-10-20 via apply.workable.com/api/v1/widget/accounts/huggingface | A Workable reader |
+| Framer | Tool company | [careers page](https://www.framer.com/careers/) | Careers page answers 200 | Find its job system |
+| Sketch | Tool company | [careers page](https://www.sketch.com/careers/) | Careers page answers 200 | Find its job system |
+| Retool | Tool company | [careers page](https://retool.com/careers) | Careers page answers 200 | Find its job system |
+| InVision | Tool company | no link verified | Not checked; the company's status is not established here | Check whether it still hires |
+<!-- /targets:unreachable -->
 
 ## D. Business schools: 21, read only through two shared feeds
 
@@ -74,29 +99,31 @@ The school's own page is the better source where it can be read; the table below
 
 **Where each school publishes open faculty positions** (all 21 links answered 200 to my plain request on 2026-10-20; the columns on system, readability and robots are from a researcher agent's plain requests the same day, spot-checked by me only for the status code). Type for every row: university business school (Brown has none; its row is the university).
 
+<!-- targets:schools -->
 | School | Faculty-jobs page (direct link) | System | Titles readable by a script? | Robots file | Notes and to-do |
 |---|---|---|---|---|---|
-| Harvard Business School | [hbs.edu/faculty/positions](https://www.hbs.edu/faculty/positions) | own page; applications in Interfolio | yes | allowed (crawl delay 2 s) | 7 searches for a 2027 start listed; full ads in Interfolio |
-| MIT Sloan | [faculty openings](https://mitsloan.mit.edu/work-mit-sloan/mit-sloan-faculty-openings) | own page; Interfolio | yes | allowed | 7 searches listed; two say "Link TBD" |
-| Duke Fuqua | [Academic Jobs Online list](https://academicjobsonline.org/ajo?joblst---31), linked from [Fuqua](https://www.fuqua.duke.edu/faculty-recruiting) | Academic Jobs Online | yes | allowed (crawl delay 5 s) | The Marketing and Operations deadlines had already passed |
-| Cornell Johnson | [Cornell HR academic careers](https://apps.hr.cornell.edu/recruiting/facultycareer.cfm) | Cornell HR app | **no** (loads by script) | no robots file | University-wide, not Johnson-only |
-| Vanderbilt Owen | [Provost faculty jobs board](https://www.vanderbilt.edu/provost/jobs/) | provost widget | **no** | no robots file | Shows 0 results and one 2019 item; no Owen page found |
-| UCLA Anderson | [UC Recruit](https://recruit.apo.ucla.edu/apply) (Anderson's [own page](https://www.anderson.ucla.edu/faculty-and-research/open-positions) only points there) | UC Recruit | yes | allowed | 2 Anderson listings |
-| UT Austin McCombs | [Faculty Careers](https://faculty.utexas.edu/career) | UT app (per a search, fed from Interfolio) | **no** (JS shell) | none found | University-wide; no McCombs page |
-| UT Dallas Jindal | [PeopleAdmin faculty search](https://jobs.utdallas.edu/postings/search?query=&query_position_type_id%5B%5D=2&commit=Search) | PeopleAdmin | yes | **disallowed for all crawlers** | Do not build a reader without permission |
-| Boston College Carroll | [Carroll faculty jobs](https://www.bc.edu/bc-web/schools/carroll-school/faculty-research/jobs.html) | own page; Interfolio | yes | allowed, but the PDF folder is not | Finance searches open; business analytics and accounting items look stale |
-| UC San Diego Rady | [Rady open positions](https://rady.ucsd.edu/faculty-research/open-positions/) | UC Recruit | yes | allowed | 3 titles, no tenure-track search |
-| UNC Kenan-Flagler | [UNC HR employment](https://hr.unc.edu/work-at-carolina/employment-opportunities/) | PeopleAdmin | pointer page only | **the PeopleAdmin host disallows crawlers** | Did not read the listings; no Kenan-Flagler page found |
-| Northeastern D'Amore-McKim | [university Workday](https://northeastern.wd1.myworkdayjobs.com/en-US/careers) | Workday | **no** (JS shell; earlier research found a Cloudflare block) | allowed for /careers/ | University-wide; no school page found |
-| Brown (no business school) | [Dean of the Faculty: searches](https://dof.brown.edu/searches-hiring), which says vacancies are posted on the HERC board | HERC | **no: a "confirm you are not a robot" page** | allowed, but the page is a bot check | Not attempted past the check |
-| Virginia Darden | [Jobs at Darden](https://www.darden.virginia.edu/about/jobs-at-darden) | UVA's Workday (staff); Interfolio for faculty, per a search | no (staff roles only) | allowed | No faculty page found |
-| Dartmouth Tuck | [faculty recruiting](https://tuck.dartmouth.edu/faculty/faculty-recruiting) | own page; Interfolio | yes | allowed (crawl delay 3 s) | "No advertised positions" |
-| Rice Jones | [faculty recruitment](https://business.rice.edu/faculty-research/faculty-recruitment) | own page; Interfolio | yes | allowed | 1 open: clinical professor of finance |
-| emlyon | [emlyon Workday site](https://galileo.wd3.myworkdayjobs.com/en-US/emlyon_career_site) | Workday | **no** | allowed | General careers site; whether it carries professor ads is not verified |
-| IESE | [an example department page](https://www.iese.edu/faculty-research/academic-departments/accounting-control/) | department pages; Interfolio | yes (that page) | allowed | No central list; the one posting seen had expired |
-| London Business School | [faculty recruitment](https://www.london.edu/faculty-and-research/faculty-recruitment) | own pages | partial (index of 7 subject pages) | allowed | Read only the accounting page: one search |
-| HEC Paris | [finance department openings](https://www.hec.edu/en/faculty-research/departments/finance/finance-department-job-openings) | department pages; EconJobMarket | yes, **but stale (2023)** | allowed | No central page; its Cornerstone careers site is a JS shell |
-| ESADE | [ESADE faculty jobs](https://esadefaculty.teamtailor.com/jobs) | Teamtailor | yes | allowed | "No open positions right now" |
+| Harvard Business School | [faculty-jobs page](https://www.hbs.edu/faculty/positions) | own page; applications in Interfolio | yes | allowed (crawl delay 2 s) | 7 searches for a 2027 start listed; full ads in Interfolio |
+| MIT Sloan | [faculty-jobs page](https://mitsloan.mit.edu/work-mit-sloan/mit-sloan-faculty-openings) | own page; Interfolio | yes | allowed | 7 searches listed; two say "Link TBD" |
+| Duke Fuqua | [faculty-jobs page](https://academicjobsonline.org/ajo?joblst---31) · [related page](https://www.fuqua.duke.edu/faculty-recruiting) | Academic Jobs Online | yes | allowed (crawl delay 5 s) | The Marketing and Operations deadlines had already passed |
+| Cornell Johnson | [faculty-jobs page](https://apps.hr.cornell.edu/recruiting/facultycareer.cfm) | Cornell HR app | **no** (loads by script) | no robots file | University-wide, not Johnson-only |
+| Vanderbilt Owen | [faculty-jobs page](https://www.vanderbilt.edu/provost/jobs/) | provost widget | **no** | no robots file | Shows 0 results and one 2019 item; no Owen page found |
+| UCLA Anderson | [faculty-jobs page](https://recruit.apo.ucla.edu/apply) · [related page](https://www.anderson.ucla.edu/faculty-and-research/open-positions) | UC Recruit | yes | allowed | 2 Anderson listings |
+| UT Austin McCombs | [faculty-jobs page](https://faculty.utexas.edu/career) | UT app (per a search, fed from Interfolio) | **no** (JS shell) | none found | University-wide; no McCombs page |
+| UT Dallas Jindal | [faculty-jobs page](https://jobs.utdallas.edu/postings/search?query=&query_position_type_id%5B%5D=2&commit=Search) | PeopleAdmin | yes | **disallowed for all crawlers** | Do not build a reader without permission |
+| Boston College Carroll | [faculty-jobs page](https://www.bc.edu/bc-web/schools/carroll-school/faculty-research/jobs.html) | own page; Interfolio | yes | allowed, but the PDF folder is not | Finance searches open; business analytics and accounting items look stale |
+| UC San Diego Rady | [faculty-jobs page](https://rady.ucsd.edu/faculty-research/open-positions/) | UC Recruit | yes | allowed | 3 titles, no tenure-track search |
+| UNC Kenan-Flagler | [faculty-jobs page](https://hr.unc.edu/work-at-carolina/employment-opportunities/) | PeopleAdmin | pointer page only | **the PeopleAdmin host disallows crawlers** | Did not read the listings; no Kenan-Flagler page found |
+| Northeastern D'Amore-McKim | [faculty-jobs page](https://northeastern.wd1.myworkdayjobs.com/en-US/careers) | Workday | **no** (JS shell; earlier research found a Cloudflare block) | allowed for /careers/ | University-wide; no school page found |
+| Brown School of Professional Studies | [faculty-jobs page](https://dof.brown.edu/searches-hiring) | HERC | **no: a "confirm you are not a robot" page** | allowed, but the page is a bot check | Not attempted past the check |
+| Virginia Darden | [faculty-jobs page](https://www.darden.virginia.edu/about/jobs-at-darden) | UVA's Workday (staff); Interfolio for faculty, per a search | no (staff roles only) | allowed | No faculty page found |
+| Dartmouth Tuck | [faculty-jobs page](https://tuck.dartmouth.edu/faculty/faculty-recruiting) | own page; Interfolio | yes | allowed (crawl delay 3 s) | "No advertised positions" |
+| Rice Jones | [faculty-jobs page](https://business.rice.edu/faculty-research/faculty-recruitment) | own page; Interfolio | yes | allowed | 1 open: clinical professor of finance |
+| emlyon Business School | [faculty-jobs page](https://galileo.wd3.myworkdayjobs.com/en-US/emlyon_career_site) | Workday | **no** | allowed | General careers site; whether it carries professor ads is not verified |
+| IESE Business School | [faculty-jobs page](https://www.iese.edu/faculty-research/academic-departments/accounting-control/) | department pages; Interfolio | yes (that page) | allowed | No central list; the one posting seen had expired |
+| London Business School | [faculty-jobs page](https://www.london.edu/faculty-and-research/faculty-recruitment) | own pages | partial (index of 7 subject pages) | allowed | Read only the accounting page: one search |
+| HEC Paris | [faculty-jobs page](https://www.hec.edu/en/faculty-research/departments/finance/finance-department-job-openings) | department pages; EconJobMarket | yes, **but stale (2023)** | allowed | No central page; its Cornerstone careers site is a JS shell |
+| ESADE Business School | [faculty-jobs page](https://esadefaculty.teamtailor.com/jobs) | Teamtailor | yes | allowed | "No open positions right now" |
+<!-- /targets:schools -->
 
 **What this says.** Only four schools run their own page that lists real titles (HBS, MIT Sloan, Rice, Boston College). Duke is on Academic Jobs Online and UCLA and UC San Diego on UC Recruit, which are readable; one reader for each of those two systems would cover three schools. Full ad text for HBS, MIT, Boston College, Rice, Tuck, Darden and IESE sits in Interfolio, a script-built page a plain request cannot read. Two systems (UT Dallas, UNC) forbid crawlers. Seven schools give only a university-wide system, and Brown's board sits behind a bot check. Search snippets disagreed with the live pages for Tuck, ESADE and Rady, so a listing seen in a search is not a listing that is open. **To-do:** readers for Academic Jobs Online and UC Recruit and for the four school-run pages; leave the other schools on the shared feeds; never build around a robots disallow or a bot check.
 
@@ -104,49 +131,56 @@ The school's own page is the better source where it can be read; the table below
 
 There is **one early reader**, `collect/collectors/biolabs.py` (seeds and rules in `config/biolabs.json`, adapted from the Biojobs repository): it checks `robots.txt`, says what it is in its User-Agent, finds lab links on a directory page, scores each lab page for data-heavy biology words and writes a local record. Run on 2026-10-20 on four directory pages: Harvard Medical School's Division of Nutrition people page, the Chan School's biostatistics page and Boston Children's labs page produced candidate lab links (the Chan page first returned degree programmes, so the filter was tightened); **the Harvard Medical School labs page answers 200 to `curl` but 404 to the reader, unresolved**; and Broad, Dana-Farber, MIT Biology and Wyss directory pages are unreadable (403 or 404). Everything else was read by hand on 2026-10-19. The design for a reader is in `lab-outreach/LAB-RECORD.md`: three stages (a department directory gives the principal investigators, each person's profile gives the lab, the lab site gives what it does and who is in it). Funding is checked at the institution level with `check-awards.py` against NIH RePORTER and the NSF Award Search (it was run for six institutions on 2026-10-19; it lives in the Prompt Engineering repository's `mode-build-assignment/scripts/funding/`, not in the master folder). Records that name people stay local.
 
-**Universities and their units**
-
+<!-- targets:research -->
 | Target | Type | Why | Data (direct link) | Status and to-do |
 |---|---|---|---|---|
-| Harvard Medical School, Division of Nutrition | University research unit | Read to design the lab record (he named endocrinology and epidemiology at Harvard Medical School; the first pilot is not chosen) | [people page](https://nutrition.hms.harvard.edu/people) (126 cards, a directory of principal investigators, not of lab members) | Read once by hand. No reader |
-| Harvard Medical School (other departments) | University research unit | Epidemiology, endocrinology | [hms.harvard.edu](https://hms.harvard.edu/) | Not read; departments to choose |
-| Harvard T.H. Chan School of Public Health | University research unit | Longwood; named by him | [hsph.harvard.edu](https://hsph.harvard.edu/) | Not read |
+| Harvard Medical School, Division of Nutrition | University research unit | Read to design the lab record (he named endocrinology and epidemiology at Harvard Medical School; the first pilot is not chosen) | [people page](https://nutrition.hms.harvard.edu/people) | 126 cards, a directory of principal investigators, not of lab members. Read once by hand; also a seed for the lab-page collector. To-do: A reader for the directory-to-profile-to-lab stages |
+| Harvard Medical School (other departments) | University research unit | Epidemiology, endocrinology | [hms.harvard.edu](https://hms.harvard.edu/) | Not read. To-do: Choose departments |
+| Harvard Medical School labs directory | University research unit | A list of HMS labs, used as a seed for the lab-page collector | [labs page](https://hms.harvard.edu/research/hms-labs) | Answers 200 to curl but 404 to the lab-page collector (unresolved). To-do: Find out why the collector gets a 404 |
+| Harvard T.H. Chan School of Public Health | University research unit | Longwood; named by him | [hsph.harvard.edu](https://hsph.harvard.edu/) · [biostatistics groups and labs](https://www.hsph.harvard.edu/biostatistics/research/groups-and-labs/) | Biostatistics groups page is a seed for the lab-page collector (200); the rest not read. To-do: Tune the filter so degree programmes are skipped (done once); read lab pages |
 | Massachusetts College of Pharmacy and Health Sciences | University research unit | Longwood; named by him | [mcphs.edu](https://www.mcphs.edu/) | Research programmes not found |
 | Northeastern: DMSB AI Strategic Hub | University research unit | Easiest to contact; his MBA school | [DASH](https://damore-mckim.northeastern.edu/dash/) | Read by hand; a great fit, posted to Discord; no pay stated |
-| Northeastern: Institute for Experiential AI (AI + Life Sciences, AI + Health, AI for Finance) | University research unit | His own affiliation | [ai.northeastern.edu](https://ai.northeastern.edu/) ([Life Sciences](https://ai.northeastern.edu/life-sciences), [Health](https://ai.northeastern.edu/ai-health), [Finance](https://ai.northeastern.edu/ai-for-finance)) | Read by hand; Life Sciences posted to Discord |
-| Northeastern: Center for Workforce Analytics; research collaborations; Supply Chain and Information Management; Center for Health Policy and Healthcare Research | University research units | Business-school and health-policy groups | [Workforce Analytics](https://damore-mckim.northeastern.edu/workforce-analytics/) · [collaborations](https://damore-mckim.northeastern.edu/research-collaborations/) · [Supply Chain and IM](https://damore-mckim.northeastern.edu/supply-chain/) · [CHPHR](https://chphr.northeastern.edu/) | Read by hand or in a search summary only; rated pretty good |
+| Northeastern: Institute for Experiential AI | University research unit | His own affiliation | [home](https://ai.northeastern.edu/) · [AI + Life Sciences](https://ai.northeastern.edu/life-sciences) · [AI + Health](https://ai.northeastern.edu/ai-health) · [AI for Finance](https://ai.northeastern.edu/ai-for-finance) | Read by hand; AI + Life Sciences posted to Discord |
+| Northeastern: Center for Workforce Analytics | University research unit | Business-school group | [page](https://damore-mckim.northeastern.edu/workforce-analytics/) | Read through a page reader; rated pretty good |
+| Northeastern: D'Amore-McKim research collaborations | University research unit | Faculty-led projects with outside partners | [listing](https://damore-mckim.northeastern.edu/research-collaborations/) | Read through a page reader; the listing only, no project read |
+| Northeastern: Supply Chain and Information Management | University research unit | Business-school academic group with AI and analytics research | [page](https://damore-mckim.northeastern.edu/supply-chain/) | A group of faculty, not a lab: recorded, not a target as a unit |
+| Northeastern: Center for Health Policy and Healthcare Research | University research unit | University-wide health policy center | [page](https://chphr.northeastern.edu/) | Seen in a search summary only; its own page was not read |
 | Harvard Business School AI Institute | University research unit | Business research on AI | [aiinstitute.hbs.edu](https://aiinstitute.hbs.edu/) | Read in a search; location is his |
-| MIT Sloan: Initiative on the Digital Economy; MIT FutureTech | University research unit | Business and economics of AI | [IDE](https://ide.mit.edu/) · [FutureTech](https://futuretech.mit.edu/) | Read in a search |
+| MIT Sloan: Initiative on the Digital Economy | University research unit | Business and economics of AI | [ide.mit.edu](https://ide.mit.edu/) | Read in a search |
+| MIT FutureTech | University research unit | Economics and risks of computing and AI progress | [futuretech.mit.edu](https://futuretech.mit.edu/) | Read in a search |
 | MIT Media Lab | University research unit | Named by him, next to the Broad | [media.mit.edu](https://www.media.mit.edu/) | What it researches was not looked at |
-| Harvard Graduate School of Education; MIT Open Learning | University research unit | Education; **the author's own suggestion, never checked** | [HGSE](https://www.gse.harvard.edu/) · [Open Learning](https://openlearning.mit.edu/) | Unchecked |
-
-**Research institutes and think tanks (his broad sense)**
-
-| Target | Type | Data (direct link) | Status and to-do |
-|---|---|---|---|
-| Broad Institute | Research institute (biology) | [broadinstitute.org](https://www.broadinstitute.org/) (answers scripts with 403; opens in a browser) | His record lists a Broad collaboration. Not read |
-| Whitehead Institute | Research institute (biology) | [wi.mit.edu](https://wi.mit.edu/) | Address beside the Broad; not read |
-| Koch, McGovern, Picower, Ragon, Wyss, Kempner institutes | Research institutes (cancer; brain; learning and memory; immunology; bioengineering; natural and artificial intelligence) | [Koch](https://ki.mit.edu/) · [McGovern](https://mcgovern.mit.edu/) · [Picower](https://picower.mit.edu/) · [Ragon](https://ragoninstitute.org/) · [Wyss](https://wyss.harvard.edu/) · [Kempner](https://kempnerinstitute.harvard.edu/) | Listed from a pasted research snapshot; not read |
-| Harvard Stem Cell Institute | Research institute (biology) | [hsci.harvard.edu](https://hsci.harvard.edu/) (403 to scripts) | From the snapshot, marked unchecked there |
-| NBER; Federal Reserve Bank of Boston research (with the New England Public Policy Center) | Think tank (economics) | [nber.org](https://www.nber.org/) · [bostonfed.org](https://www.bostonfed.org/) | From the snapshot; not read |
-| J-PAL; Harvard Kennedy School's Center for International Development and Mossavar-Rahmani Center | Think tank (economics, policy) | [J-PAL](https://www.povertyactionlab.org/) · [CID](https://www.hks.harvard.edu/centers/cid) · [Mossavar-Rahmani](https://www.hks.harvard.edu/centers/mrcbg) | From the snapshot; not read |
-| Lincoln Institute of Land Policy; Pioneer Institute; MassBudget; Massachusetts Taxpayers Foundation; Boston Municipal Research Bureau | Think tanks (land and tax policy; state policy and education; state budget; city finance) | [Lincoln](https://www.lincolninst.edu/) · [Pioneer](https://pioneerinstitute.org/) · [MassBudget](https://massbudget.org/) · [Taxpayers](https://www.masstaxpayers.org/) · [BMRB](https://www.bmrb.org/) | From the snapshot; the last two marked unchecked there |
-| Berkman Klein Center | Think tank (internet, law, AI) | [cyber.harvard.edu](https://cyber.harvard.edu/) | Kept for its AI work; fellowships; not one of his five interests |
-| Boston University Global Development Policy Center; Northeastern Dukakis Center | Think tanks (policy) | [BU GDP](https://www.bu.edu/gdp/) · Dukakis Center: link not verified (its address did not answer) | From the snapshot, marked unchecked |
-
-**Hospitals**
-
-| Target | Type | Data (direct link) | Status and to-do |
-|---|---|---|---|
-| Boston Children's Hospital | Hospital research | [research.childrenshospital.org](https://research.childrenshospital.org/) | Named by him; no lab directory read |
-| Mass General Brigham research (Brigham and Women's, Mass General, including its computational biology center) | Hospital research | [research.massgeneralbrigham.org](https://research.massgeneralbrigham.org/) | Mass General is the farthest he will go; not read |
-| Beth Israel Deaconess; Dana-Farber; Joslin | Hospital research | [BIDMC](https://bidmc.org/research) · [Dana-Farber](https://www.dana-farber.org/research) · [Joslin](https://joslin.org/) | Confirmed in the Longwood area; not read |
-
-**Biotech company**
-
-| Target | Type | Why | Data (direct link) | Status and to-do |
-|---|---|---|---|---|
-| Moderna (Research and Early Development, Data Science and AI Research, Therapeutic Area Bioinformatics) | Biotech company | A great target for AI help (his words); a pitch for a collaboration, not a job | [careers](https://www.modernatx.com/careers/life-at-moderna) · jobs feed on Workday: [page](https://modernatx.wd1.myworkdayjobs.com/M_tx) and `modernatx.wd1.myworkdayjobs.com/wday/cxs/modernatx/M_tx/jobs` (a plain POST answers: **274 postings on 2026-10-20**) | Lectern has no Workday reader. The target is a research group's page, not a job: those pages have not been found. A need for outside help is not shown by the public record |
+| Harvard Graduate School of Education | University research unit | Education; the author's own suggestion, never checked | [gse.harvard.edu](https://www.gse.harvard.edu/) | Unchecked |
+| MIT Open Learning | University research unit | Education; the author's own suggestion, never checked | [openlearning.mit.edu](https://openlearning.mit.edu/) | Unchecked |
+| Broad Institute | Research institute | Computational biology; his record lists a Broad collaboration | [broadinstitute.org](https://www.broadinstitute.org/) · [research labs and groups (seed)](https://www.broadinstitute.org/research-labs-and-groups) | Answers scripts with 403; opens in a browser. Not read. To-do: A way in that a script may use, or a browser-driven read |
+| Whitehead Institute | Research institute | Named by him; address beside the Broad | [wi.mit.edu](https://wi.mit.edu/) | Not read |
+| Koch Institute for Integrative Cancer Research (MIT) | Research institute | Cancer; engineering plus biology | [ki.mit.edu](https://ki.mit.edu/) | Listed from a pasted research snapshot; not read |
+| McGovern Institute for Brain Research (MIT) | Research institute | Neuroscience | [mcgovern.mit.edu](https://mcgovern.mit.edu/) | From the snapshot; not read |
+| Picower Institute for Learning and Memory (MIT) | Research institute | Neuroscience of learning and memory | [picower.mit.edu](https://picower.mit.edu/) | From the snapshot; not read |
+| Ragon Institute of Mass General Brigham, MIT and Harvard | Research institute | Immunology, vaccines, emerging infectious disease | [ragoninstitute.org](https://ragoninstitute.org/) | From the snapshot; not read |
+| Wyss Institute for Biologically Inspired Engineering | Research institute | Bioengineering; synthetic biology | [wyss.harvard.edu](https://wyss.harvard.edu/) · [people (seed)](https://wyss.harvard.edu/people/) | From the snapshot; the people page returns 404. To-do: Find the current people or labs page |
+| Kempner Institute for the Study of Natural and Artificial Intelligence | Research institute | Natural and artificial intelligence; large compute | [kempnerinstitute.harvard.edu](https://kempnerinstitute.harvard.edu/) | From the snapshot; not read |
+| Harvard Stem Cell Institute | Research institute | Stem cells | [hsci.harvard.edu](https://hsci.harvard.edu/) | 403 to scripts; from the snapshot, marked unchecked there |
+| Dana-Farber Cancer Institute | Hospital research | Cancer genomics; confirmed in the Longwood area | [research](https://www.dana-farber.org/research) · [labs directory (seed)](https://www.dana-farber.org/research/labs-researchers/) | The labs directory returns 404. To-do: Find the current labs directory |
+| National Bureau of Economic Research | Think tank | Economics | [nber.org](https://www.nber.org/) | From the snapshot; not read |
+| Federal Reserve Bank of Boston research (with the New England Public Policy Center) | Think tank | Economics for New England; education, workforce | [bostonfed.org](https://www.bostonfed.org/) | From the snapshot; not read |
+| J-PAL | Think tank | Randomized evaluations of anti-poverty programs | [povertyactionlab.org](https://www.povertyactionlab.org/) | From the snapshot; not read |
+| Harvard Kennedy School: Center for International Development | Think tank | Economic development | [page](https://www.hks.harvard.edu/centers/cid) | From the snapshot; not read |
+| Harvard Kennedy School: Mossavar-Rahmani Center for Business and Government | Think tank | Business-government relations and regulation | [page](https://www.hks.harvard.edu/centers/mrcbg) | From the snapshot; not read |
+| Lincoln Institute of Land Policy | Think tank | Land use, property taxation | [lincolninst.edu](https://www.lincolninst.edu/) | From the snapshot; not read |
+| Pioneer Institute | Think tank | State policy on education and more; the snapshot calls it free-market | [pioneerinstitute.org](https://pioneerinstitute.org/) | From the snapshot; not read |
+| Massachusetts Budget and Policy Center | Think tank | State budget, tax policy | [massbudget.org](https://massbudget.org/) | From the snapshot; not read |
+| Massachusetts Taxpayers Foundation | Think tank | State budget and tax analysis | [masstaxpayers.org](https://www.masstaxpayers.org/) | From the snapshot, marked unchecked there |
+| Boston Municipal Research Bureau | Think tank | City of Boston finances | [bmrb.org](https://www.bmrb.org/) | From the snapshot, marked unchecked there |
+| Berkman Klein Center | Think tank | Internet, law and AI; kept for its AI work, not one of his five interests | [cyber.harvard.edu](https://cyber.harvard.edu/) | Fellowships; not read |
+| Boston University Global Development Policy Center | Think tank | Global development policy | [bu.edu/gdp](https://www.bu.edu/gdp/) | From the snapshot, marked unchecked there |
+| Northeastern Dukakis Center for Urban and Regional Policy | Think tank | Urban and regional policy | no link verified | Link not verified: its address did not answer. To-do: Find the current address |
+| Boston Children's Hospital | Hospital research | Named by him; genomics and data-heavy research | [research.childrenshospital.org](https://research.childrenshospital.org/) · [labs directory (seed)](https://www.childrenshospital.org/research/labs) | The labs directory is a seed for the lab-page collector (200); no lab fit read. To-do: Read lab pages for fit |
+| Mass General Brigham research (Brigham and Women's, Mass General, including its computational biology center) | Hospital research | Mass General is the farthest he will go | [research.massgeneralbrigham.org](https://research.massgeneralbrigham.org/) | Not read |
+| Beth Israel Deaconess Medical Center | Hospital research | Confirmed in the Longwood area | [research](https://bidmc.org/research) | Not read |
+| Joslin Diabetes Center | Hospital research | Confirmed in the Longwood area | [joslin.org](https://joslin.org/) | Not read |
+| Moderna (Research and Early Development, Data Science and AI Research, Therapeutic Area Bioinformatics) | Biotech company | A great target for AI help (his words); a pitch for a collaboration, not a job | [careers](https://www.modernatx.com/careers/life-at-moderna) · [jobs feed (Workday page)](https://modernatx.wd1.myworkdayjobs.com/M_tx) · [jobs feed (Workday JSON, POST)](https://modernatx.wd1.myworkdayjobs.com/wday/cxs/modernatx/M_tx/jobs) | A plain POST to the Workday feed answers: 274 postings on 2026-10-20. The target is a research group's page, not a job: those pages have not been found. A need for outside help is not shown by the public record. To-do: A Workday reader; find the research group pages |
+| MIT Biology | University research unit | MIT biology department labs, a seed for the lab-page collector | [labs (seed)](https://biology.mit.edu/research/labs/) | The labs directory returns 404 (2026-10-20). To-do: Find the current labs directory |
+<!-- /targets:research -->
 
 ## F. Data sources that are not targets
 
@@ -165,7 +199,7 @@ There is **one early reader**, `collect/collectors/biolabs.py` (seeds and rules 
 | `lectern/collect/collect.py` | Greenhouse, Ashby, SmartRecruiters | 6 boards | Canva has no ad text in the n8n form |
 | `lectern/collect/collectors/` | Google, Microsoft, Amazon, Meta | Google (collected, unfiltered) | Microsoft (429), Amazon and Meta (never run); none passes the filter or the delta |
 | `lectern/collect/faculty_feed.py` | two job feeds | 21 schools by keyword | each school's own page |
-| `lectern/n8n/` (five workflows) | Greenhouse, Ashby | the same as `collect.py` minus SmartRecruiters | everything above that is not a board |
+| `lectern/forms/n8n/` (five workflows) | Greenhouse, Ashby | the same as `collect.py` minus SmartRecruiters | everything above that is not a board |
 | `check-awards.py` | NIH RePORTER, NSF | institution-level funding for 6 institutions | NSF names for four of them; lab level |
 | `collect/collectors/biolabs.py` | four lab directory pages | candidate lab links and a data-signal score per lab page | HMS labs page (404 to the reader), Broad, Dana-Farber, MIT Biology, Wyss; fit judgment; people and funding at lab level |
 

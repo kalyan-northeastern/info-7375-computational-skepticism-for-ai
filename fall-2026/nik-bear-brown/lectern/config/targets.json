@@ -1,0 +1,2331 @@
+{
+  "_comment": "The single list of everything Lectern watches or may watch, and what kind of thing each is. Every form of Lectern (the Python, n8n and the others in forms/) reads this file and none copies it. config/sources.json, the schools in config/faculty_config.json and the seeds in config/biolabs.json are generated from it by ops/build_from_targets.py; lectern/TARGETS.md's tables are generated from it too. Edit here, then run that script. A form that finds a company writes a proposal (forms/<form>/proposed-targets.jsonl) and never edits this file; a person promotes it. Removed targets stay, with the reason, so a discovery agent is shown what Professor Bear has already ruled out. Written 2026-10-20 by moving the lists that were spread over sources.json, faculty_config.json, biolabs.json and TARGETS.md.",
+  "version": "1.0.0",
+  "types": {
+    "ai-lab-edu-product": {
+      "label": "AI lab with an education product",
+      "meaning": "Builds AI and sells or runs an education product"
+    },
+    "tool-co-edu-program": {
+      "label": "Tool company with an education program",
+      "meaning": "A product company with a real education arm (an academy, a university, an education edition)"
+    },
+    "dev-advocacy-employer": {
+      "label": "Developer-advocacy employer",
+      "meaning": "Known for paying people to teach developers"
+    },
+    "tool-co-no-program": {
+      "label": "Tool company, no education program yet",
+      "meaning": "Watched cheaply; the education push may come"
+    },
+    "big-tech-edu-footprint": {
+      "label": "Big technology company with an education footprint",
+      "meaning": "Large incumbents with education businesses"
+    },
+    "ai-company": {
+      "label": "AI company",
+      "meaning": "An AI company; no education reason recorded"
+    },
+    "tool-company": {
+      "label": "Tool company",
+      "meaning": "A software product company; no education reason recorded"
+    },
+    "business-school": {
+      "label": "University business school",
+      "meaning": "Where faculty listings about AI appear"
+    },
+    "university-unit": {
+      "label": "University research unit",
+      "meaning": "A department, center or lab inside a university"
+    },
+    "research-institute": {
+      "label": "Research institute",
+      "meaning": "Professor Bear's broad sense of a think tank: smart people on hard problems, a science institute here"
+    },
+    "think-tank": {
+      "label": "Think tank",
+      "meaning": "Professor Bear's broad sense: smart people on hard problems, an economics or policy center here"
+    },
+    "hospital-research": {
+      "label": "Hospital research",
+      "meaning": "Research arms of hospitals"
+    },
+    "biotech-company": {
+      "label": "Biotech company",
+      "meaning": "A company that does biology research for profit"
+    }
+  },
+  "targets": [
+    {
+      "id": "anthropic",
+      "name": "Anthropic",
+      "type": "ai-lab-edu-product",
+      "section": "boards",
+      "status": "active",
+      "why": "Beneficial Deployments is hiring education roles now: Developer Education Lead (Claude Platform), Lead Technical Instructor, Head of Technical Training, Full Stack Engineer (Education Labs). Claude for Education launched with Northeastern.",
+      "access": "api",
+      "provider": "greenhouse",
+      "slug": "anthropic",
+      "tier": 1,
+      "data": [
+        {
+          "label": "board page",
+          "url": "https://job-boards.greenhouse.io/anthropic"
+        },
+        {
+          "label": "API the script calls",
+          "url": "https://boards-api.greenhouse.io/v1/boards/anthropic/jobs?content=true",
+          "call": true
+        }
+      ],
+      "reader": "collect/collect.py",
+      "status_note": "Reads",
+      "todo": "",
+      "counts": {
+        "postings_2026_09_26": 618,
+        "matched_2026_09_26": 23
+      }
+    },
+    {
+      "id": "figma",
+      "name": "Figma",
+      "type": "tool-co-edu-program",
+      "section": "boards",
+      "status": "active",
+      "why": "Figma Education is an acquisition funnel; Designer Advocate is the Assignment 2 dream job.",
+      "access": "api",
+      "provider": "greenhouse",
+      "slug": "figma",
+      "tier": 1,
+      "data": [
+        {
+          "label": "board page",
+          "url": "https://job-boards.greenhouse.io/figma"
+        },
+        {
+          "label": "API the script calls",
+          "url": "https://boards-api.greenhouse.io/v1/boards/figma/jobs?content=true",
+          "call": true
+        }
+      ],
+      "reader": "collect/collect.py",
+      "status_note": "Reads (API 200); the board page redirects to the company's own careers page",
+      "todo": "",
+      "counts": {
+        "postings_2026_09_26": 163,
+        "matched_2026_09_26": 9
+      }
+    },
+    {
+      "id": "miro",
+      "name": "Miro",
+      "type": "tool-co-no-program",
+      "section": "boards",
+      "status": "active",
+      "why": "Adjacent audience, no education push yet. Zero matches today. NOTE: the slug is their old company name, RealtimeBoard.",
+      "access": "api",
+      "provider": "greenhouse",
+      "slug": "realtimeboardglobal",
+      "tier": 2,
+      "data": [
+        {
+          "label": "board page",
+          "url": "https://job-boards.greenhouse.io/realtimeboardglobal"
+        },
+        {
+          "label": "API the script calls",
+          "url": "https://boards-api.greenhouse.io/v1/boards/realtimeboardglobal/jobs?content=true",
+          "call": true
+        }
+      ],
+      "reader": "collect/collect.py",
+      "status_note": "Reads (API 200); the board page redirects to the company's own careers page; kept for now, he wants to research it",
+      "todo": "",
+      "counts": {
+        "postings_2026_09_26": 28,
+        "matched_2026_09_26": 0
+      }
+    },
+    {
+      "id": "openai",
+      "name": "OpenAI",
+      "type": "ai-lab-edu-product",
+      "section": "boards",
+      "status": "active",
+      "why": "A dedicated ChatGPT Education & Learning product team; Tech Lead Manager (Education), Account Director (Higher Education), Academic Research Partnerships. ChatGPT Edu is the university-license wedge. Largest board in the set.",
+      "access": "api",
+      "provider": "ashby",
+      "slug": "openai",
+      "tier": 1,
+      "data": [
+        {
+          "label": "board page",
+          "url": "https://jobs.ashbyhq.com/openai"
+        },
+        {
+          "label": "API the script calls",
+          "url": "https://api.ashbyhq.com/posting-api/job-board/openai?includeCompensation=true",
+          "call": true
+        }
+      ],
+      "reader": "collect/collect.py",
+      "status_note": "Reads",
+      "todo": "",
+      "counts": {
+        "postings_2026_09_26": 830,
+        "matched_2026_09_26": 17
+      }
+    },
+    {
+      "id": "notion",
+      "name": "Notion",
+      "type": "tool-co-edu-program",
+      "section": "boards",
+      "status": "active",
+      "why": "Notion for Education is a student-magnet freemium play and Notion AI already ships. Technical Education Specialist and Developer Advocate both open.",
+      "access": "api",
+      "provider": "ashby",
+      "slug": "notion",
+      "tier": 2,
+      "data": [
+        {
+          "label": "board page",
+          "url": "https://jobs.ashbyhq.com/notion"
+        },
+        {
+          "label": "API the script calls",
+          "url": "https://api.ashbyhq.com/posting-api/job-board/notion?includeCompensation=true",
+          "call": true
+        }
+      ],
+      "reader": "collect/collect.py",
+      "status_note": "Reads",
+      "todo": "",
+      "counts": {
+        "postings_2026_09_26": 128,
+        "matched_2026_09_26": 5
+      }
+    },
+    {
+      "id": "canva",
+      "name": "Canva",
+      "type": "tool-co-edu-program",
+      "section": "boards",
+      "status": "active",
+      "why": "Canva for Education has huge classroom penetration. Every education role on the board is APAC, several on 12-month contracts — the engagement shape wanted, wrong geography so far. The most expensive board to fetch (248 detail calls, about 3.5 minutes).",
+      "access": "api",
+      "provider": "smartrecruiters",
+      "slug": "Canva",
+      "tier": 1,
+      "data": [
+        {
+          "label": "board page",
+          "url": "https://careers.smartrecruiters.com/Canva"
+        },
+        {
+          "label": "API the script calls",
+          "url": "https://api.smartrecruiters.com/v1/companies/Canva/postings",
+          "call": true
+        }
+      ],
+      "reader": "collect/collect.py",
+      "status_note": "Reads, but the listing has no ad text: needs one call per posting (the n8n form does not do this yet)",
+      "todo": "",
+      "counts": {
+        "postings_2026_09_19": 248,
+        "matched_2026_09_19": 0
+      }
+    },
+    {
+      "id": "stripe",
+      "name": "Stripe",
+      "type": "dev-advocacy-employer",
+      "section": "boards",
+      "status": "removed",
+      "why": "",
+      "access": "none",
+      "provider": "greenhouse",
+      "slug": "stripe",
+      "data": [],
+      "reader": null,
+      "status_note": "",
+      "todo": "",
+      "removed": {
+        "on": "2026-10-18",
+        "entry": {
+          "slug": "stripe",
+          "provider": "greenhouse",
+          "reason": "not directly applicable to transformative, AI-driven improvement of education (not a judgment that it is not useful)",
+          "postings_2026_10_18": 731
+        }
+      }
+    },
+    {
+      "id": "writer",
+      "name": "Writer",
+      "type": "tool-co-no-program",
+      "section": "boards",
+      "status": "removed",
+      "why": "",
+      "access": "none",
+      "provider": "ashby",
+      "slug": "writer",
+      "data": [],
+      "reader": null,
+      "status_note": "",
+      "todo": "",
+      "removed": {
+        "on": "2026-10-18",
+        "entry": {
+          "slug": "writer",
+          "provider": "ashby",
+          "reason": "not directly applicable to transformative, AI-driven improvement of education (not a judgment that it is a bad tool; he first said he did not think writing-AI tools were good, then clarified)",
+          "postings_2026_10_18": 47
+        }
+      }
+    },
+    {
+      "id": "replit",
+      "name": "Replit",
+      "type": "tool-co-edu-program",
+      "section": "boards",
+      "status": "removed",
+      "why": "",
+      "access": "none",
+      "provider": "ashby",
+      "slug": "replit",
+      "data": [],
+      "reader": null,
+      "status_note": "",
+      "todo": "",
+      "removed": {
+        "on": "2026-10-19",
+        "entry": {
+          "slug": "replit",
+          "provider": "ashby",
+          "reason": "not really educational AI, just AI: in Professor Bear's words, not educational software in the sense that Claude for University, NotebookLM and Claude for Life Sciences are, but more of a low-level app, and the role he read there (Learning Experiences Creator) an entry-level, low-level job. Not a finding about the company beyond that judgment.",
+          "removed_on": "2026-10-19",
+          "postings_2026_09_26": 75
+        }
+      }
+    },
+    {
+      "id": "vercel",
+      "name": "Vercel",
+      "type": "tool-co-edu-program",
+      "section": "boards",
+      "status": "removed",
+      "why": "",
+      "access": "none",
+      "provider": "greenhouse",
+      "slug": "vercel",
+      "data": [],
+      "reader": null,
+      "status_note": "",
+      "todo": "",
+      "removed": {
+        "on": "2026-10-20",
+        "entry": {
+          "slug": "vercel",
+          "provider": "greenhouse",
+          "removed_on": "2026-10-20",
+          "reason": "not really educational AI: institutional or university AI. More a software product than a true educational tool, and not a tool that could be the central part of a course unless the course is on that tool (Professor Bear's words, paraphrased only to name the company).",
+          "postings_2026_09_26": 88
+        }
+      }
+    },
+    {
+      "id": "webflow",
+      "name": "Webflow",
+      "type": "tool-co-edu-program",
+      "section": "boards",
+      "status": "removed",
+      "why": "",
+      "access": "none",
+      "provider": "greenhouse",
+      "slug": "webflow",
+      "data": [],
+      "reader": null,
+      "status_note": "",
+      "todo": "",
+      "removed": {
+        "on": "2026-10-20",
+        "entry": {
+          "slug": "webflow",
+          "provider": "greenhouse",
+          "removed_on": "2026-10-20",
+          "reason": "not really educational AI: institutional or university AI. More a software product than a true educational tool, and not a tool that could be the central part of a course unless the course is on that tool (Professor Bear's words, paraphrased only to name the company).",
+          "postings_2026_09_26": 27
+        }
+      }
+    },
+    {
+      "id": "airtable",
+      "name": "Airtable",
+      "type": "tool-co-no-program",
+      "section": "boards",
+      "status": "removed",
+      "why": "",
+      "access": "none",
+      "provider": "greenhouse",
+      "slug": "airtable",
+      "data": [],
+      "reader": null,
+      "status_note": "",
+      "todo": "",
+      "removed": {
+        "on": "2026-10-20",
+        "entry": {
+          "slug": "airtable",
+          "provider": "greenhouse",
+          "removed_on": "2026-10-20",
+          "reason": "not really educational AI: institutional or university AI. More a software product than a true educational tool, and not a tool that could be the central part of a course unless the course is on that tool (Professor Bear's words, paraphrased only to name the company).",
+          "postings_2026_09_26": 3
+        }
+      }
+    },
+    {
+      "id": "gitlab",
+      "name": "GitLab",
+      "type": "dev-advocacy-employer",
+      "section": "boards",
+      "status": "removed",
+      "why": "",
+      "access": "none",
+      "provider": "greenhouse",
+      "slug": "gitlab",
+      "data": [],
+      "reader": null,
+      "status_note": "",
+      "todo": "",
+      "removed": {
+        "on": "2026-10-20",
+        "entry": {
+          "slug": "gitlab",
+          "provider": "greenhouse",
+          "removed_on": "2026-10-20",
+          "reason": "not really educational AI: institutional or university AI. More a software product than a true educational tool, and not a tool that could be the central part of a course unless the course is on that tool (Professor Bear's words, paraphrased only to name the company).",
+          "postings_2026_09_26": 199
+        }
+      }
+    },
+    {
+      "id": "twilio",
+      "name": "Twilio",
+      "type": "dev-advocacy-employer",
+      "section": "boards",
+      "status": "removed",
+      "why": "",
+      "access": "none",
+      "provider": "greenhouse",
+      "slug": "twilio",
+      "data": [],
+      "reader": null,
+      "status_note": "",
+      "todo": "",
+      "removed": {
+        "on": "2026-10-20",
+        "entry": {
+          "slug": "twilio",
+          "provider": "greenhouse",
+          "removed_on": "2026-10-20",
+          "reason": "not really educational AI: institutional or university AI. More a software product than a true educational tool, and not a tool that could be the central part of a course unless the course is on that tool (Professor Bear's words, paraphrased only to name the company).",
+          "postings_2026_09_26": 138
+        }
+      }
+    },
+    {
+      "id": "netlify",
+      "name": "Netlify",
+      "type": "dev-advocacy-employer",
+      "section": "boards",
+      "status": "removed",
+      "why": "",
+      "access": "none",
+      "provider": "greenhouse",
+      "slug": "netlify",
+      "data": [],
+      "reader": null,
+      "status_note": "",
+      "todo": "",
+      "removed": {
+        "on": "2026-10-20",
+        "entry": {
+          "slug": "netlify",
+          "provider": "greenhouse",
+          "removed_on": "2026-10-20",
+          "reason": "not really educational AI: institutional or university AI. More a software product than a true educational tool, and not a tool that could be the central part of a course unless the course is on that tool (Professor Bear's words, paraphrased only to name the company).",
+          "postings_2026_09_26": 4
+        }
+      }
+    },
+    {
+      "id": "jasper-ai",
+      "name": "Jasper AI",
+      "type": "tool-co-no-program",
+      "section": "boards",
+      "status": "removed",
+      "why": "",
+      "access": "none",
+      "provider": "ashby",
+      "slug": "Jasper AI",
+      "data": [],
+      "reader": null,
+      "status_note": "",
+      "todo": "",
+      "removed": {
+        "on": "2026-10-20",
+        "entry": {
+          "slug": "Jasper AI",
+          "provider": "ashby",
+          "removed_on": "2026-10-20",
+          "reason": "not really educational AI: institutional or university AI. More a software product than a true educational tool, and not a tool that could be the central part of a course unless the course is on that tool (Professor Bear's words, paraphrased only to name the company).",
+          "postings_2026_09_26": 6
+        }
+      }
+    },
+    {
+      "id": "supabase",
+      "name": "Supabase",
+      "type": "dev-advocacy-employer",
+      "section": "boards",
+      "status": "removed",
+      "why": "",
+      "access": "none",
+      "provider": "ashby",
+      "slug": "supabase",
+      "data": [],
+      "reader": null,
+      "status_note": "",
+      "todo": "",
+      "removed": {
+        "on": "2026-10-20",
+        "entry": {
+          "slug": "supabase",
+          "provider": "ashby",
+          "removed_on": "2026-10-20",
+          "reason": "not really educational AI: institutional or university AI. More a software product than a true educational tool, and not a tool that could be the central part of a course unless the course is on that tool (Professor Bear's words, paraphrased only to name the company).",
+          "postings_2026_09_26": 56
+        }
+      }
+    },
+    {
+      "id": "hubspot",
+      "name": "HubSpot",
+      "type": "tool-co-edu-program",
+      "section": "boards",
+      "status": "removed",
+      "why": "",
+      "access": "none",
+      "provider": "greenhouse",
+      "slug": "hubspotjobs",
+      "data": [],
+      "reader": null,
+      "status_note": "",
+      "todo": "",
+      "removed": {
+        "on": "2026-10-20",
+        "entry": {
+          "slug": "hubspotjobs",
+          "provider": "greenhouse",
+          "removed_on": "2026-10-20",
+          "reason": "education is marketing for its own product (HubSpot Academy teaches people to use HubSpot), not educational AI for institutions or universities; not relevant to the search in his words. Its Greenhouse board had also returned 404 since 2026-10-18, so nothing was being read.",
+          "postings_2026_09_26": 133
+        }
+      }
+    },
+    {
+      "id": "google",
+      "name": "Google",
+      "type": "big-tech-edu-footprint",
+      "section": "bigfour",
+      "status": "partial",
+      "why": "Google for Education and Classroom are the incumbent K-12 infrastructure; Gemini for Education is the AI-era extension. The largest school footprint of anyone on this list.",
+      "access": "browse",
+      "data": [
+        {
+          "label": "careers results pages, read from a script block in the page",
+          "url": "https://www.google.com/about/careers/applications/jobs/results/?page=1"
+        }
+      ],
+      "reader": "collect/collectors/google.py",
+      "status_note": "Collected in two runs on 2026-10-19 (3,690 and 3,638 postings); 3,825 distinct postings in the local database. Not filtered, not in the delta. The page is server-rendered HTML with no official feed: a page change will break it",
+      "todo": "Pass it through the filter and the delta",
+      "unreachable": {
+        "ats": "own careers site — no public JSON feed found; the site IS human-readable and searchable",
+        "blocker": "Tried careers.google.com/api/v3/search, .../api/jobs/jobs-v1/search and the www.google.com/about/careers/applications equivalents on 2026-09-26: all 404. Stopped rather than guess further endpoints. Lectern cannot automate this board.",
+        "status": "TODO: DATA SOURCE — automate or keep checking by hand",
+        "manual_check": {
+          "how": "https://www.google.com/about/careers/applications/jobs/results?q=%22education%22&location=United%20States",
+          "checked": "2026-09-26, read in a browser",
+          "found": "20 education roles on the first page alone — Google for Education product managers and engineers, Head of Industry Education, Product Marketing Manager Google Classroom, TWO Brand Marketing Manager (AI Education) posts, Brand Marketing Manager (Educator Social), Senior Strategy Manager Education, plus higher-ed sales and forward-deployed engineering.",
+          "notebooklm": "A search for \"NotebookLM\" returns 6 postings, including Senior UX Researcher, LEARNING FRONTIERS, LearnX — a Google learning organisation not otherwise visible from outside.",
+          "reading": "BUILDS and SELLS are both unmistakable, and there is a dedicated AI-Education marketing function. On the demand measure Google belongs at the top of the table; it is absent only because it cannot be read."
+        },
+        "rank": 3
+      },
+      "tier": 1
+    },
+    {
+      "id": "microsoft",
+      "name": "Microsoft",
+      "type": "big-tech-edu-footprint",
+      "section": "bigfour",
+      "status": "no-reader",
+      "why": "On the most-wanted list",
+      "access": "browse",
+      "data": [
+        {
+          "label": "careers API (page size fixed at 10)",
+          "url": "https://apply.careers.microsoft.com/api/pcsx/search?domain=microsoft.com&start=0"
+        }
+      ],
+      "reader": "collect/collectors/microsoft.py",
+      "status_note": "Never read. The first runs hit HTTP 429 (the site throttles hard). A single request answers 200 today",
+      "todo": "A slower, resumable run"
+    },
+    {
+      "id": "amazon",
+      "name": "Amazon",
+      "type": "big-tech-edu-footprint",
+      "section": "bigfour",
+      "status": "no-reader",
+      "why": "No reason recorded in the repository; part of the big four",
+      "access": "browse",
+      "data": [
+        {
+          "label": "jobs search JSON (answers 200)",
+          "url": "https://www.amazon.jobs/en/search.json?base_query=&country=USA&result_limit=1&offset=0"
+        }
+      ],
+      "reader": "collect/collectors/amazon.py",
+      "status_note": "Never run here",
+      "todo": "Run it, and write down why Amazon is a target"
+    },
+    {
+      "id": "meta",
+      "name": "Meta",
+      "type": "big-tech-edu-footprint",
+      "section": "bigfour",
+      "status": "no-reader",
+      "why": "No reason recorded in the repository; part of the big four",
+      "access": "browse",
+      "data": [
+        {
+          "label": "careers search, read through a real browser (redirects to /jobsearch/)",
+          "url": "https://www.metacareers.com/jobs"
+        }
+      ],
+      "reader": "collect/collectors/meta.py",
+      "status_note": "Never run here. Needs Playwright; not covered by any test",
+      "todo": "Run it, and write down why Meta is a target"
+    },
+    {
+      "id": "adobe",
+      "name": "Adobe",
+      "type": "big-tech-edu-footprint",
+      "section": "unreachable",
+      "status": "no-reader",
+      "why": "The longest-running education playbook there is — Adobe Education Exchange, Creative Cloud for Education, deepest K-12 and higher-ed relationships.",
+      "access": "browse",
+      "tier": 1,
+      "data": [
+        {
+          "label": "careers page",
+          "url": "https://careers.adobe.com/us/en"
+        }
+      ],
+      "reader": null,
+      "status_note": "Careers page answers 200 (2026-10-20); its job system is not identified. Education Exchange, Creative Cloud for Education",
+      "todo": "Find its job system and write a reader",
+      "unreachable": {
+        "ats": "unknown — not found on the three APIs Lectern can read",
+        "blocker": "Tried Greenhouse and Ashby slugs 'adobe' and 'Adobe' and SmartRecruiters 'adobe' on 2026-09-26: no board. Which ATS Adobe actually uses has not been established, so it is not recorded here. See ATS.md.",
+        "status": "TODO: DATA SOURCE",
+        "rank": 0
+      }
+    },
+    {
+      "id": "salesforce",
+      "name": "Salesforce",
+      "type": "big-tech-edu-footprint",
+      "section": "unreachable",
+      "status": "no-reader",
+      "why": "Trailhead is arguably the largest corporate education platform in existence and is already Einstein-infused.",
+      "access": "browse",
+      "tier": 1,
+      "data": [
+        {
+          "label": "careers page",
+          "url": "https://www.salesforce.com/company/careers/"
+        }
+      ],
+      "reader": null,
+      "status_note": "Careers page answers 200 (2026-10-20); its job system is not identified. Trailhead",
+      "todo": "Find its job system and write a reader",
+      "unreachable": {
+        "ats": "unknown — not found on the three APIs Lectern can read",
+        "blocker": "Tried Greenhouse/Ashby/SmartRecruiters slugs 'salesforce', 'Salesforce', 'salesforceinc', 'slack' on 2026-09-26: no board. Which ATS Salesforce uses has not been established. See ATS.md.",
+        "status": "TODO: DATA SOURCE",
+        "rank": 1
+      }
+    },
+    {
+      "id": "github",
+      "name": "GitHub",
+      "type": "big-tech-edu-footprint",
+      "section": "unreachable",
+      "status": "no-reader",
+      "why": "GitHub Education and the Student Developer Pack are decades deep; Copilot in classrooms is the obvious AI-era extension.",
+      "access": "browse",
+      "tier": 1,
+      "data": [
+        {
+          "label": "careers page",
+          "url": "https://www.github.careers/careers-home"
+        }
+      ],
+      "reader": null,
+      "status_note": "Careers page answers 200 (2026-10-20); its job system is not identified. GitHub Education, Student Developer Pack",
+      "todo": "Find its job system and write a reader",
+      "unreachable": {
+        "ats": "unknown — not found on the three APIs Lectern can read",
+        "blocker": "Tried 'github', 'GitHub', 'githubinc', 'github-inc' on all three on 2026-09-26: no board. See ATS.md.",
+        "status": "TODO: DATA SOURCE",
+        "rank": 2
+      }
+    },
+    {
+      "id": "shopify",
+      "name": "Shopify",
+      "type": "big-tech-edu-footprint",
+      "section": "unreachable",
+      "status": "no-reader",
+      "why": "Shopify Academy exists; entrepreneurship education is marketing-adjacent rather than core.",
+      "access": "browse",
+      "tier": 2,
+      "data": [
+        {
+          "label": "careers page",
+          "url": "https://www.shopify.com/careers"
+        }
+      ],
+      "reader": null,
+      "status_note": "Careers page answers 200 (2026-10-20); its job system is not identified. Shopify Academy",
+      "todo": "Find its job system and write a reader",
+      "unreachable": {
+        "ats": "unknown — not found on the three APIs Lectern can read",
+        "blocker": "Tried 'shopify', 'Shopify', 'shopifyinc' on all three on 2026-09-26: no board. See ATS.md.",
+        "status": "TODO: DATA SOURCE",
+        "rank": 4
+      }
+    },
+    {
+      "id": "hugging-face",
+      "name": "Hugging Face",
+      "type": "ai-company",
+      "section": "unreachable",
+      "status": "no-reader",
+      "why": "Listed in ATS.md as unreachable by the three job-board APIs; no education reason recorded",
+      "access": "browse",
+      "data": [
+        {
+          "label": "careers page",
+          "url": "https://apply.workable.com/huggingface/"
+        }
+      ],
+      "reader": null,
+      "status_note": "A Workable feed that works: 6 jobs listed on 2026-10-20 via apply.workable.com/api/v1/widget/accounts/huggingface",
+      "todo": "A Workable reader"
+    },
+    {
+      "id": "framer",
+      "name": "Framer",
+      "type": "tool-company",
+      "section": "unreachable",
+      "status": "no-reader",
+      "why": "Listed in ATS.md as unreachable by the three job-board APIs; no education reason recorded",
+      "access": "browse",
+      "data": [
+        {
+          "label": "careers page",
+          "url": "https://www.framer.com/careers/"
+        }
+      ],
+      "reader": null,
+      "status_note": "Careers page answers 200",
+      "todo": "Find its job system"
+    },
+    {
+      "id": "sketch",
+      "name": "Sketch",
+      "type": "tool-company",
+      "section": "unreachable",
+      "status": "no-reader",
+      "why": "Listed in ATS.md as unreachable by the three job-board APIs; no education reason recorded",
+      "access": "browse",
+      "data": [
+        {
+          "label": "careers page",
+          "url": "https://www.sketch.com/careers/"
+        }
+      ],
+      "reader": null,
+      "status_note": "Careers page answers 200",
+      "todo": "Find its job system"
+    },
+    {
+      "id": "retool",
+      "name": "Retool",
+      "type": "tool-company",
+      "section": "unreachable",
+      "status": "no-reader",
+      "why": "Listed in ATS.md as unreachable by the three job-board APIs; no education reason recorded",
+      "access": "browse",
+      "data": [
+        {
+          "label": "careers page",
+          "url": "https://retool.com/careers"
+        }
+      ],
+      "reader": null,
+      "status_note": "Careers page answers 200",
+      "todo": "Find its job system"
+    },
+    {
+      "id": "invision",
+      "name": "InVision",
+      "type": "tool-company",
+      "section": "unreachable",
+      "status": "no-reader",
+      "why": "Listed in ATS.md as unreachable by the three job-board APIs; no education reason recorded",
+      "access": "browse",
+      "data": [],
+      "reader": null,
+      "status_note": "Not checked; the company's status is not established here",
+      "todo": "Check whether it still hires"
+    },
+    {
+      "id": "harvard-business-school",
+      "name": "Harvard Business School",
+      "type": "business-school",
+      "section": "schools",
+      "status": "active",
+      "why": "Faculty listings about AI at business schools",
+      "access": "browse",
+      "institution": "Harvard",
+      "aliases": [
+        "harvard university",
+        "harvard business school",
+        "harvard"
+      ],
+      "data": [
+        {
+          "label": "faculty-jobs page",
+          "url": "https://www.hbs.edu/faculty/positions"
+        }
+      ],
+      "faculty_jobs": {
+        "system": "own page; applications in Interfolio",
+        "titles_readable_by_script": "yes",
+        "robots": "allowed (crawl delay 2 s)"
+      },
+      "reader": "collect/faculty_feed.py (through the two shared feeds only)",
+      "status_note": "7 searches for a 2027 start listed; full ads in Interfolio",
+      "todo": ""
+    },
+    {
+      "id": "mit-sloan",
+      "name": "MIT Sloan",
+      "type": "business-school",
+      "section": "schools",
+      "status": "active",
+      "why": "Faculty listings about AI at business schools",
+      "access": "browse",
+      "institution": "Massachusetts Institute of Technology",
+      "aliases": [
+        "massachusetts institute of technology",
+        "mit sloan",
+        "mit"
+      ],
+      "data": [
+        {
+          "label": "faculty-jobs page",
+          "url": "https://mitsloan.mit.edu/work-mit-sloan/mit-sloan-faculty-openings"
+        }
+      ],
+      "faculty_jobs": {
+        "system": "own page; Interfolio",
+        "titles_readable_by_script": "yes",
+        "robots": "allowed"
+      },
+      "reader": "collect/faculty_feed.py (through the two shared feeds only)",
+      "status_note": "7 searches listed; two say \"Link TBD\"",
+      "todo": ""
+    },
+    {
+      "id": "duke-fuqua",
+      "name": "Duke Fuqua",
+      "type": "business-school",
+      "section": "schools",
+      "status": "active",
+      "why": "Faculty listings about AI at business schools",
+      "access": "browse",
+      "institution": "Duke University",
+      "aliases": [
+        "duke university",
+        "fuqua",
+        "duke"
+      ],
+      "data": [
+        {
+          "label": "faculty-jobs page",
+          "url": "https://academicjobsonline.org/ajo?joblst---31"
+        },
+        {
+          "label": "related page",
+          "url": "https://www.fuqua.duke.edu/faculty-recruiting"
+        }
+      ],
+      "faculty_jobs": {
+        "system": "Academic Jobs Online",
+        "titles_readable_by_script": "yes",
+        "robots": "allowed (crawl delay 5 s)"
+      },
+      "reader": "collect/faculty_feed.py (through the two shared feeds only)",
+      "status_note": "The Marketing and Operations deadlines had already passed",
+      "todo": ""
+    },
+    {
+      "id": "cornell-johnson",
+      "name": "Cornell Johnson",
+      "type": "business-school",
+      "section": "schools",
+      "status": "active",
+      "why": "Faculty listings about AI at business schools",
+      "access": "browse",
+      "institution": "Cornell University",
+      "aliases": [
+        "cornell university",
+        "cornell"
+      ],
+      "data": [
+        {
+          "label": "faculty-jobs page",
+          "url": "https://apps.hr.cornell.edu/recruiting/facultycareer.cfm"
+        }
+      ],
+      "faculty_jobs": {
+        "system": "Cornell HR app",
+        "titles_readable_by_script": "**no** (loads by script)",
+        "robots": "no robots file"
+      },
+      "reader": "collect/faculty_feed.py (through the two shared feeds only)",
+      "status_note": "University-wide, not Johnson-only",
+      "todo": ""
+    },
+    {
+      "id": "vanderbilt-owen",
+      "name": "Vanderbilt Owen",
+      "type": "business-school",
+      "section": "schools",
+      "status": "active",
+      "why": "Faculty listings about AI at business schools",
+      "access": "browse",
+      "institution": "Vanderbilt University",
+      "aliases": [
+        "vanderbilt university",
+        "vanderbilt"
+      ],
+      "data": [
+        {
+          "label": "faculty-jobs page",
+          "url": "https://www.vanderbilt.edu/provost/jobs/"
+        }
+      ],
+      "faculty_jobs": {
+        "system": "provost widget",
+        "titles_readable_by_script": "**no**",
+        "robots": "no robots file"
+      },
+      "reader": "collect/faculty_feed.py (through the two shared feeds only)",
+      "status_note": "Shows 0 results and one 2019 item; no Owen page found",
+      "todo": ""
+    },
+    {
+      "id": "ucla-anderson",
+      "name": "UCLA Anderson",
+      "type": "business-school",
+      "section": "schools",
+      "status": "active",
+      "why": "Faculty listings about AI at business schools",
+      "access": "browse",
+      "institution": "University of California, Los Angeles",
+      "aliases": [
+        "university of california, los angeles",
+        "university of california los angeles",
+        "ucla"
+      ],
+      "data": [
+        {
+          "label": "faculty-jobs page",
+          "url": "https://recruit.apo.ucla.edu/apply"
+        },
+        {
+          "label": "related page",
+          "url": "https://www.anderson.ucla.edu/faculty-and-research/open-positions"
+        }
+      ],
+      "faculty_jobs": {
+        "system": "UC Recruit",
+        "titles_readable_by_script": "yes",
+        "robots": "allowed"
+      },
+      "reader": "collect/faculty_feed.py (through the two shared feeds only)",
+      "status_note": "2 Anderson listings",
+      "todo": ""
+    },
+    {
+      "id": "ut-austin-mccombs",
+      "name": "UT Austin McCombs",
+      "type": "business-school",
+      "section": "schools",
+      "status": "active",
+      "why": "Faculty listings about AI at business schools",
+      "access": "browse",
+      "institution": "University of Texas at Austin",
+      "aliases": [
+        "university of texas at austin",
+        "ut austin",
+        "mccombs"
+      ],
+      "data": [
+        {
+          "label": "faculty-jobs page",
+          "url": "https://faculty.utexas.edu/career"
+        }
+      ],
+      "faculty_jobs": {
+        "system": "UT app (per a search, fed from Interfolio)",
+        "titles_readable_by_script": "**no** (JS shell)",
+        "robots": "none found"
+      },
+      "reader": "collect/faculty_feed.py (through the two shared feeds only)",
+      "status_note": "University-wide; no McCombs page",
+      "todo": ""
+    },
+    {
+      "id": "ut-dallas-jindal",
+      "name": "UT Dallas Jindal",
+      "type": "business-school",
+      "section": "schools",
+      "status": "active",
+      "why": "Faculty listings about AI at business schools",
+      "access": "browse",
+      "institution": "University of Texas at Dallas",
+      "aliases": [
+        "university of texas at dallas",
+        "ut dallas",
+        "jindal"
+      ],
+      "data": [
+        {
+          "label": "faculty-jobs page",
+          "url": "https://jobs.utdallas.edu/postings/search?query=&query_position_type_id%5B%5D=2&commit=Search"
+        }
+      ],
+      "faculty_jobs": {
+        "system": "PeopleAdmin",
+        "titles_readable_by_script": "yes",
+        "robots": "**disallowed for all crawlers**"
+      },
+      "reader": "collect/faculty_feed.py (through the two shared feeds only)",
+      "status_note": "Do not build a reader without permission",
+      "todo": ""
+    },
+    {
+      "id": "boston-college-carroll",
+      "name": "Boston College Carroll",
+      "type": "business-school",
+      "section": "schools",
+      "status": "active",
+      "why": "Faculty listings about AI at business schools",
+      "access": "browse",
+      "institution": "Boston College",
+      "aliases": [
+        "boston college",
+        "carroll school"
+      ],
+      "data": [
+        {
+          "label": "faculty-jobs page",
+          "url": "https://www.bc.edu/bc-web/schools/carroll-school/faculty-research/jobs.html"
+        }
+      ],
+      "faculty_jobs": {
+        "system": "own page; Interfolio",
+        "titles_readable_by_script": "yes",
+        "robots": "allowed, but the PDF folder is not"
+      },
+      "reader": "collect/faculty_feed.py (through the two shared feeds only)",
+      "status_note": "Finance searches open; business analytics and accounting items look stale",
+      "todo": ""
+    },
+    {
+      "id": "uc-san-diego-rady",
+      "name": "UC San Diego Rady",
+      "type": "business-school",
+      "section": "schools",
+      "status": "active",
+      "why": "Faculty listings about AI at business schools",
+      "access": "browse",
+      "institution": "University of California, San Diego",
+      "aliases": [
+        "university of california, san diego",
+        "university of california san diego",
+        "uc san diego",
+        "ucsd",
+        "rady"
+      ],
+      "data": [
+        {
+          "label": "faculty-jobs page",
+          "url": "https://rady.ucsd.edu/faculty-research/open-positions/"
+        }
+      ],
+      "faculty_jobs": {
+        "system": "UC Recruit",
+        "titles_readable_by_script": "yes",
+        "robots": "allowed"
+      },
+      "reader": "collect/faculty_feed.py (through the two shared feeds only)",
+      "status_note": "3 titles, no tenure-track search",
+      "todo": ""
+    },
+    {
+      "id": "unc-kenan-flagler",
+      "name": "UNC Kenan-Flagler",
+      "type": "business-school",
+      "section": "schools",
+      "status": "active",
+      "why": "Faculty listings about AI at business schools",
+      "access": "browse",
+      "institution": "University of North Carolina at Chapel Hill",
+      "aliases": [
+        "university of north carolina at chapel hill",
+        "unc chapel hill",
+        "unc-chapel hill",
+        "kenan-flagler",
+        "kenan flagler"
+      ],
+      "data": [
+        {
+          "label": "faculty-jobs page",
+          "url": "https://hr.unc.edu/work-at-carolina/employment-opportunities/"
+        }
+      ],
+      "faculty_jobs": {
+        "system": "PeopleAdmin",
+        "titles_readable_by_script": "pointer page only",
+        "robots": "**the PeopleAdmin host disallows crawlers**"
+      },
+      "reader": "collect/faculty_feed.py (through the two shared feeds only)",
+      "status_note": "Did not read the listings; no Kenan-Flagler page found",
+      "todo": ""
+    },
+    {
+      "id": "northeastern-d-amore-mckim",
+      "name": "Northeastern D'Amore-McKim",
+      "type": "business-school",
+      "section": "schools",
+      "status": "active",
+      "why": "Faculty listings about AI at business schools",
+      "access": "browse",
+      "institution": "Northeastern University",
+      "aliases": [
+        "northeastern university",
+        "d'amore-mckim",
+        "damore-mckim"
+      ],
+      "data": [
+        {
+          "label": "faculty-jobs page",
+          "url": "https://northeastern.wd1.myworkdayjobs.com/en-US/careers"
+        }
+      ],
+      "faculty_jobs": {
+        "system": "Workday",
+        "titles_readable_by_script": "**no** (JS shell; earlier research found a Cloudflare block)",
+        "robots": "allowed for /careers/"
+      },
+      "reader": "collect/faculty_feed.py (through the two shared feeds only)",
+      "status_note": "University-wide; no school page found",
+      "todo": ""
+    },
+    {
+      "id": "brown-school-of-professional-studies",
+      "name": "Brown School of Professional Studies",
+      "type": "business-school",
+      "section": "schools",
+      "status": "active",
+      "why": "Faculty listings about AI at business schools",
+      "access": "browse",
+      "institution": "Brown University",
+      "aliases": [
+        "brown university"
+      ],
+      "data": [
+        {
+          "label": "faculty-jobs page",
+          "url": "https://dof.brown.edu/searches-hiring"
+        }
+      ],
+      "faculty_jobs": {
+        "system": "HERC",
+        "titles_readable_by_script": "**no: a \"confirm you are not a robot\" page**",
+        "robots": "allowed, but the page is a bot check"
+      },
+      "reader": "collect/faculty_feed.py (through the two shared feeds only)",
+      "status_note": "Not attempted past the check",
+      "todo": ""
+    },
+    {
+      "id": "virginia-darden",
+      "name": "Virginia Darden",
+      "type": "business-school",
+      "section": "schools",
+      "status": "active",
+      "why": "Faculty listings about AI at business schools",
+      "access": "browse",
+      "institution": "University of Virginia",
+      "aliases": [
+        "university of virginia",
+        "darden"
+      ],
+      "data": [
+        {
+          "label": "faculty-jobs page",
+          "url": "https://www.darden.virginia.edu/about/jobs-at-darden"
+        }
+      ],
+      "faculty_jobs": {
+        "system": "UVA's Workday (staff); Interfolio for faculty, per a search",
+        "titles_readable_by_script": "no (staff roles only)",
+        "robots": "allowed"
+      },
+      "reader": "collect/faculty_feed.py (through the two shared feeds only)",
+      "status_note": "No faculty page found",
+      "todo": ""
+    },
+    {
+      "id": "dartmouth-tuck",
+      "name": "Dartmouth Tuck",
+      "type": "business-school",
+      "section": "schools",
+      "status": "active",
+      "why": "Faculty listings about AI at business schools",
+      "access": "browse",
+      "institution": "Dartmouth College",
+      "aliases": [
+        "dartmouth college",
+        "tuck school"
+      ],
+      "data": [
+        {
+          "label": "faculty-jobs page",
+          "url": "https://tuck.dartmouth.edu/faculty/faculty-recruiting"
+        }
+      ],
+      "faculty_jobs": {
+        "system": "own page; Interfolio",
+        "titles_readable_by_script": "yes",
+        "robots": "allowed (crawl delay 3 s)"
+      },
+      "reader": "collect/faculty_feed.py (through the two shared feeds only)",
+      "status_note": "\"No advertised positions\"",
+      "todo": ""
+    },
+    {
+      "id": "rice-jones",
+      "name": "Rice Jones",
+      "type": "business-school",
+      "section": "schools",
+      "status": "active",
+      "why": "Faculty listings about AI at business schools",
+      "access": "browse",
+      "institution": "Rice University",
+      "aliases": [
+        "rice university",
+        "jones graduate school"
+      ],
+      "data": [
+        {
+          "label": "faculty-jobs page",
+          "url": "https://business.rice.edu/faculty-research/faculty-recruitment"
+        }
+      ],
+      "faculty_jobs": {
+        "system": "own page; Interfolio",
+        "titles_readable_by_script": "yes",
+        "robots": "allowed"
+      },
+      "reader": "collect/faculty_feed.py (through the two shared feeds only)",
+      "status_note": "1 open: clinical professor of finance",
+      "todo": ""
+    },
+    {
+      "id": "emlyon-business-school",
+      "name": "emlyon Business School",
+      "type": "business-school",
+      "section": "schools",
+      "status": "active",
+      "why": "Faculty listings about AI at business schools",
+      "access": "browse",
+      "institution": "emlyon business school",
+      "aliases": [
+        "emlyon"
+      ],
+      "data": [
+        {
+          "label": "faculty-jobs page",
+          "url": "https://galileo.wd3.myworkdayjobs.com/en-US/emlyon_career_site"
+        }
+      ],
+      "faculty_jobs": {
+        "system": "Workday",
+        "titles_readable_by_script": "**no**",
+        "robots": "allowed"
+      },
+      "reader": "collect/faculty_feed.py (through the two shared feeds only)",
+      "status_note": "General careers site; whether it carries professor ads is not verified",
+      "todo": ""
+    },
+    {
+      "id": "iese-business-school",
+      "name": "IESE Business School",
+      "type": "business-school",
+      "section": "schools",
+      "status": "active",
+      "why": "Faculty listings about AI at business schools",
+      "access": "browse",
+      "institution": "IESE Business School",
+      "aliases": [
+        "iese business school"
+      ],
+      "data": [
+        {
+          "label": "faculty-jobs page",
+          "url": "https://www.iese.edu/faculty-research/academic-departments/accounting-control/"
+        }
+      ],
+      "faculty_jobs": {
+        "system": "department pages; Interfolio",
+        "titles_readable_by_script": "yes (that page)",
+        "robots": "allowed"
+      },
+      "reader": "collect/faculty_feed.py (through the two shared feeds only)",
+      "status_note": "No central list; the one posting seen had expired",
+      "todo": ""
+    },
+    {
+      "id": "london-business-school",
+      "name": "London Business School",
+      "type": "business-school",
+      "section": "schools",
+      "status": "active",
+      "why": "Faculty listings about AI at business schools",
+      "access": "browse",
+      "institution": "London Business School",
+      "aliases": [
+        "london business school"
+      ],
+      "data": [
+        {
+          "label": "faculty-jobs page",
+          "url": "https://www.london.edu/faculty-and-research/faculty-recruitment"
+        }
+      ],
+      "faculty_jobs": {
+        "system": "own pages",
+        "titles_readable_by_script": "partial (index of 7 subject pages)",
+        "robots": "allowed"
+      },
+      "reader": "collect/faculty_feed.py (through the two shared feeds only)",
+      "status_note": "Read only the accounting page: one search",
+      "todo": ""
+    },
+    {
+      "id": "hec-paris",
+      "name": "HEC Paris",
+      "type": "business-school",
+      "section": "schools",
+      "status": "active",
+      "why": "Faculty listings about AI at business schools",
+      "access": "browse",
+      "institution": "HEC Paris",
+      "aliases": [
+        "hec paris"
+      ],
+      "data": [
+        {
+          "label": "faculty-jobs page",
+          "url": "https://www.hec.edu/en/faculty-research/departments/finance/finance-department-job-openings"
+        }
+      ],
+      "faculty_jobs": {
+        "system": "department pages; EconJobMarket",
+        "titles_readable_by_script": "yes, **but stale (2023)**",
+        "robots": "allowed"
+      },
+      "reader": "collect/faculty_feed.py (through the two shared feeds only)",
+      "status_note": "No central page; its Cornerstone careers site is a JS shell",
+      "todo": ""
+    },
+    {
+      "id": "esade-business-school",
+      "name": "ESADE Business School",
+      "type": "business-school",
+      "section": "schools",
+      "status": "active",
+      "why": "Faculty listings about AI at business schools",
+      "access": "browse",
+      "institution": "ESADE Business School",
+      "aliases": [
+        "esade"
+      ],
+      "data": [
+        {
+          "label": "faculty-jobs page",
+          "url": "https://esadefaculty.teamtailor.com/jobs"
+        }
+      ],
+      "faculty_jobs": {
+        "system": "Teamtailor",
+        "titles_readable_by_script": "yes",
+        "robots": "allowed"
+      },
+      "reader": "collect/faculty_feed.py (through the two shared feeds only)",
+      "status_note": "\"No open positions right now\"",
+      "todo": ""
+    },
+    {
+      "id": "hms-nutrition",
+      "name": "Harvard Medical School, Division of Nutrition",
+      "type": "university-unit",
+      "section": "research",
+      "why": "Read to design the lab record (he named endocrinology and epidemiology at Harvard Medical School; the first pilot is not chosen)",
+      "data": [
+        {
+          "label": "people page",
+          "url": "https://nutrition.hms.harvard.edu/people"
+        }
+      ],
+      "access": "browse",
+      "reader": "collect/collectors/biolabs.py",
+      "status": "no-reader",
+      "status_note": "126 cards, a directory of principal investigators, not of lab members. Read once by hand; also a seed for the lab-page collector",
+      "todo": "A reader for the directory-to-profile-to-lab stages",
+      "lab_seed": {
+        "order": 3,
+        "name": "Harvard Medical School Division of Nutrition people",
+        "url": "https://nutrition.hms.harvard.edu/people",
+        "checked": "2026-10-20 HTTP 200; a directory of principal investigators",
+        "readable": true
+      }
+    },
+    {
+      "id": "hms",
+      "name": "Harvard Medical School (other departments)",
+      "type": "university-unit",
+      "section": "research",
+      "why": "Epidemiology, endocrinology",
+      "data": [
+        {
+          "label": "hms.harvard.edu",
+          "url": "https://hms.harvard.edu/"
+        }
+      ],
+      "access": "browse",
+      "reader": null,
+      "status": "no-reader",
+      "status_note": "Not read",
+      "todo": "Choose departments"
+    },
+    {
+      "id": "hms-labs-seed",
+      "name": "Harvard Medical School labs directory",
+      "type": "university-unit",
+      "section": "research",
+      "why": "A list of HMS labs, used as a seed for the lab-page collector",
+      "data": [
+        {
+          "label": "labs page",
+          "url": "https://hms.harvard.edu/research/hms-labs"
+        }
+      ],
+      "access": "browse",
+      "reader": "collect/collectors/biolabs.py",
+      "status": "unreadable",
+      "status_note": "Answers 200 to curl but 404 to the lab-page collector (unresolved)",
+      "todo": "Find out why the collector gets a 404",
+      "lab_seed": {
+        "order": 0,
+        "name": "Harvard Medical School labs",
+        "url": "https://hms.harvard.edu/research/hms-labs",
+        "checked": "2026-10-20 HTTP 200",
+        "readable": true
+      }
+    },
+    {
+      "id": "chan-sph",
+      "name": "Harvard T.H. Chan School of Public Health",
+      "type": "university-unit",
+      "section": "research",
+      "why": "Longwood; named by him",
+      "data": [
+        {
+          "label": "hsph.harvard.edu",
+          "url": "https://hsph.harvard.edu/"
+        },
+        {
+          "label": "biostatistics groups and labs",
+          "url": "https://www.hsph.harvard.edu/biostatistics/research/groups-and-labs/"
+        }
+      ],
+      "access": "browse",
+      "reader": "collect/collectors/biolabs.py",
+      "status": "partial",
+      "status_note": "Biostatistics groups page is a seed for the lab-page collector (200); the rest not read",
+      "todo": "Tune the filter so degree programmes are skipped (done once); read lab pages",
+      "lab_seed": {
+        "order": 1,
+        "name": "Harvard Chan School biostatistics groups and labs",
+        "url": "https://www.hsph.harvard.edu/biostatistics/research/groups-and-labs/",
+        "checked": "2026-10-20 HTTP 200",
+        "readable": true
+      }
+    },
+    {
+      "id": "mcphs",
+      "name": "Massachusetts College of Pharmacy and Health Sciences",
+      "type": "university-unit",
+      "section": "research",
+      "why": "Longwood; named by him",
+      "data": [
+        {
+          "label": "mcphs.edu",
+          "url": "https://www.mcphs.edu/"
+        }
+      ],
+      "access": "browse",
+      "reader": null,
+      "status": "no-reader",
+      "status_note": "Research programmes not found",
+      "todo": ""
+    },
+    {
+      "id": "neu-dash",
+      "name": "Northeastern: DMSB AI Strategic Hub",
+      "type": "university-unit",
+      "section": "research",
+      "why": "Easiest to contact; his MBA school",
+      "data": [
+        {
+          "label": "DASH",
+          "url": "https://damore-mckim.northeastern.edu/dash/"
+        }
+      ],
+      "access": "browse",
+      "reader": null,
+      "status": "read-by-hand",
+      "status_note": "Read by hand; a great fit, posted to Discord; no pay stated",
+      "todo": ""
+    },
+    {
+      "id": "neu-eai",
+      "name": "Northeastern: Institute for Experiential AI",
+      "type": "university-unit",
+      "section": "research",
+      "why": "His own affiliation",
+      "data": [
+        {
+          "label": "home",
+          "url": "https://ai.northeastern.edu/"
+        },
+        {
+          "label": "AI + Life Sciences",
+          "url": "https://ai.northeastern.edu/life-sciences"
+        },
+        {
+          "label": "AI + Health",
+          "url": "https://ai.northeastern.edu/ai-health"
+        },
+        {
+          "label": "AI for Finance",
+          "url": "https://ai.northeastern.edu/ai-for-finance"
+        }
+      ],
+      "access": "browse",
+      "reader": null,
+      "status": "read-by-hand",
+      "status_note": "Read by hand; AI + Life Sciences posted to Discord",
+      "todo": ""
+    },
+    {
+      "id": "neu-cwa",
+      "name": "Northeastern: Center for Workforce Analytics",
+      "type": "university-unit",
+      "section": "research",
+      "why": "Business-school group",
+      "data": [
+        {
+          "label": "page",
+          "url": "https://damore-mckim.northeastern.edu/workforce-analytics/"
+        }
+      ],
+      "access": "browse",
+      "reader": null,
+      "status": "read-by-hand",
+      "status_note": "Read through a page reader; rated pretty good",
+      "todo": ""
+    },
+    {
+      "id": "neu-collab",
+      "name": "Northeastern: D'Amore-McKim research collaborations",
+      "type": "university-unit",
+      "section": "research",
+      "why": "Faculty-led projects with outside partners",
+      "data": [
+        {
+          "label": "listing",
+          "url": "https://damore-mckim.northeastern.edu/research-collaborations/"
+        }
+      ],
+      "access": "browse",
+      "reader": null,
+      "status": "read-by-hand",
+      "status_note": "Read through a page reader; the listing only, no project read",
+      "todo": ""
+    },
+    {
+      "id": "neu-scim",
+      "name": "Northeastern: Supply Chain and Information Management",
+      "type": "university-unit",
+      "section": "research",
+      "why": "Business-school academic group with AI and analytics research",
+      "data": [
+        {
+          "label": "page",
+          "url": "https://damore-mckim.northeastern.edu/supply-chain/"
+        }
+      ],
+      "access": "browse",
+      "reader": null,
+      "status": "read-by-hand",
+      "status_note": "A group of faculty, not a lab: recorded, not a target as a unit",
+      "todo": ""
+    },
+    {
+      "id": "neu-chphr",
+      "name": "Northeastern: Center for Health Policy and Healthcare Research",
+      "type": "university-unit",
+      "section": "research",
+      "why": "University-wide health policy center",
+      "data": [
+        {
+          "label": "page",
+          "url": "https://chphr.northeastern.edu/"
+        }
+      ],
+      "access": "browse",
+      "reader": null,
+      "status": "read-by-hand",
+      "status_note": "Seen in a search summary only; its own page was not read",
+      "todo": ""
+    },
+    {
+      "id": "hbs-ai",
+      "name": "Harvard Business School AI Institute",
+      "type": "university-unit",
+      "section": "research",
+      "why": "Business research on AI",
+      "data": [
+        {
+          "label": "aiinstitute.hbs.edu",
+          "url": "https://aiinstitute.hbs.edu/"
+        }
+      ],
+      "access": "browse",
+      "reader": null,
+      "status": "read-by-hand",
+      "status_note": "Read in a search; location is his",
+      "todo": ""
+    },
+    {
+      "id": "mit-ide",
+      "name": "MIT Sloan: Initiative on the Digital Economy",
+      "type": "university-unit",
+      "section": "research",
+      "why": "Business and economics of AI",
+      "data": [
+        {
+          "label": "ide.mit.edu",
+          "url": "https://ide.mit.edu/"
+        }
+      ],
+      "access": "browse",
+      "reader": null,
+      "status": "read-by-hand",
+      "status_note": "Read in a search",
+      "todo": ""
+    },
+    {
+      "id": "mit-futuretech",
+      "name": "MIT FutureTech",
+      "type": "university-unit",
+      "section": "research",
+      "why": "Economics and risks of computing and AI progress",
+      "data": [
+        {
+          "label": "futuretech.mit.edu",
+          "url": "https://futuretech.mit.edu/"
+        }
+      ],
+      "access": "browse",
+      "reader": null,
+      "status": "read-by-hand",
+      "status_note": "Read in a search",
+      "todo": ""
+    },
+    {
+      "id": "mit-media-lab",
+      "name": "MIT Media Lab",
+      "type": "university-unit",
+      "section": "research",
+      "why": "Named by him, next to the Broad",
+      "data": [
+        {
+          "label": "media.mit.edu",
+          "url": "https://www.media.mit.edu/"
+        }
+      ],
+      "access": "browse",
+      "reader": null,
+      "status": "no-reader",
+      "status_note": "What it researches was not looked at",
+      "todo": ""
+    },
+    {
+      "id": "hgse",
+      "name": "Harvard Graduate School of Education",
+      "type": "university-unit",
+      "section": "research",
+      "why": "Education; the author's own suggestion, never checked",
+      "data": [
+        {
+          "label": "gse.harvard.edu",
+          "url": "https://www.gse.harvard.edu/"
+        }
+      ],
+      "access": "browse",
+      "reader": null,
+      "status": "unchecked",
+      "status_note": "Unchecked",
+      "todo": ""
+    },
+    {
+      "id": "mit-openlearning",
+      "name": "MIT Open Learning",
+      "type": "university-unit",
+      "section": "research",
+      "why": "Education; the author's own suggestion, never checked",
+      "data": [
+        {
+          "label": "openlearning.mit.edu",
+          "url": "https://openlearning.mit.edu/"
+        }
+      ],
+      "access": "browse",
+      "reader": null,
+      "status": "unchecked",
+      "status_note": "Unchecked",
+      "todo": ""
+    },
+    {
+      "id": "broad",
+      "name": "Broad Institute",
+      "type": "research-institute",
+      "section": "research",
+      "why": "Computational biology; his record lists a Broad collaboration",
+      "data": [
+        {
+          "label": "broadinstitute.org",
+          "url": "https://www.broadinstitute.org/"
+        },
+        {
+          "label": "research labs and groups (seed)",
+          "url": "https://www.broadinstitute.org/research-labs-and-groups"
+        }
+      ],
+      "access": "browse",
+      "reader": null,
+      "status": "unreadable",
+      "status_note": "Answers scripts with 403; opens in a browser. Not read",
+      "todo": "A way in that a script may use, or a browser-driven read",
+      "lab_seed": {
+        "order": 5,
+        "name": "Broad Institute research labs and groups",
+        "url": "https://www.broadinstitute.org/research-labs-and-groups",
+        "checked": "2026-10-20 HTTP 403 to a plain request",
+        "readable": false
+      }
+    },
+    {
+      "id": "whitehead",
+      "name": "Whitehead Institute",
+      "type": "research-institute",
+      "section": "research",
+      "why": "Named by him; address beside the Broad",
+      "data": [
+        {
+          "label": "wi.mit.edu",
+          "url": "https://wi.mit.edu/"
+        }
+      ],
+      "access": "browse",
+      "reader": null,
+      "status": "no-reader",
+      "status_note": "Not read",
+      "todo": ""
+    },
+    {
+      "id": "koch",
+      "name": "Koch Institute for Integrative Cancer Research (MIT)",
+      "type": "research-institute",
+      "section": "research",
+      "why": "Cancer; engineering plus biology",
+      "data": [
+        {
+          "label": "ki.mit.edu",
+          "url": "https://ki.mit.edu/"
+        }
+      ],
+      "access": "browse",
+      "reader": null,
+      "status": "no-reader",
+      "status_note": "Listed from a pasted research snapshot; not read",
+      "todo": ""
+    },
+    {
+      "id": "mcgovern",
+      "name": "McGovern Institute for Brain Research (MIT)",
+      "type": "research-institute",
+      "section": "research",
+      "why": "Neuroscience",
+      "data": [
+        {
+          "label": "mcgovern.mit.edu",
+          "url": "https://mcgovern.mit.edu/"
+        }
+      ],
+      "access": "browse",
+      "reader": null,
+      "status": "no-reader",
+      "status_note": "From the snapshot; not read",
+      "todo": ""
+    },
+    {
+      "id": "picower",
+      "name": "Picower Institute for Learning and Memory (MIT)",
+      "type": "research-institute",
+      "section": "research",
+      "why": "Neuroscience of learning and memory",
+      "data": [
+        {
+          "label": "picower.mit.edu",
+          "url": "https://picower.mit.edu/"
+        }
+      ],
+      "access": "browse",
+      "reader": null,
+      "status": "no-reader",
+      "status_note": "From the snapshot; not read",
+      "todo": ""
+    },
+    {
+      "id": "ragon",
+      "name": "Ragon Institute of Mass General Brigham, MIT and Harvard",
+      "type": "research-institute",
+      "section": "research",
+      "why": "Immunology, vaccines, emerging infectious disease",
+      "data": [
+        {
+          "label": "ragoninstitute.org",
+          "url": "https://ragoninstitute.org/"
+        }
+      ],
+      "access": "browse",
+      "reader": null,
+      "status": "no-reader",
+      "status_note": "From the snapshot; not read",
+      "todo": ""
+    },
+    {
+      "id": "wyss",
+      "name": "Wyss Institute for Biologically Inspired Engineering",
+      "type": "research-institute",
+      "section": "research",
+      "why": "Bioengineering; synthetic biology",
+      "data": [
+        {
+          "label": "wyss.harvard.edu",
+          "url": "https://wyss.harvard.edu/"
+        },
+        {
+          "label": "people (seed)",
+          "url": "https://wyss.harvard.edu/people/"
+        }
+      ],
+      "access": "browse",
+      "reader": null,
+      "status": "unreadable",
+      "status_note": "From the snapshot; the people page returns 404",
+      "todo": "Find the current people or labs page",
+      "lab_seed": {
+        "order": 7,
+        "name": "Wyss Institute people",
+        "url": "https://wyss.harvard.edu/people/",
+        "checked": "2026-10-20 HTTP 404",
+        "readable": false
+      }
+    },
+    {
+      "id": "kempner",
+      "name": "Kempner Institute for the Study of Natural and Artificial Intelligence",
+      "type": "research-institute",
+      "section": "research",
+      "why": "Natural and artificial intelligence; large compute",
+      "data": [
+        {
+          "label": "kempnerinstitute.harvard.edu",
+          "url": "https://kempnerinstitute.harvard.edu/"
+        }
+      ],
+      "access": "browse",
+      "reader": null,
+      "status": "no-reader",
+      "status_note": "From the snapshot; not read",
+      "todo": ""
+    },
+    {
+      "id": "hsci",
+      "name": "Harvard Stem Cell Institute",
+      "type": "research-institute",
+      "section": "research",
+      "why": "Stem cells",
+      "data": [
+        {
+          "label": "hsci.harvard.edu",
+          "url": "https://hsci.harvard.edu/"
+        }
+      ],
+      "access": "browse",
+      "reader": null,
+      "status": "unreadable",
+      "status_note": "403 to scripts; from the snapshot, marked unchecked there",
+      "todo": ""
+    },
+    {
+      "id": "dana-farber",
+      "name": "Dana-Farber Cancer Institute",
+      "type": "hospital-research",
+      "section": "research",
+      "why": "Cancer genomics; confirmed in the Longwood area",
+      "data": [
+        {
+          "label": "research",
+          "url": "https://www.dana-farber.org/research"
+        },
+        {
+          "label": "labs directory (seed)",
+          "url": "https://www.dana-farber.org/research/labs-researchers/"
+        }
+      ],
+      "access": "browse",
+      "reader": null,
+      "status": "unreadable",
+      "status_note": "The labs directory returns 404",
+      "todo": "Find the current labs directory",
+      "lab_seed": {
+        "order": 4,
+        "name": "Dana-Farber labs",
+        "url": "https://www.dana-farber.org/research/labs-researchers/",
+        "checked": "2026-10-20 HTTP 404",
+        "readable": false
+      }
+    },
+    {
+      "id": "nber",
+      "name": "National Bureau of Economic Research",
+      "type": "think-tank",
+      "section": "research",
+      "why": "Economics",
+      "data": [
+        {
+          "label": "nber.org",
+          "url": "https://www.nber.org/"
+        }
+      ],
+      "access": "browse",
+      "reader": null,
+      "status": "no-reader",
+      "status_note": "From the snapshot; not read",
+      "todo": ""
+    },
+    {
+      "id": "boston-fed",
+      "name": "Federal Reserve Bank of Boston research (with the New England Public Policy Center)",
+      "type": "think-tank",
+      "section": "research",
+      "why": "Economics for New England; education, workforce",
+      "data": [
+        {
+          "label": "bostonfed.org",
+          "url": "https://www.bostonfed.org/"
+        }
+      ],
+      "access": "browse",
+      "reader": null,
+      "status": "no-reader",
+      "status_note": "From the snapshot; not read",
+      "todo": ""
+    },
+    {
+      "id": "jpal",
+      "name": "J-PAL",
+      "type": "think-tank",
+      "section": "research",
+      "why": "Randomized evaluations of anti-poverty programs",
+      "data": [
+        {
+          "label": "povertyactionlab.org",
+          "url": "https://www.povertyactionlab.org/"
+        }
+      ],
+      "access": "browse",
+      "reader": null,
+      "status": "no-reader",
+      "status_note": "From the snapshot; not read",
+      "todo": ""
+    },
+    {
+      "id": "hks-cid",
+      "name": "Harvard Kennedy School: Center for International Development",
+      "type": "think-tank",
+      "section": "research",
+      "why": "Economic development",
+      "data": [
+        {
+          "label": "page",
+          "url": "https://www.hks.harvard.edu/centers/cid"
+        }
+      ],
+      "access": "browse",
+      "reader": null,
+      "status": "no-reader",
+      "status_note": "From the snapshot; not read",
+      "todo": ""
+    },
+    {
+      "id": "hks-mrcbg",
+      "name": "Harvard Kennedy School: Mossavar-Rahmani Center for Business and Government",
+      "type": "think-tank",
+      "section": "research",
+      "why": "Business-government relations and regulation",
+      "data": [
+        {
+          "label": "page",
+          "url": "https://www.hks.harvard.edu/centers/mrcbg"
+        }
+      ],
+      "access": "browse",
+      "reader": null,
+      "status": "no-reader",
+      "status_note": "From the snapshot; not read",
+      "todo": ""
+    },
+    {
+      "id": "lincoln",
+      "name": "Lincoln Institute of Land Policy",
+      "type": "think-tank",
+      "section": "research",
+      "why": "Land use, property taxation",
+      "data": [
+        {
+          "label": "lincolninst.edu",
+          "url": "https://www.lincolninst.edu/"
+        }
+      ],
+      "access": "browse",
+      "reader": null,
+      "status": "no-reader",
+      "status_note": "From the snapshot; not read",
+      "todo": ""
+    },
+    {
+      "id": "pioneer",
+      "name": "Pioneer Institute",
+      "type": "think-tank",
+      "section": "research",
+      "why": "State policy on education and more; the snapshot calls it free-market",
+      "data": [
+        {
+          "label": "pioneerinstitute.org",
+          "url": "https://pioneerinstitute.org/"
+        }
+      ],
+      "access": "browse",
+      "reader": null,
+      "status": "no-reader",
+      "status_note": "From the snapshot; not read",
+      "todo": ""
+    },
+    {
+      "id": "massbudget",
+      "name": "Massachusetts Budget and Policy Center",
+      "type": "think-tank",
+      "section": "research",
+      "why": "State budget, tax policy",
+      "data": [
+        {
+          "label": "massbudget.org",
+          "url": "https://massbudget.org/"
+        }
+      ],
+      "access": "browse",
+      "reader": null,
+      "status": "no-reader",
+      "status_note": "From the snapshot; not read",
+      "todo": ""
+    },
+    {
+      "id": "masstaxpayers",
+      "name": "Massachusetts Taxpayers Foundation",
+      "type": "think-tank",
+      "section": "research",
+      "why": "State budget and tax analysis",
+      "data": [
+        {
+          "label": "masstaxpayers.org",
+          "url": "https://www.masstaxpayers.org/"
+        }
+      ],
+      "access": "browse",
+      "reader": null,
+      "status": "no-reader",
+      "status_note": "From the snapshot, marked unchecked there",
+      "todo": ""
+    },
+    {
+      "id": "bmrb",
+      "name": "Boston Municipal Research Bureau",
+      "type": "think-tank",
+      "section": "research",
+      "why": "City of Boston finances",
+      "data": [
+        {
+          "label": "bmrb.org",
+          "url": "https://www.bmrb.org/"
+        }
+      ],
+      "access": "browse",
+      "reader": null,
+      "status": "no-reader",
+      "status_note": "From the snapshot, marked unchecked there",
+      "todo": ""
+    },
+    {
+      "id": "bkc",
+      "name": "Berkman Klein Center",
+      "type": "think-tank",
+      "section": "research",
+      "why": "Internet, law and AI; kept for its AI work, not one of his five interests",
+      "data": [
+        {
+          "label": "cyber.harvard.edu",
+          "url": "https://cyber.harvard.edu/"
+        }
+      ],
+      "access": "browse",
+      "reader": null,
+      "status": "no-reader",
+      "status_note": "Fellowships; not read",
+      "todo": ""
+    },
+    {
+      "id": "bu-gdp",
+      "name": "Boston University Global Development Policy Center",
+      "type": "think-tank",
+      "section": "research",
+      "why": "Global development policy",
+      "data": [
+        {
+          "label": "bu.edu/gdp",
+          "url": "https://www.bu.edu/gdp/"
+        }
+      ],
+      "access": "browse",
+      "reader": null,
+      "status": "no-reader",
+      "status_note": "From the snapshot, marked unchecked there",
+      "todo": ""
+    },
+    {
+      "id": "neu-dukakis",
+      "name": "Northeastern Dukakis Center for Urban and Regional Policy",
+      "type": "think-tank",
+      "section": "research",
+      "why": "Urban and regional policy",
+      "data": [],
+      "access": "browse",
+      "reader": null,
+      "status": "unchecked",
+      "status_note": "Link not verified: its address did not answer",
+      "todo": "Find the current address"
+    },
+    {
+      "id": "bch",
+      "name": "Boston Children's Hospital",
+      "type": "hospital-research",
+      "section": "research",
+      "why": "Named by him; genomics and data-heavy research",
+      "data": [
+        {
+          "label": "research.childrenshospital.org",
+          "url": "https://research.childrenshospital.org/"
+        },
+        {
+          "label": "labs directory (seed)",
+          "url": "https://www.childrenshospital.org/research/labs"
+        }
+      ],
+      "access": "browse",
+      "reader": "collect/collectors/biolabs.py",
+      "status": "partial",
+      "status_note": "The labs directory is a seed for the lab-page collector (200); no lab fit read",
+      "todo": "Read lab pages for fit",
+      "lab_seed": {
+        "order": 2,
+        "name": "Boston Children's Hospital labs",
+        "url": "https://www.childrenshospital.org/research/labs",
+        "checked": "2026-10-20 HTTP 200",
+        "readable": true
+      }
+    },
+    {
+      "id": "mgb",
+      "name": "Mass General Brigham research (Brigham and Women's, Mass General, including its computational biology center)",
+      "type": "hospital-research",
+      "section": "research",
+      "why": "Mass General is the farthest he will go",
+      "data": [
+        {
+          "label": "research.massgeneralbrigham.org",
+          "url": "https://research.massgeneralbrigham.org/"
+        }
+      ],
+      "access": "browse",
+      "reader": null,
+      "status": "no-reader",
+      "status_note": "Not read",
+      "todo": ""
+    },
+    {
+      "id": "bidmc",
+      "name": "Beth Israel Deaconess Medical Center",
+      "type": "hospital-research",
+      "section": "research",
+      "why": "Confirmed in the Longwood area",
+      "data": [
+        {
+          "label": "research",
+          "url": "https://bidmc.org/research"
+        }
+      ],
+      "access": "browse",
+      "reader": null,
+      "status": "no-reader",
+      "status_note": "Not read",
+      "todo": ""
+    },
+    {
+      "id": "joslin",
+      "name": "Joslin Diabetes Center",
+      "type": "hospital-research",
+      "section": "research",
+      "why": "Confirmed in the Longwood area",
+      "data": [
+        {
+          "label": "joslin.org",
+          "url": "https://joslin.org/"
+        }
+      ],
+      "access": "browse",
+      "reader": null,
+      "status": "no-reader",
+      "status_note": "Not read",
+      "todo": ""
+    },
+    {
+      "id": "moderna",
+      "name": "Moderna (Research and Early Development, Data Science and AI Research, Therapeutic Area Bioinformatics)",
+      "type": "biotech-company",
+      "section": "research",
+      "why": "A great target for AI help (his words); a pitch for a collaboration, not a job",
+      "data": [
+        {
+          "label": "careers",
+          "url": "https://www.modernatx.com/careers/life-at-moderna"
+        },
+        {
+          "label": "jobs feed (Workday page)",
+          "url": "https://modernatx.wd1.myworkdayjobs.com/M_tx"
+        },
+        {
+          "label": "jobs feed (Workday JSON, POST)",
+          "url": "https://modernatx.wd1.myworkdayjobs.com/wday/cxs/modernatx/M_tx/jobs"
+        }
+      ],
+      "access": "browse",
+      "reader": null,
+      "status": "no-reader",
+      "status_note": "A plain POST to the Workday feed answers: 274 postings on 2026-10-20. The target is a research group's page, not a job: those pages have not been found. A need for outside help is not shown by the public record",
+      "todo": "A Workday reader; find the research group pages"
+    },
+    {
+      "id": "mit-biology",
+      "name": "MIT Biology",
+      "type": "university-unit",
+      "section": "research",
+      "why": "MIT biology department labs, a seed for the lab-page collector",
+      "access": "browse",
+      "data": [
+        {
+          "label": "labs (seed)",
+          "url": "https://biology.mit.edu/research/labs/"
+        }
+      ],
+      "reader": "collect/collectors/biolabs.py",
+      "status": "unreadable",
+      "status_note": "The labs directory returns 404 (2026-10-20)",
+      "todo": "Find the current labs directory",
+      "lab_seed": {
+        "order": 6,
+        "name": "MIT Biology labs",
+        "url": "https://biology.mit.edu/research/labs/",
+        "checked": "2026-10-20 HTTP 404",
+        "readable": false
+      }
+    }
+  ]
+}

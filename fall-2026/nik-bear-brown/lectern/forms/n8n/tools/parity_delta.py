@@ -10,8 +10,8 @@ import argparse, json, os, subprocess, sys, glob
 HERE = os.path.dirname(os.path.abspath(__file__))
 
 def _default_lectern():
-    """The Python Lectern, when this folder sits inside it (as in the course repository: lectern/n8n/)."""
-    d = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))      # lectern/, which holds n8n/
+    """The Python Lectern, when this folder sits inside it (as in the course repository: lectern/forms/n8n/)."""
+    d = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))      # lectern/, which holds forms/n8n/
     return d if os.path.exists(os.path.join(d, "lectern_paths.py")) else None
 
 
