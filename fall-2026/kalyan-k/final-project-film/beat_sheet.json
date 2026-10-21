@@ -1,0 +1,801 @@
+{
+  "metadata": {
+    "slug": "pm-sponsor-check-pitch",
+    "title": "PM Sponsor Check",
+    "topic": "PM SPONSOR CHECK",
+    "skill": "show-tell",
+    "style_preset": "show-tell",
+    "channel": "kalyan-karnati",
+    "channel_title": "Kalyan Karnati",
+    "persona": "Kalyan Karnati (narrating as self)",
+    "author": "Kalyan Venkata Swamy Karnati",
+    "voice": "af_heart",
+    "voice_kokoro": "af_heart",
+    "engine": "kokoro",
+    "clock": "narration",
+    "palette": "claude",
+    "register": "Teardown",
+    "fps": 24,
+    "aspect_ratio": "16:9",
+    "width": 3840,
+    "height": 2160,
+    "caption_policy": "none",
+    "greeting_language": "English (Hello)",
+    "bookend_exempt": [
+      "cold-open",
+      "bvdt"
+    ],
+    "bookend_exempt_reason": "show-tell style: opens on the hesitant writer + terms card, no verdict card; Your Turn is the Claude.ai composer.",
+    "assignment_overrides": [
+      "narrator is Kalyan Karnati: house narrator persona and its sign-off dropped",
+      "Kokoro voice af_heart instead of the house default voice",
+      "house outro not used: BOUT is a drawn Manim close signed by the author"
+    ],
+    "audience": "INFO 7375 reviewers and hiring managers for early-career product roles in health tech",
+    "source_doc": "final-project-film/BEAT-PLAN.md + PROJECT-BRIEF.md; numbers from the-reallocation-engine/logs/runs/2026fa-kalyan-karnati-1.md (2026-10-09)",
+    "playlist": "INFO 7375 Final Project Pitches",
+    "chapter_number": 0,
+    "tags": [
+      "H-1B",
+      "product management",
+      "health tech",
+      "Reallocation Engine",
+      "INFO 7375",
+      "Kalyan Karnati"
+    ],
+    "build": {
+      "at": "2026-10-21T14:51:15",
+      "cut": "master",
+      "filled": 15,
+      "of": 15,
+      "slates": [],
+      "skin_warnings": [
+        "BIDEA: palette=claude but the cold open is 'BrutalistHesitantWriter' — COLD OPEN LAW wants ClaudeComposerAsk",
+        "BOUT: palette=claude but the outro is 'un-annotated' — OUTRO LAW wants ClaudeTitleOutro"
+      ]
+    }
+  },
+  "beats": [
+    {
+      "beat_id": "BIDEA",
+      "act": "the question",
+      "lane": "bookend",
+      "proof_gate": "SHOW",
+      "narration_text": "Hello. I'm Kalyan Karnati, and this is the pitch for my final project. The usual question is which health-tech companies sponsor visas. For an early-career product manager, the real question is which ones sponsor product managers.",
+      "estimated_duration_s": 14.4,
+      "voice": "af_heart",
+      "engine": "kokoro",
+      "shot": {
+        "type": "REMOTION",
+        "source": "own",
+        "show": [
+          {
+            "at": 0.0,
+            "event": "types 'Which health-tech companies sponsor visas'"
+          },
+          {
+            "at": 0.6,
+            "event": "backspaces 'sponsor visas' → 'sponsor product managers' on the spoken correction"
+          }
+        ],
+        "remotion": {
+          "pattern": "BrutalistHesitantWriter",
+          "props": {
+            "text": "Which health-tech companies\nsponsor visas",
+            "triggerWords": "sponsor visas",
+            "replacementWords": "sponsor product managers",
+            "fontSize": 70,
+            "charMs": 22,
+            "hesitateBetween": 6,
+            "hesitateWithin": 1,
+            "mistakeRate": 2,
+            "jitter": 20,
+            "seed": "pm-sponsor-check-pitch",
+            "banner": "",
+            "durationSeconds": 14.61
+          },
+          "rendered": {
+            "out": "media/BIDEA.mp4",
+            "at": "2026-10-20T23:05:23.338745+00:00"
+          }
+        }
+      },
+      "lead_silence_s": 0.8,
+      "motion_claim": "The writer types the usual visa question and corrects it to the real one: sponsoring product managers.",
+      "qc": {
+        "sparse_by_design": true,
+        "sparse_reason": "Hesitant-writer bookend: the correction is the motion."
+      },
+      "audio_file": "mp3/beat-BIDEA.mp3",
+      "actual_duration_s": 14.61,
+      "render_duration_s": 14.625,
+      "build": {
+        "status": "VIDEO",
+        "src": "media\\BIDEA.mp4",
+        "filled_by": "remotion:BrutalistHesitantWriter",
+        "at": "2026-10-21T14:51:15"
+      }
+    },
+    {
+      "beat_id": "BDEFS",
+      "act": "terms",
+      "lane": "bookend",
+      "proof_gate": "CARD",
+      "narration_text": "An H-1B sponsor is an employer that files work-visa petitions. A SOC code is the government's job category for a role. A liveness check asks whether a job posting is still open.",
+      "estimated_duration_s": 12.8,
+      "voice": "af_heart",
+      "engine": "kokoro",
+      "shot": {
+        "type": "REMOTION",
+        "source": "own",
+        "show": [
+          {
+            "at": 0.1,
+            "event": "'H-1B sponsor' lands"
+          },
+          {
+            "at": 0.4,
+            "event": "'SOC code' lands"
+          },
+          {
+            "at": 0.7,
+            "event": "'liveness check' lands"
+          }
+        ],
+        "remotion": {
+          "pattern": "ClaudeDefinitions",
+          "props": {
+            "title": "Terms In This Film",
+            "terms": [
+              {
+                "term": "H-1B sponsor",
+                "meaning": "an employer that files work-visa petitions"
+              },
+              {
+                "term": "SOC code",
+                "meaning": "the government's job category for a role"
+              },
+              {
+                "term": "liveness check",
+                "meaning": "asks whether a job posting is still open"
+              }
+            ],
+            "folderLabel": "Kalyan Karnati",
+            "durationSeconds": 13.03
+          },
+          "rendered": {
+            "out": "media/BDEFS.mp4",
+            "at": "2026-10-20T23:07:20.895803+00:00"
+          }
+        }
+      },
+      "qc": {
+        "sparse_by_design": true,
+        "sparse_reason": "TERMS card: three prerequisites, one line each."
+      },
+      "audio_file": "mp3/beat-BDEFS.mp3",
+      "actual_duration_s": 13.03,
+      "render_duration_s": 13.041666666666666,
+      "build": {
+        "status": "VIDEO",
+        "src": "media\\BDEFS.mp4",
+        "filled_by": "remotion:ClaudeDefinitions",
+        "at": "2026-10-21T14:51:15"
+      }
+    },
+    {
+      "beat_id": "B00",
+      "act": "show-tell",
+      "lane": "manim",
+      "proof_gate": "SHOW",
+      "narration_text": "What I will build is a repository: a recipe that says what to check, a scan script, a labelled test set, and an evaluation log, added to the Reallocation Engine.",
+      "estimated_duration_s": 12.0,
+      "voice": "af_heart",
+      "engine": "kokoro",
+      "shot": {
+        "type": "GRAPHIC",
+        "source": "own",
+        "visual_intent": "An open kraft box drops onto the floor; a recipe page, a dark script block and a test-set tray drop into it. Labelled 'constructed'.",
+        "show": [
+          {
+            "at": 0.1,
+            "event": "box drops"
+          },
+          {
+            "at": 0.35,
+            "event": "recipe"
+          },
+          {
+            "at": 0.5,
+            "event": "script"
+          },
+          {
+            "at": 0.65,
+            "event": "test set"
+          }
+        ],
+        "manim": {
+          "class": "B00_Repo"
+        },
+        "motion_claim": "An open kraft box drops onto the floor; a recipe page, a dark script block and a test-set tray drop into it. Labelled 'constructed'."
+      },
+      "qc": {
+        "sparse_by_design": true,
+        "sparse_reason": "show-tell style: one drawn object or scene on a cream stage per beat, minimal labels, with the voice carrying the explanation. The negative space is the style, so only underfill and clustered are waived; edge-bleed, empty-frame and contrast still apply."
+      },
+      "audio_file": "mp3/beat-B00.mp3",
+      "actual_duration_s": 10.52,
+      "render_duration_s": 10.541666666666666,
+      "build": {
+        "status": "MANIM",
+        "src": "manim\\B00.mp4",
+        "filled_by": "manim",
+        "at": "2026-10-21T14:51:15"
+      }
+    },
+    {
+      "beat_id": "B01",
+      "act": "show-tell",
+      "lane": "manim",
+      "proof_gate": "SHOW",
+      "narration_text": "Part of it already exists. On October ninth, I ran a first version on the repository's public data. Over thirty thousand companies went in. Three hundred fifty-two possible health sponsors came out.",
+      "estimated_duration_s": 12.8,
+      "voice": "af_heart",
+      "engine": "kokoro",
+      "shot": {
+        "type": "GRAPHIC",
+        "source": "own",
+        "visual_intent": "A wide grid of crates slides through an ink gate; a small stack lands on the other side.",
+        "show": [
+          {
+            "at": 0.2,
+            "event": "crates + gate"
+          },
+          {
+            "at": 0.55,
+            "event": "30,369"
+          },
+          {
+            "at": 0.8,
+            "event": "352 stack lands"
+          }
+        ],
+        "manim": {
+          "class": "B01_Gate"
+        },
+        "motion_claim": "A wide grid of crates slides through an ink gate; a small stack lands on the other side."
+      },
+      "qc": {
+        "sparse_by_design": true,
+        "sparse_reason": "show-tell style: one drawn object or scene on a cream stage per beat, minimal labels, with the voice carrying the explanation. The negative space is the style, so only underfill and clustered are waived; edge-bleed, empty-frame and contrast still apply."
+      },
+      "audio_file": "mp3/beat-B01.mp3",
+      "actual_duration_s": 12.86,
+      "render_duration_s": 12.875,
+      "build": {
+        "status": "MANIM",
+        "src": "manim\\B01.mp4",
+        "filled_by": "manim",
+        "at": "2026-10-21T14:51:15"
+      }
+    },
+    {
+      "beat_id": "B02",
+      "act": "show-tell",
+      "lane": "manim",
+      "proof_gate": "SHOW",
+      "narration_text": "On that run, only nine of those three hundred fifty-two listed a product manager title among their top sponsored job titles, and none of those titles was entry level.",
+      "estimated_duration_s": 11.6,
+      "voice": "af_heart",
+      "engine": "kokoro",
+      "shot": {
+        "type": "GRAPHIC",
+        "source": "own",
+        "visual_intent": "352 crate tops in rows; a scan line sweeps; nine light up; the hero number '9 of 352' lands.",
+        "show": [
+          {
+            "at": 0.1,
+            "event": "352 rows"
+          },
+          {
+            "at": 0.3,
+            "event": "scan"
+          },
+          {
+            "at": 0.6,
+            "event": "9 of 352"
+          }
+        ],
+        "manim": {
+          "class": "B02_Nine"
+        },
+        "motion_claim": "352 crate tops in rows; a scan line sweeps; nine light up; the hero number '9 of 352' lands."
+      },
+      "audio_file": "mp3/beat-B02.mp3",
+      "actual_duration_s": 9.9,
+      "render_duration_s": 9.916666666666666,
+      "build": {
+        "status": "MANIM",
+        "src": "manim\\B02.mp4",
+        "filled_by": "manim",
+        "at": "2026-10-21T14:51:15"
+      }
+    },
+    {
+      "beat_id": "B03",
+      "act": "show-tell",
+      "lane": "manim",
+      "proof_gate": "SHOW",
+      "narration_text": "A filter on health industry categories would have missed the sixty-four sponsors that filed under technology and other categories instead, including digital-health companies I would actually apply to.",
+      "estimated_duration_s": 11.2,
+      "voice": "af_heart",
+      "engine": "kokoro",
+      "shot": {
+        "type": "GRAPHIC",
+        "source": "own",
+        "visual_intent": "A funnel marked 'health filter'; a row of crates slides off its side and lands under a second sign, '64'.",
+        "show": [
+          {
+            "at": 0.15,
+            "event": "funnel"
+          },
+          {
+            "at": 0.45,
+            "event": "crates slide off"
+          },
+          {
+            "at": 0.75,
+            "event": "64"
+          }
+        ],
+        "manim": {
+          "class": "B03_Filter"
+        },
+        "motion_claim": "A funnel marked 'health filter'; a row of crates slides off its side and lands under a second sign, '64'."
+      },
+      "qc": {
+        "sparse_by_design": true,
+        "sparse_reason": "show-tell style: one drawn object or scene on a cream stage per beat, minimal labels, with the voice carrying the explanation. The negative space is the style, so only underfill and clustered are waived; edge-bleed, empty-frame and contrast still apply."
+      },
+      "audio_file": "mp3/beat-B03.mp3",
+      "actual_duration_s": 11.82,
+      "render_duration_s": 11.833333333333334,
+      "build": {
+        "status": "MANIM",
+        "src": "manim\\B03.mp4",
+        "filled_by": "manim",
+        "at": "2026-10-21T14:51:15"
+      }
+    },
+    {
+      "beat_id": "B04",
+      "act": "show-tell",
+      "lane": "manim",
+      "proof_gate": "SHOW",
+      "narration_text": "On October ninth, I compared this with two things. The first was the Reallocation Engine's own sponsorship scorer. It rated each company's sponsorship as one tier, but never asked whether that company sponsored product managers. Mine will show product-manager evidence separately.",
+      "estimated_duration_s": 16.4,
+      "voice": "af_heart",
+      "engine": "kokoro",
+      "shot": {
+        "type": "GRAPHIC",
+        "source": "own",
+        "visual_intent": "Two windows: the engine scorer's row grows one tier bar; my row grows the same bar plus a separate PM chip with a check.",
+        "show": [
+          {
+            "at": 0.2,
+            "event": "two windows"
+          },
+          {
+            "at": 0.45,
+            "event": "tier bar"
+          },
+          {
+            "at": 0.85,
+            "event": "PM chip + check"
+          }
+        ],
+        "manim": {
+          "class": "B04_Scorer"
+        },
+        "motion_claim": "Two windows: the engine scorer's row grows one tier bar; my row grows the same bar plus a separate PM chip with a check."
+      },
+      "qc": {
+        "sparse_by_design": true,
+        "sparse_reason": "show-tell style: one drawn object or scene on a cream stage per beat, minimal labels, with the voice carrying the explanation. The negative space is the style, so only underfill and clustered are waived; edge-bleed, empty-frame and contrast still apply."
+      },
+      "audio_file": "mp3/beat-B04.mp3",
+      "actual_duration_s": 17.81,
+      "render_duration_s": 17.833333333333332,
+      "build": {
+        "status": "MANIM",
+        "src": "manim\\B04.mp4",
+        "filled_by": "manim",
+        "at": "2026-10-21T14:51:15"
+      }
+    },
+    {
+      "beat_id": "B05",
+      "act": "show-tell",
+      "lane": "manim",
+      "proof_gate": "SHOW",
+      "narration_text": "The second was Built In Boston's job listings. They still showed copies of Cohere Health roles marked removed, while the live role sat on Cohere's own job board. Mine will check each posting on the company's own board.",
+      "estimated_duration_s": 15.2,
+      "voice": "af_heart",
+      "engine": "kokoro",
+      "shot": {
+        "type": "GRAPHIC",
+        "source": "own",
+        "visual_intent": "Left window 'Built In': job cards greyed with a cross. Right, the company's own board: one live card; a check lands.",
+        "show": [
+          {
+            "at": 0.15,
+            "event": "Built In window"
+          },
+          {
+            "at": 0.4,
+            "event": "removed copies"
+          },
+          {
+            "at": 0.6,
+            "event": "live card"
+          },
+          {
+            "at": 0.85,
+            "event": "check"
+          }
+        ],
+        "manim": {
+          "class": "B05_Board"
+        },
+        "motion_claim": "Left window 'Built In': job cards greyed with a cross. Right, the company's own board: one live card; a check lands."
+      },
+      "qc": {
+        "sparse_by_design": true,
+        "sparse_reason": "show-tell style: one drawn object or scene on a cream stage per beat, minimal labels, with the voice carrying the explanation. The negative space is the style, so only underfill and clustered are waived; edge-bleed, empty-frame and contrast still apply."
+      },
+      "audio_file": "mp3/beat-B05.mp3",
+      "actual_duration_s": 13.21,
+      "render_duration_s": 13.25,
+      "build": {
+        "status": "MANIM",
+        "src": "manim\\B05.mp4",
+        "filled_by": "manim",
+        "at": "2026-10-21T14:51:15"
+      }
+    },
+    {
+      "beat_id": "B06",
+      "act": "show-tell",
+      "lane": "manim",
+      "proof_gate": "SHOW",
+      "narration_text": "The reader I'm building for is a hiring manager for a product role. In the first minute, they open one card listing what the tool can and cannot verify, then one run log showing a check catching a real error.",
+      "estimated_duration_s": 16.0,
+      "voice": "af_heart",
+      "engine": "kokoro",
+      "shot": {
+        "type": "GRAPHIC",
+        "source": "own",
+        "visual_intent": "A reader figure beside the box; the lid lifts; a card and a run-log page rise; a check lands on the log.",
+        "show": [
+          {
+            "at": 0.15,
+            "event": "reader"
+          },
+          {
+            "at": 0.4,
+            "event": "card rises"
+          },
+          {
+            "at": 0.75,
+            "event": "run log + check"
+          }
+        ],
+        "manim": {
+          "class": "B06_Reader"
+        },
+        "motion_claim": "A reader figure beside the box; the lid lifts; a card and a run-log page rise; a check lands on the log."
+      },
+      "qc": {
+        "sparse_by_design": true,
+        "sparse_reason": "show-tell style: one drawn object or scene on a cream stage per beat, minimal labels, with the voice carrying the explanation. The negative space is the style, so only underfill and clustered are waived; edge-bleed, empty-frame and contrast still apply."
+      },
+      "audio_file": "mp3/beat-B06.mp3",
+      "actual_duration_s": 13.06,
+      "render_duration_s": 13.083333333333334,
+      "build": {
+        "status": "MANIM",
+        "src": "manim\\B06.mp4",
+        "filled_by": "manim",
+        "at": "2026-10-21T14:51:15"
+      }
+    },
+    {
+      "beat_id": "B07",
+      "act": "show-tell",
+      "lane": "manim",
+      "proof_gate": "SHOW",
+      "narration_text": "Here's that error. On my October ninth run, the scorer marked postings nobody had checked as checked. Even after I fixed the labels, the two roles I couldn't check still ranked above the ones I had. Catching that is the skill this project is about: verifying output instead of trusting it.",
+      "estimated_duration_s": 20.4,
+      "voice": "af_heart",
+      "engine": "kokoro",
+      "shot": {
+        "type": "GRAPHIC",
+        "source": "own",
+        "visual_intent": "A two-row ranking: the unchecked card sits on top with a false grey check; a scan line sweeps it and the false check is struck.",
+        "show": [
+          {
+            "at": 0.15,
+            "event": "ranking"
+          },
+          {
+            "at": 0.3,
+            "event": "false check"
+          },
+          {
+            "at": 0.75,
+            "event": "scan + strike"
+          }
+        ],
+        "manim": {
+          "class": "B07_Error"
+        },
+        "motion_claim": "A two-row ranking: the unchecked card sits on top with a false grey check; a scan line sweeps it and the false check is struck."
+      },
+      "qc": {
+        "sparse_by_design": true,
+        "sparse_reason": "show-tell style: one drawn object or scene on a cream stage per beat, minimal labels, with the voice carrying the explanation. The negative space is the style, so only underfill and clustered are waived; edge-bleed, empty-frame and contrast still apply."
+      },
+      "audio_file": "mp3/beat-B07.mp3",
+      "actual_duration_s": 17.81,
+      "render_duration_s": 17.833333333333332,
+      "build": {
+        "status": "MANIM",
+        "src": "manim\\B07.mp4",
+        "filled_by": "manim",
+        "at": "2026-10-21T14:51:15"
+      }
+    },
+    {
+      "beat_id": "B08",
+      "act": "show-tell",
+      "lane": "manim",
+      "proof_gate": "SHOW",
+      "narration_text": "It will not tell anyone which job code an employer will file, and it will not give immigration advice. The first piece will be a tighter health-keyword filter, tested against the sixty-four matches I reviewed with evidence. Today's filter gets fifty-two right; the evaluation log will show the change.",
+      "estimated_duration_s": 19.6,
+      "voice": "af_heart",
+      "engine": "kokoro",
+      "shot": {
+        "type": "GRAPHIC",
+        "source": "own",
+        "visual_intent": "A fence; two items stay outside it; the box moves forward; a gauge fills to 52 / 64 beside an empty after-gauge labelled 'constructed'.",
+        "show": [
+          {
+            "at": 0.15,
+            "event": "fence, out"
+          },
+          {
+            "at": 0.45,
+            "event": "box forward"
+          },
+          {
+            "at": 0.8,
+            "event": "52 of 64"
+          }
+        ],
+        "manim": {
+          "class": "B08_Scope"
+        },
+        "motion_claim": "A fence; two items stay outside it; the box moves forward; a gauge fills to 52 / 64 beside an empty after-gauge labelled 'constructed'."
+      },
+      "qc": {
+        "sparse_by_design": true,
+        "sparse_reason": "show-tell style: one drawn object or scene on a cream stage per beat, minimal labels, with the voice carrying the explanation. The negative space is the style, so only underfill and clustered are waived; edge-bleed, empty-frame and contrast still apply."
+      },
+      "audio_file": "mp3/beat-B08.mp3",
+      "actual_duration_s": 18.37,
+      "render_duration_s": 18.375,
+      "build": {
+        "status": "MANIM",
+        "src": "manim\\B08.mp4",
+        "filled_by": "manim",
+        "at": "2026-10-21T14:51:15"
+      }
+    },
+    {
+      "beat_id": "B09",
+      "act": "show-tell",
+      "lane": "manim",
+      "proof_gate": "SHOW",
+      "narration_text": "The risk is the full government filing data, the only way to confirm product-manager sponsorship. It is large, and job titles are inconsistent. If I can't match it in time, I will limit it to the most recent fiscal year published, for Massachusetts employers only, and say so in the log.",
+      "estimated_duration_s": 20.4,
+      "voice": "af_heart",
+      "engine": "kokoro",
+      "shot": {
+        "type": "GRAPHIC",
+        "source": "own",
+        "visual_intent": "A tall messy stack of filing pages wobbles; a thin slice slides off to the right, labelled '1 year · MA', 'constructed'.",
+        "show": [
+          {
+            "at": 0.15,
+            "event": "stack"
+          },
+          {
+            "at": 0.4,
+            "event": "wobble"
+          },
+          {
+            "at": 0.7,
+            "event": "slice"
+          }
+        ],
+        "manim": {
+          "class": "B09_Risk"
+        },
+        "motion_claim": "A tall messy stack of filing pages wobbles; a thin slice slides off to the right, labelled '1 year · MA', 'constructed'."
+      },
+      "qc": {
+        "sparse_by_design": true,
+        "sparse_reason": "show-tell style: one drawn object or scene on a cream stage per beat, minimal labels, with the voice carrying the explanation. The negative space is the style, so only underfill and clustered are waived; edge-bleed, empty-frame and contrast still apply."
+      },
+      "audio_file": "mp3/beat-B09.mp3",
+      "actual_duration_s": 18.58,
+      "render_duration_s": 18.583333333333332,
+      "build": {
+        "status": "MANIM",
+        "src": "manim\\B09.mp4",
+        "filled_by": "manim",
+        "at": "2026-10-21T14:51:15"
+      }
+    },
+    {
+      "beat_id": "B10",
+      "act": "show-tell",
+      "lane": "manim",
+      "proof_gate": "SHOW",
+      "narration_text": "Why this project? It's a mix. Product management in health tech is something I've done, in my internship at Andor Health, and you can see that thinking in the health-tech recipe I submitted on October ninth. Python data pipelines, test sets, and verification gates are what I'm learning.",
+      "estimated_duration_s": 19.2,
+      "voice": "af_heart",
+      "engine": "kokoro",
+      "shot": {
+        "type": "GRAPHIC",
+        "source": "own",
+        "visual_intent": "Two shelves: one box sits on 'have'; three boxes drop onto 'learning' one by one.",
+        "show": [
+          {
+            "at": 0.2,
+            "event": "have"
+          },
+          {
+            "at": 0.75,
+            "event": "learning boxes"
+          }
+        ],
+        "manim": {
+          "class": "B10_Skills"
+        },
+        "motion_claim": "Two shelves: one box sits on 'have'; three boxes drop onto 'learning' one by one."
+      },
+      "qc": {
+        "sparse_by_design": true,
+        "sparse_reason": "show-tell style: one drawn object or scene on a cream stage per beat, minimal labels, with the voice carrying the explanation. The negative space is the style, so only underfill and clustered are waived; edge-bleed, empty-frame and contrast still apply."
+      },
+      "audio_file": "mp3/beat-B10.mp3",
+      "actual_duration_s": 17.28,
+      "render_duration_s": 17.291666666666668,
+      "build": {
+        "status": "MANIM",
+        "src": "manim\\B10.mp4",
+        "filled_by": "manim",
+        "at": "2026-10-21T14:51:15"
+      }
+    },
+    {
+      "beat_id": "BHTF",
+      "act": "your turn",
+      "lane": "bookend",
+      "proof_gate": "SHOW",
+      "narration_text": "Your turn. Paste this into Claude: \"Here is a company's list of sponsored job titles: [paste the list]. Does it show evidence of sponsoring my target role? Label each answer as either taken from the list or a guess.\" Then check two things: did it say \"not listed\" rather than \"never sponsored\", and did it label its guesses?",
+      "estimated_duration_s": 23.2,
+      "voice": "af_heart",
+      "engine": "kokoro",
+      "shot": {
+        "type": "REMOTION",
+        "source": "own",
+        "show": [
+          {
+            "at": 0.0,
+            "event": "Composer opens — 'Your turn.'"
+          },
+          {
+            "at": 0.1,
+            "event": "the prompt types in full"
+          },
+          {
+            "at": 0.8,
+            "event": "two check lines land"
+          }
+        ],
+        "remotion": {
+          "pattern": "ClaudeComposerAsk",
+          "props": {
+            "greeting": "Your turn.",
+            "topic": "PM SPONSOR CHECK · YOUR TURN · CONSTRUCTED",
+            "segment": "Check One Company's Titles",
+            "command": "Here is a company's list of sponsored job titles: [paste the list]. Does it show evidence of sponsoring my target role? Label each answer as either taken from the list or a guess.",
+            "runningText": "paste this into Claude…",
+            "output": [
+              "Check: it says “not listed”, not “never sponsored”.",
+              "Check: every guess is labelled as a guess."
+            ],
+            "folderLabel": "Kalyan Karnati",
+            "modelLabel": "Opus 5.5",
+            "effortLabel": "High",
+            "durationSeconds": 19.33
+          },
+          "rendered": {
+            "out": "media/BHTF.mp4",
+            "at": "2026-10-20T23:23:45.854672+00:00"
+          }
+        }
+      },
+      "audio_file": "mp3/beat-BHTF.mp3",
+      "actual_duration_s": 19.33,
+      "render_duration_s": 19.333333333333332,
+      "build": {
+        "status": "VIDEO",
+        "src": "media\\BHTF.mp4",
+        "filled_by": "remotion:ClaudeComposerAsk",
+        "at": "2026-10-21T14:51:15"
+      }
+    },
+    {
+      "beat_id": "BOUT",
+      "act": "outro",
+      "lane": "manim",
+      "proof_gate": "SHOW",
+      "narration_text": "PM Sponsor Check. By Kalyan Karnati.",
+      "estimated_duration_s": 4.0,
+      "voice": "af_heart",
+      "engine": "kokoro",
+      "shot": {
+        "type": "GRAPHIC",
+        "source": "own",
+        "manim": {
+          "class": "BOUT_Close"
+        },
+        "visual_intent": "The film's box, sealed with tape, drops in; the title and the author's name land beside it.",
+        "show": [
+          {
+            "at": 0.0,
+            "event": "box drops"
+          },
+          {
+            "at": 0.3,
+            "event": "title"
+          },
+          {
+            "at": 0.6,
+            "event": "name"
+          }
+        ],
+        "motion_claim": "The box from B00 comes back sealed: the project, signed by its author."
+      },
+      "kind": "outro_voice",
+      "tail_silence_s": 1.0,
+      "outro_override": "Assignment requires the author's own close: ClaudeTitleOutro hard-codes the house handle, so BOUT is drawn in Manim.",
+      "qc": {
+        "sparse_by_design": true,
+        "sparse_reason": "show-tell style: one drawn object or scene on a cream stage per beat, minimal labels, with the voice carrying the explanation. The negative space is the style, so only underfill and clustered are waived; edge-bleed, empty-frame and contrast still apply."
+      },
+      "audio_file": "mp3/beat-BOUT.mp3",
+      "actual_duration_s": 3.79,
+      "render_duration_s": 3.7916666666666665,
+      "build": {
+        "status": "MANIM",
+        "src": "manim\\BOUT.mp4",
+        "filled_by": "manim",
+        "at": "2026-10-21T14:51:15"
+      }
+    }
+  ]
+}
